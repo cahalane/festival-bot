@@ -1,0 +1,15 @@
+{
+  "slug": "CHANGEME",
+  "name": "CHANGE ME Festival 20XX",
+  "timezone": "Europe/Dublin",
+  "dayCutoffHour": 6,
+  "catchFraction": 0.5,
+  "nightGapHours": 3,
+  "days": {
+    "fri": [2026, 8, 1],
+    "sat": [2026, 8, 2],
+    "sun": [2026, 8, 3]
+  },
+  "coordinates": { "lat": 0.0, "lon": 0.0 },
+  "_note": "Replace all values. dayCutoffHour groups post-midnight sets with the right evening; pick the hour after the last act ends. Add a sanity anchor (a known set's day/time) once the lineup is loaded."
+}

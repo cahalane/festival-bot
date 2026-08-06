@@ -50,14 +50,28 @@ into two paths, each with a working reference module in this repo:
   festival itself runs** (the opposite topology from ATN's mirror — see `clashfinder.md` for the
   distinction). Follow `scraped-lineup.md`.
 
-There is no `festivals/_template` skeleton or `/new-festival` scaffolding command in this repo as
-of this writing — build a new festival module by copying whichever of `atn26` or `ps26` matches
-your path and adapting it. Each module is a small workspace package: `package.json`,
-`festival.json` (name/timezone/day-cutoff/dates), `venues.json` (stage list + walk graph — see
-`walk-graph.md`), `schedule.json` (the lineup snapshot), `src/` (the lineup source + any
-adapter-specific glue), and `CONTEXT.md` (the festival-specific facts your assistant reads).
-Register the new module's builder in `packages/cli/src/festivals.ts` alongside `demofest`/`atn26`/
-`ps26`.
+Start from `festivals/_template`, a skeleton with the files in place and the decisions marked
+`CHANGEME`. Copy it to `festivals/<your-slug>/` and rename `package.json.template` to
+`package.json` — it ships with that suffix deliberately, so the skeleton is not itself picked up
+as a workspace package or built.
+
+Each module is a small workspace package:
+
+| File | What it holds |
+|---|---|
+| `package.json` | workspace entry, named `@festival/<slug>` |
+| `festival.json` | name, timezone, `dayCutoffHour`, dates, coordinates (coordinates are what enable the weather source) |
+| `venues.json` | stage list + walk graph — see `walk-graph.md` |
+| `schedule.json` | the lineup snapshot |
+| `src/` | the lineup source and any vendor-specific glue |
+| `CONTEXT.md` | the festival-specific facts your assistant reads |
+| `knowledge/` | longer notes read on demand, not loaded every session |
+
+Then register the builder in `packages/cli/src/festivals.ts` alongside `demofest`/`atn26`/`ps26`,
+and add the dependency to `packages/cli/package.json`.
+
+The template gets you the shape; for the substance, read whichever of `atn26` (vendor API) or
+`ps26` (scrape) matches your path and copy how it wires its sources.
 
 ## 4. Point the CLI at your festival
 

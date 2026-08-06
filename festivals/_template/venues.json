@@ -1,0 +1,15 @@
+{
+  "venues": [
+    { "slug": "main-stage", "name": "Main Stage" },
+    { "slug": "second-stage", "name": "Second Stage" },
+    { "slug": "tent", "name": "The Tent" }
+  ],
+  "limitedCapacity": ["tent"],
+  "walk": {
+    "defaultMinutes": 15,
+    "edges": [
+      ["main-stage", "second-stage", 5],
+      ["second-stage", "tent", 4]
+    ]
+  }
+}

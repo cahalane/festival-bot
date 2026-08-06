@@ -1,0 +1,12 @@
+{
+  "name": "@festival/CHANGEME",
+  "version": "0.1.0",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "dependencies": {
+    "@festival-bot/core": "*",
+    "@festival-bot/adapters": "*"
+  }
+}
