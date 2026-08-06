@@ -1,6 +1,6 @@
 /**
  * Machine-readable (`--json`) serialisers for the read commands. The console
- * renderers in format.ts stay for humans/Telegram relay; these emit structured
+ * renderers in format.ts stay for humans/channel relay; these emit structured
  * objects (festival-local ISO times, display venue names, explicit deltas) for an
  * agent or downstream tool to reason over without parsing prose.
  */

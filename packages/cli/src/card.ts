@@ -1,5 +1,5 @@
 /**
- * Shared plumbing for the PNG cards we send to Telegram.
+ * Shared plumbing for the PNG cards we send over the channel.
  *
  * Extracted from the weather card once a second card (the route) needed the same
  * things: the chromium screenshot, HTML escaping, and one palette so the cards
