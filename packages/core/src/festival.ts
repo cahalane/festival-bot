@@ -16,6 +16,7 @@ import type {
   PagesSource,
   ArtistInfoSource,
 } from "./sources.js";
+import type { SiteMapSource } from "./sitemap.js";
 
 export interface GeoPoint {
   lat: number;
@@ -42,6 +43,8 @@ export interface FestivalManifest {
   days: Record<string, readonly [number, number, number]>;
   /** Site coordinates (for the weather adapter). */
   coordinates?: GeoPoint;
+  /** POI categories the amenities report groups by. Omit for the common defaults. */
+  amenityCategories?: string[];
 }
 
 export interface VenueInfo {
@@ -63,6 +66,8 @@ export interface FestivalSources {
   announcements?: AnnouncementsSource;
   pages?: PagesSource;
   artistInfo?: ArtistInfoSource;
+  /** Site-map POIs, if this festival publishes any. */
+  map?: SiteMapSource;
 }
 
 export interface FestivalModule {
