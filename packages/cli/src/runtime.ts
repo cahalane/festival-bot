@@ -92,7 +92,7 @@ export async function resolveUserFavourites(
     // one user keeps their partner's wants in pink (2026-07-31). Those tiers are
     // pulled out BEFORE any inversion and appended last, so they stay visible
     // without ever outranking the owner's own picks. Blind inversion had been
-    // putting her 6 acts above his 17 must-sees.
+    // putting the partner's 6 acts above the owner's 17 must-sees.
     // Alias unresolved refs BEFORE anything else, so an aliased pick keeps the
     // tier it was starred in rather than arriving as an extra.
     const aliases = opts.refAliases;
@@ -103,8 +103,8 @@ export async function resolveUserFavourites(
       const partner = new Set(opts.partnerTiers ?? []);
       const own = tiers.filter((_, i) => !partner.has(i + 1));
       const theirs = tiers.filter((_, i) => partner.has(i + 1));
-      // The inversion describes how the OWNER colours his own picks, so it
-      // applies to his tiers only.
+      // The inversion describes how the OWNER colours their own picks, so it
+      // applies to their tiers only.
       const ordered = opts.tierOrder === "inverted" ? [...own].reverse() : own;
       tiers = [...ordered, ...theirs];
     }

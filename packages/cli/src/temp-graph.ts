@@ -3,9 +3,9 @@
  *
  * Operator request, 2026-07-31, with a Forecaster app screenshot: "replace the
  * temp with a labelled graph like the Forecaster app does", for the current
- * day. The
- * min/max bar answers "how cold does it get"; it cannot answer "how cold is it
- * when I walk back at 3am", which is the question people actually have.
+ * day. The min/max bar answers "how cold does it get"; it cannot answer "how
+ * cold is it when I walk back at 3am", which is the question people actually
+ * have.
  *
  * The reference design is a smooth line, a labelled dot every few hours, and a
  * time axis underneath. Two departures from labelling purely on an interval:
@@ -71,9 +71,9 @@ export function smoothPath(pts: { x: number; y: number }[]): string {
  * The next `hoursAhead` hours from `now`, inclusive of the hour in progress.
  *
  * Operator ask, 2026-07-31: "make the graph from time of card render to 24h
- * ahead". A
- * calendar-day graph is mostly history by mid-afternoon; a rolling window is
- * entirely actionable and crosses midnight, which is where the cold lives.
+ * ahead". A calendar-day graph is mostly history by mid-afternoon; a rolling
+ * window is entirely actionable and crosses midnight, which is where the cold
+ * lives.
  *
  * The series carries festival-local ISO WITHOUT an offset, so it is compared as
  * local wall-clock text rather than parsed as UTC.
