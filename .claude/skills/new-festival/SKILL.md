@@ -81,8 +81,10 @@ in Step 7 — don't hand-guess edges here, the template's example edges are plac
 
 ## Step 4 — Implement `loadSets()` (required gate — do not skip)
 
-The scaffolded `festivals/<slug>/src/index.ts` still calls through to the template's
-`festivals/_template/src/index.ts`, whose `loadSets()` is a stub:
+The scaffold step copies `festivals/_template/` into `festivals/<slug>/` (`cp -r`), so
+`festivals/<slug>/src/index.ts` is now its own independent file, not a call-through to the
+template — edit the new module's copy, not `festivals/_template/src/index.ts`. Its `loadSets()`
+starts out as the template's stub:
 
 ```ts
 loadSets() {
