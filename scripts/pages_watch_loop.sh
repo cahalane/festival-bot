@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
 # Info-pages watch loop — mirrors schedule_watch_loop.sh, driven by
-# `festplan pages-tick`. Diffs ATN's Appmiral CMS pages (/pages) by modified_at
-# and prints NOTHING unless a page was added / removed / edited — silent Monitor.
-# Surfaces the change only; the session decides whether an update is worth delving
-# into. Same 20-30 min jittered cadence and x-protect auth as the lineup pull.
+# `festplan pages-tick`. Diffs the active festival's info/CMS pages by their
+# modified timestamp — if its module declares a pages source — and prints NOTHING
+# unless a page was added / removed / edited. Silent Monitor. Surfaces the change
+# only; the session decides whether it is worth acting on. 20-30 min jittered
+# cadence, same auth as that festival's lineup pull.
 set -uo pipefail
 
 cd "$(dirname "$0")/.." || exit 1

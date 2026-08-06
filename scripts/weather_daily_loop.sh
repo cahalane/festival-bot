@@ -6,9 +6,9 @@
 # the multi-day outlook shifts materially day to day and the crew plan off it. So it
 # emits the full festival-window forecast once per day and nothing at any other time.
 #
-# Timing: sleeps until the next HOUR:00 in the festival's own timezone (Europe/Dublin for
-# ATN26), not the machine's — so it stays correct if the box is ever on another TZ, and
-# across the DST boundary. It re-computes the sleep every iteration rather than assuming
+# Timing: sleeps until the next HOUR:00 in the FESTIVAL's own timezone (from its
+# festival.json), not the machine's — so it stays correct if the box is on another TZ, and
+# across a DST boundary. It re-computes the sleep every iteration rather than assuming
 # a fixed 24h, so a drifting or suspended host self-corrects instead of skewing.
 #
 # Stderr is kept OFF stdout: only the forecast itself should notify the session.

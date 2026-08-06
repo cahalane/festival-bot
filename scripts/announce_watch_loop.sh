@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 # Official-announcements watch loop — mirrors schedule_watch_loop.sh, driven by
-# `festplan announce-tick`. Polls ATN's Appmiral push/news inbox (/notifications)
-# and prints NOTHING unless a new official post landed — silent Monitor. Same
-# 20-30 min jittered cadence and x-protect auth as the lineup pull.
+# `festplan announce-tick`. Polls the active festival's official news feed — if its
+# module declares an announcements source — and prints NOTHING unless a new post
+# landed. Silent Monitor, 20-30 min jittered cadence, same auth as that festival's
+# lineup pull.
 set -uo pipefail
 
 cd "$(dirname "$0")/.." || exit 1
