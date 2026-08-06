@@ -6,6 +6,14 @@
 
 Use demofest to test the CLI and planner in isolation. To plan a real festival, replace it by adding the festival's module under `festivals/<slug>/` and pointing your root `CLAUDE.md` at it with an `@festivals/<slug>/CONTEXT.md` import line — the CLI (see `packages/cli/src/config.ts`) parses that import out of `CLAUDE.md` to decide what it plans against. There's no `CLAUDE.md` in a fresh checkout, so the CLI falls back to `demofest` until you add one. `ACTIVE_FESTIVAL=<slug>` overrides for a one-off/test run. See `docs/setup/getting-started.md` for details.
 
+**No favourites source is wired up.** demofest deliberately declares no Clashfinder mirror and no
+`data/users.json` favourites, on purpose — it needs no network access or secrets. That means
+`./festplan favs <anyone>` returns `0 matched, 0 unmatched` and `./festplan vibecheck <anyone>`
+reports nothing to see, for *any* name you pass, real or not. That is demofest having no
+favourites data wired in, not the tool failing to match a real user's picks — don't read an empty
+result from these two commands against demofest as a bug. `now`/`at`/`after`/`myday` (with no
+favourites weighting) all work normally.
+
 ## Venues
 
 - **The Meadow** (meadow)

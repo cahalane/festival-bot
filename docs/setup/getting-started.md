@@ -100,7 +100,9 @@ ACTIVE_FESTIVAL=<slug> ./festplan now
 - `data/users.json` — one entry per crew member: a handle, a `channel` reference
   (`{ "kind": "telegram", "id": "…" }` — the `kind` records which channel plugin the id belongs
   to), and either a Clashfinder username or a manual `favs` list. Copy `data/users.example.json`
-  and edit directly.
+  and edit directly. (`demofest` deliberately ships with none of this wired up — trying
+  `./festplan favs`/`vibecheck` against it returns an empty result for anyone, by design, not as a
+  bug — see `festivals/demofest/CONTEXT.md`.)
 - `data/prefs.json` — per-user tone/notes, same handles. Copy `data/prefs.example.json`.
 - `data/reminders.json` — the reminder queue; starts empty, see `data/reminders.json.example` for
   the shape `./festplan reminders add` writes.
