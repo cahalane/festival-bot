@@ -1,0 +1,64 @@
+{
+  "_note": "Legacy array form is still accepted. Object form adds `retime` for feed entries whose published times do not match reality.",
+  "retime": [
+    {
+      "name": "The Last City All Ireland Cypher",
+      "start": "2026-08-01T15:30:00+00:00",
+      "end": "2026-08-01T16:30:00+00:00",
+      "note": "Running order from the host's own Instagram story (@karimtamulol, reposted from @thelastcity_, screenshotted 2026-08-01 14:16): 'Last City Takeover! All Ireland Cypher 2:30-5:30 ... 2:30-3:00 @gomie091, 3:00-3:30 @beddyminaj, 3:30-4:00 @sugabooooooooo, 4:00-4:30 @lil.skag, 4:30-5:30 Cypher (@etheartistdublin on decks)'. The Appmiral feed carries the whole thing as ONE 14:30-17:30 block, which is not what happens on the stage. NOT in the app; Instagram-only. The feed block is retimed to the cypher PROPER, 16:30-17:30 IST."
+    }
+  ],
+  "sets": [
+    {
+      "name": "Sell Everything",
+      "stage": "global-roots-main-stage",
+      "start": "2026-07-31T14:15:00+00:00",
+      "end": "2026-07-31T15:00:00+00:00",
+      "endEstimated": true,
+      "note": "Surprise pop-up announced on ATN's official news feed 2026-07-31 11:00:46Z: 'Sell Everything are bringing their high energy to Global Roots Main Stage at 15:15'. Start is official (15:15 IST). NO end was published — 45min assumed, matching the neighbouring Global Roots slot (Nan Fee, 45min) and clear of the next act on that stage (16:45 IST)."
+    },
+    {
+      "name": "The Mary Wallopers",
+      "stage": "heineken-garden",
+      "start": "2026-08-01T14:00:00+00:00",
+      "end": "2026-08-01T15:00:00+00:00",
+      "endEstimated": true,
+      "note": "Pop-up announced on ATN's official Instagram story (@alltogethernow.ie, ~22h before 2026-08-01 09:44), screenshotted: 'From the Main Stage to an intimate one — The Mary Wallopers, Saturday 15:00, at the Heineken Garden, located in the Well Field Arena.' Start 15:00 IST is official. NO end published — 60min assumed. NOT in the Appmiral feed; Instagram-only, which we cannot poll."
+    },
+    {
+      "name": "Memory",
+      "stage": "seancho-che",
+      "start": "2026-08-02T13:30:00+00:00",
+      "end": "2026-08-02T15:30:00+00:00",
+      "note": "The Appmiral feed publishes this one with stage_name null, so it is dropped as unroutable. Its stage is NOT inferred from its five siblings — it is sourced: a Clashfinder user hand-entered all six Seanchoíche sessions with stage and times, screenshotted 2026-08-01, showing Memory on Seanchoíche 14:30-16:30 Sun 2 Aug. Times match the feed exactly. Remove this entry if ATN ever assign the stage themselves."
+    },
+    {
+      "name": "GOMIE",
+      "stage": "the-last-city",
+      "start": "2026-08-01T13:30:00+00:00",
+      "end": "2026-08-01T14:00:00+00:00",
+      "note": "Running order from the host's own Instagram story (@karimtamulol, reposted from @thelastcity_, screenshotted 2026-08-01 14:16): 'Last City Takeover! All Ireland Cypher 2:30-5:30 ... 2:30-3:00 @gomie091, 3:00-3:30 @beddyminaj, 3:30-4:00 @sugabooooooooo, 4:00-4:30 @lil.skag, 4:30-5:30 Cypher (@etheartistdublin on decks)'. The Appmiral feed carries the whole thing as ONE 14:30-17:30 block, which is not what happens on the stage. NOT in the app; Instagram-only."
+    },
+    {
+      "name": "Beddyminaj",
+      "stage": "the-last-city",
+      "start": "2026-08-01T14:00:00+00:00",
+      "end": "2026-08-01T14:30:00+00:00",
+      "note": "Running order from the host's own Instagram story (@karimtamulol, reposted from @thelastcity_, screenshotted 2026-08-01 14:16): 'Last City Takeover! All Ireland Cypher 2:30-5:30 ... 2:30-3:00 @gomie091, 3:00-3:30 @beddyminaj, 3:30-4:00 @sugabooooooooo, 4:00-4:30 @lil.skag, 4:30-5:30 Cypher (@etheartistdublin on decks)'. The Appmiral feed carries the whole thing as ONE 14:30-17:30 block, which is not what happens on the stage. NOT in the app; Instagram-only."
+    },
+    {
+      "name": "Sugaboo",
+      "stage": "the-last-city",
+      "start": "2026-08-01T14:30:00+00:00",
+      "end": "2026-08-01T15:00:00+00:00",
+      "note": "Running order from the host's own Instagram story (@karimtamulol, reposted from @thelastcity_, screenshotted 2026-08-01 14:16): 'Last City Takeover! All Ireland Cypher 2:30-5:30 ... 2:30-3:00 @gomie091, 3:00-3:30 @beddyminaj, 3:30-4:00 @sugabooooooooo, 4:00-4:30 @lil.skag, 4:30-5:30 Cypher (@etheartistdublin on decks)'. The Appmiral feed carries the whole thing as ONE 14:30-17:30 block, which is not what happens on the stage. NOT in the app; Instagram-only."
+    },
+    {
+      "name": "Lil Skag",
+      "stage": "the-last-city",
+      "start": "2026-08-01T15:00:00+00:00",
+      "end": "2026-08-01T15:30:00+00:00",
+      "note": "Running order from the host's own Instagram story (@karimtamulol, reposted from @thelastcity_, screenshotted 2026-08-01 14:16): 'Last City Takeover! All Ireland Cypher 2:30-5:30 ... 2:30-3:00 @gomie091, 3:00-3:30 @beddyminaj, 3:30-4:00 @sugabooooooooo, 4:00-4:30 @lil.skag, 4:30-5:30 Cypher (@etheartistdublin on decks)'. The Appmiral feed carries the whole thing as ONE 14:30-17:30 block, which is not what happens on the stage. NOT in the app; Instagram-only."
+    }
+  ]
+}

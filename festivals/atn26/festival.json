@@ -1,0 +1,17 @@
+{
+  "slug": "atn26",
+  "name": "All Together Now 2026",
+  "timezone": "Europe/Dublin",
+  "dayCutoffHour": 6,
+  "catchFraction": 0.4,
+  "worthwhileCatch": 0.7,
+  "nightGapHours": 3,
+  "days": {
+    "thu": [2026, 7, 30],
+    "fri": [2026, 7, 31],
+    "sat": [2026, 8, 1],
+    "sun": [2026, 8, 2]
+  },
+  "coordinates": { "lat": 52.296, "lon": -7.353 },
+  "_note": "Curraghmore Estate, Portlaw, Co. Waterford. Vendor = Appmiral (event=alltogethernow). ✅ 2026 EDITION LIVE (flipped 2026-07-10): schedule.json = the published alltogethernow2026 timetable (763 artist records / 364 performances / 16 stages, sets 30 Jul 18:00 → 03 Aug 02:00 IST). `days` verified against the snapshot with the 06:00 cutoff: Thu 19 sets / Fri 100 / Sat 122 / Sun 119. dayCutoffHour=6 groups post-midnight sets with the prior evening. ⚠️ venues.json walk graph is still a placeholder (uniform defaultMinutes) — Curraghmore site geography not yet modelled; build real edges from the festival map before trusting myday routing."
+}

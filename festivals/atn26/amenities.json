@@ -1,0 +1,62 @@
+{
+  "_note": "Amenities in PIXEL coordinates on ATN's official 2026 site map — same 3000x3000 frame as stage-positions.json, so the same 0.792 m/px scale applies. Read off the image on 2026-07-28 from four independently-cropped tiles. The NUMBERED entries are the map's own 'Experiences' list (24-46) and are complete. The unnumbered facility points (toilets/water/food/medical) are those legible at this resolution and are NOT an exhaustive census — the map draws long rows of identical icons and only the cluster anchors are recorded. Positions are estimates from a picture, not surveyed points.",
+  "items": [
+    { "n": 24, "name": "Heineken Main Arena Bar", "category": "bar", "at": [2623, 1356] },
+    { "n": 25, "name": "White Claw Main Arena 1 & 2", "category": "bar", "at": [2579, 1584] },
+    { "n": 26, "name": "Jameson Main Arena Bar", "category": "bar", "at": [2368, 1633] },
+    { "n": 27, "name": "Kildare Village Clubhouse", "category": "venue", "at": [2617, 1307] },
+    { "n": 28, "name": "Guest Bar", "category": "bar", "at": [2765, 1605] },
+    { "n": 29, "name": "Aperol Spritz", "category": "bar", "at": [2653, 1753] },
+    { "n": 30, "name": "Heineken RTN", "category": "bar", "at": [2245, 1774] },
+    { "n": 31, "name": "Kraken Rum", "category": "bar", "at": [2511, 1867] },
+    { "n": 32, "name": "Wine Bar", "category": "bar", "at": [2448, 1920] },
+    { "n": 33, "name": "Heineken Garden", "category": "bar", "at": [2249, 2030] },
+    { "n": 34, "name": "Craft Cocktails", "category": "bar", "at": [2472, 2161], "_note2": "CONFIRMED 2026-07-29. Position validated against ATN's own bar coordinates (15m). The name was briefly in doubt because ATN's POI at this spot is labelled 'Ping Pong Bar' — but the operator identified the C as the Craft Cocktails brand logo, and they are a known operator, so the marker is theirs. That makes ATN's 'Ping Pong Bar' POI their SECOND confirmed misplacement of the evening, after the Circle marker landing on the Jameson logo: their POI layer was unreliable while being populated, and the published raster plus the operator's on-the-ground brand knowledge beat it both times.","_note": "CORRECTED 2026-07-29. Was [2120,1912] — a placeholder copied from #36 Arcadia Bar when the original map read couldn't find a marker numbered 34. ATN's map has NO 34: it labels two markers '35. BAR', one at Ping Pong Disco and one in The Folly. The operator identified the Folly marker's multicoloured C logo as Craft Cocktails, so that one is the mislabelled 34 (#35 = 'Ping Pong Bar' fits the other). Position derived by georeferencing: Folly marker at composite px (4511,5417) -> 52.289901,-7.361522 via the overlay-tile bounds, then into this frame through a least-squares fit over 15 stage control points (worst residual 29px ~ 23m). Lands between the Bandstand and Theatre of Food, north of Lawns of Tranquility, matching the map." },
+    { "n": 35, "name": "Ping Pong Bar", "category": "bar", "at": [2212, 1905] },
+    { "n": 36, "name": "Arcadia Bar", "category": "bar", "at": [2120, 1912] },
+    { "n": 37, "name": "Rise x Vithit Sauna & Hot Tubs", "category": "wellness", "at": [2140, 1745] },
+    { "n": 38, "name": "Arty Party", "category": "activity", "at": [2120, 1698] },
+    { "n": 39, "name": "Tang Arabizi BBQ", "category": "food", "at": [2577, 1390] },
+    { "n": 40, "name": "Borgo Restaurant", "category": "food", "at": [2662, 2155] },
+    { "n": 41, "name": "Arbitrary Nations", "category": "activity", "at": [2347, 1857] },
+    { "n": 42, "name": "Waterford Library", "category": "activity", "at": [2591, 2203] },
+    { "n": 43, "name": "Lawns of Tranquility", "category": "wellness", "at": [2483, 2249] },
+    { "n": 44, "name": "Heart of the Forest", "category": "activity", "at": [2572, 1963] },
+    { "n": 45, "name": "Behind Walls", "category": "activity", "at": [2449, 1789] },
+    { "n": 46, "name": "Lovers Social", "category": "activity", "at": [2049, 1706] },
+
+    { "name": "Merch Shop", "category": "retail", "at": [2718, 1650] },
+    { "name": "Londis", "category": "retail", "at": [2065, 2212] },
+    { "name": "Lockers (Arcadia side)", "category": "lockers", "at": [2067, 2085] },
+    { "name": "Lockers (Main Arena)", "category": "lockers", "at": [2586, 1500] },
+
+    { "name": "Medical (Lovers Rock)", "category": "medical", "at": [2109, 1806] },
+    { "name": "Medical (Well Field)", "category": "medical", "at": [2280, 1930] },
+    { "name": "Medical (Main Arena)", "category": "medical", "at": [2731, 1430] },
+
+    { "name": "Toilets (Road To Nowhere)", "category": "toilets", "at": [2245, 1734] },
+    { "name": "Toilets (Something Kind of Wonderful)", "category": "toilets", "at": [2589, 1774] },
+    { "name": "Toilets (Ping Pong)", "category": "toilets", "at": [2204, 1886] },
+    { "name": "Toilets (Arcadia south)", "category": "toilets", "at": [2069, 2015] },
+    { "name": "Toilets (Well Field)", "category": "toilets", "at": [2268, 2087] },
+    { "name": "Toilets (Global Roots)", "category": "toilets", "at": [2577, 2009] },
+    { "name": "Toilets (Main Arena north)", "category": "toilets", "at": [2660, 1330] },
+
+    { "name": "Drinking water (The Circle)", "category": "water", "at": [2306, 1886] },
+    { "name": "Drinking water (Hidden Sounds)", "category": "water", "at": [2422, 1867] },
+    { "name": "Drinking water (Arcadia)", "category": "water", "at": [2126, 1958] },
+    { "name": "Drinking water (Bandstand)", "category": "water", "at": [2287, 2106] },
+    { "name": "Drinking water (Last City)", "category": "water", "at": [2240, 2225] },
+    { "name": "Drinking water (Main Arena)", "category": "water", "at": [2690, 1400] },
+
+    { "name": "Food row (Main Arena)", "category": "food", "at": [2600, 1600] },
+    { "name": "Food row (Global Roots)", "category": "food", "at": [2473, 1950] },
+    { "name": "Food row (Well Field)", "category": "food", "at": [2393, 2034] },
+    { "name": "Food row (Bandstand)", "category": "food", "at": [2348, 2130] },
+    { "name": "Food row (Arcadia camping)", "category": "food", "at": [2077, 2137] },
+
+    { "name": "Showers (Lovers Rock)", "category": "showers", "at": [2010, 1795] },
+    { "name": "Info point (Something Kind of Wonderful)", "category": "info", "at": [2586, 1745] },
+    { "name": "Info point (Main Arena)", "category": "info", "at": [2700, 1480] }
+  ]
+}

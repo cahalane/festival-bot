@@ -1,0 +1,11 @@
+{
+  "_note": "Mirror-only display names, applied by cf-push and NOT by the planner (planner names must keep matching the Appmiral feed or favourites stop resolving). Restores work a Clashfinder user did by hand that our push clobbered — submitted by a crew member to the mirror, 2026-08-01. The Appmiral feed lists the Seanchoíche storytelling sessions as bare words, so 'Love' and 'Memory' on the mirror told nobody anything.",
+  "displayNames": {
+    "As Gaeilge": "Seanchoíche: As Gaeilge",
+    "Connection": "Seanchoíche: Connection",
+    "Identity": "Seanchoíche: Identity",
+    "Embarassment": "Seanchoíche: Embarrassment",
+    "Love": "Seanchoíche: Love",
+    "Memory": "Seanchoíche: Memory"
+  }
+}

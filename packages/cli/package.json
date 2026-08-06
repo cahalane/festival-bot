@@ -12,6 +12,7 @@
     "@festival-bot/core": "*",
     "@festival-bot/adapters": "*",
     "@festival-bot/data": "*",
-    "@festival/demofest": "*"
+    "@festival/demofest": "*",
+    "@festival/atn26": "*"
   }
 }

@@ -7,10 +7,12 @@
  */
 import type { FestivalModule } from "@festival-bot/core";
 import { createFestival as demofest } from "@festival/demofest";
+import { createFestival as atn26 } from "@festival/atn26";
 import { cacheDir, loadSecrets, activeFestivalSlug } from "./config.js";
 
 const builders: Record<string, () => FestivalModule> = {
   demofest: () => demofest({ cacheDir: cacheDir("demofest") }),
+  atn26: () => atn26({ secrets: loadSecrets(), cacheDir: cacheDir("atn26") }),
 };
 
 export const ACTIVE_FESTIVAL = activeFestivalSlug();

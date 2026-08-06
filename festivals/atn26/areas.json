@@ -1,0 +1,44 @@
+{
+  "_note": "Area boundaries in COMPOSITE map pixels (6000x7500 — the 2x2 overlay-tile mosaic, NOT the 3000x3000 static image used by stage-positions.json/amenities.json). Hand-traced off ATN's official 2026 site map on 2026-07-29 at the operator's request. Composite pixels convert to lat/lng through the overlay corner-tile bounds, which are EXACT, so these carry no projection-fit error — only my tracing error, roughly +/-10 crop pixels or about 7-10m on the ground. Rings are stored OPEN (first vertex not repeated); the KML writer closes them. Boundaries are indicative: they follow the map's drawn edges, which are themselves a cartoon of the real fencing.",
+  "categories": {
+    "camping": "Campsites",
+    "parking": "Car parks"
+  },
+  "areas": [
+    { "name": "Under The Radar", "category": "camping",
+      "ring": [[1343,4970],[2269,4723],[2349,5591],[1274,5633]] },
+    { "name": "A Hard Days Night", "category": "camping",
+      "ring": [[2280,4723],[3126,4734],[3160,5614],[2371,5603]] },
+    { "name": "Better Lands", "category": "camping",
+      "ring": [[1263,5649],[2349,5610],[2399,6197],[1544,6506]] },
+    { "name": "This Must Be The Place", "category": "camping",
+      "ring": [[2970,5610],[4081,5596],[4090,5946],[3583,6186],[3011,6300]] },
+    { "name": "At The River", "category": "camping",
+      "ring": [[3590,6190],[4086,5957],[4198,6071],[3949,6300],[3606,6277]] },
+    { "name": "Family Campsite", "category": "camping",
+      "ring": [[3617,6300],[3944,6300],[4017,6529],[3674,6666]] },
+    { "name": "Accessible Campsite", "category": "camping",
+      "ring": [[3949,6311],[4198,6460],[4198,6871],[3663,6929],[3686,6666]] },
+    { "name": "One For The Road", "category": "camping",
+      "ring": [[3034,6305],[3606,6300],[3651,6929],[3560,6986],[2970,6643]] },
+    { "name": "Campervan", "category": "camping",
+      "ring": [[1571,6547],[2966,6314],[3313,6951],[2070,6986]] },
+    { "name": "Family Campervan", "category": "camping",
+      "ring": [[2070,6997],[3313,6963],[3366,7260],[1754,7260]] },
+    { "name": "Old Wood Boutique Campsite", "category": "camping",
+      "ring": [[3574,1206],[4210,2280],[3440,2690],[2720,1894]] },
+    { "name": "Strawberry Hill Boutique Campsite", "category": "camping",
+      "ring": [[4434,2384],[4896,2564],[5074,2760],[5060,3024],[4610,3116],[4566,2810]] },
+
+    { "name": "Car Park 6", "category": "parking",
+      "ring": [[79,1730],[699,1716],[680,2771],[92,2776]] },
+    { "name": "Car Park 3", "category": "parking",
+      "ring": [[1292,1400],[2215,1558],[2228,2441],[1582,2534]] },
+    { "name": "Car Park 4", "category": "parking",
+      "ring": [[909,2731],[1582,2521],[2043,3219],[1318,3799]] },
+    { "name": "Car Park 2", "category": "parking",
+      "ring": [[1582,2521],[2228,2441],[2347,3219],[2043,3219]] },
+    { "name": "Car Park 5", "category": "parking",
+      "ring": [[1318,3799],[2043,3219],[2347,3219],[2136,4511],[1371,4564]] }
+  ]
+}

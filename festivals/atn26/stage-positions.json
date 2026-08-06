@@ -1,0 +1,36 @@
+{
+  "_note": "Stage positions in PIXELS on ATN's official 2026 site map (3000x3000 JPEG, edition field `static_map_image`, pulled 2026-07-28 to cache/atn26/site_map_2026.jpg). The 2026 edition publishes NO POI/vector data — /maps and /pois both return data:[] — so these are read off the image, not measured. Each was read twice from independently-cropped tiles and agreed within ~15px. Scale is calibrated in `scaleReferences` against stages whose real 2025 lat/lngs we still hold. See knowledge/walk-graph.md.",
+  "image": {
+    "file": "cache/atn26/site_map_2026.jpg",
+    "width": 3000,
+    "height": 3000,
+    "source": "https://media.appmiral.com/prod/staticMapImage/0058/06/thumb_5705581_staticMapImage_3000.jpeg"
+  },
+  "scaleReferences": [
+    { "pair": "atn-main-stage <-> arcadia-afterburner", "metres": 658, "pixels": 852 },
+    { "pair": "atn-main-stage <-> the-temporary-bandstand", "metres": 626, "pixels": 702 },
+    { "pair": "arcadia-afterburner <-> the-temporary-bandstand", "metres": 297, "pixels": 417 }
+  ],
+  "positions": {
+    "atn-main-stage": [2769, 1504],
+    "something-kind-of-wonderful": [2518, 1769],
+    "road-to-nowhere": [2266, 1810],
+    "flourish-with-district-music": [2534, 1575],
+    "the-temporary-bandstand": [2394, 2098],
+    "the-circle-by-jameson-music": [2371, 1915],
+    "arcadia-afterburner": [2021, 1912],
+    "immerse-ava-x-smirnoff": [2303, 1694],
+    "global-roots-main-stage": [2564, 1905],
+    "global-roots-cambium": [2578, 1851],
+    "hidden-sounds": [2422, 1891],
+    "the-well": [2256, 1976],
+    "ping-pong-disco": [2171, 1881],
+    "the-last-city": [2318, 2184],
+    "born-social-by-schweppes": [2418, 1549],
+    "theatre-of-food": [2614, 2128],
+    "the-big-romance-dome-x-altos": [2480, 1450],
+    "dance-forever-red-bull-x-izakaya": [2689, 1703],
+    "lover-s-rock": [2055, 1756],
+    "goloud-lounge": [2572, 2063]
+  }
+}
