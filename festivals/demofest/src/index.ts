@@ -15,9 +15,19 @@ import { createLineupSource } from "./lineup.js";
 const PACK_DIR = join(dirname(fileURLToPath(import.meta.url)), "..");
 
 export interface DemofestConfig {
+  /**
+   * Cache directory — accepted so every festival module takes the same config shape
+   * and the CLI registry can hand each one a cache directory without special-casing.
+   * Demofest ignores this because its lineup is a committed file with nothing to cache.
+   * A real festival module passes this to its sources.
+   */
   cacheDir?: string;
 }
 
+/**
+ * Create the demofest module. A real festival would use `config.cacheDir` to pass
+ * cache paths to its sources; demofest ignores it since its data is committed.
+ */
 export function createFestival(_config: DemofestConfig = {}): FestivalModule {
   const pack = createPack(PACK_DIR);
   const sources: FestivalSources = { lineup: createLineupSource() };
