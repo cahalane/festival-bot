@@ -1,0 +1,16 @@
+{
+  "venues": [
+    { "slug": "meadow", "name": "The Meadow" },
+    { "slug": "barn", "name": "The Barn" },
+    { "slug": "grove", "name": "The Grove" }
+  ],
+  "limitedCapacity": ["grove"],
+  "walk": {
+    "defaultMinutes": 10,
+    "edges": [
+      ["meadow", "barn", 6],
+      ["meadow", "grove", 11],
+      ["barn", "grove", 8]
+    ]
+  }
+}

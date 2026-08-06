@@ -1,0 +1,13 @@
+{
+  "slug": "demofest",
+  "name": "Demo Fest 2026",
+  "timezone": "Europe/Dublin",
+  "dayCutoffHour": 6,
+  "catchFraction": 0.5,
+  "nightGapHours": 3,
+  "days": {
+    "fri": [2026, 8, 14],
+    "sat": [2026, 8, 15]
+  },
+  "_note": "Invented festival used as the offline default and as the test fixture. No coordinates, so no weather source is wired — that keeps the suite off the network."
+}

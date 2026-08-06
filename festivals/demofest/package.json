@@ -1,0 +1,11 @@
+{
+  "name": "@festival/demofest",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "src/index.ts",
+  "dependencies": {
+    "@festival-bot/core": "*",
+    "@festival-bot/adapters": "*"
+  }
+}

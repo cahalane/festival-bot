@@ -1,0 +1,18 @@
+[
+  { "name": "Morning Static", "stage": "meadow", "start": "2026-08-14T17:00:00+01:00", "end": "2026-08-14T17:45:00+01:00" },
+  { "name": "The Wolds", "stage": "barn", "start": "2026-08-14T17:30:00+01:00", "end": "2026-08-14T18:15:00+01:00" },
+  { "name": "Halcyon Pool", "stage": "grove", "start": "2026-08-14T18:00:00+01:00", "end": "2026-08-14T18:50:00+01:00" },
+  { "name": "Cedar Line", "stage": "meadow", "start": "2026-08-14T18:30:00+01:00", "end": "2026-08-14T19:30:00+01:00" },
+  { "name": "Paper Ghosts", "stage": "barn", "start": "2026-08-14T19:00:00+01:00", "end": "2026-08-14T20:00:00+01:00" },
+  { "name": "Fen & Fathom", "stage": "grove", "start": "2026-08-14T19:40:00+01:00", "end": "2026-08-14T20:40:00+01:00" },
+  { "name": "Tessellate", "stage": "meadow", "start": "2026-08-14T20:15:00+01:00", "end": "2026-08-14T21:30:00+01:00" },
+  { "name": "Nightjar", "stage": "barn", "start": "2026-08-14T21:00:00+01:00", "end": "2026-08-14T22:00:00+01:00" },
+  { "name": "The Long Acre", "stage": "meadow", "start": "2026-08-14T22:00:00+01:00", "end": "2026-08-14T23:30:00+01:00" },
+  { "name": "Sodium Lamps", "stage": "grove", "start": "2026-08-15T00:15:00+01:00", "end": "2026-08-15T01:30:00+01:00" },
+  { "name": "Bright Deceit", "stage": "meadow", "start": "2026-08-15T16:00:00+01:00", "end": "2026-08-15T16:45:00+01:00" },
+  { "name": "Quiet Machines", "stage": "barn", "start": "2026-08-15T17:00:00+01:00", "end": "2026-08-15T18:00:00+01:00" },
+  { "name": "Ashgrove", "stage": "grove", "start": "2026-08-15T18:30:00+01:00", "end": "2026-08-15T19:30:00+01:00" },
+  { "name": "Marram", "stage": "meadow", "start": "2026-08-15T19:45:00+01:00", "end": "2026-08-15T20:45:00+01:00" },
+  { "name": "The Undertow", "stage": "barn", "start": "2026-08-15T21:00:00+01:00", "end": "2026-08-15T22:15:00+01:00" },
+  { "name": "Vela", "stage": "meadow", "start": "2026-08-15T22:45:00+01:00", "end": "2026-08-16T00:15:00+01:00" }
+]
