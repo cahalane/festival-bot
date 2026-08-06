@@ -22,6 +22,7 @@ import {
 import type { Setlist } from "@festival-bot/core";
 import {
   favouriteInputs,
+  channelOf,
   addReminder,
   loadReminders,
   pendingReminders,
@@ -60,6 +61,7 @@ import { runPinMap } from "./pin-map.js";
 import { runColdTick } from "./cold-watch.js";
 import { parseCaps, applyCaps } from "./set-caps.js";
 import { runRainTick } from "./rain-watch.js";
+import { reminderChannel } from "./reminder-channel.js";
 import { buildRouteCard, renderRouteCardHtml, routeCardHeightPx } from "./route-card.js";
 import { writeCardPng } from "./card.js";
 import {
@@ -298,7 +300,7 @@ async function main(argv: string[]): Promise<void> {
         const text = rest.join(" ");
         if (!handle || !chatId || !fireIso || !text)
           return void console.log('usage: reminders add <handle> <chat_id> <fire_iso> "<text>"');
-        const r = addReminder({ handle, channel: { kind: "telegram", id: chatId }, fireIso, text });
+        const r = addReminder({ handle, channel: reminderChannel(chatId, channelOf(handle)), fireIso, text });
         if (json) emit(r);
         else console.log(`added: ${r.id}`);
       } else if (sub === "due") {
