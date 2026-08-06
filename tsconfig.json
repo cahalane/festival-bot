@@ -1,0 +1,9 @@
+{
+  "extends": "./tsconfig.base.json",
+  "include": [
+    "packages/*/src/**/*.ts",
+    "festivals/*/src/**/*.ts",
+    "apps/*/src/**/*.ts"
+  ],
+  "exclude": ["node_modules", "dist", "festivals/_template"]
+}

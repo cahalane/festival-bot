@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# festplan — festival-bot CLI launcher.
+#
+# Centralises the runtime choice: prefer bun (runs the TS directly, ~0.1s cold
+# start vs ~1.5s for `npx tsx`), fall back to `npx tsx` on a plain Node box so the
+# project still runs without bun installed.
+#
+#   ./festplan now ["Sat 17:00"]
+#   ./festplan setlist "The Cure" --json
+#   ACTIVE_FESTIVAL=atn26 ./festplan myday <handle> Fri
+set -euo pipefail
+DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+CLI="$DIR/packages/cli/src/index.ts"
+if command -v bun >/dev/null 2>&1; then
+  exec bun "$CLI" "$@"
+else
+  exec npx tsx "$CLI" "$@"
+fi

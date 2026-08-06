@@ -1,0 +1,11 @@
+{
+  "name": "@festival-bot/data",
+  "version": "0.1.0",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "dependencies": {
+    "@festival-bot/core": "*"
+  }
+}

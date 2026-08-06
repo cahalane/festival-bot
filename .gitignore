@@ -1,0 +1,37 @@
+# --- Secrets / credentials (NEVER commit) ---
+config/secrets.json
+*.env
+.env
+.env.*
+
+# --- Deployment-specific: who your crew are, how they like to be talked to ---
+# CREW.example.md is committed; your real CREW.md is not.
+CREW.md
+
+# --- Real people-data. The *.example.json files ARE committed. ---
+data/users.json
+data/prefs.json
+data/reminders.json
+data/personal_events.json
+data/archive/
+
+# --- Node / TypeScript ---
+node_modules/
+dist/
+*.tsbuildinfo
+
+# --- Runtime caches + state (regenerable) ---
+cache/
+state/
+
+# --- Lineup fetch sidecars (guarded fetches; inspect then discard) ---
+*.fetched.json
+
+# --- App binaries / decompiler artifacts (reverse-eng inputs, not source) ---
+*.xapk
+*.apk
+*.apks
+
+# --- OS / editor noise ---
+.DS_Store
+*.swp

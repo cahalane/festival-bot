@@ -1,0 +1,25 @@
+{
+  "_note": "Copy to users.json (gitignored). One entry per person. Either `clashfinder` (tiers pulled live from their Clashfinder profile) OR `favs` (a manual list, single tier); both is allowed and the manual names rank lowest.",
+  "users": {
+    "alex": {
+      "name": "Alex",
+      "channel": { "kind": "telegram", "id": "100000001" },
+      "clashfinder": "alex-cf-username",
+      "role": "admin"
+    },
+    "sam": {
+      "name": "Sam",
+      "channel": { "kind": "telegram", "id": "100000002" },
+      "favs": ["Some Band", "Another Act"],
+      "role": "planner"
+    },
+    "jo": {
+      "name": "Jo",
+      "channel": { "kind": "telegram", "id": "100000003" },
+      "clashfinder": "jo-cf-username",
+      "tierOrder": "inverted",
+      "_note": "tierOrder inverted = this person colour-codes their HIGHEST set number as must-see. Set it from what they tell you, never from a guess.",
+      "role": "planner"
+    }
+  }
+}

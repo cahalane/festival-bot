@@ -1,0 +1,16 @@
+{
+  "_note": "Copy to prefs.json (gitignored). Keyed by the same handle as users.json. `tone` is read on every inbound message and applied to the reply.",
+  "alex": {
+    "name": "Alex",
+    "channel": { "kind": "telegram", "id": "100000001" },
+    "tone": "plain, no filler, data first",
+    "weatherDaily": true,
+    "notes": ["Prefers a card over a wall of text."]
+  },
+  "sam": {
+    "name": "Sam",
+    "channel": { "kind": "telegram", "id": "100000002" },
+    "tone": "warm and chatty",
+    "notes": []
+  }
+}
