@@ -1,6 +1,6 @@
 import { describe, expect, test } from "vitest";
 import { parseWhen, dayWindow, type ArtistSet, type FavouriteTier } from "@festival-bot/core";
-import { createFestival } from "@festival/ps26";
+import { createFestival } from "@festival/demofest";
 import { loadRuntime, resolveUserFavourites, type Runtime } from "./runtime.js";
 
 /** Minimal Runtime carrying just what resolveUserFavourites reads: sets + a
@@ -13,24 +13,24 @@ function stubRuntime(names: string[], tiers: FavouriteTier[]): Runtime {
   } as unknown as Runtime;
 }
 
-describe("loadRuntime (ps26 end-to-end through core)", () => {
+describe("loadRuntime (demofest end-to-end through core)", () => {
   test("wires module -> planner -> sets and reproduces a known on-now set", async () => {
     const rt = await loadRuntime(createFestival());
-    expect(rt.sets.length).toBeGreaterThan(50);
-    expect(rt.venueName("auditori-rockdelux")).toBe("Auditori Rockdelux");
-    expect(rt.limited("auditori-rockdelux")).toBe(true);
+    expect(rt.sets.length).toBeGreaterThan(10);
+    expect(rt.venueName("grove")).toBe("The Grove");
+    expect(rt.limited("grove")).toBe(true);
 
     const { now } = rt.planner.whatson(rt.sets, parseWhen("Sat 17:00", rt.calendar));
-    expect(now.map((s) => s.name)).toContain("st.frances"); // Sat 16:30-17:30 @ Auditori
+    expect(now.map((s) => s.name)).toContain("Quiet Machines"); // Sat 17:00-18:00 @ Barn
   });
 
   test("myday plans a day from resolved favourites (manual, offline)", async () => {
     const rt = await loadRuntime(createFestival());
-    const { favs, unmatched } = await resolveUserFavourites(rt, { manual: ["st.frances", "Jimena Amarillo"] });
+    const { favs, unmatched } = await resolveUserFavourites(rt, { manual: ["Cedar Line", "Paper Ghosts"] });
     expect(favs.size).toBe(2);
     expect(unmatched).toEqual([]);
 
-    const result = rt.planner.myday(rt.sets, favs, dayWindow("sat", rt.calendar));
+    const result = rt.planner.myday(rt.sets, favs, dayWindow("fri", rt.calendar));
     expect(result.meta.nFavsToday).toBe(2);
     expect(result.route.length).toBeGreaterThanOrEqual(1);
   });
@@ -73,9 +73,9 @@ describe("resolveUserFavourites partner tiers", () => {
   const tiers: FavouriteTier[] = [
     { label: "set1", names: ["wildcard"] },
     { label: "set2", names: ["mustsee"] },
-    { label: "set3", names: ["hers"] },
+    { label: "set3", names: ["sidepick"] },
   ];
-  const names = ["wildcard", "mustsee", "hers"];
+  const names = ["wildcard", "mustsee", "sidepick"];
 
   test("ranks the owner's tiers above the partner's", async () => {
     const rt = stubRuntime(names, tiers);
@@ -86,7 +86,7 @@ describe("resolveUserFavourites partner tiers", () => {
     });
     expect(favs.get("mustsee")).toBe(1);
     expect(favs.get("wildcard")).toBe(2);
-    expect(favs.get("hers")).toBe(3);
+    expect(favs.get("sidepick")).toBe(3);
   });
 
   test("inverts only the owner's own tiers", async () => {
@@ -108,7 +108,7 @@ describe("resolveUserFavourites partner tiers", () => {
       tierOrder: "inverted",
       partnerTiers: [3],
     });
-    expect(favs.has("hers")).toBe(true);
+    expect(favs.has("sidepick")).toBe(true);
   });
 
   test("an act the owner ALSO picked keeps their own, better ranking", async () => {
@@ -131,7 +131,7 @@ describe("resolveUserFavourites partner tiers", () => {
   test("behaves exactly as before when no partner tier is declared", async () => {
     const rt = stubRuntime(names, tiers);
     const { favs } = await resolveUserFavourites(rt, { user: "sam-cf", tierOrder: "inverted" });
-    expect(favs.get("hers")).toBe(1);
+    expect(favs.get("sidepick")).toBe(1);
   });
 });
 

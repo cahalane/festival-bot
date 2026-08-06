@@ -16,6 +16,13 @@ describe("parseActiveFestival", () => {
   });
 });
 
+test("falls back to the offline demo festival, not a real one", () => {
+  // A fresh clone has no CLAUDE.md import yet. It must still run — and it must
+  // not fall back to a festival whose data source needs a token the user has not
+  // got, which would present as a mystery auth error on first run.
+  expect(FALLBACK_FESTIVAL).toBe("demofest");
+});
+
 describe("activeFestivalSlug", () => {
   test("ACTIVE_FESTIVAL env overrides everything", () => {
     const prev = process.env.ACTIVE_FESTIVAL;

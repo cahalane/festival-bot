@@ -30,7 +30,7 @@ export function loadSecrets(): Secrets {
 export const cacheDir = (slug: string): string => join(REPO_ROOT, "cache", slug);
 
 /** Default slug if CLAUDE.md can't be read / has no import (last-resort only). */
-export const FALLBACK_FESTIVAL = "atn26";
+export const FALLBACK_FESTIVAL = "demofest";
 
 /**
  * Parse the active-festival slug from CLAUDE.md's `@festivals/<slug>/CONTEXT.md`
