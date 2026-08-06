@@ -97,11 +97,11 @@ const USAGE = `festplan (festival: ${ACTIVE_FESTIVAL})
   cold-tick                                   unattended: forecast cold-snap alerts for opted-in users; SILENT unless one is due
   rain-tick                                   unattended: imminent-rain warning over the next 6h; SILENT unless rain is due or worsens
   page <id> [--json]                          full text of one info page by id (from a PAGE UPDATE line)
-  fetch-lineup [--ciutat] [--force]           re-pull the lineup from the live source (Fòrum / city programme)
+  fetch-lineup [--ciutat] [--force]           re-pull the lineup from the live source (--ciutat: a secondary programme some festival modules' lineup sources support)
   artist-info <slug> [slug ...]               per-artist genre/bio (festival artist page)
   favs <cf-user|handle>                       a user's matched picks (+ unmatched)
-  map-check                                   Appmiral site-map watch (SILENT unless the map just published; ATN only)
-  kml-augment --in FILE [--out FILE]          merge ATN official POI coords into an existing My Maps KML
+  map-check                                   site-map watch (SILENT unless the map just published; no-op for a festival with no map source)
+  kml-augment --in FILE [--out FILE]          merge official POI coords into an existing My Maps KML export
   kml [--out FILE]                            every POI as KML for Google My Maps import
   pin "<place>" ["<place>" ...] [--png FILE]  official site map, cropped + pinned around named places
   amenities [--json]                          nearest amenity (toilets/water/food/bars/...) per stage, from the cached map
