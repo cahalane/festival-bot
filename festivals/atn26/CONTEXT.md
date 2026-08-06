@@ -1,11 +1,18 @@
-# ATN26 — active-festival context (All Together Now 2026)
+# ATN26 — festival context (All Together Now 2026)
 
-> The active-festival headline for ATN, loaded via the pointer in `CLAUDE.md`
-> (`@festivals/atn26/CONTEXT.md`). **ATN is the active festival as of 2026-07-10** (PS26 is over).
-> Bulky detail lives in `knowledge/`, Read on demand.
+> **A reference module, not the active festival.** This repo defaults to `demofest`
+> (see `FALLBACK_FESTIVAL` in `packages/cli/src/config.ts`). ATN26 ships as the worked
+> example of the **vendor-API** path: an authed lineup fetch, news and info-page
+> watches, site-map POIs, and favourites resolved from a Clashfinder mirror this
+> deployment publishes. For the other path — no API, scrape it — see `festivals/ps26`.
 >
-> ✅ **2026 edition LIVE.** The Appmiral `alltogethernow2026` edition published its full timetable;
-> the module was flipped to it on **2026-07-10**. Dated facts below are real 2026 schedule data.
+> Activate it deliberately: point `CLAUDE.md`'s active-festival import at
+> `@festivals/atn26/CONTEXT.md`, or use `ACTIVE_FESTIVAL=atn26 ./festplan …` for a
+> one-off run. Bulky detail lives in `knowledge/`, Read on demand.
+>
+> ✅ **2026 edition timetable is real.** The Appmiral `alltogethernow2026` edition
+> published its full timetable and the snapshot was taken on **2026-07-10**; the dated
+> facts below are that real schedule data, not invented fixtures.
 
 ## Status — read before planning ATN
 - **Festival:** All Together Now, **Curraghmore Estate, Portlaw, Co. Waterford**, Ireland.

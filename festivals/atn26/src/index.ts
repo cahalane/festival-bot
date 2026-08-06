@@ -47,10 +47,15 @@ export function createFestival(config: Atn26Config = {}): FestivalModule {
   const venues = loadVenues();
   const knowledge = loadKnowledge();
 
+  // One lookup for every source that needs the vendor token. The lineup and artist
+  // bios fall back to the committed snapshot without it; the live-only sources
+  // below are wired ONLY when it is present, so a clone with no secrets still plans.
+  const xProtect = config.secrets?.appmiral?.xProtect;
+
   const appmiralConfig = {
     event: ATN_EVENT,
     edition: config.edition ?? ATN_EDITION,
-    xProtect: config.secrets?.appmiral?.xProtect ?? "",
+    xProtect: xProtect ?? "",
   };
   // `file` is always the snapshot: what loadSets reads by default, and what
   // `fetch-lineup` (LineupSource.refresh) re-writes from the live API.
@@ -64,13 +69,9 @@ export function createFestival(config: Atn26Config = {}): FestivalModule {
 
   // Official ATN announcements (push/news inbox), on the same Appmiral API +
   // x-protect auth as the lineup. No snapshot fallback, so needs the token.
-  if (config.secrets?.appmiral?.xProtect) {
+  if (xProtect) {
     sources.announcements = createAppmiralNotificationsSource(appmiralConfig);
     sources.pages = createAppmiralPagesSource(appmiralConfig);
-  }
-
-  const xProtect = config.secrets?.appmiral?.xProtect;
-  if (xProtect) {
     sources.map = createAppmiralMapSource({ event: ATN_EVENT, edition: ATN_EDITION, xProtect });
   }
 
