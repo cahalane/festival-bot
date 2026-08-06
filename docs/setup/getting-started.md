@@ -129,7 +129,8 @@ gracefully rather than crashing the CLI.
 
 Several commands are designed to run unattended and print nothing unless something changed:
 `schedule-tick` (lineup diff), `announce-tick` (official announcements), `pages-tick` (CMS info
-pages), `cold-tick` / `rain-tick` (weather alerts), `map-check` (ATN-specific map-publish watch).
+pages), `cold-tick` / `rain-tick` (weather alerts), `map-check` (fires once, when the festival's
+site map publishes real points of interest rather than just a backdrop image).
 Use the `.claude/skills/bootstrap/` skill (`/bootstrap`, or ask the agent to "arm the watches") to
 wire these into your session's scheduler/cron/Monitor loop — it inspects the **active** festival
 module's `sources` object (`packages/core/src/festival.ts`) and arms only the watches that module
