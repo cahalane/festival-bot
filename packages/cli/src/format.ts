@@ -9,6 +9,25 @@ const dayhhmm = (rt: Runtime, d: Date) =>
 
 const cap = (rt: Runtime, slug: string) => (rt.limited(slug) ? "  *arrive early*" : "");
 
+/**
+ * When a time query comes back completely empty, an idle festival and a
+ * broken/partial lineup load look identical to the user. Distinguish them by
+ * reporting the date range the loaded sets actually cover — derived from the
+ * sets themselves (not the manifest's declared days), so a silently
+ * incomplete fetch shows up as a narrower range than expected.
+ */
+function coverageHint(rt: Runtime): string {
+  if (!rt.sets.length) return "  (no lineup loaded for this festival)";
+  let lo = rt.sets[0]!.start;
+  let hi = rt.sets[0]!.end;
+  for (const s of rt.sets) {
+    if (s.start < lo) lo = s.start;
+    if (s.end > hi) hi = s.end;
+  }
+  const fmt = (d: Date) => formatInZone(d, tzOf(rt), { weekday: "short", day: "2-digit", month: "short" });
+  return `  (this festival's lineup covers ${fmt(lo)} – ${fmt(hi)}; nothing loaded for the day you asked about)`;
+}
+
 export function renderWhatson(rt: Runtime, when: Date, now: ArtistSet[], next: ArtistSet[], favs?: Set<string>): string {
   const star = (s: ArtistSet) => (favs?.has(s.name) ? "*" : " ");
   const lines = [`\nAt ${dayhhmm(rt, when)} (${tzOf(rt)})`, "", "  ON NOW:"];
@@ -23,6 +42,7 @@ export function renderWhatson(rt: Runtime, when: Date, now: ArtistSet[], next: A
     const inMin = Math.round((s.start.getTime() - when.getTime()) / 60000);
     lines.push(`  ${star(s)} ${hhmm(rt, s.start)} (+${String(inMin).padStart(3)}m) ${s.name.slice(0, 28).padEnd(28)} ${rt.venueName(s.stage)}${cap(rt, s.stage)}`);
   }
+  if (!now.length && !next.length) lines.push("", coverageHint(rt));
   return lines.join("\n");
 }
 

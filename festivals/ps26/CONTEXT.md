@@ -4,7 +4,7 @@
 > (see `FALLBACK_FESTIVAL` in `packages/cli/src/config.ts`). PS26 ships as the worked
 > example of the **no-vendor-API** path: the lineup is web-scraped and snapshotted
 > (not pulled from an authed feed), favourites are resolved from a Clashfinder event
-> the festival itself runs, and announcements would arrive over the AT Protocol. For
+> the festival itself runs, and announcements arrive over the AT Protocol. For
 > the other path — an authed vendor API + a self-published mirror — see `festivals/atn26`.
 >
 > Activate it deliberately: point `CLAUDE.md`'s active-festival import at
