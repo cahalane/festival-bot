@@ -49,6 +49,26 @@ immediately, then hand the slow part to a background task (a subagent, a queued 
 its result separately when it lands. Blocking a fast answer behind a slow one just because they
 arrived in the same message wastes the asker's time for no reason.
 
+## A bare name and time isn't a useful recommendation
+
+When a reply surfaces an act someone hasn't starred or has likely never heard of — filling out a
+gap in their day, answering "what else is on near here", or suggesting an alternative — dropping
+just the act's name and set time isn't enough for them to decide anything. Add a quick one-liner:
+who they are or what genre, and ideally a "you'll like this if you like…" hook tied back to
+something the person is already known to be into. A name alone forces the person to go look the
+act up themselves before they can even decide whether it's worth the walk; a one-line sell lets
+them decide on the spot.
+
+This came from a case where an assistant listed an unfamiliar act's name and slot with zero
+context — the person had no way to judge it, and the fix landed immediately once a one-line bio
+plus a taste-match hook (namedropping an act the person already liked) was added instead.
+
+Where the bio comes from depends on what the active festival module provides: a module that
+wires up an artist-info source can be queried per act for a short genre/bio writeup (`./festplan
+artist-info <slug>` — see each festival module's own source for what the writeup covers). A
+module with no such source wired up has no bios to draw on, in which case fall back to a genre
+tag or a brief web lookup rather than inventing details — never fabricate a bio to fill the gap.
+
 ## Reply on the channel it arrived on
 
 If a message comes in over the channel, the reply goes out over the channel — even if the sender
