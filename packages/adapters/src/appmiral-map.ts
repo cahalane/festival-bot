@@ -112,10 +112,18 @@ export function haversineMeters(a: { lat: number; lng: number }, b: { lat: numbe
  * Appmiral gives a POI a polygon; the planner wants a point, so each is reduced
  * to its centroid. Deleted POIs are dropped — the endpoint keeps tombstones.
  */
-export function createAppmiralMapSource(c: AppmiralMapConfig): SiteMapSource {
+export function createAppmiralMapSource(
+  c: AppmiralMapConfig,
+  opts: {
+    fetchMaps?: (c: AppmiralMapConfig) => Promise<AppmiralMap[]>;
+    fetchPois?: (c: AppmiralMapConfig) => Promise<AppmiralPoi[]>;
+  } = {},
+): SiteMapSource {
+  const fetchMaps = opts.fetchMaps ?? fetchAppmiralMaps;
+  const fetchPois = opts.fetchPois ?? fetchAppmiralPois;
   return {
     async loadPois(): Promise<SitePoi[]> {
-      const [maps, pois] = await Promise.all([fetchAppmiralMaps(c), fetchAppmiralPois(c)]);
+      const [maps, pois] = await Promise.all([fetchMaps(c), fetchPois(c)]);
       const categoryName = new Map<number, string>();
       for (const m of maps) for (const cat of m.categories ?? []) categoryName.set(cat.id, cat.name);
 
