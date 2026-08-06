@@ -3,11 +3,12 @@
 # TS `festplan map-check` command (packages/cli/src/map-watch.ts) rather than a
 # standalone script, per the project's single-TS-toolchain convention.
 #
-# Polls the Appmiral maps/pois endpoints for the active ATN26 edition. Prints
-# NOTHING while the map is unpublished (empty data) — silent Monitor, same
-# convention as the schedule watch. The moment it publishes, `map-check` caches
-# the raw dump (cache/atn26/map_raw.json), prints ONE "MAP AVAILABLE (atn26): ..."
-# line, and marks itself done (cache/atn26/map_reported.flag) so it never re-fires.
+# Polls the active festival's site-map source, if its module declares one. Prints
+# NOTHING while the map is unpublished (no POIs beyond backdrop tiles) — silent
+# Monitor, same convention as the schedule watch. The moment it publishes,
+# `map-check` caches the raw dump (cache/<slug>/map_raw.json), prints ONE
+# "MAP AVAILABLE (<slug>): ..." line, and marks itself done
+# (cache/<slug>/map_reported.flag) so it never re-fires.
 #
 # Interval: 20-30 min (2-3 checks/hour), jittered — same rate-limit posture as
 # the schedule watch (map + POIs are heavier pulls than a lineup diff, no need to
