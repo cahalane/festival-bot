@@ -86,12 +86,20 @@ ACTIVE_FESTIVAL=<slug> ./festplan now
 
 ## 5. Configure people-data
 
-- `data/users.json` — one entry per crew member: a handle, chat id (if using the Telegram
-  channel), and either a Clashfinder username or a manual `favs` list. Copy
-  `data/users.example.json` and edit directly.
+- `CREW.md` — **copy `CREW.example.md` to `CREW.md` and fill it in.** This is the file your
+  assistant reads to know who it is talking to: names, handles, channel ids, each person's tone,
+  and your crew's own vocabulary for places. It is gitignored, and it is the *only* file that
+  should ever contain real people — which is what makes the rest of this repo safe to publish or
+  share. `CLAUDE.md` imports it; until you create it, that import simply resolves to nothing.
+- `data/users.json` — one entry per crew member: a handle, a `channel` reference
+  (`{ "kind": "telegram", "id": "…" }` — the `kind` records which channel plugin the id belongs
+  to), and either a Clashfinder username or a manual `favs` list. Copy `data/users.example.json`
+  and edit directly.
 - `data/prefs.json` — per-user tone/notes, same handles. Copy `data/prefs.example.json`.
 - `data/reminders.json` — the reminder queue; starts empty, see `data/reminders.json.example` for
   the shape `./festplan reminders add` writes.
+
+All four are gitignored. The `*.example.*` files are the committed templates.
 
 ## 6. Secrets
 
