@@ -15,12 +15,14 @@
 set -uo pipefail
 
 cd "$(dirname "$0")/.." || exit 1
-ERRLOG="cache/atn26/map_watch.err"
-mkdir -p cache/atn26
+# Resolved once at startup; switching the active festival requires restarting this loop.
+SLUG="$(./festplan active-festival)"
+ERRLOG="cache/$SLUG/map_watch.err"
+mkdir -p "cache/$SLUG"
 
 while true; do
   ./festplan map-check 2>>"$ERRLOG" || true
-  if [ -f cache/atn26/map_reported.flag ]; then
+  if [ -f "cache/$SLUG/map_reported.flag" ]; then
     break
   fi
   sleep $(( 1200 + RANDOM % 600 ))

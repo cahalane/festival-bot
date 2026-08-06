@@ -7,8 +7,10 @@
 set -uo pipefail
 
 cd "$(dirname "$0")/.." || exit 1
-ERRLOG="cache/atn26/pages_watch.err"
-mkdir -p cache/atn26
+# Resolved once at startup; switching the active festival requires restarting this loop.
+SLUG="$(./festplan active-festival)"
+ERRLOG="cache/$SLUG/pages_watch.err"
+mkdir -p "cache/$SLUG"
 
 while true; do
   ./festplan pages-tick 2>>"$ERRLOG" || true

@@ -76,6 +76,7 @@ import {
 } from "./json.js";
 
 const USAGE = `festplan (festival: ${ACTIVE_FESTIVAL})
+  active-festival                             print the resolved active-festival slug (for shell scripts)
   now ["Sat 17:00"]
   at "Sat 17:15" [--from <stage>]
   after "<artist>"
@@ -148,6 +149,11 @@ async function main(argv: string[]): Promise<void> {
   const from = takeFlag(args, "--from"); args = from.rest;
   const favsFlag = takeFlag(args, "--favs"); args = favsFlag.rest;
   const manual = favsFlag.value ? favsFlag.value.split(",").map((s) => s.trim()).filter(Boolean) : undefined;
+
+  if (cmd === "active-festival") {
+    console.log(ACTIVE_FESTIVAL);
+    return;
+  }
 
   const rt: Runtime = await loadRuntime(loadActiveFestival());
   const tz = rt.module.manifest.timezone;

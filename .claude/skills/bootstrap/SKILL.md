@@ -56,12 +56,11 @@ For each row whose source the active module actually declares:
 - The lineup and reminders loops apply to every festival — arm them unconditionally. Everything
   else is conditional on Step 1's findings.
 
-One caveat carried over from the loops as written: `announce_watch_loop.sh`, `pages_watch_loop.sh`
-and `map_watch_loop.sh` write their error logs under a hardcoded `cache/atn26/…` path. If the
-active festival isn't `atn26`, either accept that its errors land in that directory anyway (they
-still get written, just under the wrong festival's cache) or point the `ERRLOG` at
-`cache/<active-slug>/` before arming. This is a script detail, not a reason to skip arming — note
-it, don't silently work around it in code you weren't asked to change.
+`announce_watch_loop.sh`, `pages_watch_loop.sh`, and `map_watch_loop.sh` resolve the active slug
+themselves at startup (`SLUG="$(./festplan active-festival)"`) and write their error logs / one-shot
+flag under `cache/$SLUG/…`, so no per-festival editing is needed before arming. That resolution
+happens once at process start, so switching the active festival mid-run requires restarting the
+loop, not just editing `CLAUDE.md`.
 
 ## Step 3 — What each event line means
 
