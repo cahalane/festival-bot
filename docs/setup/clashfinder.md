@@ -18,8 +18,9 @@ This project reads a user's starred acts to build personalised plans (`myday`, `
   it — and the crew star acts on that mirror instead. Reads and writes both go through your
   operator credentials.
 
-Check which topology your festival's `favourites.ts` wires up before assuming either behaviour;
-they use the same read path but only the mirror topology ever writes.
+Check which topology your festival wires up before assuming either behaviour — it is the event id
+handed to `createClashfinderFavouritesSource` in that module's `src/index.ts`. Both topologies read
+the same way; only the mirror topology ever writes.
 
 ## Reading favourites (both topologies)
 
