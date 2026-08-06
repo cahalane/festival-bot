@@ -6,9 +6,12 @@
 We scoped, designed, and fully implemented an ATN Instagram announcements back-channel, then
 abandoned it. This note records **why**, so a future session doesn't walk the same path from scratch.
 
-- Design spec: `docs/superpowers/specs/2026-07-24-instagram-announcements-design.md`
-- Implementation plan: `docs/superpowers/plans/2026-07-24-instagram-announcements.md`
-- Implementation: branch `feat/instagram-announcements` (**not merged** — see end).
+- The design spec/plan for the abandoned attempt were tracked in the private deployment this
+  project was extracted from and are not part of this repo.
+- Implementation: was on branch `feat/instagram-announcements`, which was **not merged** and does
+  not exist in this repo's history (see "Branch disposition" below) — the surviving, shipped
+  replacement is the Appmiral news/pages adapters (`packages/adapters/src/appmiral-news.ts`),
+  see "Resolution" below.
 
 ## What we wanted
 
@@ -59,9 +62,10 @@ all stay), so only the adapter internals would need swapping.
 
 ## Branch disposition
 
-`feat/instagram-announcements` holds the complete, tested implementation (6 commits) but is **not
-merged**. It also adds the `instagram-private-api` dependency, which we do **not** want on `master`.
-Kept unmerged as a record / discarded per the operator's call (see session).
+`feat/instagram-announcements` held the complete, tested implementation (6 commits) but was **not
+merged** and does not exist in this repo (it lived only in the private deployment this project was
+extracted from). It added the `instagram-private-api` dependency, which we do **not** want on
+`master`. Discarded per the operator's call; this note is the surviving record.
 
 ## Resolution (2026-07-24) — the official Appmiral path works
 
@@ -74,8 +78,9 @@ authenticate against for the lineup — exposes the official channel directly.**
 - **`/pages`** — 129 CMS info pages (campsite/event times, drop-off, …); each carries `modified_at`,
   so edits are detectable by diffing.
 
-Built on branch `feat/appmiral-news`: an `AnnouncementsSource` over `/notifications` (reusing the
-`announce-tick` silent-watch + classifier machinery originally designed for IG), plus a new
-`PagesSource` + `pages-tick` content-diff watch, both armed via `arm-schedule-watch`. This **replaces
-the Instagram approach entirely** for the same goal, with far better reliability. So the IG dead-end
-was worth documenting, but the delivered feature is the Appmiral one.
+Shipped in `packages/adapters/src/appmiral-news.ts`: an `AnnouncementsSource` over `/notifications`
+(reusing the `announce-tick` silent-watch + classifier machinery originally designed for IG), plus
+a `PagesSource` + `pages-tick` content-diff watch (`packages/cli/src/pages-watch.ts`), both armed
+via `arm-schedule-watch`. This **replaces the Instagram approach entirely** for the same goal, with
+far better reliability. So the IG dead-end was worth documenting, but the delivered feature is the
+Appmiral one.

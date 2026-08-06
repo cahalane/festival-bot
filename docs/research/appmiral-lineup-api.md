@@ -233,8 +233,8 @@ real response before finalising field names.
 
 ## Recommended adapter approach
 
-**Recommendation: build ONE shared `appmiral` LineupSource adapter** (e.g.
-`packages/adapters/appmiral`), parameterised per festival. Rationale:
+**Recommendation: build ONE shared `appmiral` LineupSource adapter** (shipped as
+`packages/adapters/src/appmiral.ts`), parameterised per festival. Rationale:
 
 - The URL contract is identical across all Appmiral festivals — only `event_identifier`,
   `edition_identifier`, the `x-api-key`/`x-protect` header values, and the locale differ. That is a

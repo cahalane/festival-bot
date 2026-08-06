@@ -32,4 +32,6 @@ workspace package: declarative facts **plus** its own code for the data sources 
 - **Facts** → this module (json + knowledge md). **Shared logic** → `packages/`.
 - **People** (users/prefs/reminders) → `data/` (cross-festival). **Caches/secrets** → gitignored.
 
-See `docs/superpowers/specs/2026-06-18-multi-festival-architecture-design.md` for the full design.
+See `docs/setup/getting-started.md` and `README.md`'s "Two reference festivals" section for the
+full multi-festival design (the shared `packages/` engine + per-festival modules under
+`festivals/<slug>/`).
