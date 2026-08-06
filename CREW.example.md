@@ -16,8 +16,10 @@ line up — copy both together.
 | Sam | `sam` | telegram:100000002 | manual favs list | planner | casual, likes a bit of slagging |
 | Jo | `jo` | telegram:100000003 | Clashfinder `jo-cf-username` (inverted tiers) | planner | enthusiastic, short replies |
 
-Only `alex` is admin here — admin is the one role that can touch access control, pairings, and
-`data/users.json`/`data/access.json` from a terminal session; everyone else is a regular planner.
+Only `alex` is admin here — admin is the one role that can touch `data/users.json` (favourite
+profiles) from a terminal session. Access control and pairing approvals live in the channel
+plugin's own configuration, outside this repo — not in a `data/access.json` here — but changing
+them is likewise a terminal-operator-only action, never something a channel message can request.
 See `docs/operating/privacy-and-access.md`.
 
 ## Per-person notes
