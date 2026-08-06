@@ -23,4 +23,19 @@ describe("active-festival subcommand", () => {
     const out = runCli(["active-festival"], { ACTIVE_FESTIVAL: "atn26" });
     expect(out).toBe("atn26");
   });
+
+  test("--json emits slug and timezone for demofest", () => {
+    const out = runCli(["active-festival", "--json"], { ACTIVE_FESTIVAL: "demofest" });
+    expect(JSON.parse(out)).toEqual({ slug: "demofest", timezone: "Europe/Dublin" });
+  });
+
+  test("--json emits slug and timezone for atn26", () => {
+    const out = runCli(["active-festival", "--json"], { ACTIVE_FESTIVAL: "atn26" });
+    expect(JSON.parse(out)).toEqual({ slug: "atn26", timezone: "Europe/Dublin" });
+  });
+
+  test("--json emits slug and timezone for ps26", () => {
+    const out = runCli(["active-festival", "--json"], { ACTIVE_FESTIVAL: "ps26" });
+    expect(JSON.parse(out)).toEqual({ slug: "ps26", timezone: "Europe/Madrid" });
+  });
 });

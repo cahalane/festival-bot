@@ -55,6 +55,12 @@ Start from `festivals/_template`, a skeleton with the files in place and the dec
 `package.json` — it ships with that suffix deliberately, so the skeleton is not itself picked up
 as a workspace package or built.
 
+The steps below (scaffold → identify source → manifest → implement the lineup source → fetch →
+timezone anchor → walk graph → favourites → verify) are also automated as the `.claude/skills/
+new-festival/` skill — it runs the same procedure interactively, asking you one decision at a time
+and verifying each step before moving on. Either walk through this doc by hand or invoke that
+skill; they describe the same process.
+
 Each module is a small workspace package:
 
 | File | What it holds |
@@ -124,9 +130,14 @@ gracefully rather than crashing the CLI.
 Several commands are designed to run unattended and print nothing unless something changed:
 `schedule-tick` (lineup diff), `announce-tick` (official announcements), `pages-tick` (CMS info
 pages), `cold-tick` / `rain-tick` (weather alerts), `map-check` (ATN-specific map-publish watch).
-There is no `/bootstrap` slash command in this repo as of this writing; wire these into your
-session's scheduler/cron/Monitor loop directly, one command per watch, on whatever cadence suits
-your festival (a few times an hour is typical for schedule/announcement watches).
+Use the `.claude/skills/bootstrap/` skill (`/bootstrap`, or ask the agent to "arm the watches") to
+wire these into your session's scheduler/cron/Monitor loop — it inspects the **active** festival
+module's `sources` object (`packages/core/src/festival.ts`) and arms only the watches that module
+actually declares a source for (a festival with no announcements feed gets no announcements watch,
+one with no site-map source gets no map watch), reporting what it armed vs. skipped and why
+(not-implemented for this festival vs. implemented-but-missing-secret). One Monitor per applicable
+watch, all but the weather one silent-unless-changed; a few times an hour is typical cadence for
+schedule/announcement watches.
 
 ## 8. Verify the timezone before you trust anything — do this first, always
 

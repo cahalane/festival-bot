@@ -77,9 +77,64 @@ Fill in `festivals/<slug>/festival.json` (copied from the template, all fields c
   leaving it `{0,0}` silently means no weather for this festival, not an error.
 
 Fill in `festivals/<slug>/venues.json`'s `venues` list with the real stage names (walk graph comes
-in Step 6 — don't hand-guess edges here, the template's example edges are placeholders).
+in Step 7 — don't hand-guess edges here, the template's example edges are placeholders).
 
-## Step 4 — Fetch the snapshot
+## Step 4 — Implement `loadSets()` (required gate — do not skip)
+
+The scaffolded `festivals/<slug>/src/index.ts` still calls through to the template's
+`festivals/_template/src/index.ts`, whose `loadSets()` is a stub:
+
+```ts
+loadSets() {
+  throw new Error("implement loadSets() for this festival");
+}
+```
+
+Nothing in this repo can fetch or plan for the new festival until that stub is replaced with a
+real implementation. If Step 5 (fetch) throws `implement loadSets() for this festival`, that is
+this exact step having been skipped — come back here, don't work around it.
+
+Which shape to write follows directly from the Step 2 fork:
+
+- **Vendor API** (`festivals/atn26/src/index.ts`) — `createFestival` builds a small config object
+  (event/edition slugs, the vendor token from `config.secrets`) and hands it to the shared adapter
+  factory instead of writing a bespoke `LineupSource`:
+  ```ts
+  const appmiralConfig = { event: ATN_EVENT, edition: config.edition ?? ATN_EDITION, xProtect: xProtect ?? "" };
+  const appmiralOpts = { file: SCHEDULE_FILE, cacheDir: config.cacheDir, live: config.live };
+  sources.lineup = createAppmiralLineupSource(appmiralConfig, appmiralOpts);
+  ```
+  `file` doubles as both what `loadSets()` reads by default (the bundled snapshot, for
+  offline/deterministic planning) and what `fetch-lineup` (`LineupSource.refresh`) re-writes from
+  the live API. If the new festival's vendor isn't Appmiral, write the equivalent adapter under
+  `packages/adapters/` following that shape — a config object in, a `LineupSource` out.
+
+- **Scrape** (`festivals/ps26/src/lineup.ts`) — write a `LineupSource` directly: a `parseLineup()`
+  that turns the festival's own raw JSON shape into `ArtistSet[]`, a `loadSets()` that reads the
+  committed snapshot file and parses it, and a `refresh()` that fetches live, parses to count sets,
+  and writes the new snapshot (guarded by the shared shrink-guard so a bad fetch can't clobber a
+  good snapshot with a shrunken one):
+  ```ts
+  return {
+    async loadSets() {
+      return parseLineup(JSON.parse(readFileSync(file, "utf8")) as RawLineup);
+    },
+    async refresh({ force = false } = {}) {
+      const raw = await fetchLineupRaw(...);
+      const fetched = parseLineup(raw).length;
+      const decision = refreshDecision(fetched, countSets(file), force);
+      writeFileSync(decision.write ? file : `${file}.fetched.json`, JSON.stringify(raw, null, 2));
+      return { fetched, written: decision.write, ... };
+    },
+  };
+  ```
+  Wire it into `festivals/<slug>/src/index.ts` as `sources.lineup = createLineupSource()`, mirroring
+  `ps26/src/index.ts`.
+
+Either way, this step ends when `festivals/<slug>/src/index.ts` no longer depends on the
+template's throwing `loadSets()` — check the diff, don't just eyeball the file.
+
+## Step 5 — Fetch the snapshot
 
 ```
 ACTIVE_FESTIVAL=<slug> ./festplan fetch-lineup
@@ -90,7 +145,7 @@ last set's artist/time. A snapshot with 3 stages when the festival's site advert
 failed fetch that looks exactly like a successful one from the command's exit code alone — the
 count is the only thing that catches it here.
 
-## Step 5 — Timezone anchor (required gate — do not skip)
+## Step 6 — Timezone anchor (required gate — do not skip)
 
 Ask the operator: **name one act whose real-world set time you already know** (from the
 festival's own site, a poster, anywhere trusted). Then run:
@@ -110,7 +165,7 @@ If it doesn't match: check whether the source's `start`/`end` times are UTC need
 `festival.json`'s `timezone`, or already local and being double-converted. Fix the adapter, not
 the manifest.
 
-## Step 6 — Venues and walk graph
+## Step 7 — Venues and walk graph
 
 Check whether the chosen lineup source exposes real stage coordinates (a `maps`/`pois`-shaped
 endpoint returning lat/lng, not just a static map image):
@@ -130,7 +185,7 @@ Either way, **report the edge count and the longest edge** — a graph with far 
 `stages choose 2`, or one absurdly long edge, is visible immediately in those two numbers and easy
 to miss by skimming the JSON.
 
-## Step 7 — Favourites
+## Step 8 — Favourites
 
 This is a real fork, not a formality — ask the operator explicitly which applies
 (`docs/setup/clashfinder.md` has the full distinction):
@@ -147,7 +202,7 @@ Wire the chosen event id into `festivals/<slug>/src/index.ts` via
 behind `config.secrets?.clashfinder` being present (mirror how `atn26/src/index.ts` and
 `ps26/src/index.ts` both do it) so a clone with no secrets still plans, just without favourites.
 
-## Step 8 — Verify
+## Step 9 — Verify
 
 Run the actual commands, don't just assert the module is wired:
 

@@ -76,7 +76,7 @@ import {
 } from "./json.js";
 
 const USAGE = `festplan (festival: ${ACTIVE_FESTIVAL})
-  active-festival                             print the resolved active-festival slug (for shell scripts)
+  active-festival [--json]                    print the resolved active-festival slug (for shell scripts); --json adds timezone
   now ["Sat 17:00"]
   at "Sat 17:15" [--from <stage>]
   after "<artist>"
@@ -151,7 +151,12 @@ async function main(argv: string[]): Promise<void> {
   const manual = favsFlag.value ? favsFlag.value.split(",").map((s) => s.trim()).filter(Boolean) : undefined;
 
   if (cmd === "active-festival") {
-    console.log(ACTIVE_FESTIVAL);
+    if (json) {
+      const { manifest } = loadActiveFestival();
+      console.log(JSON.stringify({ slug: ACTIVE_FESTIVAL, timezone: manifest.timezone }, null, 2));
+    } else {
+      console.log(ACTIVE_FESTIVAL);
+    }
     return;
   }
 

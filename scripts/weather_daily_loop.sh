@@ -6,16 +6,23 @@
 # the multi-day outlook shifts materially day to day and the crew plan off it. So it
 # emits the full festival-window forecast once per day and nothing at any other time.
 #
-# Timing: sleeps until the next HOUR:00 in the FESTIVAL's own timezone (from its
-# festival.json), not the machine's — so it stays correct if the box is on another TZ, and
-# across a DST boundary. It re-computes the sleep every iteration rather than assuming
-# a fixed 24h, so a drifting or suspended host self-corrects instead of skewing.
+# Timing: sleeps until the next HOUR:00 in the FESTIVAL's own timezone, resolved via
+# `festplan active-festival --json` (which reads the active module's manifest.timezone),
+# not the machine's — so it stays correct if the box is on another TZ, and across a DST
+# boundary. It re-computes the sleep every iteration rather than assuming a fixed 24h, so
+# a drifting or suspended host self-corrects instead of skewing.
 #
 # Stderr is kept OFF stdout: only the forecast itself should notify the session.
 set -uo pipefail
 
 cd "$(dirname "$0")/.." || exit 1
 
+# Resolved once at startup from the ACTIVE festival's own manifest (via `festplan
+# active-festival --json`), so this loop stays correct for any festival's timezone, not
+# just Dublin. FEST_TZ env var still wins if set explicitly (escape hatch / testing).
+if [ -z "${FEST_TZ:-}" ]; then
+  FEST_TZ="$(./festplan active-festival --json | sed -n 's/.*"timezone": *"\([^"]*\)".*/\1/p')"
+fi
 FEST_TZ="${FEST_TZ:-Europe/Dublin}"
 HOUR="${WEATHER_HOUR:-9}"
 ERRLOG="cache/weather_daily.err"
