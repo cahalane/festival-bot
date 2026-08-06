@@ -28,9 +28,9 @@ overwrite the snapshot with a smaller post-festival pull (see `knowledge/data-so
   the Ciutat city programme. All 4 acts on the **Parc Del Forum** stage: Ouineta 17:45, Yard Act
   18:55, Guitarricadelafuente 20:15, **Wet Leg 21:55**. (That one day the `parc-del-forum` slug
   hosts real acts, not the 720-min filler.)
-- **Sun 7 at the Fòrum = Primavera Bits**, a SEPARATELY-TICKETED electronic lineup. Most of the
-  crew don't have it / don't care → default to **Thu–Sat** unless a user says otherwise; flag Bits
-  as a separate ticket if they ask about Sunday.
+- **Sun 7 at the Fòrum = Primavera Bits**, a SEPARATELY-TICKETED electronic lineup, distinct from
+  the main festival pass. Confirm a user has that ticket before planning their Sunday around it;
+  flag Bits as a separate ticket if they ask about Sunday without saying they have one.
 - **Day-grouping (all nights):** the **08:00 `DAY_CUTOFF`** applies every night — a set timestamped
   e.g. Fri 02:00 belongs to **Thursday night**. `./festplan myday` groups this way. Consequence:
   Saturday's post-midnight headliners (Gorillaz 01:15, Knocked Loose 01:35, Ninajirachi 03:40,
