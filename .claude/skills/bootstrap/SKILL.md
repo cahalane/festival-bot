@@ -1,6 +1,6 @@
 ---
 description: Arm this session's background watches — the specific set the ACTIVE festival module actually has sources for, no more and no less. Use at session start, after a restart/compaction, or when the user asks to set up / check the watches.
-allowed-tools: Bash, Read, Monitor, TaskStop, mcp__plugin_telegram_telegram__reply
+allowed-tools: Bash, Read, Monitor, TaskStop
 ---
 
 Arm the session's background Monitors: persistent loops, all but one **silent by design** — no
@@ -93,8 +93,9 @@ loop, not just editing `CLAUDE.md`.
   `coldAlert` block in `data/prefs.json`. `ahead` is the planning nudge, `imminent` the ~90-minute
   jacket reminder — relay `imminent` even if it fires late, it's still useful.
 - `WEATHER UPDATE (<date>):` + `./festplan weather` output, then a `CARD: <path>` line — the one
-  watch that fires on a clock (once daily), not on a change. Send the card (via the reply tool's
-  file attachment) to everyone with `weatherDaily: true` in `data/prefs.json`, each in their own
+  watch that fires on a clock (once daily), not on a change. Send the card (via the session's
+  channel reply tool, as a file attachment) to everyone with `weatherDaily: true` in
+  `data/prefs.json`, each in their own
   tone; that flag is the source of truth, so check it fresh rather than from memory. `CARD:
   unavailable` means send the text summary and say the render failed.
 - `WEATHER UPDATE FAILED (<date>): 3 attempts, no forecast.` — tell the operator immediately, then
