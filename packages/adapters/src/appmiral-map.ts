@@ -12,6 +12,7 @@
  * (curl's UA works fine and is what we send).
  */
 import { httpGetJson } from "./http.js";
+import type { SitePoi, SiteMapSource } from "@festival-bot/core";
 
 export interface AppmiralMapCategory {
   id: number;
@@ -103,4 +104,35 @@ export function haversineMeters(a: { lat: number; lng: number }, b: { lat: numbe
   const dlmb = ((b.lng - a.lng) * Math.PI) / 180;
   const x = Math.sin(dphi / 2) ** 2 + Math.cos(p1) * Math.cos(p2) * Math.sin(dlmb / 2) ** 2;
   return 2 * R * Math.asin(Math.sqrt(x));
+}
+
+/**
+ * Wrap the Appmiral map endpoints as a vendor-agnostic SiteMapSource.
+ *
+ * Appmiral gives a POI a polygon; the planner wants a point, so each is reduced
+ * to its centroid. Deleted POIs are dropped — the endpoint keeps tombstones.
+ */
+export function createAppmiralMapSource(c: AppmiralMapConfig): SiteMapSource {
+  return {
+    async loadPois(): Promise<SitePoi[]> {
+      const [maps, pois] = await Promise.all([fetchAppmiralMaps(c), fetchAppmiralPois(c)]);
+      const categoryName = new Map<number, string>();
+      for (const m of maps) for (const cat of m.categories ?? []) categoryName.set(cat.id, cat.name);
+
+      const out: SitePoi[] = [];
+      for (const p of pois) {
+        if (p.deleted_at) continue;
+        if (!p.coordinates?.length) continue;
+        const { lat, lng } = poiCentroid(p.coordinates);
+        out.push({
+          id: String(p.id),
+          name: p.name ?? "",
+          category: (p.category_id !== undefined ? categoryName.get(p.category_id) : undefined) ?? "",
+          lat,
+          lng,
+        });
+      }
+      return out;
+    },
+  };
 }
