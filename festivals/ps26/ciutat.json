@@ -1,0 +1,1355 @@
+{
+  "data": {
+    "getLineupEvent": {
+      "artists": [
+        {
+          "artistName": "1111",
+          "artistSlugName": "1111",
+          "duration": 40,
+          "venues": [
+            {
+              "duration": 40,
+              "venueSlugName": "sala-apolo",
+              "artistSetName": "1111-primavera-ciutat-2026-barcelona",
+              "artistSetGenres": [],
+              "dateTimeStartReal": "1780853400000",
+              "dateTimeStartHuman": "1780833600000"
+            }
+          ]
+        },
+        {
+          "artistName": "3L3D3P",
+          "artistSlugName": "3l3d3p",
+          "duration": 30,
+          "venues": [
+            {
+              "duration": 30,
+              "venueSlugName": "cccb-pati-de-les-dones",
+              "artistSetName": "3l3d3p-primavera-ciutat-2026-barcelona",
+              "artistSetGenres": [],
+              "dateTimeStartReal": "1780498200000",
+              "dateTimeStartHuman": "1780488000000"
+            }
+          ]
+        },
+        {
+          "artistName": "Alasdair Roberts",
+          "artistSlugName": "alasdair-roberts",
+          "duration": 50,
+          "venues": [
+            {
+              "duration": 50,
+              "venueSlugName": "parallel-62",
+              "artistSetName": "alasdair-roberts-primavera-ciutat-2026-barcelona",
+              "artistSetGenres": [],
+              "dateTimeStartReal": "1780335000000",
+              "dateTimeStartHuman": "1780315200000"
+            }
+          ]
+        },
+        {
+          "artistName": "aLex vs aLex",
+          "artistSlugName": "alex-vs-alex",
+          "duration": 30,
+          "venues": [
+            {
+              "duration": 30,
+              "venueSlugName": "cccb-pati-de-les-dones",
+              "artistSetName": "alex-vs-alex-primavera-ciutat-2026-barcelona",
+              "artistSetGenres": [],
+              "dateTimeStartReal": "1780668000000",
+              "dateTimeStartHuman": "1780660800000"
+            }
+          ]
+        },
+        {
+          "artistName": "Amie Blu",
+          "artistSlugName": "amie-blu",
+          "duration": 40,
+          "venues": [
+            {
+              "duration": 40,
+              "venueSlugName": "sala-apolo",
+              "artistSetName": "amie-blu-primavera-ciutat-2026-barcelona",
+              "artistSetGenres": [],
+              "dateTimeStartReal": "1780422600000",
+              "dateTimeStartHuman": "1780401600000"
+            }
+          ]
+        },
+        {
+          "artistName": "April",
+          "artistSlugName": "april",
+          "duration": 30,
+          "venues": [
+            {
+              "duration": 30,
+              "venueSlugName": "cccb-pati-de-les-dones",
+              "artistSetName": "april-primavera-ciutat-2026-barcelona",
+              "artistSetGenres": [],
+              "dateTimeStartReal": "1780659000000",
+              "dateTimeStartHuman": "1780660800000"
+            }
+          ]
+        },
+        {
+          "artistName": "Ata Kak",
+          "artistSlugName": "ata-kak",
+          "duration": 60,
+          "venues": [
+            {
+              "duration": 60,
+              "venueSlugName": "la-2-de-apolo",
+              "artistSetName": "ata-kak-primavera-ciutat-2026-barcelona",
+              "artistSetGenres": [],
+              "dateTimeStartReal": "1780869000000",
+              "dateTimeStartHuman": "1780833600000"
+            }
+          ]
+        },
+        {
+          "artistName": "Azikazin Magic World",
+          "artistSlugName": "azikazin-magic-world",
+          "duration": 30,
+          "venues": [
+            {
+              "duration": 30,
+              "venueSlugName": "cccb-pati-de-les-dones",
+              "artistSetName": "azikazin-magic-world-primavera-ciutat-2026-barcelona",
+              "artistSetGenres": [],
+              "dateTimeStartReal": "1780665000000",
+              "dateTimeStartHuman": "1780660800000"
+            }
+          ]
+        },
+        {
+          "artistName": "bar italia",
+          "artistSlugName": "bar-italia",
+          "duration": 60,
+          "venues": [
+            {
+              "duration": 60,
+              "venueSlugName": "sala-apolo",
+              "artistSetName": "bar-italia-primavera-ciutat-2026-barcelona",
+              "artistSetGenres": [],
+              "dateTimeStartReal": "1780426800000",
+              "dateTimeStartHuman": "1780401600000"
+            }
+          ]
+        },
+        {
+          "artistName": "Bassvictim",
+          "artistSlugName": "bassvictim",
+          "duration": 55,
+          "venues": [
+            {
+              "duration": 55,
+              "venueSlugName": "sala-apolo",
+              "artistSetName": "bassvictim-primavera-ciutat-2026-barcelona",
+              "artistSetGenres": [],
+              "dateTimeStartReal": "1780862700000",
+              "dateTimeStartHuman": "1780833600000"
+            }
+          ]
+        },
+        {
+          "artistName": "billy woods",
+          "artistSlugName": "billy-woods",
+          "duration": 50,
+          "venues": [
+            {
+              "duration": 50,
+              "venueSlugName": "parallel-62",
+              "artistSetName": "billy-woods-primavera-ciutat-2026-barcelona",
+              "artistSetGenres": [],
+              "dateTimeStartReal": "1780426800000",
+              "dateTimeStartHuman": "1780401600000"
+            }
+          ]
+        },
+        {
+          "artistName": "Black Country, New Road",
+          "artistSlugName": "black-country-new-road",
+          "duration": 60,
+          "venues": [
+            {
+              "duration": 60,
+              "venueSlugName": "parallel-62",
+              "artistSetName": "black-country-new-road-primavera-ciutat-2026-barcelona",
+              "artistSetGenres": [],
+              "dateTimeStartReal": "1780866900000",
+              "dateTimeStartHuman": "1780833600000"
+            }
+          ]
+        },
+        {
+          "artistName": "Blood Orange",
+          "artistSlugName": "blood-orange",
+          "duration": 80,
+          "venues": [
+            {
+              "duration": 80,
+              "venueSlugName": "parallel-62",
+              "artistSetName": "blood-orange-primavera-ciutat-2026-barcelona",
+              "artistSetGenres": [],
+              "dateTimeStartReal": "1780432200000",
+              "dateTimeStartHuman": "1780401600000"
+            }
+          ]
+        },
+        {
+          "artistName": "Brokenclark",
+          "artistSlugName": "brokenclark",
+          "duration": 45,
+          "venues": [
+            {
+              "duration": 45,
+              "venueSlugName": "laut",
+              "artistSetName": "brokenclark-primavera-ciutat-2026-barcelona",
+              "artistSetGenres": [],
+              "dateTimeStartReal": "1780516800000",
+              "dateTimeStartHuman": "1780488000000"
+            }
+          ]
+        },
+        {
+          "artistName": "Camille Keller",
+          "artistSlugName": "camille-keller",
+          "duration": 30,
+          "venues": [
+            {
+              "duration": 30,
+              "venueSlugName": "cccb-pati-de-les-dones",
+              "artistSetName": "camille-keller-primavera-ciutat-2026-barcelona",
+              "artistSetGenres": [],
+              "dateTimeStartReal": "1780578600000",
+              "dateTimeStartHuman": "1780574400000"
+            }
+          ]
+        },
+        {
+          "artistName": "Candelabro",
+          "artistSlugName": "candelabro",
+          "duration": 45,
+          "venues": [
+            {
+              "duration": 45,
+              "venueSlugName": "la-nau",
+              "artistSetName": "candelabro-primavera-ciutat-2026-barcelona",
+              "artistSetGenres": [],
+              "dateTimeStartReal": "1780423200000",
+              "dateTimeStartHuman": "1780401600000"
+            }
+          ]
+        },
+        {
+          "artistName": "Cara Delevingne",
+          "artistSlugName": "cara-delevingne",
+          "duration": 45,
+          "venues": [
+            {
+              "duration": 45,
+              "venueSlugName": "la-nau",
+              "artistSetName": "cara-delevigne-primavera-ciutat-2026-barcelona",
+              "artistSetGenres": [],
+              "dateTimeStartReal": "1780513800000",
+              "dateTimeStartHuman": "1780488000000"
+            }
+          ]
+        },
+        {
+          "artistName": "Cardiacs",
+          "artistSlugName": "cardiacs",
+          "duration": 120,
+          "venues": [
+            {
+              "duration": 120,
+              "venueSlugName": "la-2-de-apolo",
+              "artistSetName": "cardiacs-primavera-ciutat-2026-barcelona",
+              "artistSetGenres": [],
+              "dateTimeStartReal": "1780426800000",
+              "dateTimeStartHuman": "1780401600000"
+            }
+          ]
+        },
+        {
+          "artistName": "Cass McCombs",
+          "artistSlugName": "cass-mccombs",
+          "duration": 50,
+          "venues": [
+            {
+              "duration": 50,
+              "venueSlugName": "laut",
+              "artistSetName": "cass-mccombs-primavera-ciutat-2026-barcelona",
+              "artistSetGenres": [],
+              "dateTimeStartReal": "1780856400000",
+              "dateTimeStartHuman": "1780833600000"
+            }
+          ]
+        },
+        {
+          "artistName": "Christian Sean",
+          "artistSlugName": "christian-sean",
+          "duration": 30,
+          "venues": [
+            {
+              "duration": 30,
+              "venueSlugName": "cccb-pati-de-les-dones",
+              "artistSetName": "christian-sean-primavera-ciutat-2026-barcelona",
+              "artistSetGenres": [],
+              "dateTimeStartReal": "1780662000000",
+              "dateTimeStartHuman": "1780660800000"
+            }
+          ]
+        },
+        {
+          "artistName": "Clara Mann",
+          "artistSlugName": "clara-mann",
+          "duration": 30,
+          "venues": [
+            {
+              "duration": 30,
+              "venueSlugName": "cccb-pati-de-les-dones",
+              "artistSetName": "clara-mann-primavera-ciutat-2026-barcelona",
+              "artistSetGenres": [],
+              "dateTimeStartReal": "1780572600000",
+              "dateTimeStartHuman": "1780574400000"
+            }
+          ]
+        },
+        {
+          "artistName": "CORTE!",
+          "artistSlugName": "corte",
+          "duration": 40,
+          "venues": [
+            {
+              "duration": 40,
+              "venueSlugName": "la-2-de-apolo",
+              "artistSetName": "corte-primavera-ciutat-2026-barcelona",
+              "artistSetGenres": [],
+              "dateTimeStartReal": "1780860900000",
+              "dateTimeStartHuman": "1780833600000"
+            }
+          ]
+        },
+        {
+          "artistName": "Current '93'",
+          "artistSlugName": "current-93",
+          "duration": 150,
+          "venues": [
+            {
+              "duration": 150,
+              "venueSlugName": "parallel-62",
+              "artistSetName": "current-93-primavera-ciutat-2026-barcelona",
+              "artistSetGenres": [],
+              "dateTimeStartReal": "1780339800000",
+              "dateTimeStartHuman": "1780315200000"
+            }
+          ]
+        },
+        {
+          "artistName": "d.dramático",
+          "artistSlugName": "ddramatico",
+          "duration": 30,
+          "venues": [
+            {
+              "duration": 30,
+              "venueSlugName": "cccb-pati-de-les-dones",
+              "artistSetName": "ddramatico-primavera-ciutat-2026-barcelona",
+              "artistSetGenres": [],
+              "dateTimeStartReal": "1780495200000",
+              "dateTimeStartHuman": "1780488000000"
+            }
+          ]
+        },
+        {
+          "artistName": "del Gesù",
+          "artistSlugName": "del-gesu",
+          "duration": 40,
+          "venues": [
+            {
+              "duration": 40,
+              "venueSlugName": "la-nau",
+              "artistSetName": "del-gesu-primavera-ciutat-2026-barcelona",
+              "artistSetGenres": [],
+              "dateTimeStartReal": "1780509600000",
+              "dateTimeStartHuman": "1780488000000"
+            }
+          ]
+        },
+        {
+          "artistName": "Dexter In The Newsagent",
+          "artistSlugName": "dexter-in-the-newsagent",
+          "duration": 60,
+          "venues": [
+            {
+              "duration": 60,
+              "venueSlugName": "la-2-de-apolo",
+              "artistSetName": "dexter-in-the-newsagent-primavera-ciutat-2026-barcelona",
+              "artistSetGenres": [],
+              "dateTimeStartReal": "1780527600000",
+              "dateTimeStartHuman": "1780488000000"
+            }
+          ]
+        },
+        {
+          "artistName": "dh2 Label Party (Kelly Lee Owens DJ Set, George Daniel and Josh Caffé, Olof Dreijer, Oscar Farrell & Surusinghe)",
+          "artistSlugName": "dh2-label-party-george-daniel-and-friends",
+          "duration": 360,
+          "venues": [
+            {
+              "duration": 360,
+              "venueSlugName": "les-enfants",
+              "artistSetName": "dh2-label-party-george-daniel-and-friends-primavera-ciutat-2026-barcelona",
+              "artistSetGenres": [],
+              "dateTimeStartReal": "1780520400000",
+              "dateTimeStartHuman": "1780488000000"
+            }
+          ]
+        },
+        {
+          "artistName": "Die Spitz",
+          "artistSlugName": "die-spitz",
+          "duration": 60,
+          "venues": [
+            {
+              "duration": 60,
+              "venueSlugName": "la-nau",
+              "artistSetName": "die-spitz-primavera-ciutat-2026-barcelona",
+              "artistSetGenres": [],
+              "dateTimeStartReal": "1780858800000",
+              "dateTimeStartHuman": "1780833600000"
+            }
+          ]
+        },
+        {
+          "artistName": "Div1ne",
+          "artistSlugName": "div1ne",
+          "duration": 30,
+          "venues": [
+            {
+              "duration": 30,
+              "venueSlugName": "laut",
+              "artistSetName": "div1ne-primavera-ciutat-2026-barcelona",
+              "artistSetGenres": [],
+              "dateTimeStartReal": "1780511400000",
+              "dateTimeStartHuman": "1780488000000"
+            }
+          ]
+        },
+        {
+          "artistName": "DJ Python",
+          "artistSlugName": "dj-python",
+          "duration": 90,
+          "venues": [
+            {
+              "duration": 90,
+              "venueSlugName": "la-2-de-apolo",
+              "artistSetName": "dj-python-primavera-ciutat-2026-barcelona",
+              "artistSetGenres": [],
+              "dateTimeStartReal": "1780531200000",
+              "dateTimeStartHuman": "1780488000000"
+            }
+          ]
+        },
+        {
+          "artistName": "Dj Sneeze",
+          "artistSlugName": "dj-sneeze",
+          "duration": 55,
+          "venues": [
+            {
+              "duration": 55,
+              "venueSlugName": "laut",
+              "artistSetName": "dj-sneeze-primavera-ciutat-2026-barcelona",
+              "artistSetGenres": [],
+              "dateTimeStartReal": "1780507800000",
+              "dateTimeStartHuman": "1780488000000"
+            },
+            {
+              "duration": 45,
+              "venueSlugName": "laut",
+              "artistSetName": "dj-sneeze-primavera-ciutat-2026-barcelona-2",
+              "artistSetGenres": [],
+              "dateTimeStartReal": "1780526700000",
+              "dateTimeStartHuman": "1780488000000"
+            }
+          ]
+        },
+        {
+          "artistName": "Ela Minus",
+          "artistSlugName": "ela-minus",
+          "duration": 55,
+          "venues": [
+            {
+              "duration": 55,
+              "venueSlugName": "sala-apolo",
+              "artistSetName": "ela-minus-primavera-ciutat-2026-barcelona",
+              "artistSetGenres": [],
+              "dateTimeStartReal": "1780857600000",
+              "dateTimeStartHuman": "1780833600000"
+            }
+          ]
+        },
+        {
+          "artistName": "Elias Rønnenfelt",
+          "artistSlugName": "elias-ronnenfelt",
+          "duration": 40,
+          "venues": [
+            {
+              "duration": 40,
+              "venueSlugName": "la-2-de-apolo",
+              "artistSetName": "elias-ronnenfelt-primavera-ciutat-2026-barcelona",
+              "artistSetGenres": [],
+              "dateTimeStartReal": "1780343400000",
+              "dateTimeStartHuman": "1780315200000"
+            }
+          ]
+        },
+        {
+          "artistName": "Faten Kanaan",
+          "artistSlugName": "faten-kanaan",
+          "duration": 50,
+          "venues": [
+            {
+              "duration": 50,
+              "venueSlugName": "la-2-de-apolo",
+              "artistSetName": "faten-kanaan-primavera-ciutat-2026-barcelona",
+              "artistSetGenres": [],
+              "dateTimeStartReal": "1780421400000",
+              "dateTimeStartHuman": "1780401600000"
+            }
+          ]
+        },
+        {
+          "artistName": "femtanyl",
+          "artistSlugName": "femtanyl",
+          "duration": 60,
+          "venues": [
+            {
+              "duration": 60,
+              "venueSlugName": "sala-apolo",
+              "artistSetName": "femtanyl-primavera-ciutat-2026-barcelona",
+              "artistSetGenres": [],
+              "dateTimeStartReal": "1780872600000",
+              "dateTimeStartHuman": "1780833600000"
+            }
+          ]
+        },
+        {
+          "artistName": "Fine",
+          "artistSlugName": "fine",
+          "duration": 45,
+          "venues": [
+            {
+              "duration": 45,
+              "venueSlugName": "laut",
+              "artistSetName": "fine-primavera-ciutat-2026-barcelona",
+              "artistSetGenres": [],
+              "dateTimeStartReal": "1780423200000",
+              "dateTimeStartHuman": "1780401600000"
+            }
+          ]
+        },
+        {
+          "artistName": "GAL GO",
+          "artistSlugName": "gal-go",
+          "duration": 30,
+          "venues": [
+            {
+              "duration": 30,
+              "venueSlugName": "cccb-pati-de-les-dones",
+              "artistSetName": "gal-go-primavera-ciutat-2026-barcelona",
+              "artistSetGenres": [],
+              "dateTimeStartReal": "1780587600000",
+              "dateTimeStartHuman": "1780574400000"
+            }
+          ]
+        },
+        {
+          "artistName": "Geese",
+          "artistSlugName": "geese",
+          "duration": 60,
+          "venues": [
+            {
+              "duration": 60,
+              "venueSlugName": "parallel-62",
+              "artistSetName": "geese-primavera-ciutat-2026-barcelona",
+              "artistSetGenres": [],
+              "dateTimeStartReal": "1780509600000",
+              "dateTimeStartHuman": "1780488000000"
+            }
+          ]
+        },
+        {
+          "artistName": "Gelli Haha",
+          "artistSlugName": "gelli-haha",
+          "duration": 60,
+          "venues": [
+            {
+              "duration": 60,
+              "venueSlugName": "la-2-de-apolo",
+              "artistSetName": "gelli-haha-primavera-ciutat-2026-barcelona",
+              "artistSetGenres": [],
+              "dateTimeStartReal": "1780874400000",
+              "dateTimeStartHuman": "1780833600000"
+            }
+          ]
+        },
+        {
+          "artistName": "Gwenifer Raymond",
+          "artistSlugName": "gwenifer-raymond",
+          "duration": 50,
+          "venues": [
+            {
+              "duration": 50,
+              "venueSlugName": "sala-apolo",
+              "artistSetName": "gwenifer-raymond-primavera-ciutat-2026-barcelona",
+              "artistSetGenres": [],
+              "dateTimeStartReal": "1780338600000",
+              "dateTimeStartHuman": "1780315200000"
+            }
+          ]
+        },
+        {
+          "artistName": "Hadren",
+          "artistSlugName": "hadren",
+          "duration": 30,
+          "venues": [
+            {
+              "duration": 30,
+              "venueSlugName": "cccb-pati-de-les-dones",
+              "artistSetName": "hadren-primavera-ciutat-2026-barcelona",
+              "artistSetGenres": [],
+              "dateTimeStartReal": "1780513200000",
+              "dateTimeStartHuman": "1780488000000"
+            }
+          ]
+        },
+        {
+          "artistName": "Hank",
+          "artistSlugName": "hank",
+          "duration": 30,
+          "venues": [
+            {
+              "duration": 30,
+              "venueSlugName": "cccb-pati-de-les-dones",
+              "artistSetName": "hank-primavera-ciutat-2026-barcelona",
+              "artistSetGenres": [],
+              "dateTimeStartReal": "1780575600000",
+              "dateTimeStartHuman": "1780574400000"
+            }
+          ]
+        },
+        {
+          "artistName": "Hannah Diamond",
+          "artistSlugName": "hannah-diamond",
+          "duration": 50,
+          "venues": [
+            {
+              "duration": 50,
+              "venueSlugName": "sala-apolo",
+              "artistSetName": "hannah-diamond-primavera-ciutat-2026-barcelona",
+              "artistSetGenres": [],
+              "dateTimeStartReal": "1780533900000",
+              "dateTimeStartHuman": "1780488000000"
+            }
+          ]
+        },
+        {
+          "artistName": "jasmine.4.T",
+          "artistSlugName": "jasmine4t",
+          "duration": 45,
+          "venues": [
+            {
+              "duration": 45,
+              "venueSlugName": "la-nau",
+              "artistSetName": "jasmine4t-primavera-ciutat-2026-barcelona",
+              "artistSetGenres": [],
+              "dateTimeStartReal": "1780338600000",
+              "dateTimeStartHuman": "1780315200000"
+            }
+          ]
+        },
+        {
+          "artistName": "Joanne Robertson",
+          "artistSlugName": "joanne-robertson",
+          "duration": 40,
+          "venues": [
+            {
+              "duration": 40,
+              "venueSlugName": "la-2-de-apolo",
+              "artistSetName": "joanne-robertson-primavera-ciutat-2026-barcelona",
+              "artistSetGenres": [],
+              "dateTimeStartReal": "1780340400000",
+              "dateTimeStartHuman": "1780315200000"
+            }
+          ]
+        },
+        {
+          "artistName": "Joey Valence & Brae",
+          "artistSlugName": "joey-valence-and-brae",
+          "duration": 50,
+          "venues": [
+            {
+              "duration": 50,
+              "venueSlugName": "sala-apolo",
+              "artistSetName": "joey-valence-and-brae-primavera-ciutat-2026-barcelona",
+              "artistSetGenres": [],
+              "dateTimeStartReal": "1780867800000",
+              "dateTimeStartHuman": "1780833600000"
+            }
+          ]
+        },
+        {
+          "artistName": "Kara Boi",
+          "artistSlugName": "kara-boi",
+          "duration": 30,
+          "venues": [
+            {
+              "duration": 30,
+              "venueSlugName": "cccb-pati-de-les-dones",
+              "artistSetName": "kara-boi-primavera-ciutat-2026-barcelona",
+              "artistSetGenres": [],
+              "dateTimeStartReal": "1780510200000",
+              "dateTimeStartHuman": "1780488000000"
+            }
+          ]
+        },
+        {
+          "artistName": "keiyaA",
+          "artistSlugName": "keiyaa",
+          "duration": 60,
+          "venues": [
+            {
+              "duration": 60,
+              "venueSlugName": "la-2-de-apolo",
+              "artistSetName": "keiyaa-primavera-ciutat-2026-barcelona",
+              "artistSetGenres": [],
+              "dateTimeStartReal": "1780520400000",
+              "dateTimeStartHuman": "1780488000000"
+            }
+          ]
+        },
+        {
+          "artistName": "Konono Nº1",
+          "artistSlugName": "konono-1",
+          "duration": 75,
+          "venues": [
+            {
+              "duration": 75,
+              "venueSlugName": "parallel-62",
+              "artistSetName": "konono-1-primavera-ciutat-2026-barcelona",
+              "artistSetGenres": [],
+              "dateTimeStartReal": "1780860600000",
+              "dateTimeStartHuman": "1780833600000"
+            }
+          ]
+        },
+        {
+          "artistName": "Kris Tena",
+          "artistSlugName": "kris-tena",
+          "duration": 30,
+          "venues": [
+            {
+              "duration": 30,
+              "venueSlugName": "cccb-pati-de-les-dones",
+              "artistSetName": "kris-tena-primavera-ciutat-2026-barcelona",
+              "artistSetGenres": [],
+              "dateTimeStartReal": "1780507200000",
+              "dateTimeStartHuman": "1780488000000"
+            }
+          ]
+        },
+        {
+          "artistName": "La Sécurité",
+          "artistSlugName": "la-securite",
+          "duration": 30,
+          "venues": [
+            {
+              "duration": 30,
+              "venueSlugName": "cccb-pati-de-les-dones",
+              "artistSetName": "la-securite-primavera-ciutat-2026-barcelona",
+              "artistSetGenres": [],
+              "dateTimeStartReal": "1780581600000",
+              "dateTimeStartHuman": "1780574400000"
+            }
+          ]
+        },
+        {
+          "artistName": "L’arannà",
+          "artistSlugName": "laranna",
+          "duration": 30,
+          "venues": [
+            {
+              "duration": 30,
+              "venueSlugName": "cccb-pati-de-les-dones",
+              "artistSetName": "laranna-primavera-ciutat-2026-barcelona",
+              "artistSetGenres": [],
+              "dateTimeStartReal": "1780504200000",
+              "dateTimeStartHuman": "1780488000000"
+            }
+          ]
+        },
+        {
+          "artistName": "Lauren Auder",
+          "artistSlugName": "lauren-auder",
+          "duration": 30,
+          "venues": [
+            {
+              "duration": 30,
+              "venueSlugName": "cccb-pati-de-les-dones",
+              "artistSetName": "lauren-auder-primavera-ciutat-2026-barcelona",
+              "artistSetGenres": [],
+              "dateTimeStartReal": "1780501200000",
+              "dateTimeStartHuman": "1780488000000"
+            }
+          ]
+        },
+        {
+          "artistName": "LHARA",
+          "artistSlugName": "lhara",
+          "duration": 40,
+          "venues": [
+            {
+              "duration": 40,
+              "venueSlugName": "la-2-de-apolo",
+              "artistSetName": "lhara-primavera-ciutat-2026-barcelona",
+              "artistSetGenres": [],
+              "dateTimeStartReal": "1780857000000",
+              "dateTimeStartHuman": "1780833600000"
+            }
+          ]
+        },
+        {
+          "artistName": "M8NSE b2b Doppelganger",
+          "artistSlugName": "m8nse",
+          "duration": 60,
+          "venues": [
+            {
+              "duration": 60,
+              "venueSlugName": "les-enfants",
+              "artistSetName": "m8nse-primavera-ciutat-2026-barcelona",
+              "artistSetGenres": [],
+              "dateTimeStartReal": "1780862400000",
+              "dateTimeStartHuman": "1780833600000"
+            }
+          ]
+        },
+        {
+          "artistName": "M8NSE b2b Doppelganger",
+          "artistSlugName": "m8nse-b2b-doppelganger",
+          "duration": 60,
+          "venues": [
+            {
+              "duration": 60,
+              "venueSlugName": "les-enfants",
+              "artistSetName": "m8nse-b2b-doppelganger-primavera-ciutat-2026-barcelona",
+              "artistSetGenres": [],
+              "dateTimeStartReal": "1780862400000",
+              "dateTimeStartHuman": "1780833600000"
+            }
+          ]
+        },
+        {
+          "artistName": "Madra Salach",
+          "artistSlugName": "madra-salach",
+          "duration": 30,
+          "venues": [
+            {
+              "duration": 30,
+              "venueSlugName": "cccb-pati-de-les-dones",
+              "artistSetName": "madra-salach-primavera-ciutat-2026-barcelona",
+              "artistSetGenres": [],
+              "dateTimeStartReal": "1780584600000",
+              "dateTimeStartHuman": "1780574400000"
+            }
+          ]
+        },
+        {
+          "artistName": "Mechatok",
+          "artistSlugName": "mechatok",
+          "duration": 120,
+          "venues": [
+            {
+              "duration": 120,
+              "venueSlugName": "sala-apolo",
+              "artistSetName": "mechatok-primavera-ciutat-2026-barcelona",
+              "artistSetGenres": [],
+              "dateTimeStartReal": "1780878000000",
+              "dateTimeStartHuman": "1780833600000"
+            }
+          ]
+        },
+        {
+          "artistName": "Melt-Banana",
+          "artistSlugName": "melt-banana",
+          "duration": 45,
+          "venues": [
+            {
+              "duration": 45,
+              "venueSlugName": "sala-apolo",
+              "artistSetName": "melt-banana-primavera-ciutat-2026-barcelona",
+              "artistSetGenres": [],
+              "dateTimeStartReal": "1780524600000",
+              "dateTimeStartHuman": "1780488000000"
+            }
+          ]
+        },
+        {
+          "artistName": "MIEL",
+          "artistSlugName": "miel",
+          "duration": 30,
+          "venues": [
+            {
+              "duration": 30,
+              "venueSlugName": "cccb-pati-de-les-dones",
+              "artistSetName": "miel-primavera-ciutat-2026-barcelona",
+              "artistSetGenres": [],
+              "dateTimeStartReal": "1780671000000",
+              "dateTimeStartHuman": "1780660800000"
+            }
+          ]
+        },
+        {
+          "artistName": "Model/Actriz",
+          "artistSlugName": "model-actriz",
+          "duration": 50,
+          "venues": [
+            {
+              "duration": 50,
+              "venueSlugName": "sala-apolo",
+              "artistSetName": "model-actriz-primavera-ciutat-2026-barcelona",
+              "artistSetGenres": [],
+              "dateTimeStartReal": "1780529100000",
+              "dateTimeStartHuman": "1780488000000"
+            }
+          ]
+        },
+        {
+          "artistName": "Mogwai",
+          "artistSlugName": "mogwai",
+          "duration": 120,
+          "venues": [
+            {
+              "duration": 120,
+              "venueSlugName": "razzmatazz",
+              "artistSetName": "mogwai-primavera-ciutat-2026-barcelona",
+              "artistSetGenres": [],
+              "dateTimeStartReal": "1780506000000",
+              "dateTimeStartHuman": "1780488000000"
+            }
+          ]
+        },
+        {
+          "artistName": "naya mö",
+          "artistSlugName": "naya-mo",
+          "duration": 30,
+          "venues": [
+            {
+              "duration": 30,
+              "venueSlugName": "cccb-pati-de-les-dones",
+              "artistSetName": "naya-mo-primavera-ciutat-2026-barcelona",
+              "artistSetGenres": [],
+              "dateTimeStartReal": "1780489200000",
+              "dateTimeStartHuman": "1780488000000"
+            }
+          ]
+        },
+        {
+          "artistName": "Nick León",
+          "artistSlugName": "nick-leon",
+          "duration": 60,
+          "venues": [
+            {
+              "duration": 60,
+              "venueSlugName": "les-enfants",
+              "artistSetName": "nick-leon-primavera-ciutat-2026-barcelona",
+              "artistSetGenres": [],
+              "dateTimeStartReal": "1780866900000",
+              "dateTimeStartHuman": "1780833600000"
+            }
+          ]
+        },
+        {
+          "artistName": "paco te quiero",
+          "artistSlugName": "paco-te-quiero",
+          "duration": 60,
+          "venues": [
+            {
+              "duration": 60,
+              "venueSlugName": "la-nau",
+              "artistSetName": "paco-te-quiero-primavera-ciutat-2026-barcelona",
+              "artistSetGenres": [],
+              "dateTimeStartReal": "1780853400000",
+              "dateTimeStartHuman": "1780833600000"
+            }
+          ]
+        },
+        {
+          "artistName": "Pájaros Vampiro",
+          "artistSlugName": "pajaros-vampiro",
+          "duration": 30,
+          "venues": [
+            {
+              "duration": 30,
+              "venueSlugName": "cccb-pati-de-les-dones",
+              "artistSetName": "pajaros-vampiro-primavera-ciutat-2026-barcelona",
+              "artistSetGenres": [],
+              "dateTimeStartReal": "1780674000000",
+              "dateTimeStartHuman": "1780660800000"
+            }
+          ]
+        },
+        {
+          "artistName": "Pálida Tez",
+          "artistSlugName": "palida-tez",
+          "duration": 40,
+          "venues": [
+            {
+              "duration": 40,
+              "venueSlugName": "la-2-de-apolo",
+              "artistSetName": "palida-tez-primavera-ciutat-2026-barcelona",
+              "artistSetGenres": [],
+              "dateTimeStartReal": "1780333200000",
+              "dateTimeStartHuman": "1780315200000"
+            }
+          ]
+        },
+        {
+          "artistName": "quickly, quickly",
+          "artistSlugName": "quickly-quickly",
+          "duration": 50,
+          "venues": [
+            {
+              "duration": 50,
+              "venueSlugName": "laut",
+              "artistSetName": "quickly-quickly-primavera-ciutat-2026-barcelona",
+              "artistSetGenres": [],
+              "dateTimeStartReal": "1780851600000",
+              "dateTimeStartHuman": "1780833600000"
+            }
+          ]
+        },
+        {
+          "artistName": "RAKEL",
+          "artistSlugName": "rakel",
+          "duration": 30,
+          "venues": [
+            {
+              "duration": 30,
+              "venueSlugName": "cccb-pati-de-les-dones",
+              "artistSetName": "rakel-primavera-ciutat-2026-barcelona",
+              "artistSetGenres": [],
+              "dateTimeStartReal": "1780492200000",
+              "dateTimeStartHuman": "1780488000000"
+            }
+          ]
+        },
+        {
+          "artistName": "Remei de Ca la Fresca",
+          "artistSlugName": "remei-de-ca-la-fresca",
+          "duration": 40,
+          "venues": [
+            {
+              "duration": 40,
+              "venueSlugName": "parallel-62",
+              "artistSetName": "remei-de-ca-la-fresca-primavera-ciutat-2026-barcelona",
+              "artistSetGenres": [],
+              "dateTimeStartReal": "1780853400000",
+              "dateTimeStartHuman": "1780833600000"
+            }
+          ]
+        },
+        {
+          "artistName": "Safety Trance b2b Dj Florentino",
+          "artistSlugName": "safety-trance-b2b-florentino",
+          "duration": 80,
+          "venues": [
+            {
+              "duration": 80,
+              "venueSlugName": "les-enfants",
+              "artistSetName": "safety-trance-primavera-ciutat-2026-barcelona",
+              "artistSetGenres": [],
+              "dateTimeStartReal": "1780873800000",
+              "dateTimeStartHuman": "1780833600000"
+            }
+          ]
+        },
+        {
+          "artistName": "Salvana",
+          "artistSlugName": "salvana",
+          "duration": 30,
+          "venues": [
+            {
+              "duration": 30,
+              "venueSlugName": "sala-apolo",
+              "artistSetName": "salvana-primavera-ciutat-2026-barcelona",
+              "artistSetGenres": [],
+              "dateTimeStartReal": "1780419600000",
+              "dateTimeStartHuman": "1780401600000"
+            }
+          ]
+        },
+        {
+          "artistName": "Santiago Motorizado",
+          "artistSlugName": "santiago-motorizado",
+          "duration": 60,
+          "venues": [
+            {
+              "duration": 60,
+              "venueSlugName": "la-nau",
+              "artistSetName": "santiago-motorizado-primavera-ciutat-2026-barcelona",
+              "artistSetGenres": [],
+              "dateTimeStartReal": "1780427700000",
+              "dateTimeStartHuman": "1780401600000"
+            }
+          ]
+        },
+        {
+          "artistName": "Serpent",
+          "artistSlugName": "serpent",
+          "duration": 40,
+          "venues": [
+            {
+              "duration": 40,
+              "venueSlugName": "sala-apolo",
+              "artistSetName": "serpent-primavera-ciutat-2026-barcelona",
+              "artistSetGenres": [],
+              "dateTimeStartReal": "1780520400000",
+              "dateTimeStartHuman": "1780488000000"
+            }
+          ]
+        },
+        {
+          "artistName": "Six Sex",
+          "artistSlugName": "six-sex",
+          "duration": 30,
+          "venues": [
+            {
+              "duration": 30,
+              "venueSlugName": "les-enfants",
+              "artistSetName": "six-sex-primavera-ciutat-2026-barcelona",
+              "artistSetGenres": [],
+              "dateTimeStartReal": "1780871400000",
+              "dateTimeStartHuman": "1780833600000"
+            }
+          ]
+        },
+        {
+          "artistName": "snuggle",
+          "artistSlugName": "snuggle",
+          "duration": 45,
+          "venues": [
+            {
+              "duration": 45,
+              "venueSlugName": "laut",
+              "artistSetName": "snuggle-primavera-ciutat-2026-barcelona",
+              "artistSetGenres": [],
+              "dateTimeStartReal": "1780427100000",
+              "dateTimeStartHuman": "1780401600000"
+            }
+          ]
+        },
+        {
+          "artistName": "Soleá Morente",
+          "artistSlugName": "solea-morente",
+          "duration": 60,
+          "venues": [
+            {
+              "duration": 60,
+              "venueSlugName": "la-2-de-apolo",
+              "artistSetName": "solea-morente-primavera-ciutat-2026-barcelona",
+              "artistSetGenres": [],
+              "dateTimeStartReal": "1780347600000",
+              "dateTimeStartHuman": "1780315200000"
+            }
+          ]
+        },
+        {
+          "artistName": "Sorry",
+          "artistSlugName": "sorry",
+          "duration": 60,
+          "venues": [
+            {
+              "duration": 60,
+              "venueSlugName": "la-nau",
+              "artistSetName": "sorry-primavera-ciutat-2026-barcelona",
+              "artistSetGenres": [],
+              "dateTimeStartReal": "1780343100000",
+              "dateTimeStartHuman": "1780315200000"
+            }
+          ]
+        },
+        {
+          "artistName": "Spill Tab",
+          "artistSlugName": "spill-tab",
+          "duration": 40,
+          "venues": [
+            {
+              "duration": 40,
+              "venueSlugName": "la-2-de-apolo",
+              "artistSetName": "spill-tab-primavera-ciutat-2026-barcelona",
+              "artistSetGenres": [],
+              "dateTimeStartReal": "1780864800000",
+              "dateTimeStartHuman": "1780833600000"
+            }
+          ]
+        },
+        {
+          "artistName": "Spirit Blue",
+          "artistSlugName": "spirit-blue",
+          "duration": 60,
+          "venues": [
+            {
+              "duration": 60,
+              "venueSlugName": "la-2-de-apolo",
+              "artistSetName": "spirit-blue-primavera-ciutat-2026-barcelona",
+              "artistSetGenres": [],
+              "dateTimeStartReal": "1780524000000",
+              "dateTimeStartHuman": "1780488000000"
+            }
+          ]
+        },
+        {
+          "artistName": "Teo Planell",
+          "artistSlugName": "teo-planell",
+          "duration": 45,
+          "venues": [
+            {
+              "duration": 45,
+              "venueSlugName": "parallel-62",
+              "artistSetName": "teo-planell-primavera-ciutat-2026-barcelona",
+              "artistSetGenres": [],
+              "dateTimeStartReal": "1780422300000",
+              "dateTimeStartHuman": "1780401600000"
+            }
+          ]
+        },
+        {
+          "artistName": "The Clothes",
+          "artistSlugName": "the-clothes",
+          "duration": 40,
+          "venues": [
+            {
+              "duration": 40,
+              "venueSlugName": "la-2-de-apolo",
+              "artistSetName": "the-clothes-primavera-ciutat-2026-barcelona",
+              "artistSetGenres": [],
+              "dateTimeStartReal": "1780336800000",
+              "dateTimeStartHuman": "1780315200000"
+            }
+          ]
+        },
+        {
+          "artistName": "Titanic",
+          "artistSlugName": "titanic",
+          "duration": 40,
+          "venues": [
+            {
+              "duration": 40,
+              "venueSlugName": "parallel-62",
+              "artistSetName": "titanic-primavera-ciutat-2026-barcelona",
+              "artistSetGenres": [],
+              "dateTimeStartReal": "1780857000000",
+              "dateTimeStartHuman": "1780833600000"
+            }
+          ]
+        },
+        {
+          "artistName": "VIIZERO7",
+          "artistSlugName": "viizero7",
+          "duration": 30,
+          "venues": [
+            {
+              "duration": 30,
+              "venueSlugName": "laut",
+              "artistSetName": "viizero7-primavera-ciutat-2026-barcelona",
+              "artistSetGenres": [],
+              "dateTimeStartReal": "1780524000000",
+              "dateTimeStartHuman": "1780488000000"
+            }
+          ]
+        },
+        {
+          "artistName": "Violeta",
+          "artistSlugName": "violeta",
+          "duration": 45,
+          "venues": [
+            {
+              "duration": 45,
+              "venueSlugName": "laut",
+              "artistSetName": "violeta-primavera-ciutat-2026-barcelona",
+              "artistSetGenres": [],
+              "dateTimeStartReal": "1780520400000",
+              "dateTimeStartHuman": "1780488000000"
+            }
+          ]
+        },
+        {
+          "artistName": "Xeo",
+          "artistSlugName": "xeo",
+          "duration": 30,
+          "venues": [
+            {
+              "duration": 30,
+              "venueSlugName": "laut",
+              "artistSetName": "xeo-primavera-ciutat-2026-barcelona",
+              "artistSetGenres": [],
+              "dateTimeStartReal": "1780514100000",
+              "dateTimeStartHuman": "1780488000000"
+            }
+          ]
+        },
+        {
+          "artistName": "YANA",
+          "artistSlugName": "yana",
+          "duration": 30,
+          "venues": [
+            {
+              "duration": 30,
+              "venueSlugName": "cccb-pati-de-les-dones",
+              "artistSetName": "yana-primavera-ciutat-2026-barcelona",
+              "artistSetGenres": [],
+              "dateTimeStartReal": "1780486200000",
+              "dateTimeStartHuman": "1780488000000"
+            }
+          ]
+        },
+        {
+          "artistName": "Yerai Cortés",
+          "artistSlugName": "yerai-cortes",
+          "duration": 75,
+          "venues": [
+            {
+              "duration": 75,
+              "venueSlugName": "sala-apolo",
+              "artistSetName": "yerai-cortes-primavera-ciutat-2026-barcelona",
+              "artistSetGenres": [],
+              "dateTimeStartReal": "1780343400000",
+              "dateTimeStartHuman": "1780315200000"
+            }
+          ]
+        },
+        {
+          "artistName": "Yves Tumor",
+          "artistSlugName": "yves-tumor",
+          "duration": 45,
+          "venues": [
+            {
+              "duration": 45,
+              "venueSlugName": "sala-apolo",
+              "artistSetName": "yves-tumor-primavera-ciutat-2026-barcelona",
+              "artistSetGenres": [],
+              "dateTimeStartReal": "1780432800000",
+              "dateTimeStartHuman": "1780401600000"
+            }
+          ]
+        }
+      ],
+      "venues": "{\"sala-apolo\":{\"venueReadableName\":{\"en\":\"Sala Apolo\",\"es\":\"Sala Apolo\",\"ca\":\"Sala Apolo\",\"pt\":\"Sala Apolo\"},\"position\":1},\"cccb-pati-de-les-dones\":{\"venueReadableName\":{\"en\":\"SHOWCASES PRO @ CCCB - PATI DE LES DONES\",\"es\":\"SHOWCASES PRO @ CCCB - PATI DE LES DONES\",\"ca\":\"SHOWCASES PRO @ CCCB - PATI DE LES DONES\",\"pt\":\"SHOWCASES PRO @ CCCB - PATI DE LES DONES\"},\"position\":90},\"parallel-62\":{\"venueReadableName\":{\"en\":\"Paral.lel 62\",\"es\":\"Paral.lel 62\",\"ca\":\"Paral.lel 62\",\"pt\":\"Paral.lel 62\"},\"position\":3},\"la-2-de-apolo\":{\"venueReadableName\":{\"en\":\"La [2] Apolo\",\"es\":\"La [2] Apolo\",\"ca\":\"La [2] Apolo\"},\"position\":2},\"laut\":{\"venueReadableName\":{\"en\":\"LAUT\",\"es\":\"LAUT\",\"ca\":\"LAUT\",\"pt\":\"LAUT\"},\"position\":5},\"la-nau\":{\"venueReadableName\":{\"en\":\"La Nau\",\"es\":\"La Nau\",\"ca\":\"La Nau\",\"pt\":\"La Nau\"},\"position\":4},\"les-enfants\":{\"venueReadableName\":{\"en\":\"Les Enfants\",\"es\":\"Les Enfants\",\"ca\":\"Les Enfants\",\"pt\":\"Les Enfants\"},\"position\":9999},\"razzmatazz\":{\"venueReadableName\":{\"en\":\"Razzmatazz\",\"es\":\"Razzmatazz\",\"ca\":\"Razzmatazz\",\"pt\":\"Razzmatazz\"},\"position\":0}}",
+      "showDate": true,
+      "showVenue": true,
+      "timezone": null
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "slug": "ps26",
+  "name": "Primavera Sound 2026",
+  "timezone": "Europe/Madrid",
+  "dayCutoffHour": 8,
+  "catchFraction": 0.5,
+  "nightGapHours": 3,
+  "days": {
+    "wed": [2026, 6, 3],
+    "thu": [2026, 6, 4],
+    "fri": [2026, 6, 5],
+    "sat": [2026, 6, 6],
+    "sun": [2026, 6, 7]
+  },
+  "coordinates": { "lat": 41.4106, "lon": 2.2275 },
+  "_note": "Parc del Fòrum, Barcelona. Wed 3 = Jornada Inaugural; Sun 7 Fòrum = Primavera Bits (separate ticket). CEST (UTC+2) for these dates. Sanity anchor: Cameron Winter Thu 2026-06-04 17:00 CEST @ auditori-rockdelux."
+}
