@@ -14,6 +14,13 @@ export interface SitePoi {
   category: string;
   lat: number;
   lng: number;
+  /**
+   * This POI is part of the map's decorative/raster backdrop rather than a
+   * place, as determined by the source from whatever vendor signals it has
+   * (e.g. an overlay-image field) — independent of, and in addition to, the
+   * category signal. A generic map concept, not an Appmiral one.
+   */
+  backdrop?: boolean;
 }
 
 export interface SiteMapSource {
@@ -27,7 +34,16 @@ export interface SiteMapSource {
  */
 const BACKDROP_CATEGORIES = new Set(["map_overlay_image"]);
 
+/**
+ * A backdrop tile is identified two ways (either is enough): it carries
+ * `backdrop: true` (a source-determined vendor signal, e.g. an overlay
+ * image), or it sits in one of `BACKDROP_CATEGORIES`.
+ */
+export function isBackdrop(p: SitePoi): boolean {
+  return p.backdrop === true || BACKDROP_CATEGORIES.has(p.category);
+}
+
 /** Has this map published anything that tells you where something IS? */
 export function poisPublished(pois: SitePoi[]): boolean {
-  return pois.some((p) => !BACKDROP_CATEGORIES.has(p.category));
+  return pois.some((p) => !isBackdrop(p));
 }

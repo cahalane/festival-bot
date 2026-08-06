@@ -83,4 +83,34 @@ describe("createAppmiralMapSource", () => {
     expect(out[0]!.id).toBe("42");
     expect(typeof out[0]!.id).toBe("string");
   });
+
+  test("flags backdrop:true when the vendor record carries a non-empty map_overlay_image, even under an ordinary category", async () => {
+    const pois: AppmiralPoi[] = [
+      {
+        id: 1,
+        name: "Corner Tile",
+        category_id: 10,
+        coordinates: [{ lat: 52.2, lng: -7.2 }],
+        map_overlay_image: { medium: "https://example.com/tile.png" },
+      },
+    ];
+    const out = await source(pois).loadPois();
+    expect(out[0]!.category).toBe("Stage");
+    expect(out[0]!.backdrop).toBe(true);
+  });
+
+  test("no backdrop flag when map_overlay_image is absent or all values are empty strings", async () => {
+    const pois: AppmiralPoi[] = [
+      { id: 1, name: "No Overlay Field", category_id: 10, coordinates: [{ lat: 52.2, lng: -7.2 }] },
+      {
+        id: 2,
+        name: "Empty Overlay",
+        category_id: 10,
+        coordinates: [{ lat: 52.2, lng: -7.2 }],
+        map_overlay_image: { medium: "", large: "" },
+      },
+    ];
+    const out = await source(pois).loadPois();
+    expect(out.every((p) => !p.backdrop)).toBe(true);
+  });
 });

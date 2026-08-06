@@ -17,5 +17,5 @@ export * from "./vibecheck.js";
 export * from "./schedule-watch.js";
 export * from "./sources.js";
 export * from "./festival.js";
-export { poisPublished } from "./sitemap.js";
+export { poisPublished, isBackdrop } from "./sitemap.js";
 export type { SitePoi, SiteMapSource } from "./sitemap.js";

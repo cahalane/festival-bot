@@ -1,8 +1,8 @@
 import { describe, expect, test } from "vitest";
 import { poisPublished, type SitePoi } from "./sitemap.js";
 
-const poi = (name: string, category: string): SitePoi => ({
-  id: name, name, category, lat: 52.29, lng: -7.37,
+const poi = (name: string, category: string, backdrop?: boolean): SitePoi => ({
+  id: name, name, category, lat: 52.29, lng: -7.37, ...(backdrop !== undefined ? { backdrop } : {}),
 });
 
 /**
@@ -24,5 +24,14 @@ describe("poisPublished", () => {
 
   test("true once a POI carries real information", () => {
     expect(poisPublished([poi("overlay-1", "map_overlay_image"), poi("Main Stage", "Stages")])).toBe(true);
+  });
+
+  test("false when a POI is flagged backdrop even under a normal, real category (mis-categorised tile)", () => {
+    expect(poisPublished([poi("weird-tile", "Stages", true)])).toBe(false);
+  });
+
+  test("category signal alone still works with no backdrop flag present", () => {
+    expect(poisPublished([poi("overlay-1", "map_overlay_image")])).toBe(false);
+    expect(poisPublished([poi("Main Stage", "Stages")])).toBe(true);
   });
 });

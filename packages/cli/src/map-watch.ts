@@ -18,7 +18,7 @@
  */
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
-import { poisPublished, type SitePoi } from "@festival-bot/core";
+import { poisPublished, isBackdrop, type SitePoi } from "@festival-bot/core";
 import { haversineMeters } from "@festival-bot/adapters";
 import { cacheDir, REPO_ROOT } from "./config.js";
 import { ACTIVE_FESTIVAL, loadActiveFestival } from "./festivals.js";
@@ -38,9 +38,6 @@ const DEFAULT_AMENITY_CATEGORIES = [
   "Wheelchair Access",
 ];
 
-/** The vendor-neutral category label a SiteMapSource uses for raster backdrop tiles. */
-const BACKDROP_CATEGORY = "map_overlay_image";
-
 function rawFile(): string {
   return join(cacheDir(ACTIVE_FESTIVAL), "map_raw.json");
 }
@@ -51,10 +48,13 @@ function rawFile(): string {
  * One festival's map published as four `map_overlay_image` corner polygons and
  * nothing else — every real category empty. A bare `pois.length` test counts
  * those tiles as data, which is what made the watch announce the map and
- * self-stop while the useful half was still unpublished.
+ * self-stop while the useful half was still unpublished. Backdrop is
+ * identified two ways (either is enough, via `isBackdrop`): the source-set
+ * `backdrop` flag, or the vendor-neutral `map_overlay_image` category — so a
+ * tile mis-filed under a real category is still caught.
  */
 export function informationalPois(pois: SitePoi[]): SitePoi[] {
-  return pois.filter((p) => p.category !== BACKDROP_CATEGORY);
+  return pois.filter((p) => !isBackdrop(p));
 }
 
 export interface PlacedMove {

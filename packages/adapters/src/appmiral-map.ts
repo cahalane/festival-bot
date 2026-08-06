@@ -42,6 +42,8 @@ export interface AppmiralPoi {
   category_id?: number;
   coordinates?: AppmiralPoiCoord[];
   deleted_at?: string;
+  /** Present on raster backdrop tiles; keyed by size, e.g. `{ medium: "https://..." }`. */
+  map_overlay_image?: Record<string, string>;
 }
 
 export interface AppmiralMapConfig {
@@ -132,12 +134,15 @@ export function createAppmiralMapSource(
         if (p.deleted_at) continue;
         if (!p.coordinates?.length) continue;
         const { lat, lng } = poiCentroid(p.coordinates);
+        const overlay = p.map_overlay_image;
+        const isOverlay = overlay !== undefined && Object.values(overlay).some((u) => u);
         out.push({
           id: String(p.id),
           name: p.name ?? "",
           category: (p.category_id !== undefined ? categoryName.get(p.category_id) : undefined) ?? "",
           lat,
           lng,
+          ...(isOverlay ? { backdrop: true } : {}),
         });
       }
       return out;
