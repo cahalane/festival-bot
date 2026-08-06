@@ -15,8 +15,9 @@
 set -uo pipefail
 
 cd "$(dirname "$0")/.." || exit 1
-ERRLOG="cache/schedule_tick.err"
-mkdir -p cache
+SLUG="$(./festplan active-festival)"
+ERRLOG="cache/$SLUG/schedule_tick.err"
+mkdir -p "cache/$SLUG"
 
 while true; do
   ./festplan schedule-tick 2>>"$ERRLOG" || true

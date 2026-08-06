@@ -17,8 +17,9 @@
 set -uo pipefail
 
 cd "$(dirname "$0")/.." || exit 1
-ERRLOG="cache/reminders_loop.err"
-mkdir -p cache
+SLUG="$(./festplan active-festival)"
+ERRLOG="cache/$SLUG/reminders_loop.err"
+mkdir -p "cache/$SLUG"
 
 while true; do
   # Filter to DUE lines: `reminders due` prints "(none due)" rather than staying

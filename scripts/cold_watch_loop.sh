@@ -8,8 +8,9 @@
 set -uo pipefail
 
 cd "$(dirname "$0")/.." || exit 1
-ERRLOG="cache/cold_watch_loop.err"
-mkdir -p cache
+SLUG="$(./festplan active-festival)"
+ERRLOG="cache/$SLUG/cold_watch_loop.err"
+mkdir -p "cache/$SLUG"
 
 while true; do
   ./festplan cold-tick 2>>"$ERRLOG"

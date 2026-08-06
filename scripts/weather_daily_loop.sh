@@ -17,6 +17,22 @@ set -uo pipefail
 
 cd "$(dirname "$0")/.." || exit 1
 
+# GNU-only: this loop's sleep-until-next-HOUR math depends on `date -d` and
+# `date -Is`, neither of which BSD/macOS `date` supports. On those platforms
+# `date -d ...` used to fail silently, target_local came back empty, and the
+# loop just logged one line to $ERRLOG and slept an hour, forever — no daily
+# card, no signal anywhere the session would actually see. Full BSD portability
+# (rewriting every `date -d`/`date -Is` call as `date -j -f ...`) is more
+# machinery than this loop is worth; fail loudly at startup instead so a
+# misconfigured host is obvious immediately rather than a silent no-op.
+if ! date -d "today" >/dev/null 2>&1; then
+  echo "WEATHER LOOP ERROR: this script requires GNU date (date -d / date -Is)," \
+    "which this host's 'date' does not support (looks like BSD/macOS date)." \
+    "Install GNU coreutils and either alias 'date' to 'gdate' or run this loop" \
+    "on a Linux host. Refusing to start rather than looping silently forever."
+  exit 1
+fi
+
 # Resolved once at startup from the ACTIVE festival's own manifest (via `festplan
 # active-festival --json`), so this loop stays correct for any festival's timezone, not
 # just Dublin. FEST_TZ env var still wins if set explicitly (escape hatch / testing).
@@ -25,9 +41,10 @@ if [ -z "${FEST_TZ:-}" ]; then
 fi
 FEST_TZ="${FEST_TZ:-Europe/Dublin}"
 HOUR="${WEATHER_HOUR:-9}"
-ERRLOG="cache/weather_daily.err"
-CARD="cache/weather_card.png"
-mkdir -p cache
+SLUG="$(./festplan active-festival)"
+ERRLOG="cache/$SLUG/weather_daily.err"
+CARD="cache/$SLUG/weather_card.png"
+mkdir -p "cache/$SLUG"
 
 while true; do
   # Seconds until the next HOUR:00 in FEST_TZ, computed via epoch arithmetic so the
