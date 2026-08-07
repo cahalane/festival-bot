@@ -69,13 +69,14 @@ minutes = round( haversine(a, b) meters × 1.3 / 1.1 meters-per-second / 60 ), m
 
 ## Limitation — and when to override by hand
 
-This heuristic is straight-line geometry with two constant fudge-factors. It has no idea a lake,
-a fence line, a one-way crowd-flow corridor, or a closed gate sits between two stages — it will
-happily estimate a short walk between two points that are actually separated by a body of water
-you have to walk all the way around. Treat every derived edge as a starting estimate, and when a
-route recommendation feels wrong or someone reports an actual walk taking noticeably longer or
-shorter than the graph says, correct that specific edge by hand in `venues.json` rather than
-re-deriving the whole graph — and note why, the same way `festivals/atn26/knowledge/walk-graph.md`
-tracks per-stage corrections (e.g. a stage that first landed on a lakeshore before being moved
-north off it). `limitedCapacity` (stages the graph should treat as gate-limited) is a separate,
-still-manual field — populate it from on-site knowledge, nothing derives it automatically.
+This heuristic is straight-line geometry with two constant fudge-factors. It has no idea a lake, a
+fence line, a one-way crowd-flow corridor, or a closed gate sits between two stages — it will
+happily estimate a short walk between two points that are actually separated by a body of water you
+have to walk all the way around. Treat every derived edge as a starting estimate, and when a route
+recommendation feels wrong or someone reports an actual walk taking noticeably longer or shorter
+than the graph says, correct that specific edge by hand in `venues.json` rather than re-deriving the
+whole graph — and note why, the same way
+[`festivals/atn26/knowledge/walk-graph.md`](../../festivals/atn26/knowledge/walk-graph.md) tracks
+per-stage corrections (e.g. a stage that first landed on a lakeshore before being moved north off
+it). `limitedCapacity` (stages the graph should treat as gate-limited) is a separate, still-manual
+field — populate it from on-site knowledge, nothing derives it automatically.

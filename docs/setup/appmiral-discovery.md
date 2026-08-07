@@ -1,14 +1,15 @@
 # Appmiral discovery — finding and authenticating your festival's feed
 
-**Appmiral** is a white-label festival-app platform (part of CM.com) used by 100+ festivals
-(Rock Werchter, Tomorrowland, Pukkelpop, Dour, Iceland Airwaves, and more). If your festival's
-official app is built on it, its full lineup — artists, stages, times, maps, POIs, news — is
-reachable over a documented read API, `app.appmiral.com/api/v7/...`, the same one the app itself
-calls. `festivals/atn26` in this repo is a working reference module built against it (source:
-`docs/research/appmiral-lineup-api.md`, the raw research this guide distills into steps).
+**Appmiral** is a white-label festival-app platform (part of CM.com) used by 100+ festivals (Rock
+Werchter, Tomorrowland, Pukkelpop, Dour, Iceland Airwaves, and more). If your festival's official
+app is built on it, its full lineup — artists, stages, times, maps, POIs, news — is reachable over a
+documented read API, `app.appmiral.com/api/v7/...`, the same one the app itself calls.
+`festivals/atn26` in this repo is a working reference module built against it (source:
+[`docs/research/appmiral-lineup-api.md`](../research/appmiral-lineup-api.md), the raw research this
+guide distills into steps).
 
-This is the path to take when your festival **has an official app** and you can identify its
-vendor. If there is no app / no vendor API, see `scraped-lineup.md` instead.
+This is the path to take when your festival **has an official app** and you can identify its vendor.
+If there is no app / no vendor API, see [`scraped-lineup.md`](scraped-lineup.md) instead.
 
 ## 1. Is your festival on Appmiral?
 
@@ -93,8 +94,8 @@ Everything hangs off `events/{event}/editions/{edition}/`:
 - `artists` — artist records, each with nested `performances` (or fetch `performances`
   separately and join by id).
 - `stages` — stage list (id, name, display priority).
-- `maps` / `pois` — site-map geodata, when the festival supplies it as real coordinates rather
-  than a static image (see `walk-graph.md` for what to do when it's only an image).
+- `maps` / `pois` — site-map geodata, when the festival supplies it as real coordinates rather than
+  a static image (see [`walk-graph.md`](walk-graph.md) for what to do when it's only an image).
 - `pages` — CMS info pages (FAQ-style content), diffable for change-watching.
 - `notifications` — the app's official push/news feed.
 
@@ -114,8 +115,9 @@ Appmiral's `performance` records map onto this project's `ArtistSet`:
 
 ## 8. Verify before you trust it
 
-Once you have a token and a working adapter, do not treat parsed times as correct just because
-the fetch returned 200. Do the timezone-anchor check described in `getting-started.md`: pick one
-act whose real-world set time you already know, and confirm the parsed/converted data reproduces
-it exactly. An off-by-one-hour timezone bug is invisible in the JSON and wrong in every reply
-downstream — the anchor check is the only thing that catches it before a user does.
+Once you have a token and a working adapter, do not treat parsed times as correct just because the
+fetch returned 200. Do the timezone-anchor check described in
+[`getting-started.md`](getting-started.md): pick one act whose real-world set time you already know,
+and confirm the parsed/converted data reproduces it exactly. An off-by-one-hour timezone bug is
+invisible in the JSON and wrong in every reply downstream — the anchor check is the only thing that
+catches it before a user does.

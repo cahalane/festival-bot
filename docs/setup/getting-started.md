@@ -31,7 +31,7 @@ With no configuration at all, the CLI defaults to `demofest`, a small invented f
 ```
 
 `demofest` has no real-world coordinates, so its weather source is intentionally unwired (see
-`weather.md`) — that's expected, not a bug, and keeps the test suite off the network.
+[`weather.md`](weather.md)) — that's expected, not a bug, and keeps the test suite off the network.
 
 ## 3. The fork in the road: which festival are you setting up?
 
@@ -41,15 +41,16 @@ into two paths, each with a working reference module in this repo:
 - **Your festival has an official app, and you can identify its vendor** → the vendor-API path.
   `festivals/atn26` is the reference module: an authenticated lineup pull, an official-news watch
   and an info-page watch, site-map POIs for the walk graph, and favourites sourced from a
-  Clashfinder *mirror this deployment publishes* (the festival itself has no public favourites
-  API). Follow `appmiral-discovery.md` to find and authenticate the feed — Appmiral is the vendor
-  covered there, and the platform behind a large share of festival apps, but if your festival's
-  app is built on something else, the same "find the API behind the app" method still applies.
+  Clashfinder *mirror this deployment publishes* (the festival itself has no public favourites API).
+  Follow [`appmiral-discovery.md`](appmiral-discovery.md) to find and authenticate the feed —
+  Appmiral is the vendor covered there, and the platform behind a large share of festival apps, but
+  if your festival's app is built on something else, the same "find the API behind the app" method
+  still applies.
 - **No app, or no identifiable vendor API** → the scrape path. `festivals/ps26` is the reference
   module: no API, a scraped-and-snapshotted lineup, and favourites read from **an existing
   Clashfinder event this deployment doesn't own** (for PS26, one an independent user runs — the
-  opposite topology from ATN's mirror; see `clashfinder.md` for the distinction). Follow
-  `scraped-lineup.md`.
+  opposite topology from ATN's mirror; see [`clashfinder.md`](clashfinder.md) for the distinction).
+  Follow [`scraped-lineup.md`](scraped-lineup.md).
 
 Start from `festivals/_template`, a skeleton with the files in place and the decisions marked
 `CHANGEME`. Copy it to `festivals/<your-slug>/` and rename `package.json.template` to
@@ -68,7 +69,7 @@ Each module is a small workspace package:
 |---|---|
 | `package.json` | workspace entry, named `@festival/<slug>` |
 | `festival.json` | name, timezone, `dayCutoffHour`, dates, coordinates (coordinates are what enable the weather source) |
-| `venues.json` | stage list + walk graph — see `walk-graph.md` |
+| `venues.json` | stage list + walk graph — see [`walk-graph.md`](walk-graph.md) |
 | `schedule.json` | the lineup snapshot |
 | `src/` | the lineup source and any vendor-specific glue |
 | `CONTEXT.md` | the festival-specific facts your assistant reads |
@@ -82,10 +83,10 @@ The template gets you the shape; for the substance, read whichever of `atn26` (v
 
 ## 4. Point the CLI at your festival
 
-The active festival is decided by a single line in a root `CLAUDE.md` you create:
-`@festivals/<slug>/CONTEXT.md`. There's no root `CLAUDE.md` in a fresh checkout, so the CLI falls
-back to `demofest` until you add one. For a one-off run without touching `CLAUDE.md`, use the env
-override:
+The active festival is decided by a single line in a root [`CLAUDE.md`](../../CLAUDE.md) you create:
+`@festivals/<slug>/CONTEXT.md`. There's no root [`CLAUDE.md`](../../CLAUDE.md) in a fresh checkout,
+so the CLI falls back to `demofest` until you add one. For a one-off run without touching
+[`CLAUDE.md`](../../CLAUDE.md), use the env override:
 
 ```
 ACTIVE_FESTIVAL=<slug> ./festplan now
@@ -93,17 +94,19 @@ ACTIVE_FESTIVAL=<slug> ./festplan now
 
 ## 5. Configure people-data
 
-- `CREW.md` — **copy `CREW.example.md` to `CREW.md` and fill it in.** This is the file your
-  assistant reads to know who it is talking to: names, handles, channel ids, each person's tone,
-  and your crew's own vocabulary for places. It is gitignored, and it is the *only* file that
-  should ever contain real people — which is what makes the rest of this repo safe to publish or
-  share. `CLAUDE.md` imports it; until you create it, that import simply resolves to nothing.
+- `CREW.md` — **copy [`CREW.example.md`](../../CREW.example.md) to `CREW.md` and fill it in.** This
+  is the file your assistant reads to know who it is talking to: names, handles, channel ids, each
+  person's tone, and your crew's own vocabulary for places. It is gitignored, and it is the *only*
+  file that should ever contain real people — which is what makes the rest of this repo safe to
+  publish or share. [`CLAUDE.md`](../../CLAUDE.md) imports it; until you create it, that import
+  simply resolves to nothing.
 - `data/users.json` — one entry per crew member: a handle, a `channel` reference
   (`{ "kind": "telegram", "id": "…" }` — the `kind` records which channel plugin the id belongs
-  to), and either a Clashfinder username or a manual `favs` list. Copy `data/users.example.json`
-  and edit directly. (`demofest` deliberately ships with none of this wired up — trying
-  `./festplan favs`/`vibecheck` against it returns an empty result for anyone, by design, not as a
-  bug — see `festivals/demofest/CONTEXT.md`.)
+  to), and either a Clashfinder username or a manual `favs` list. Copy
+  `data/users.example.json` and edit directly.
+  (`demofest` deliberately ships with none of this wired up — trying `./festplan favs`/`vibecheck`
+  against it returns an empty result for anyone, by design, not as a bug — see
+  [`festivals/demofest/CONTEXT.md`](../../festivals/demofest/CONTEXT.md).)
 - `data/prefs.json` — per-user tone/notes, same handles. Copy `data/prefs.example.json`.
 - `data/reminders.json` — the reminder queue; starts empty, see `data/reminders.json.example` for
   the shape `./festplan reminders add` writes.
@@ -123,11 +126,12 @@ All four are gitignored. The `*.example.*` files are the committed templates.
 ```
 
 Only fill in what your festival's path needs: `appmiral` for the vendor-API path
-(`appmiral-discovery.md`), `clashfinder` for favourites/mirror pushes (`clashfinder.md`),
-`setlist.fm` optionally for the `setlist` command. Pushing to a Clashfinder mirror needs
-`clashfinder.password` — the CLI derives the login cookie from it locally (Clashfinder hashes
-passwords client-side, so the password never leaves your machine). If you'd rather not store it,
-put the derived cookie in `clashfinder.write.userLogin` instead and omit the password.
+([`appmiral-discovery.md`](appmiral-discovery.md)), `clashfinder` for favourites/mirror pushes
+([`clashfinder.md`](clashfinder.md)), `setlist.fm` optionally for the `setlist` command. Pushing to
+a Clashfinder mirror needs `clashfinder.password` — the CLI derives the login cookie from it locally
+(Clashfinder hashes passwords client-side, so the password never leaves your machine). If you'd
+rather not store it, put the derived cookie in `clashfinder.write.userLogin` instead and omit the
+password.
 
 Missing keys degrade the relevant command gracefully rather than crashing the CLI.
 
@@ -147,8 +151,9 @@ watch, all but the weather one silent-unless-changed; a few times an hour is typ
 schedule/announcement watches.
 
 Because those watches run inside the session rather than as their own daemon, the session has to
-stay up for them to keep ticking — `running-as-a-service.md` covers running it unattended under
-tmux + systemd, including re-invoking `/bootstrap` automatically after a restart.
+stay up for them to keep ticking — [`running-as-a-service.md`](running-as-a-service.md) covers
+running it unattended under tmux + systemd, including re-invoking `/bootstrap` automatically after a
+restart.
 
 ## 8. Verify the timezone before you trust anything — do this first, always
 
@@ -161,12 +166,12 @@ poster, anywhere you trust — and confirm the CLI reproduces it exactly.**
 ./festplan now "Fri 22:45"
 ```
 
-or grep the act directly out of `--json` output and eyeball the `start` field. If your festival
-runs `./festplan artist-info`/`schedule.json` pipeline against a feed in UTC or a different
-offset than the festival's own timezone (see `festival.json`'s `timezone` field), an off-by-one
-(or off-by-several) hour bug is trivial to introduce and **invisible in the data** — the JSON
-still parses, the times still look like times, nothing errors. It's only wrong once you check it
-against a fact you already know, and from then on it's wrong in *every* reply the bot gives about
-that festival until someone catches it. `festivals/atn26/CONTEXT.md` documents its own anchor
-(Pulp headlining ATN Main Stage, Fri 31 Jul 22:45 IST) as exactly this kind of tripwire — set one
-for your festival before you rely on any other output.
+or grep the act directly out of `--json` output and eyeball the `start` field. If your festival runs
+`./festplan artist-info`/`schedule.json` pipeline against a feed in UTC or a different offset than
+the festival's own timezone (see `festival.json`'s `timezone` field), an off-by-one (or
+off-by-several) hour bug is trivial to introduce and **invisible in the data** — the JSON still
+parses, the times still look like times, nothing errors. It's only wrong once you check it against a
+fact you already know, and from then on it's wrong in *every* reply the bot gives about that
+festival until someone catches it. [`festivals/atn26/CONTEXT.md`](../../festivals/atn26/CONTEXT.md)
+documents its own anchor (Pulp headlining ATN Main Stage, Fri 31 Jul 22:45 IST) as exactly this kind
+of tripwire — set one for your festival before you rely on any other output.

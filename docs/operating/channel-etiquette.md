@@ -1,9 +1,9 @@
 # Channel etiquette
 
 The bot's front door is a chat channel plugin (Telegram or similar) wired into the assistant
-session. This file covers the mechanical discipline of using that channel correctly — separate
-from *what* to say (see `per-user-tone.md`, `data-accuracy.md`) or *who's allowed to say it*
-(see `privacy-and-access.md`).
+session. This file covers the mechanical discipline of using that channel correctly — separate from
+*what* to say (see [`per-user-tone.md`](per-user-tone.md), [`data-accuracy.md`](data-accuracy.md))
+or *who's allowed to say it* (see [`privacy-and-access.md`](privacy-and-access.md)).
 
 ## Every user-facing message goes through the reply tool
 

@@ -37,8 +37,9 @@ now?" or "plan my Saturday", it runs the planner and replies in the chat.
 - **PNG cards** — weather and other summaries rendered as images for the chat, not just text.
 
 None of this needs a server process of its own: the watches run as long-lived polls inside a live
-Claude Code session (see `docs/operating/watches-and-alerts.md`), and everything else runs on
-demand when someone messages the bot.
+Claude Code session (see
+[`docs/operating/watches-and-alerts.md`](docs/operating/watches-and-alerts.md)), and everything else
+runs on demand when someone messages the bot.
 
 ## Keeping it up
 
@@ -50,10 +51,11 @@ it start-on-boot and restart-on-crash. A restart brings back a *cold* session, w
 only because every watch keeps its baseline on disk — so a change that lands while nothing was
 watching still fires exactly once on the next tick.
 
-`docs/setup/running-as-a-service.md` has the unit file, the start script, and the reasoning for
-each piece — including why the script blocks on a `tmux has-session` poll loop instead of just
-spawning and exiting, how to re-arm the watches after a restart, how to run two bots on one host,
-and the trust decision you're making by leaving an auto-permission agent up unattended.
+[`docs/setup/running-as-a-service.md`](docs/setup/running-as-a-service.md) has the unit file, the
+start script, and the reasoning for each piece — including why the script blocks on a
+`tmux has-session` poll loop instead of just spawning and exiting, how to re-arm the watches after
+a restart, how to run two bots on one host, and the trust decision you're making by leaving an
+auto-permission agent up unattended.
 
 ## 60-second quickstart
 
@@ -111,16 +113,17 @@ worked examples ship in this repo, each demonstrating a different lineup-source 
   fetch before the festival ended — it's kept as-is for provenance, not backfilled, so don't treat
   it as a complete lineup.
 
-Neither reference module is "the" festival this repo defaults to — that's `demofest`. They're
-there to show the two shapes a real integration takes; see `docs/setup/appmiral-discovery.md` and
-`docs/setup/scraped-lineup.md` for how each was actually built.
+Neither reference module is "the" festival this repo defaults to — that's `demofest`. They're there
+to show the two shapes a real integration takes; see
+[`docs/setup/appmiral-discovery.md`](docs/setup/appmiral-discovery.md) and
+[`docs/setup/scraped-lineup.md`](docs/setup/scraped-lineup.md) for how each was actually built.
 
 ## Docs
 
-- `docs/setup/getting-started.md` — install, run the demo, and the fork-in-the-road decision for
-  wiring up a real festival (vendor API vs. scrape).
-- `docs/setup/running-as-a-service.md` — running the session unattended under tmux + systemd, so
-  the background watches survive crashes and reboots.
+- [`docs/setup/getting-started.md`](docs/setup/getting-started.md) — install, run the demo, and the
+  fork-in-the-road decision for wiring up a real festival (vendor API vs. scrape).
+- [`docs/setup/running-as-a-service.md`](docs/setup/running-as-a-service.md) — running the session
+  unattended under tmux + systemd, so the background watches survive crashes and reboots.
 - `docs/operating/` — how the bot behaves once it's live: channel etiquette, per-user tone,
   privacy and access boundaries, watches and alerts, data-accuracy caveats.
 
@@ -130,8 +133,8 @@ there to show the two shapes a real integration takes; see `docs/setup/appmiral-
   against your own clone.
 - Not a web UI — the only interface is the chat channel.
 - Not multi-tenant — one deployment plans for one crew, one active festival at a time. Which one is
-  set by the `@festivals/<slug>/CONTEXT.md` import line in `CLAUDE.md`, so the docs the assistant
-  reads and the festival the CLI plans against can't drift apart; `ACTIVE_FESTIVAL=<slug>`
+  set by the `@festivals/<slug>/CONTEXT.md` import line in [`CLAUDE.md`](CLAUDE.md), so the docs the
+  assistant reads and the festival the CLI plans against can't drift apart; `ACTIVE_FESTIVAL=<slug>`
   overrides it for a one-off run.
 - Not an npm package — it's a repo you clone, configure, and run, not a library you `npm install`
   into something else.

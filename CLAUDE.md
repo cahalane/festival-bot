@@ -26,12 +26,18 @@ need to reason over results rather than relay prose. Highlights: `now`/`at`/`aft
 
 ## Operating docs (read on demand)
 
-- `docs/operating/channel-etiquette.md` — how replies work, tone defaults, when to ask vs. act.
-- `docs/operating/clashfinder.md` — maintaining a favourites mirror where the lineup source has none.
-- `docs/operating/data-accuracy.md` — handling live data sources, staleness, and outages.
-- `docs/operating/per-user-tone.md` — applying each person's own register.
-- `docs/operating/privacy-and-access.md` — roles, consent, and cross-person data boundaries.
-- `docs/operating/watches-and-alerts.md` — the unattended background checks and how to act on them.
+- [`docs/operating/channel-etiquette.md`](docs/operating/channel-etiquette.md) — how replies work,
+  tone defaults, when to ask vs. act.
+- [`docs/operating/clashfinder.md`](docs/operating/clashfinder.md) — maintaining a favourites mirror
+  where the lineup source has none.
+- [`docs/operating/data-accuracy.md`](docs/operating/data-accuracy.md) — handling live data sources,
+  staleness, and outages.
+- [`docs/operating/per-user-tone.md`](docs/operating/per-user-tone.md) — applying each person's own
+  register.
+- [`docs/operating/privacy-and-access.md`](docs/operating/privacy-and-access.md) — roles, consent,
+  and cross-person data boundaries.
+- [`docs/operating/watches-and-alerts.md`](docs/operating/watches-and-alerts.md) — the unattended
+  background checks and how to act on them.
 
 ## Concurrency
 

@@ -1,11 +1,12 @@
 # Scraped lineup — the no-API path
 
 When your festival has no official app / no identifiable vendor API, the lineup has to come from
-whatever public source the festival actually exposes: a GraphQL endpoint behind its site, a
-rendered page with an embedded JSON blob, a PDF timetable — whatever it is. `festivals/ps26` is
-the reference module for this path (source: `festivals/ps26/knowledge/data-source.md`, which is
-the detailed account this doc summarises — read it for the exact endpoint shapes if you're
-building against a similar site).
+whatever public source the festival actually exposes: a GraphQL endpoint behind its site, a rendered
+page with an embedded JSON blob, a PDF timetable — whatever it is. `festivals/ps26` is the reference
+module for this path (source:
+[`festivals/ps26/knowledge/data-source.md`](../../festivals/ps26/knowledge/data-source.md), which is
+the detailed account this doc summarises — read it for the exact endpoint shapes if you're building
+against a similar site).
 
 ## Where scrapes break
 

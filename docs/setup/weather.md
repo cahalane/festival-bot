@@ -44,8 +44,9 @@ work here, and conflating them is what made an earlier version cry wolf:
 
 A 0.1mm episode is therefore measured but never sent. That second bar exists because the watch once
 fired at 01:05 over a tenth of a millimetre, then fired three times in twelve hours across a day of
-light drizzle — see the drizzle story in `docs/operating/watches-and-alerts.md`. Keeping one
-definition of "how bad is this" (`rainSeverity`) rather than two is deliberate.
+light drizzle — see the drizzle story in
+[`docs/operating/watches-and-alerts.md`](../operating/watches-and-alerts.md). Keeping one definition
+of "how bad is this" (`rainSeverity`) rather than two is deliberate.
 
 Fires once per episode, re-alerting only if the episode gets materially worse (`MATERIAL_WORSE_MM`,
 1mm) — the daily-card gap this fills is weather *arriving* after the card was already written.

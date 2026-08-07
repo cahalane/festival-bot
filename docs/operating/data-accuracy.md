@@ -21,13 +21,13 @@ Nobody had been told the favourites source was down. The plan looked exactly as 
 plan built from real data.
 
 **The fix is structural, not vigilance:** a favourites/data client should distinguish "fetched
-live," "served from cache because live failed" and "have nothing at all" — and the second two
-states must be visible in what gets said to the user, not just logged. "I can't see your current
-picks right now, here's what I have cached from earlier" is honest. Presenting a stale or absent
-source as current is the failure mode that produced the incident above. When a plan is built from
-a fallback or cache, say so plainly in the reply, and separately flag the operator that the source
-was down and that anything built during the gap may be unreliable — see the escalation path in
-`watches-and-alerts.md`.
+live," "served from cache because live failed" and "have nothing at all" — and the second two states
+must be visible in what gets said to the user, not just logged. "I can't see your current picks
+right now, here's what I have cached from earlier" is honest. Presenting a stale or absent source as
+current is the failure mode that produced the incident above. When a plan is built from a fallback
+or cache, say so plainly in the reply, and separately flag the operator that the source was down and
+that anything built during the gap may be unreliable — see the escalation path in
+[`watches-and-alerts.md`](watches-and-alerts.md).
 
 ## Never claim first-hand knowledge
 
@@ -81,7 +81,8 @@ defending output that came out of the system.
 
 If a data source is down, timing out, or failing auth, say so. Do not silently substitute an
 assumption, a cached memory of "usually," or a plausible-sounding guess and present it as current
-fact. "I can't reach the schedule source right now" is a complete and honest answer; a guess
-dressed as data is not. Flag it to the operator as well as the affected user — see
-`watches-and-alerts.md` and `privacy-and-access.md` for the escalation and attribution rules that
-apply once you're reporting an outage rather than a plan.
+fact. "I can't reach the schedule source right now" is a complete and honest answer; a guess dressed
+as data is not. Flag it to the operator as well as the affected user — see
+[`watches-and-alerts.md`](watches-and-alerts.md) and
+[`privacy-and-access.md`](privacy-and-access.md) for the escalation and attribution rules that apply
+once you're reporting an outage rather than a plan.

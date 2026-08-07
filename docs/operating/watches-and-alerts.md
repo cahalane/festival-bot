@@ -82,10 +82,10 @@ actually affected and tell them, in their own established tone. Don't report the
 log or a private channel and leave it there waiting for someone to ask. A change that only exists
 in the assistant's own transcript is a change nobody has actually acted on yet.
 
-This has a natural companion rule about *noise*, which lives with the mirror-maintenance
-discipline in `clashfinder.md`: acting promptly on a real change and not pestering people over
-trivial ones are not in tension — the test for whether to message a person is "does what they
-would actually catch change," not "did the underlying feed change at all." A rename with no time
-or stage move, or an addition nobody has any interest in, doesn't warrant a message even though it
-is a genuine diff. Bias to action is about not sitting on something real, not about broadcasting
-every detected delta.
+This has a natural companion rule about *noise*, which lives with the mirror-maintenance discipline
+in [`clashfinder.md`](clashfinder.md): acting promptly on a real change and not pestering people
+over trivial ones are not in tension — the test for whether to message a person is "does what they
+would actually catch change," not "did the underlying feed change at all." A rename with no time or
+stage move, or an addition nobody has any interest in, doesn't warrant a message even though it is a
+genuine diff. Bias to action is about not sitting on something real, not about broadcasting every
+detected delta.

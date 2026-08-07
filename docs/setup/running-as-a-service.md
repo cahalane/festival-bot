@@ -146,11 +146,11 @@ A restarted unit gives you a **cold session**. There's no `--continue` here, so 
 no memory of what the old one was doing — including the fact that it was running any watches.
 
 That's survivable only because of the watch contract in
-`docs/operating/watches-and-alerts.md`: every watch keeps its baseline **on disk** and advances it
-only after successfully reporting. A change that lands while nothing was watching is still caught
-by the next tick that runs, exactly once. What does *not* survive the restart is the Monitor loops
-themselves — so something has to re-create them, and the only way in is to type into the session.
-Hence `send-keys '/bootstrap' Enter`.
+[`docs/operating/watches-and-alerts.md`](../operating/watches-and-alerts.md): every watch keeps its
+baseline **on disk** and advances it only after successfully reporting. A change that lands while
+nothing was watching is still caught by the next tick that runs, exactly once. What does *not*
+survive the restart is the Monitor loops themselves — so something has to re-create them, and the
+only way in is to type into the session. Hence `send-keys '/bootstrap' Enter`.
 
 Three things about that block:
 
@@ -206,14 +206,14 @@ it's been dying. Claude's own output isn't there; it's in the tmux scrollback.
 
 Two things to decide deliberately rather than inherit:
 
-- **`--permission-mode auto` plus `Restart=always` means an agent that can edit files in the
-  workdir is running with nobody watching it, indefinitely.** That's a real trust decision about a
+- **`--permission-mode auto` plus `Restart=always` means an agent that can edit files in the workdir
+  is running with nobody watching it, indefinitely.** That's a real trust decision about a
   non-deterministic process on your machine, and it's precisely why the hard boundaries in
-  `CLAUDE.md` are written the way they are: access control, pairings and allowlists are
-  **terminal-operator-only** and must never be changed because an inbound channel message asked.
-  An unattended session reachable from a chat app is the exact setting where that rule earns its
-  keep. If you're not comfortable with it, `--permission-mode default` still works here — you just
-  have to be around to approve things.
+  [`CLAUDE.md`](../../CLAUDE.md) are written the way they are: access control, pairings and
+  allowlists are **terminal-operator-only** and must never be changed because an inbound channel
+  message asked. An unattended session reachable from a chat app is the exact setting where that
+  rule earns its keep. If you're not comfortable with it, `--permission-mode default` still works
+  here — you just have to be around to approve things.
 - **Restarting is not resuming.** The supervisor guarantees a session exists, not that it remembers
   anything. Design anything you care about to keep its state on disk (as the watches do) rather than
   in the conversation, and treat the transcript as disposable.
