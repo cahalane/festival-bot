@@ -254,10 +254,8 @@ export function buildClashfinderPushBody(f: ClashfinderPushFields): string {
 }
 
 export interface ClashfinderWriteCreds {
-  /** Durable login token cookie ("user,token"). */
+  /** Durable login token cookie ("user,token") — the whole of the write auth. */
   userLogin: string;
-  /** Volatile session cookie; omit to let userLogin alone authenticate. */
-  phpsessid?: string;
 }
 
 export interface ClashfinderPushResult {
@@ -282,8 +280,8 @@ type FetchLike = (
 
 /**
  * Push setup text to a Clashfinder event via the editor save endpoint. Auth is the
- * operator's login cookies (NOT the read API key). Detects a stale session (login
- * wall) so the caller can refresh credentials rather than silently no-op.
+ * operator's `userLogin` cookie alone (NOT the read API key). Detects a login wall
+ * so the caller can refresh credentials rather than silently no-op.
  */
 export async function pushClashfinder(
   event: string,
@@ -293,9 +291,7 @@ export async function pushClashfinder(
 ): Promise<ClashfinderPushResult> {
   const fetchImpl: FetchLike =
     opts.fetchImpl ?? ((url, init) => fetch(url, init) as unknown as Promise<FetchResponseLike>);
-  const cookie = [`userLogin=${creds.userLogin}`, creds.phpsessid ? `PHPSESSID=${creds.phpsessid}` : ""]
-    .filter(Boolean)
-    .join("; ");
+  const cookie = `userLogin=${creds.userLogin}`;
   const url = `https://clashfinder.com/s/${encodeURIComponent(event)}/?edit`;
   const res = await fetchImpl(url, {
     method: "POST",

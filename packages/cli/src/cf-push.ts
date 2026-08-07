@@ -144,7 +144,7 @@ export async function runCfPush(rt: Runtime, tz: string, args: string[]): Promis
     const res = await pushClashfinder(
       event,
       { ...buildFields(mbids, blurbs), desc: m.name, revNote },
-      { userLogin, phpsessid: cf?.write?.phpsessid },
+      { userLogin },
     );
     if (res.ok) {
       log(`  pushed ${sets.length} acts (${mbids.size} mbids, ${blurbs.size} blurbs) -> clashfinder.com/s/${event} [${revNote}]`);

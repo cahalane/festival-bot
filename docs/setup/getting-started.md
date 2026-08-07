@@ -115,8 +115,7 @@ All four are gitignored. The `*.example.*` files are the committed templates.
 
 ```json
 {
-  "clashfinder": { "authUsername": "...", "authPublicKey": "...", "password": "...",
-                    "write": { "userLogin": "...", "phpsessid": "..." } },
+  "clashfinder": { "authUsername": "...", "authPublicKey": "...", "password": "..." },
   "appmiral": { "xProtect": "..." },
   "setlist.fm": { "apiKey": "..." }
 }
@@ -124,8 +123,12 @@ All four are gitignored. The `*.example.*` files are the committed templates.
 
 Only fill in what your festival's path needs: `appmiral` for the vendor-API path
 (`appmiral-discovery.md`), `clashfinder` for favourites/mirror pushes (`clashfinder.md`),
-`setlist.fm` optionally for the `setlist` command. Missing keys degrade the relevant command
-gracefully rather than crashing the CLI.
+`setlist.fm` optionally for the `setlist` command. Pushing to a Clashfinder mirror needs
+`clashfinder.password` — the CLI derives the login cookie from it locally (Clashfinder hashes
+passwords client-side, so the password never leaves your machine). If you'd rather not store it,
+put the derived cookie in `clashfinder.write.userLogin` instead and omit the password.
+
+Missing keys degrade the relevant command gracefully rather than crashing the CLI.
 
 ## 7. Arm the background watches
 

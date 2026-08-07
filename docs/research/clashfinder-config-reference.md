@@ -49,5 +49,5 @@ The editor POST (`/s/<event>/?edit`) splits the setup text into two textareas:
 - **`input1`** = the `act = {...}` lines (`\r\n`-separated).
 
 Plus metadata fields: `user=`, `revNote=<note>`, `entData=Update`, and `cinfo-*` (desc, private=0,
-whoCanEdit=anyone, whoCanTag=anyone, autoMbIdTagging=1, …, xlSetup=<default>). Auth is via login
-cookies. See `clashfinder-export.md` for the push recipe.
+whoCanEdit=anyone, whoCanTag=anyone, autoMbIdTagging=1, …, xlSetup=<default>). Auth is the single
+`userLogin` login cookie. See `clashfinder-export.md` for the push recipe.

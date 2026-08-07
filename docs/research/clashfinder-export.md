@@ -57,8 +57,8 @@ festival timezone. Optional keys supported: `artist`, `blurb`, `url`, `estd`, `m
 
 ## Push mechanism (BUILT 2026-06-18 — from a captured editor-save request)
 **Live-verified 2026-06-19** against the Clashfinder **`/test` sandbox**: a push returned HTTP 200
-(no login redirect) and a follow-up read confirmed the acts landed — authenticating with
-**`userLogin` alone** (no `PHPSESSID`). Use `/test` for any future write testing.
+(no login redirect) and a follow-up read confirmed the acts landed. Use `/test` for any future
+write testing.
 
 The CF editor saves via a form POST; it IS scriptable. Implemented as `pushClashfinder()` +
 `toClashfinderFields()`/`buildClashfinderPushBody()` (adapters) and the **`festplan cf-push
@@ -67,10 +67,9 @@ manual paste.
 
 - **Request:** `POST https://clashfinder.com/s/<event>/?edit`, `Content-Type:
   application/x-www-form-urlencoded`.
-- **Auth = login COOKIES, not the read API key:** `userLogin` (durable login token) + `PHPSESSID`
-  (volatile session). Stored gitignored in `config/secrets.json` → `clashfinder.write.{userLogin,
-  phpsessid}`. If a write 401s / redirects to login, refresh those from a fresh browser session.
-  (The read API key / `privateKey` is unrelated to editor saves — confirmed against a live push.)
+- **Auth = one login COOKIE, not the read API key:** `userLogin`, the durable login token, is the
+  whole of it — see "Auth" below. (The read API key / `privateKey` is unrelated to editor saves —
+  confirmed against a live push.)
 - **Body fields:**
   - `input0` — the **setup directives** block: `maintitle`, `timezone`, `dateFormat`,
     `printAdvisory`, `footer` (×N), `daychangeover`, `lpRevisions`, `lpComments`.
@@ -85,21 +84,18 @@ manual paste.
   session** (login-wall heuristic). Self-throttle: push only on real timetable changes; `--note`
   bumps the revision label.
 
-## Session refresh plan (PHPSESSID expiry)
-`pushClashfinder` flags `staleSession` when the save response looks like a login wall, so a push
-never silently no-ops. Refresh ladder, cheapest first:
+## Auth (settled 2026-06-19)
+A write authenticates with **one cookie, `userLogin`** — nothing else. There is no session to keep
+alive and no expiry to plan around.
 
-1. **Rely on `userLogin` alone.** It's the durable "remember me" token; `PHPSESSID` is volatile.
-   `pushClashfinder` sends `PHPSESSID` only if present, so the first thing to try is dropping it and
-   letting `userLogin` authenticate (CF should mint a fresh session). If that holds, expiry is a
-   non-issue until `userLogin` itself rotates. **(To verify on the first live test.)**
-2. **Manual cookie refresh.** On a `staleSession`, copy fresh `userLogin`/`PHPSESSID` from a
-   logged-in browser into `config/secrets.json` → `clashfinder.write`. Documented in the CLI's
-   stale-session message.
-3. **Local re-login from the password — DONE 2026-06-19.** Clashfinder hashes the password
-   *client-side* and never sends it: the login is just the cookie `userLogin = <user>,sha1(<user> +
-   <password>)`, validated server-side via `/utils/checkHash.php`. So there's **no login request to
-   replay** — `clashfinderUserLogin(user, password)` (adapters) mints the token with one SHA-1, and
-   `cf-push` derives it from `clashfinder.password` (gitignored) automatically, preferring it over a
-   stored `write.userLogin`. The cookie is a 10-year token, so this only needs recomputing if the
-   password changes. (Verified: the derived token reproduces the captured working `userLogin` exactly.)
+Clashfinder hashes the password *client-side* and never sends it: the login is just the cookie
+`userLogin = <user>,sha1(<user> + <password>)`, validated server-side via `/utils/checkHash.php`.
+So there's **no login request to replay** — `clashfinderUserLogin(user, password)` (adapters) mints
+the token with one SHA-1, and `cf-push` derives it from `clashfinder.password` in gitignored
+`config/secrets.json` automatically, preferring it over a stored `write.userLogin`. It's a 10-year
+token, so it only changes when the password does. (Verified: the derived token reproduces the
+captured working `userLogin` exactly, and a live push authenticated with it alone.)
+
+`pushClashfinder` still flags `staleSession` when a save response looks like a login wall, so a
+push never silently no-ops — the fix is to correct `clashfinder.password` (or `write.userLogin`),
+not to refresh a session.

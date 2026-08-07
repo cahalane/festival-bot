@@ -13,7 +13,7 @@ export interface Secrets {
     privateKey?: string;
     /** Account password — used to derive the login cookie locally (sha1). */
     password?: string;
-    write?: { userLogin?: string; phpsessid?: string };
+    write?: { userLogin?: string };
   };
   appmiral?: { xProtect: string };
   "setlist.fm"?: { apiKey: string };

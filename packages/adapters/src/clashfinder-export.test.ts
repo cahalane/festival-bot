@@ -211,12 +211,12 @@ describe("buildClashfinderPushBody", () => {
 });
 
 describe("pushClashfinder", () => {
-  test("POSTs the form body to the edit endpoint with login cookies", async () => {
+  test("POSTs the form body to the edit endpoint with the login cookie", async () => {
     let captured: { url: string; init: any } | undefined;
     const res = await pushClashfinder(
       "myevent",
       { input0: "maintitle = X", input1: "act = {}", desc: "My Event", revNote: "r1" },
-      { userLogin: "alex-cf,tok", phpsessid: "sess" },
+      { userLogin: "alex-cf,tok" },
       {
         fetchImpl: async (url: string, init: any) => {
           captured = { url, init };
@@ -227,8 +227,8 @@ describe("pushClashfinder", () => {
     expect(captured!.url).toBe("https://clashfinder.com/s/myevent/?edit");
     expect(captured!.init.method).toBe("POST");
     expect(String(captured!.init.headers["Content-Type"])).toContain("x-www-form-urlencoded");
-    expect(String(captured!.init.headers["Cookie"])).toContain("userLogin=alex-cf,tok");
-    expect(String(captured!.init.headers["Cookie"])).toContain("PHPSESSID=sess");
+    // userLogin is the whole of the write auth — no session cookie is sent.
+    expect(String(captured!.init.headers["Cookie"])).toBe("userLogin=alex-cf,tok");
     expect(new URLSearchParams(captured!.init.body).get("entData")).toBe("Update");
     expect(res.ok).toBe(true);
   });
