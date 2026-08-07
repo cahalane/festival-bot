@@ -61,7 +61,8 @@ export async function runCfPush(rt: Runtime, tz: string, args: string[]): Promis
   );
   const pushArgs = noteFlag.rest;
   const event = pushArgs[0];
-  if (!event) return void log('usage: cf-push <cf-event-slug> [--note "..."] [--no-mbid]');
+  if (!event)
+    return void log('usage: cf-push <cf-event-slug> [--note "..."] [--no-mbid] [--accept-remote]');
   const cf = loadSecrets().clashfinder;
   // Prefer deriving the login from the password (always fresh); fall back to a
   // stored userLogin token.

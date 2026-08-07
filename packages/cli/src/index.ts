@@ -85,8 +85,8 @@ const USAGE = `festplan (festival: ${ACTIVE_FESTIVAL})
   myday <cf-user> <day> [--favs "A, B"] [--since "Fri 16:15"] [--cap "Cypher=60"] [--png FILE]
   remind "<artist>" [lead_min]
   clashfinder                                 emit Clashfinder setup text for the lineup
-  cf-push <cf-event> [--note "..."] [--no-mbid]  push the lineup to a Clashfinder event (needs secrets)
-  setlist "<artist>" [--limit N]              recent setlists for an artist (via setlist.fm)
+  cf-push <cf-event> [--note "..."] [--no-mbid] [--accept-remote]  push the lineup to a Clashfinder event (needs secrets; --accept-remote overrides a foreign-edit hold)
+  setlist "<artist>" [--limit N] [--mbid <id>]  recent setlists for an artist (via setlist.fm; --mbid skips name resolution)
   reminders add|list|pending|due|fired|rm|next   reminder queue (wake-loop surface)
   events add|list|rm                          personal (non-lineup) fixed events (add --soft for an annotation-only one); myday routes around mandatory ones, always shows soft ones
   weather [--days N] [--png FILE]              forecast over the festival window (--png = shareable card)
@@ -109,7 +109,7 @@ const USAGE = `festplan (festival: ${ACTIVE_FESTIVAL})
   amenities [--json]                          nearest amenity (toilets/water/food/bars/...) per stage, from the cached map
   walk-refine [--commit]                      recompute venues.json walk-graph edges from real map coordinates
 
-  --json on now/at/after/myday/setlist/remind/vibecheck/schedule-watch/announcements/reminders/artist-info/favs/amenities/weather for machine-readable output`;
+  --json on active-festival/now/at/after/myday/setlist/remind/vibecheck/schedule-watch/announcements/reminders/events/page/fetch-lineup/artist-info/favs/amenities/weather for machine-readable output`;
 
 function takeFlag(args: string[], flag: string): { value?: string; rest: string[] } {
   const i = args.indexOf(flag);
