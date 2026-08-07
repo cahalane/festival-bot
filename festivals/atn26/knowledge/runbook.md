@@ -20,15 +20,17 @@
   minutes. Always serve from the bundled snapshot / disk cache; refetch sparingly.
 
 ## What's bundled now (flipped to 2026 on 2026-07-10)
-- `schedule.json` = the **published `alltogethernow2026`** snapshot (763 artist records / 364
-  performances / 16 stages). `festival.json` `days` = the 2026 dates (Thu 30 Jul → Sun 2 Aug),
-  verified against the snapshot with the 06:00 cutoff (Thu 19 / Fri 100 / Sat 122 / Sun 119).
+- `schedule.json` = the **published `alltogethernow2026`** snapshot: 864 records, 466 artist records
+  carrying 506 performances, which the planner resolves to **486 sets across 23 stages** (479 from
+  the feed + 7 from `extra-sets.json`). `festival.json` `days` = the 2026 dates (Thu 30 Jul → Sun 2
+  Aug), verified against the snapshot with the 06:00 cutoff (Thu 20 / Fri 139 / Sat 170 / Sun 157).
   `venues.json` venue list regenerated from the 2026 stages.
-- `venues.json` walk graph is **still a placeholder** (uniform `defaultMinutes` 12); Curraghmore site
-  geography is not yet modelled → `myday` route *timings* aren't ground truth. Build real edges from
-  the site map before trusting travel-sensitive routing.
-- A read-only Clashfinder schedule mirror is published at `clashfinder.com/s/atn2026`
-  (`./festplan cf-push atn2026`).
+- `venues.json` walk graph is **derived, not a placeholder** — 247 of 253 possible edges, anchored
+  to the site map (see `walk-graph.md` for method and provenance). `defaultMinutes` (12) now only
+  covers the 6 missing pairs. Edge minutes are still map-derived estimates rather than on-site path
+  timings — they ignore the lake — so refine from on-site experience if a timing looks off.
+- A Clashfinder schedule mirror we own is published at `clashfinder.com/s/atn2026`
+  (`./festplan cf-push atn2026`) — we are the only ones who should write its timetable.
 
 ## Flip checklist — when the 2026 edition publishes
 1. Confirm the edition slug resolves (probe `…/editions/alltogethernow2026/stages` → 200, not 401).

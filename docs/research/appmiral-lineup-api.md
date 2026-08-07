@@ -12,8 +12,10 @@ reasonable deduction, not directly confirmed; **[UNKNOWN]** = could not determin
 ## ✅ 2026 EDITION LIVE + TOKEN ROTATED 2026-07-10 (app v6.0.0)
 
 > The `alltogethernow2026` edition published its full timetable. Flipped the module to it on
-> 2026-07-10 (`ATN_EDITION` in `festivals/atn26/src/index.ts`, `schedule.json` refetched: 763 artist
-> records / 364 performances / 16 stages, sets 30 Jul 18:00 → 03 Aug 02:00 IST).
+> 2026-07-10 (`ATN_EDITION` in `festivals/atn26/src/index.ts`). The snapshot committed today holds
+> 864 records — 466 artist records carrying 506 performances across 23 stages, sets 30 Jul 18:00 →
+> 03 Aug 02:00 IST. (Stage count grew through the run-up as the edition published more; earlier
+> notes in this repo cite the 16- and 20-stage intermediate states.)
 
 - **The `x-protect` token ROTATED with app v6.0.0.** The old token
   (`<redacted — extract your own, see docs/setup/appmiral-discovery.md>`, from v5.0.1) now

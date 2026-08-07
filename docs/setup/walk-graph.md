@@ -1,7 +1,8 @@
 # Walk graph — inter-stage travel time
 
-`festivals/<slug>/venues.json` carries an all-pairs walk graph: minutes between every pair of
-stages. `packages/core`'s clash/route logic uses it directly — two sets are only reachable
+`festivals/<slug>/venues.json` carries the walk graph: minutes between pairs of stages. It need not
+be all-pairs — any pair with no edge falls back to `walk.defaultMinutes`, so a sparse graph covering
+the hops that matter is a legitimate design (`ps26` does exactly that; `atn26` is near-complete). `packages/core`'s clash/route logic uses it directly — two sets are only reachable
 back-to-back if the gap between them is at least the walk time, and `myday` routes over these
 edges — so **an edge that's wrong makes a routing decision wrong**, silently (a bad recommendation
 looks exactly like a good one). Getting this graph right is worth the setup time.

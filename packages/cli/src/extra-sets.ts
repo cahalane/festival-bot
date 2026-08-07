@@ -9,8 +9,10 @@
  *
  * These live in the festival module rather than in `schedule.json` on purpose.
  * The snapshot must keep matching the live feed exactly or `schedule-tick` reports
- * a phantom ADD on every run; this list is merged in at the point of USE (the
- * Clashfinder push) and nowhere else.
+ * a phantom ADD on every run; this list is merged in at LOAD time instead
+ * (`runtime.ts`), so every command sees these sets while `schedule.json` stays
+ * untouched. Merging only at the push would leave the mirror showing a set the
+ * planner refuses to plan — see the split-brain note in `runtime.ts`.
  *
  * Every entry must carry a `note` saying where its times came from. The FTIL
  * times were recovered from the 2026-07-10 snapshot committed fifteen minutes

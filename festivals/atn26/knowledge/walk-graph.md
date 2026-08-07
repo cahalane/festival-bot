@@ -1,12 +1,23 @@
 # ATN26 walk graph — provenance & derivation
 
 Provenance for the inter-stage walk graph in `festivals/atn26/venues.json` (the `walk.edges`
-all-pairs list). The `_note` in `venues.json` itself is kept to a one-line current-state summary;
+list). The `_note` in `venues.json` itself carries the venue-ORDER warning;
 the history and method live here.
 
 ## Current state
+- **As committed today, `venues.json` holds 23 stages and 247 edges.** 6 of the 253 possible pairs
+  are absent and fall back to `defaultMinutes` (12): All Curious Minds↔Global Roots Cambium,
+  All Curious Minds↔Lover's Rock, Global Roots Cambium↔Heineken Garden, Global Roots
+  Cambium↔Seanchoíche, Heineken Garden↔Lover's Rock, Lover's Rock↔Seanchoíche.
+- ⚠️ **That is three stages more than the 2026-07-28 rebuild below produced**, and this file does
+  not record where the extra three came from. So the "no mixed provenance left" claim no longer
+  holds: most edges trace to the rebuild, but the newest stages don't have a documented derivation.
+  Re-derive the whole graph (or document the addition) before treating it as uniform.
+- The Arcadia↔Main calibration anchor still holds: it remains the longest edge at **14 min**.
+
+## The 2026-07-28 rebuild — the method most edges still come from
 - **Rebuilt from the OFFICIAL 2026 site map (2026-07-28).** 20 stages, all-pairs graph
-  (**190 edges**), every edge derived the same way — no mixed provenance left.
+  (**190 edges**), every edge derived the same way.
 - **The 2026 map is an IMAGE, not geodata.** ATN published it as `static_map_image` on the
   edition object (750/1500/3000px JPEGs on media.appmiral.com) with a `Map` menu item pointing at
   `appmiral-alltogethernow://staticmap`. Both are server-side config, which is why a map tab

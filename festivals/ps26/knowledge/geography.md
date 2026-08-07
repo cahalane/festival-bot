@@ -2,11 +2,16 @@
 
 **Provenance:** stage clusters and walk-times below were read off the festival's official
 arena map (Parc del Fòrum) and cross-checked against on-the-ground reports. The derived walk
-graph — `../venues.json` (stage list + all-pairs edges in minutes) — is what ships in this
+graph — `../venues.json` (stage list + edges in minutes) — is what ships in this
 module, because it's ours: measurements and estimates, not artwork. The source map itself is
 the festival's own artwork and is **not redistributed** here; when a fresh official map is
 available, re-derive the edges from it the same way. This doc is the human narrative behind
 the numbers in `venues.json`.
+
+The graph is deliberately **sparse, not all-pairs**: 27 explicit edges across 18 stages, covering
+the cluster-to-cluster hops that matter. Every other pair falls back to `walk.defaultMinutes` (20),
+which is a deliberately pessimistic full-traverse figure — so an unlisted pair routes conservatively
+rather than optimistically. Add an explicit edge for any pair where 20 min is badly wrong.
 
 Crews often coin their own shorthand for a far-flung stage cluster (this one had a name for
 the long seaside walk out to the mains) — that kind of local vocabulary belongs in a

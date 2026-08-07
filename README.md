@@ -12,7 +12,9 @@ now?" or "plan my Saturday", it runs the planner and replies in the chat.
 - **Per-person favourites and day plans** — each crew member gets their own tiered favourites
   (`myday`, `vibecheck`) resolved either from Clashfinder or a manual list.
 - **Clashfinder mirroring** — for festivals with no public per-user favourites feature, the bot can
-  publish and maintain a read-only Clashfinder mirror the crew stars acts on instead.
+  publish and maintain a Clashfinder mirror of the lineup that the crew stars acts on instead. The
+  bot is the only thing that *writes* the timetable, and it refuses to overwrite a hand edit it
+  didn't make.
 - **Background watches** — lineup changes, festival news/announcement feeds, weather, and (where
   the vendor exposes one) info-page updates, all polled quietly and only surfaced when something
   actually changes.
@@ -94,8 +96,10 @@ there to show the two shapes a real integration takes; see `docs/setup/appmiral-
 - Not a hosted service — there's no backend to sign up for; you run your own Claude Code session
   against your own clone.
 - Not a web UI — the only interface is the chat channel.
-- Not multi-tenant — one deployment plans for one crew, one active festival at a time
-  (`ACTIVE_FESTIVAL` picks it; see `CLAUDE.md`).
+- Not multi-tenant — one deployment plans for one crew, one active festival at a time. Which one is
+  set by the `@festivals/<slug>/CONTEXT.md` import line in `CLAUDE.md`, so the docs the assistant
+  reads and the festival the CLI plans against can't drift apart; `ACTIVE_FESTIVAL=<slug>`
+  overrides it for a one-off run.
 - Not an npm package — it's a repo you clone, configure, and run, not a library you `npm install`
   into something else.
 

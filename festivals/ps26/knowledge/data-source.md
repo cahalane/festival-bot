@@ -12,7 +12,7 @@ The lineup lives in the module as `festivals/ps26/schedule.json`, parsed by the 
 **Two events on the SAME endpoint/query, different `name`:** Fòrum = `primavera-sound-2026-barcelona`
 (Parc del Fòrum lineup → `schedule.json`); `--ciutat` = `primavera-ciutat-2026-barcelona`
 (Primavera a la Ciutat — off-site city venues, SEPARATE ticket → `festivals/ps26/ciutat.json`,
-tracked but NOT auto-planned; programme in `knowledge/2026/city-program.md`). The fetch **guards
+tracked but NOT auto-planned; programme in `2026/city-program.md`). The fetch **guards
 against post-festival pruning**: if the live feed returns fewer sets than the snapshot it won't
 overwrite (writes a `.fetched.json` sidecar unless `--force`).
 
@@ -34,7 +34,7 @@ Key fields:
 Stages (slug → name): estrella-damm, revolut, occident, cupra, schwarzkopf, port,
 warehouse (The Levi's Warehouse), plenitude, auditori-rockdelux, pulse-cupra,
 aperol-island-of-joy (Aperol Island of Joy), parc-del-forum (the venue itself, `position: 9999`).
-(2026 late-added stages in `knowledge/2026/stages.md`; walk graph in `../venues.json`.)
+(2026 late-added stages in `2026/stages.md`; walk graph in `../venues.json`.)
 
 ### Per-artist set detail — `getArtistSetsByArtist`
 variables `{"artist":"<slug>","eventSlugName":null,"maxPast":100,"maxFuture":100}`. Returns

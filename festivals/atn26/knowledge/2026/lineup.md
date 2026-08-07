@@ -1,7 +1,8 @@
 # ATN 2026 — announced lineup (names only)
 
 > **⚠️ SUPERSEDED 2026-07-10.** The Appmiral `alltogethernow2026` edition has since **published its
-> full timetable**; `schedule.json` now carries real set times + stages (364 performances / 16 stages)
+> full timetable**; `schedule.json` now carries real set times + stages (506 performances / 23
+> stages; the planner resolves 486 sets)
 > and `now`/`at`/`after`/`myday` run on it. **Use `./festplan` as the source of truth for who plays
 > when.** This file is kept for provenance and to spot any act the app feed omits vs the public
 > announcement — its stage groupings are the *announced* ones, which don't always match the app's

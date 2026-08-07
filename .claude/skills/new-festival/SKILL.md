@@ -73,8 +73,12 @@ Fill in `festivals/<slug>/festival.json` (copied from the template, all fields c
 - `dayCutoffHour` — the hour after the last act ends, so post-midnight sets group with the right
   evening rather than rolling into the next day.
 - `days` — the festival's actual dates.
-- `coordinates` — real lat/lon. This is what enables the weather source (`createWeatherSource`);
-  leaving it `{0,0}` silently means no weather for this festival, not an error.
+- `coordinates` — real lat/lon. This is what enables the weather source (`createWeatherSource`).
+  The gate is `if (manifest.coordinates)` — **presence of the field, not whether it's sensible** —
+  so the template's placeholder `{0.0, 0.0}` does *not* disable weather: it wires a live forecast
+  for Null Island in the Atlantic and reports it as your festival's weather. Either put in real
+  coordinates or delete the field outright (as `demofest` does, to stay offline). A wrong-but-
+  confident forecast is worse than none.
 
 Fill in `festivals/<slug>/venues.json`'s `venues` list with the real stage names (walk graph comes
 in Step 7 — don't hand-guess edges here, the template's example edges are placeholders).

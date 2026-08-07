@@ -38,7 +38,9 @@ overwrite the snapshot with a smaller post-festival pull (see `knowledge/data-so
   Ecco2k 04:35, JVB 00:25 — all Sun-dated) belong to **Saturday night, NOT Primavera Bits** (Bits
   is Sunday daytime/evening proper). So a `myday … Sun` can show "no favourites" — their Sat night
   is filed under Sat.
-- **Scale:** 175 artists (1 set each), 11 venues. Site layout + walk times in `knowledge/geography.md`.
+- **Scale:** 175 artists (1 set each) in the full lineup, **18 venues** in `venues.json` — all 18
+  appear in the 73-set partial snapshot. `limitedCapacity`: `auditori-rockdelux`, `warehouse`,
+  `levis-501-club`. Site layout + walk times in `knowledge/geography.md`.
 - **TZ sanity anchor:** **Cameron Winter** = Thu 2026-06-04 **17:00 CEST**, Auditori Rockdelux, 60
   min. If a conversion doesn't reproduce this, the TZ math is wrong. (Cameron Winter is absent from
   the partial snapshot — it's a *math* check against full data.)

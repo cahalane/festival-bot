@@ -32,12 +32,23 @@ gap is deliberate, and it's exactly what the two watches below cover.
 ## The rain watch (`rain-tick`)
 
 Unattended, silent unless rain is imminent or an already-flagged episode gets worse. Looks
-`RAIN_LOOKAHEAD_HOURS` (6) hours ahead for a contiguous run of wet hours, where "wet" requires
-**actual millimetres**, not just a raised probability — a hard floor of 0.1mm per hour. A 60%
-chance of 0.0mm is a cloudy afternoon, not rain; alerting on probability alone would cry wolf
-through an entire dry weekend and train everyone to ignore the watch. Fires once per episode,
-re-alerting only if the episode gets materially worse — the daily-card gap this fills is weather
-*arriving* after the card was already written for the day.
+`RAIN_LOOKAHEAD_HOURS` (6) hours ahead for a contiguous run of wet hours. Two separate bars are at
+work here, and conflating them is what made an earlier version cry wolf:
+
+- **What counts as a wet hour** (`WET_HOUR_MM`, 0.1mm) — used only to measure how far an episode
+  extends. It requires **actual millimetres**, not just a raised probability: a 60% chance of 0.0mm
+  is a cloudy afternoon, not rain.
+- **Whether the episode is worth telling anyone about** (`alertWorthy`) — this defers to
+  `rainSeverity`, so **drizzle never alerts**; only `rain` (peak ≥1mm or total ≥2mm) or `downpour`
+  (peak ≥4mm or total ≥8mm) do.
+
+A 0.1mm episode is therefore measured but never sent. That second bar exists because the watch once
+fired at 01:05 over a tenth of a millimetre, then fired three times in twelve hours across a day of
+light drizzle — see the drizzle story in `docs/operating/watches-and-alerts.md`. Keeping one
+definition of "how bad is this" (`rainSeverity`) rather than two is deliberate.
+
+Fires once per episode, re-alerting only if the episode gets materially worse (`MATERIAL_WORSE_MM`,
+1mm) — the daily-card gap this fills is weather *arriving* after the card was already written.
 
 ## The cold watch (`cold-tick`)
 
