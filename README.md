@@ -1,3 +1,19 @@
+# A note from the author
+
+⚠️ Danger: slop here.
+
+This project was an experiment in trying out Claude Code's channels feature. All of the code and documentation in this repository was written by Claude Code. This note is the single exception. I've done my best to have agents sweep through this repo to rip out some personal data (such as which user enjoyed having the bot talk to them in Toronto slang — you know who you are) and to make it accessible and applicable for a wide variety of use cases. Maybe you don't want the bot stuff and you just want something that can write to or rip Clashfinder, maybe you want to manage a mirror of a festival that manages Appmiral - that's all fine. I'm bundling everything together here so that others can figure out if there's something of value here.
+
+I have an employer that pays for my Claude Code subscription. I don't recommend using this outside of a subscription plan; over the lead-in to and duration of All Together Now this year, it ran up almost a thousand dollars at API pricing. That's why I went the Claude route rather than trying to make this work with something like OpenClaw or Hermes. 
+
+But with that said, I think this is fun. When the rain started bucketing down at Primavera Sound and sets started getting cancelled left and right, while my phone signal really began to suffer, having active monitors that kept me updated on the status of various stages and helped me keep planning without having to wait for web pages or the festival app to load was a game-changer.
+
+Some people have asked if I would ever think about turning this into a product, selling it to festivals, or whatever. I just don't think the cost/benefit analysis works out right now, but if you're someone who wants to combine this with some existing infrastructure, try out turning it into a proper agent, etc. - please get in touch. I'd love to share ideas, lessons learned etc. and work on it. I think a proper, secured version of this that isn't just a Claude Code scaffold could be a unique VIP perk for some festivals to offer.
+
+This tool works best with an Opus model on low effort during festivals, and a higher level of effort while doing pre-festival analysis. I use Auto mode for permissions in order to allow it to write code for some basic tasks, and I run it in a tmux session as a daemon so that it automatically resumes.
+
+I will revisit this project next year to hopefully add more app-native features from the Primavera Sound side.
+
 # festival-bot
 
 A festival schedule-planning bot for a group of friends, run through [Claude Code](https://claude.com/claude-code).
