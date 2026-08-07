@@ -7,20 +7,24 @@ This project reads a user's starred acts to build personalised plans (`myday`, `
 
 ## Two topologies — know which one your festival is
 
-- **Festival-run event** (`festivals/ps26`'s model). The festival itself operates a public
-  Clashfinder event; your crew star acts on the festival's own event, and this project only
-  *reads* their highlights (`clashfinder.com/data/event/<event>.json`, authed with your own
-  Clashfinder API key — see `config/secrets.json`'s `clashfinder.authUsername`/`authPublicKey`).
-  You never push anything here.
-- **Mirror you publish** (`festivals/atn26`'s model), used when the festival has **no** public
-  favourites mechanism of its own (Appmiral has nothing equivalent). This deployment creates and
-  owns a Clashfinder event as a *mirror* of the vendor lineup — `cf-push` writes the schedule to
-  it — and the crew star acts on that mirror instead. Reads and writes both go through your
-  operator credentials.
+The axis that matters is **who owns the event** — not who runs the festival.
+
+- **Someone else's event** (`festivals/ps26`'s model). A public Clashfinder event for the festival
+  already exists and this deployment doesn't own it. Anyone can create one, so this is often *not*
+  the festival: PS26's event is maintained by an independent Clashfinder user, with no official
+  standing. Your crew star acts on that event, and this project only *reads* their highlights
+  (`clashfinder.com/data/event/<event>.json`, authed with your own Clashfinder API key — see
+  `config/secrets.json`'s `clashfinder.authUsername`/`authPublicKey`). You never push here: it
+  isn't yours to overwrite, and whoever does own it can change or abandon it without telling you.
+- **Mirror you publish** (`festivals/atn26`'s model), used when no event worth starring on exists
+  and the festival has no favourites mechanism of its own (Appmiral has nothing equivalent). This
+  deployment creates and owns a Clashfinder event as a *mirror* of the vendor lineup — `cf-push`
+  writes the schedule to it — and the crew star acts on that mirror instead. Reads and writes both
+  go through your operator credentials.
 
 Check which topology your festival wires up before assuming either behaviour — it is the event id
 handed to `createClashfinderFavouritesSource` in that module's `src/index.ts`. Both topologies read
-the same way; only the mirror topology ever writes.
+the same way; only an event you own should ever be written to.
 
 ## Reading favourites (both topologies)
 

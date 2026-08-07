@@ -46,9 +46,10 @@ into two paths, each with a working reference module in this repo:
   covered there, and the platform behind a large share of festival apps, but if your festival's
   app is built on something else, the same "find the API behind the app" method still applies.
 - **No app, or no identifiable vendor API** → the scrape path. `festivals/ps26` is the reference
-  module: no API, a scraped-and-snapshotted lineup, and favourites from a Clashfinder event **the
-  festival itself runs** (the opposite topology from ATN's mirror — see `clashfinder.md` for the
-  distinction). Follow `scraped-lineup.md`.
+  module: no API, a scraped-and-snapshotted lineup, and favourites read from **an existing
+  Clashfinder event this deployment doesn't own** (for PS26, one an independent user runs — the
+  opposite topology from ATN's mirror; see `clashfinder.md` for the distinction). Follow
+  `scraped-lineup.md`.
 
 Start from `festivals/_template`, a skeleton with the files in place and the decisions marked
 `CHANGEME`. Copy it to `festivals/<your-slug>/` and rename `package.json.template` to

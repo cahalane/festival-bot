@@ -192,8 +192,10 @@ to miss by skimming the JSON.
 This is a real fork, not a formality — ask the operator explicitly which applies
 (`docs/setup/clashfinder.md` has the full distinction):
 
-- **The festival already runs a public Clashfinder event.** Use its event id directly, read-only
-  — this deployment never writes to it. (`festivals/ps26`'s model.)
+- **A public Clashfinder event already exists that someone else owns.** Anyone can create one, so
+  check who actually runs it — often an independent user rather than the festival (PS26's is). Use
+  its event id directly, read-only: this deployment never writes to an event it doesn't own.
+  (`festivals/ps26`'s model.)
 - **This deployment publishes its own mirror.** Pick an event id you'll own, wire `cf-push
   <event>` into the operator's own workflow, and know that from this point *you* are responsible
   for keeping it in sync. (`festivals/atn26`'s model — used because Appmiral has no public

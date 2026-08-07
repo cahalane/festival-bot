@@ -72,7 +72,8 @@ worked examples ship in this repo, each demonstrating a different lineup-source 
   per-user favourites feature of its own).
 - **`festivals/ps26`** — Primavera Sound 2026. The **no-vendor-API** path: the lineup is
   web-scraped and snapshotted rather than pulled from an authed feed, and favourites are resolved
-  from a Clashfinder event the festival itself runs. Worth knowing going in: the committed
+  from an existing Clashfinder event this deployment doesn't own — one an independent Clashfinder
+  user maintains, not the festival — so the bot only ever reads it. Worth knowing going in: the committed
   `schedule.json` is a **deliberately partial capture** (73 of 175 artists) from the last live
   fetch before the festival ended — it's kept as-is for provenance, not backfilled, so don't treat
   it as a complete lineup.

@@ -37,10 +37,12 @@
 
 ## Favourites
 Appmiral has no public per-user highlights equivalent, so ATN favourites come from **our own
-read-only Clashfinder mirror at `clashfinder.com/s/atn2026`** (pushed via `./festplan cf-push
-atn2026`). `src/index.ts` wires the shared Clashfinder client to that `atn2026` event, so crew
+Clashfinder mirror at `clashfinder.com/s/atn2026`** (pushed via `./festplan cf-push atn2026`; we
+are the only ones who should write its timetable, though the event is publicly editable — which is
+why `cf-push` guards against clobbering a hand edit). `src/index.ts` wires the shared Clashfinder
+client to that `atn2026` event, so crew
 members star acts on the mirror and their tiers resolve back to lineup names — exactly like PS26's
-official CF event, just on a mirror we publish rather than one the festival runs. **Every ATN
+CF event, just on a mirror we publish rather than someone else's event we only read. **Every ATN
 profile in `data/users.json` uses `clashfinder`**; none uses manual `favs`.
 Manual `favs` remain supported as a fallback for a user with no Clashfinder, but nobody uses them for
 ATN. (⚠️ One crew member colour-codes their Clashfinder sets **inverted** — set 3 = highest want;

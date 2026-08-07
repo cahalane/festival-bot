@@ -108,12 +108,13 @@ loop, not just editing `CLAUDE.md`.
 
 Don't just report a diff and wait to be asked:
 
-1. **If this deployment publishes a favourites mirror** (see `docs/setup/clashfinder.md` — only
-   the mirror topology writes; a festival-run event is read-only), **push it first**,
-   unconditionally — even when nobody is affected. Maintaining the shared source of truth is the
-   job; deciding who to message is the follow-up, not a precondition. The only exception is a
-   purely cosmetic rename with no time/stage change (say so rather than silently skipping even
-   then). On a festival-run event, there is nothing to push — go straight to re-checking stars.
+1. **If this deployment publishes a favourites mirror** (see `docs/setup/clashfinder.md` — only an
+   event this deployment owns is ever written to; an event someone else owns is read-only to us),
+   **push it first**, unconditionally — even when nobody is affected. Maintaining the shared source
+   of truth is the job; deciding who to message is the follow-up, not a precondition. The only
+   exception is a purely cosmetic rename with no time/stage change (say so rather than silently
+   skipping even then). If the festival's event belongs to someone else, there is nothing to push —
+   go straight to re-checking stars.
 2. **Re-check every crew member's stars** after the push — a push can orphan a star by making an id
    ambiguous, so verify rather than assume nothing broke.
 3. **Tell only the affected people**, in their own tone from `data/prefs.json`, bound to the exact
