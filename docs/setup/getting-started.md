@@ -146,6 +146,10 @@ one with no site-map source gets no map watch), reporting what it armed vs. skip
 watch, all but the weather one silent-unless-changed; a few times an hour is typical cadence for
 schedule/announcement watches.
 
+Because those watches run inside the session rather than as their own daemon, the session has to
+stay up for them to keep ticking — `running-as-a-service.md` covers running it unattended under
+tmux + systemd, including re-invoking `/bootstrap` automatically after a restart.
+
 ## 8. Verify the timezone before you trust anything — do this first, always
 
 This is the single highest-value check in the whole setup, and it takes thirty seconds:

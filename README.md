@@ -40,6 +40,21 @@ None of this needs a server process of its own: the watches run as long-lived po
 Claude Code session (see `docs/operating/watches-and-alerts.md`), and everything else runs on
 demand when someone messages the bot.
 
+## Keeping it up
+
+Because the watches live *inside* the session, the session is the thing that has to stay running —
+and if it dies, they die with it silently. The deployment shape that solves that is a **tmux**
+session holding the Claude Code process and a **systemd user unit** holding the tmux session up:
+tmux gives it a real terminal you can attach to (and that `send-keys` can type into), systemd gives
+it start-on-boot and restart-on-crash. A restart brings back a *cold* session, which is survivable
+only because every watch keeps its baseline on disk — so a change that lands while nothing was
+watching still fires exactly once on the next tick.
+
+`docs/setup/running-as-a-service.md` has the unit file, the start script, and the reasoning for
+each piece — including why the script blocks on a `tmux has-session` poll loop instead of just
+spawning and exiting, how to re-arm the watches after a restart, how to run two bots on one host,
+and the trust decision you're making by leaving an auto-permission agent up unattended.
+
 ## 60-second quickstart
 
 ```
@@ -104,6 +119,8 @@ there to show the two shapes a real integration takes; see `docs/setup/appmiral-
 
 - `docs/setup/getting-started.md` — install, run the demo, and the fork-in-the-road decision for
   wiring up a real festival (vendor API vs. scrape).
+- `docs/setup/running-as-a-service.md` — running the session unattended under tmux + systemd, so
+  the background watches survive crashes and reboots.
 - `docs/operating/` — how the bot behaves once it's live: channel etiquette, per-user tone,
   privacy and access boundaries, watches and alerts, data-accuracy caveats.
 
