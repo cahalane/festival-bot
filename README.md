@@ -120,8 +120,9 @@ to show the two shapes a real integration takes; see
 
 ## Docs
 
-- [`docs/setup/getting-started.md`](docs/setup/getting-started.md) — install, run the demo, and the
-  fork-in-the-road decision for wiring up a real festival (vendor API vs. scrape).
+- [`docs/setup/getting-started.md`](docs/setup/getting-started.md) — standing up your own bot
+  end to end: wiring a chat channel, configuring your crew, giving it a festival to plan
+  (vendor API vs. scrape), and what talking to it looks like.
 - [`docs/setup/running-as-a-service.md`](docs/setup/running-as-a-service.md) — running the session
   unattended under tmux + systemd, so the background watches survive crashes and reboots.
 - `docs/operating/` — how the bot behaves once it's live: channel etiquette, per-user tone,
