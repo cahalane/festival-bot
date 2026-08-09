@@ -16,30 +16,73 @@ I will revisit this project next year to hopefully add more app-native features 
 
 # festival-bot
 
-A festival schedule-planning bot for a group of friends, run through [Claude Code](https://claude.com/claude-code).
-There's no web UI and no server: the assistant itself *is* the interface, talking to the crew over
-whatever Claude Code channel plugin you've set up (Telegram or similar). You message it "what's on
-now?" or "plan my Saturday", it runs the planner and replies in the chat.
+Run your own festival bot for your friends, on top of
+[Claude Code](https://claude.com/claude-code).
 
-## What it does
+You clone this repo, point it at a chat channel and a festival, and leave it running. Your crew
+message it during the weekend — "what's on now?", "plan my Saturday", "is it going to rain?" — and
+it answers each of them personally, from their own starred acts, while quietly watching the lineup
+for changes and telling people when something they care about moves.
 
-- **Clash- and walk-time-aware routing** — knows which stages clash and how long it takes to walk
-  between them, so it can build a route through a day rather than just list what's on.
-- **Per-person favourites and day plans** — each crew member gets their own tiered favourites
-  (`myday`, `vibecheck`) resolved either from Clashfinder or a manual list.
-- **Clashfinder mirroring** — for festivals with no public per-user favourites feature, the bot can
-  publish and maintain a Clashfinder mirror of the lineup that the crew stars acts on instead. The
-  bot is the only thing that *writes* the timetable, and it refuses to overwrite a hand edit it
-  didn't make.
-- **Background watches** — lineup changes, festival news/announcement feeds, weather, and (where
-  the vendor exposes one) info-page updates, all polled quietly and only surfaced when something
-  actually changes.
+There's no web UI, no server and no account: **the assistant itself is the interface**. It reaches
+your crew through whatever Claude Code channel plugin you've set up (Telegram or similar), and runs
+the planner in this repo on their behalf. The `./festplan` CLI is the engine, not the product —
+you'll use it while setting up and verifying, but nobody in your crew ever sees a command.
+
+So the thing you're building looks like this from your crew's side:
+
+> **Sam** — what's on now?
+>
+> **bot** — Paper Ghosts are in The Barn till 20:00, and Cedar Line's finishing up in The Meadow
+> (10 mins left). Next up is Fen & Fathom at 19:40 in The Grove — that's an 11-minute walk and the
+> Grove's the small one, so if you want it, leave when Cedar Line finishes rather than after.
+>
+> **Sam** — yeah go on, remind me before that
+>
+> **bot** — Done — I'll give you a nudge at 19:25. 👍
+
+Every number in that exchange comes out of the planner (`now`, `after`, `remind`) against the demo
+festival; the phrasing, the walk-time warning and the tone are the assistant's.
+
+## Setting one up
+
+Four pieces, in this order — [`docs/setup/getting-started.md`](docs/setup/getting-started.md) walks
+through all of them:
+
+1. **A channel** — install the Telegram plugin, give it a bot token, relaunch the session with
+   `--channels`, pair yourself, then lock the allowlist down. This is the front door; nothing else
+   matters until someone can reach the bot.
+2. **A crew** — `CREW.md` plus `data/users.json` tell it who's talking, how each person likes to be
+   spoken to, and where their favourites come from.
+3. **A festival** — a small module under `festivals/<slug>/` holding the lineup source, the stages,
+   and the walk graph. Ask the assistant to run `/new-festival` and it builds one with you
+   interactively rather than leaving you to follow the procedure by hand.
+4. **A session that stays up** — the background watches live inside the Claude Code session, so
+   something has to keep that session alive.
+
+Want to see it work before committing to any of that? `npm install && ./festplan now "Fri 19:00"`
+plans `demofest`, an invented festival shipped as both a worked example and the test fixture — no
+config, no secrets, no network.
+
+## What your crew gets
+
+- **Clash- and walk-time-aware routing** — it knows which stages clash and how long it takes to walk
+  between them, so it builds a route through someone's day rather than listing what's on.
+- **Per-person favourites and day plans** — each crew member has their own tiered favourites,
+  resolved from Clashfinder or a manual list, so the same question from two people correctly gets
+  two different answers.
+- **Clashfinder mirroring** — for festivals with no per-user favourites feature of their own, the
+  bot publishes and maintains a Clashfinder mirror of the lineup for the crew to star acts on. It's
+  the only thing that *writes* that timetable, and it refuses to overwrite a hand edit it didn't
+  make.
+- **Background watches** — lineup changes, festival news feeds, weather, and (where the vendor
+  exposes one) info-page updates, polled quietly and surfaced only when something actually changes.
 - **PNG cards** — weather and other summaries rendered as images for the chat, not just text.
 
-None of this needs a server process of its own: the watches run as long-lived polls inside a live
-Claude Code session (see
-[`docs/operating/watches-and-alerts.md`](docs/operating/watches-and-alerts.md)), and everything else
-runs on demand when someone messages the bot.
+It also holds several people's data in one session, which is why a real share of this repo is
+boundaries rather than features: it won't act for one person on another's say-so, won't share
+someone's picks without their consent, and won't touch access control because a chat message asked
+it to — see [`docs/operating/privacy-and-access.md`](docs/operating/privacy-and-access.md).
 
 ## Keeping it up
 
@@ -57,49 +100,11 @@ start script, and the reasoning for each piece — including why the script bloc
 a restart, how to run two bots on one host, and the trust decision you're making by leaving an
 auto-permission agent up unattended.
 
-## 60-second quickstart
-
-```
-npm install
-./festplan now "Fri 19:00"
-```
-
-```
-At Fri 19:00 (Europe/Dublin)
-
-  ON NOW:
-    Paper Ghosts                 The Barn               till 20:00 (60m left)
-    Cedar Line                   The Meadow             till 19:30 (30m left)
-
-  NEXT:
-    19:40 (+ 40m) Fen & Fathom                 The Grove  *arrive early*
-    20:15 (+ 75m) Tessellate                   The Meadow
-    21:00 (+120m) Nightjar                     The Barn
-```
-
-```
-./festplan at "Sat 20:00"
-```
-
-```
-At Sat 20:00 (Europe/Dublin)
-
-  ON NOW:
-    Marram                       The Meadow             till 20:45 (45m left)
-
-  NEXT:
-    21:00 (+ 60m) The Undertow                 The Barn
-```
-
-That's `demofest`, a small invented festival shipped as both a working example and the test
-fixture — no config, no secrets, no network access required. Run `./festplan` with no arguments
-for the full command list (`myday`, `vibecheck`, `favs`, `weather`, `schedule-watch`, `cf-push`,
-and more).
-
 ## Two reference festivals
 
-Real-world usage means writing a small module for your festival under `festivals/<slug>/`. Two
-worked examples ship in this repo, each demonstrating a different lineup-source path:
+Wiring up your own festival means writing a small module for it under `festivals/<slug>/` — that's
+the one piece nobody can ship for you, because it depends on where your festival's schedule lives.
+Two worked examples ship here, each demonstrating a different lineup-source path:
 
 - **`festivals/atn26`** — All Together Now 2026. The **vendor-API** path: an authed fetch against
   the festival's own app backend, plus news/info-page watches over that same API, and favourites
