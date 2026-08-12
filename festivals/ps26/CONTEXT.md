@@ -2,10 +2,12 @@
 
 > **A reference module, not the active festival.** This repo defaults to `demofest`
 > (see `FALLBACK_FESTIVAL` in `packages/cli/src/config.ts`). PS26 ships as the worked
-> example of the **no-vendor-API** path: the lineup is web-scraped and snapshotted
-> (not pulled from an authed feed), favourites are resolved from a Clashfinder event
-> an independent user runs (not the festival, and not us), and announcements arrive
-> over the AT Protocol. For
+> example of the **festival's-own-API, no-auth** path: lineup, artist bios and official
+> news all come from one unauthenticated GraphQL endpoint (queries recovered from the
+> official Android app — see
+> [`docs/research/primavera-graphql-api.md`](../../docs/research/primavera-graphql-api.md)),
+> favourites are resolved from a Clashfinder event an independent user runs (not the
+> festival, and not us), and live-ops announcements arrive over the AT Protocol. For
 > the other path — an authed vendor API + a self-published mirror — see `festivals/atn26`.
 >
 > Activate it deliberately: point `CLAUDE.md`'s active-festival import at
@@ -54,7 +56,7 @@ in `knowledge/data-source.md`.
 **Evergreen (persist year to year):**
 - `knowledge/geography.md` — site clusters, walk times, alternating pairs, limited-capacity venues; provenance for the derived walk graph in `venues.json`.
 - `knowledge/amenities.md` — water / toilets / bars / food by zone, Damm restaurant vendors, Fever House.
-- `knowledge/data-source.md` — GraphQL lineup API + Clashfinder favourites + `artist-info` scrape + feed quirks (720 filler, null genres).
+- `knowledge/data-source.md` — the GraphQL endpoint (lineup, artist bios, official news), Clashfinder favourites, BlueSky live-ops, and feed quirks (720 filler, null genres, post-festival pruning).
 - `knowledge/runbook.md` — refresh / rebuild procedure.
 - The festival's own map artwork is not redistributed with this module; `venues.json` ships the
   derived stage list and walk graph instead (see `knowledge/geography.md` for provenance).

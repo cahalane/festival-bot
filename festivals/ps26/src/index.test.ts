@@ -10,7 +10,8 @@ describe("createFestival (ps26 module assembly)", () => {
     expect(f.sources.lineup).toBeDefined();
     expect(f.sources.weather).toBeDefined(); // coordinates present -> weather wired
     expect(f.sources.artistInfo).toBeDefined();
-    expect(f.sources.announcements).toBeDefined();
+    expect(f.sources.announcements).toBeDefined(); // BlueSky — live ops
+    expect(f.sources.pages).toBeDefined(); // GraphQL editorial feed — diffable news
     expect((await f.sources.lineup.loadSets()).length).toBeGreaterThan(50);
   });
 

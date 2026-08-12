@@ -126,11 +126,20 @@ working reference module in this repo:
   [`appmiral-discovery.md`](appmiral-discovery.md) — Appmiral is the vendor covered there and the
   platform behind a large share of festival apps, but if your festival's app is built on something
   else, the same "find the API behind the app" method still applies.
-- **No app, or no identifiable vendor API** → the scrape path. `festivals/ps26` is the reference:
-  no API, a scraped-and-snapshotted lineup, and favourites read from **an existing Clashfinder event
-  this deployment doesn't own** (for PS26, one an independent user runs — the opposite topology from
-  ATN's mirror; see [`clashfinder.md`](clashfinder.md) for the distinction). Follow
-  [`scraped-lineup.md`](scraped-lineup.md).
+- **An app, but not a vendor platform** → the festival's *own* API. `festivals/ps26` is the
+  reference: Primavera's app is React Native, so its GraphQL queries sit in plain sight in
+  `assets/index.android.bundle`, and the endpoint needs **no auth at all** — lineup, artist bios and
+  official news all come from it. See
+  [`primavera-graphql-api.md`](../research/primavera-graphql-api.md) for how that was recovered; the
+  method (pull the APK, read the queries out of the app, live-test them) generalises even though the
+  vendor specifics don't.
+- **No usable API at all** → the scrape path, [`scraped-lineup.md`](scraped-lineup.md). ps26 is still
+  the reference for its *snapshot-and-guard* mechanics (a live feed prunes past sets), and it keeps a
+  page scrape as a fallback behind the API.
+
+Either way, favourites can come from **an existing Clashfinder event this deployment doesn't own**
+(for PS26, one an independent user runs — the opposite topology from ATN's mirror; see
+[`clashfinder.md`](clashfinder.md) for the distinction).
 
 **Don't do this by hand on your first festival.** The whole procedure — scaffold → identify source →
 manifest → implement the lineup source → fetch → timezone anchor → walk graph → favourites → verify

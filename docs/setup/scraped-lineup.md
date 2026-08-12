@@ -65,8 +65,14 @@ sharpened to ask about specific sets rather than overall event state.
 
 ## Per-artist enrichment (optional)
 
-ps26 also scrapes a per-artist page (`artist-info.ts`) for genre/bio text embedded as a
-`window.__INITIAL_DATA__` JSON blob, wired to `./festplan artist-info <slug>`. This is a separate,
-optional concern from the lineup fetch — build it only if your festival's own artist pages carry
-useful text and you want richer recommendations/blurbs. Not every artist will have one; handle an
+ps26 enriches per-artist text via `artist-info.ts`, wired to `./festplan artist-info <slug>`. This is
+a separate, optional concern from the lineup fetch — build it only if your festival carries useful
+artist text and you want richer recommendations/blurbs. Not every artist will have one; handle an
 empty bio as expected, not an error.
+
+**Check for an API before you commit to the scrape.** ps26 read that bio out of the page's
+`window.__INITIAL_DATA__` blob for a long time before anyone noticed the blob is just a *render of
+the festival's own GraphQL API* — and that the API serves the same tree directly, batched, without
+an HTML parse. The scrape survives only as a fallback. If a page embeds a big JSON blob, ask where
+that blob comes from before you write a parser for it; see
+[`primavera-graphql-api.md`](../research/primavera-graphql-api.md) for how that was traced.

@@ -12,6 +12,7 @@ import { loadManifest, loadVenues, loadKnowledge } from "./pack.js";
 import { createLineupSource } from "./lineup.js";
 import { createArtistInfoSource } from "./artist-info.js";
 import { createAnnouncementsSource } from "./announcements.js";
+import { createPostsPagesSource } from "./posts.js";
 
 /** PS26's official Clashfinder event (per-user highlights source). */
 const PS26_FAVOURITES_EVENT = "ps26";
@@ -27,10 +28,17 @@ export function createFestival(config: Ps26Config = {}): FestivalModule {
   const venues = loadVenues();
   const knowledge = loadKnowledge();
 
+  // Two official back-channels, deliberately on different seams — they carry
+  // different traffic and must not be collapsed into one:
+  //   announcements = BlueSky, the LIVE ops channel (stage delays, weather calls);
+  //                   this is what carried the Thu 4 Jun weather chaos.
+  //   pages         = the GraphQL editorial feed (programme news, ticket waves),
+  //                   slower and diffable, so `pages-tick` can watch it for changes.
   const sources: FestivalSources = {
     lineup: createLineupSource(),
     artistInfo: createArtistInfoSource(),
     announcements: createAnnouncementsSource(),
+    pages: createPostsPagesSource(),
   };
 
   if (manifest.coordinates) {
