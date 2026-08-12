@@ -56,6 +56,24 @@ re-pushes enriched. Requires `clashfinder.password` (or a stored `write.userLogi
   the schedule live fast and don't need clickable artist links yet, or when the MusicBrainz cache
   is cold and you don't want to wait through the throttle.
 
+### How phase 2 resolves bios and mbids
+
+**Bios** come from the festival's `artistInfo` source. If that source implements the optional
+`infoMany(slugs)`, they are fetched in batches rather than one HTTP round trip per act — ps26's
+does, via `getPostsBySlugName`, which answers a whole lineup in a couple of requests (measured:
+**73 slugs → 53 bios in 732ms, 2 requests**). Anything the batch doesn't answer for still falls
+back to a per-slug `info()` lookup, so batching only ever changes how *long* a cold start takes,
+never which bios you end up with. Bios are cached in `blurbs.json` (hits and misses), so this cost
+is paid once.
+
+**MBIDs** come from a MusicBrainz name search, which deliberately refuses to guess: no tag at all
+beats a tag pointing at the wrong artist. When a festival also exposes an `artistIds` source
+(ps26 does — Spotify ids from the app's own artist search), an unresolved name gets a second
+reading: the Spotify id is reversed through MusicBrainz's URL entity, which matches by *identity*
+instead of by name and so can settle two acts that share one. It is a genuine but modest gain —
+on a 30-act ps26 sample, 17 resolved by name and 3 more by this fallback — because MusicBrainz's
+Spotify-link coverage is thin for smaller acts. Each fallback costs one extra throttled request.
+
 ## The foreign-edit guard
 
 `cf-push` **overwrites the entire event** — it doesn't merge. On a mirror, that's dangerous: a

@@ -12,6 +12,8 @@ describe("createFestival (ps26 module assembly)", () => {
     expect(f.sources.artistInfo).toBeDefined();
     expect(f.sources.announcements).toBeDefined(); // BlueSky — live ops
     expect(f.sources.pages).toBeDefined(); // GraphQL editorial feed — diffable news
+    expect(f.sources.artistIds).toBeDefined(); // Spotify ids — MusicBrainz disambiguation
+    expect(f.sources.artistInfo?.infoMany).toBeDefined(); // batched bios for cf-push
     expect((await f.sources.lineup.loadSets()).length).toBeGreaterThan(50);
   });
 

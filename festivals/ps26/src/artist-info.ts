@@ -48,6 +48,8 @@ export function createArtistInfoSource(
     fetchJson?: <T>(url: string) => Promise<T>;
     /** Set false to skip the GraphQL path entirely (scrape only). */
     useApi?: boolean;
+    /** Slugs per batched request in `infoMany` (default 50, to bound the GET URL). */
+    chunkSize?: number;
   } = {},
 ): ArtistInfoSource {
   const fetchText = opts.fetchText ?? ((u: string) => httpGet(u, { headers: { "User-Agent": "Mozilla/5.0" } }));
@@ -74,6 +76,43 @@ export function createArtistInfoSource(
         }
       }
       return scrape(slug);
+    },
+
+    /**
+     * Batched bios. `getPostsBySlugName` takes the whole slug list in one request
+     * (60 slugs = one 1.5KB URL, ~400ms, measured 2026-08-12), which is what makes
+     * a full-lineup Clashfinder push practical: it was one HTTP round trip per act.
+     *
+     * Chunked because this is a GET — the slug list rides in the query string, and
+     * a few hundred acts would build a URL long enough for an intermediary to
+     * reject. 50 keeps it comfortably under 2KB.
+     *
+     * Returns only slugs that produced a real bio, per the ArtistInfoSource
+     * contract. Anything absent — unknown slug, no write-up published, or a chunk
+     * that errored — is left for the caller's per-slug `info()` fallback, which
+     * still has the scrape. So this can only ever be faster, never lossier.
+     */
+    async infoMany(slugs: string[]): Promise<Map<string, ArtistInfo>> {
+      const out = new Map<string, ArtistInfo>();
+      if (!useApi) return out;
+      const chunkSize = opts.chunkSize ?? 50;
+      const unique = [...new Set(slugs.filter(Boolean))];
+      for (let i = 0; i < unique.length; i += chunkSize) {
+        const chunk = unique.slice(i, i + chunkSize);
+        let posts;
+        try {
+          posts = await fetchPostsBySlug(chunk, opts.fetchJson);
+        } catch {
+          continue; // this chunk falls back to per-slug lookups
+        }
+        for (const post of posts) {
+          const bio = postBody(post);
+          if (post.slugName && bio) {
+            out.set(post.slugName, { name: postTitle(post), bio, url: PAGE(post.slugName) });
+          }
+        }
+      }
+      return out;
     },
   };
 }

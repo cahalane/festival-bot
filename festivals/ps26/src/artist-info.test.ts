@@ -81,6 +81,85 @@ describe("createArtistInfoSource", () => {
     expect((await src.info("absolute")).bio).toBe("from the page");
   });
 
+  test("infoMany resolves a whole batch in ONE request", async () => {
+    const urls: string[] = [];
+    const src = createArtistInfoSource({
+      fetchText: failText,
+      fetchJson: async <T>(url: string): Promise<T> => {
+        urls.push(url);
+        return {
+          data: {
+            getPostsBySlugName: [
+              apiPost,
+              { slugName: "big-thief", postName: "Big Thief", components: [{ text: { en: "<p>Brooklyn four-piece.</p>" } }] },
+            ],
+          },
+        } as T;
+      },
+    });
+    const got = await src.infoMany!(["wet-leg", "big-thief"]);
+    expect(urls).toHaveLength(1);
+    expect(got.get("wet-leg")?.bio).toBe("Where to start? Chaise Longue.");
+    expect(got.get("big-thief")).toEqual({
+      name: "Big Thief",
+      bio: "Brooklyn four-piece.",
+      url: "https://www.primaverasound.com/en/artist/big-thief",
+    });
+  });
+
+  test("chunks a large slug list so the GET URL stays bounded", async () => {
+    let calls = 0;
+    const src = createArtistInfoSource({
+      chunkSize: 2,
+      fetchText: failText,
+      fetchJson: async <T>(): Promise<T> => {
+        calls++;
+        return { data: { getPostsBySlugName: [] } } as T;
+      },
+    });
+    await src.infoMany!(["a", "b", "c", "d", "e"]);
+    expect(calls).toBe(3); // 2 + 2 + 1
+  });
+
+  test("omits slugs with no write-up, leaving them for the per-slug fallback", async () => {
+    // The contract that keeps the batch a pure speed-up: absent != 'no such artist'.
+    const src = createArtistInfoSource({
+      fetchText: failText,
+      fetchJson: async <T>(): Promise<T> =>
+        ({ data: { getPostsBySlugName: [{ slugName: "silent", components: [] }] } }) as T,
+    });
+    const got = await src.infoMany!(["silent"]);
+    expect(got.has("silent")).toBe(false);
+  });
+
+  test("a failing chunk yields no entries rather than throwing", async () => {
+    const src = createArtistInfoSource({
+      fetchText: failText,
+      fetchJson: async <T>(): Promise<T> => {
+        throw new Error("graphql down");
+      },
+    });
+    await expect(src.infoMany!(["wet-leg"])).resolves.toEqual(new Map());
+  });
+
+  test("infoMany deduplicates repeated slugs", async () => {
+    let asked: string[] = [];
+    const src = createArtistInfoSource({
+      fetchText: failText,
+      fetchJson: async <T>(url: string): Promise<T> => {
+        asked = JSON.parse(new URL(url).searchParams.get("variables")!).slugnames;
+        return { data: { getPostsBySlugName: [apiPost] } } as T;
+      },
+    });
+    await src.infoMany!(["wet-leg", "wet-leg"]);
+    expect(asked).toEqual(["wet-leg"]);
+  });
+
+  test("useApi:false makes infoMany a no-op, never a scrape storm", async () => {
+    const src = createArtistInfoSource({ useApi: false, fetchText: failText, fetchJson: failText as never });
+    expect(await src.infoMany!(["a", "b"])).toEqual(new Map());
+  });
+
   test("useApi:false keeps the scrape-only behaviour", async () => {
     const html = `<script>window.__INITIAL_DATA__ = {"postName":"X","body":{"text":{"en":"<p>page only</p>"}}};</script>`;
     const src = createArtistInfoSource({

@@ -162,8 +162,45 @@ Likewise `artistSetGenres` is still null/empty — the genre gap is real, not a 
 | `getUserFavourites` / `setUserFavourites` / `getUserData` | **account-scoped.** Reading a crew member's Primavera account favourites needs *their* credentials. Clashfinder already solves this consensually — see [`privacy-and-access.md`](../operating/privacy-and-access.md). Not pursued. |
 | `getAppConfig(version, app, enviroment)` | [VERIFIED] returns empty for every `app`/version tried (`ps`, `psb`, …); it is app UI chrome (menus, onboarding), not festival data. |
 | `radioPrograms` / `radioSchedule` | Primavera Radio. Real and unauthenticated, but off-scope for schedule planning. |
-| `getRegisterPreferencesData` | has `spotifyId` per artist — a possible future hook for recommendations. |
+| `getRegisterPreferencesData` | [VERIFIED, now used] see §7b — a Spotify-id lookup, wired into MBID resolution. |
 | `userSignup` / `userCheckEmail` / newsletter | account mutations. Never call these. |
+
+## 7b. `getRegisterPreferencesData` — Spotify ids, and the trap in them
+
+Powers the app's registration artist-picker. Unauthenticated like the rest:
+
+```
+query R($search: String, $from: Int, $to: Int, $artists: [String]) {
+  getRegisterPreferencesData(search: $search, from: $from, to: $to, artists: $artists) {
+    topArtists { name image isSpotifyArtist spotifyId slug }
+  }
+}
+```
+
+`spotifyId` is genuinely useful: MusicBrainz records streaming URLs as artist relations, so
+`/ws/2/url?resource=https://open.spotify.com/artist/<id>&inc=artist-rels` reverses an id to an
+**MBID by identity rather than by name** — the only way to separate two acts that share a name.
+Implemented in `festivals/ps26/src/spotify.ts` + `packages/adapters/src/musicbrainz.ts`.
+
+**The trap.** This searches Spotify's *global* catalogue and pads results with related artists. It
+is **not** a lineup lookup, and the first result is routinely a different, more famous act
+(measured 2026-08-12):
+
+| search | result[0] | actual |
+|---|---|---|
+| `Greta` | Greta Van Fleet | ps26's Bits act is slugged `greta` |
+| `Amiga Date Cuenta` | Karol Sevilla | — |
+| `Corte!` | CortexUS | — |
+
+Taking `result[0]` would tag the wrong artist on a published mirror with full confidence — the
+res/pinkpantheress phantom match through a new door. So the implementation accepts a result **only
+on an exact normalised-name match**, and returns null otherwise.
+
+**Measured value, on 30 real ps26 acts.** MusicBrainz name search alone resolved 17 (2 null from
+same-name ambiguity, 11 from no exact match). The Spotify fallback added **3** — `Ecco2k`,
+`Gorillaz`, `Absolutely` — for 20/30. The rest have no MusicBrainz Spotify relation at all
+(`DJ Marcelle`, `Akazie`, `Gadea`, `DJ Nobu` → HTTP 404): coverage thins out on exactly the
+smaller acts that need it most. Worth having as a fallback; not a fix.
 
 ## 8. Field mapping
 

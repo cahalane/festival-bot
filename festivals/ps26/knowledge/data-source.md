@@ -81,6 +81,26 @@ getPostsBySlugName(slugnames: ["<slug>", …]) { slugName postName postCategory 
 The site's global 13-genre taxonomy (Electronic, Folk/Country, Jazz, Pop/R&B, Rock, Experimental,
 Global, Rap/Hip-Hop, Latin, Indie, Flamenco, Urban, Punk) is still **not** applied per-artist.
 
+**Batched bios (`infoMany`).** Because the query takes a slug *list*, the source implements the
+optional `ArtistInfoSource.infoMany(slugs)` — chunked at 50 to keep the GET URL short. Measured
+2026-08-12: **73 slugs → 53 bios in 732ms across 2 requests**, where the per-slug path would have
+made 73. This is what makes bio-enriching a whole-lineup Clashfinder push practical. Slugs the
+batch doesn't answer for are simply absent from the result, so callers fall back to `info()` per
+slug and keep the scrape safety net — batching is a speed-up, never a coverage change.
+
+## 2c. Spotify ids — `artistIds` source (MusicBrainz disambiguation only)
+
+`getRegisterPreferencesData(search:)` — the app's registration artist-picker — returns
+`spotifyId` per artist, which MusicBrainz can reverse into an MBID *by identity* rather than by
+name. Used only to enrich a Clashfinder push (`festivals/ps26/src/spotify.ts`).
+
+**Read the warning before using this for anything else:** it searches Spotify's global catalogue,
+not the ps26 lineup, and pads with related artists — searching `Greta` returns *Greta Van Fleet*,
+not ps26's Bits act slugged `greta`. The source therefore accepts a result only on an exact
+normalised-name match and returns null otherwise. See
+[`docs/research/primavera-graphql-api.md`](../../../docs/research/primavera-graphql-api.md) §7b for
+the measured hit rate (+3 of 30 acts) and the full list of traps.
+
 ## 2b. Official news — `./festplan page` / `pages-tick` (`getPostsListWithTotal`)
 The festival's editorial feed, wired as the `pages` source (so ps26 has the same change-watch atn26
 gets from Appmiral's CMS). Category **`barcelona`** scopes it to this festival — posts are

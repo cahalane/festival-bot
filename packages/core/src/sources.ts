@@ -116,6 +116,33 @@ export interface ArtistInfo {
 
 export interface ArtistInfoSource {
   info(slug: string): Promise<ArtistInfo>;
+  /**
+   * Bios for many slugs at once. OPTIONAL — implement it only when the upstream
+   * API genuinely batches (PS's `getPostsBySlugName` takes a slug list and answers
+   * ~60 in one ~400ms request); a loop dressed up as a batch buys nothing.
+   *
+   * Contract: return ONLY the slugs actually resolved, keyed by the slug asked for.
+   * A missing key means "this batch didn't answer for it", NOT "no such artist" —
+   * so a caller that needs full coverage falls back to `info()` per missing slug.
+   * That keeps the batch a pure speed-up: it can never *lose* a bio that the
+   * one-at-a-time path would have found.
+   */
+  infoMany?(slugs: string[]): Promise<Map<string, ArtistInfo>>;
+}
+
+/**
+ * Resolves an act name to an identifier in an external music catalogue. Separate
+ * from ArtistInfoSource because it answers "who is this, globally?" rather than
+ * "what does the festival say about them?" — the festival is merely the one who
+ * happens to know (PS's app carries a Spotify id per artist).
+ *
+ * Used to disambiguate MusicBrainz lookups: a name search cannot tell two acts
+ * with the same name apart, but a catalogue id can. Implementations MUST return
+ * null rather than a best guess — a wrong id here tags the wrong artist on a
+ * published mirror, which is worse than no tag at all.
+ */
+export interface ArtistIdSource {
+  spotifyId(name: string): Promise<string | null>;
 }
 
 export interface SetlistSong {

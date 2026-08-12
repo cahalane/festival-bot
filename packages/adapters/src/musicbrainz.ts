@@ -65,6 +65,49 @@ export function pickExactMbid(
   return distinct.length === 1 ? distinct[0]! : null;
 }
 
+interface MbUrlRelation {
+  "target-type"?: string;
+  artist?: { id?: string; name?: string };
+}
+
+interface MbUrlResponse {
+  relations?: MbUrlRelation[];
+}
+
+/**
+ * Reverse a Spotify artist id to an MBID via MusicBrainz's URL entity: editors
+ * link streaming URLs to artists, so the relation is an *identity* statement, not
+ * a name guess. This is the only way to resolve two acts that share a name.
+ *
+ * Coverage is patchy and skews against exactly the acts we most need — measured
+ * against the ps26 lineup on 2026-08-12, big names reversed cleanly (Gorillaz,
+ * Ecco2k, Absolutely) while smaller/local acts had no relation at all (DJ Marcelle,
+ * Akazie, Gadea, DJ Nobu → HTTP 404). Treat it as a fallback that sometimes pays,
+ * never as a replacement for the name search.
+ *
+ * A 404 means "MusicBrainz knows no such URL" — an ordinary miss, not an outage,
+ * so it returns null rather than throwing.
+ */
+export async function mbidFromSpotifyId(
+  spotifyId: string,
+  fetchJson: <T>(url: string) => Promise<T>,
+): Promise<string | null> {
+  if (!spotifyId) return null;
+  const resource = `https://open.spotify.com/artist/${spotifyId}`;
+  const url = `https://musicbrainz.org/ws/2/url?resource=${encodeURIComponent(resource)}&inc=artist-rels&fmt=json`;
+  let res: MbUrlResponse;
+  try {
+    res = await fetchJson<MbUrlResponse>(url);
+  } catch {
+    return null; // 404 (no such URL) and transport failures alike: just a miss
+  }
+  const artists = (res.relations ?? []).filter((r) => r["target-type"] === "artist" && r.artist?.id);
+  const distinct = [...new Set(artists.map((r) => r.artist!.id!))];
+  // One URL pointing at two different artists is a data conflict upstream, not a
+  // resolution — same rule as pickExactMbid: no tag beats a wrong tag.
+  return distinct.length === 1 ? distinct[0]! : null;
+}
+
 export interface MbidResolver {
   resolve(name: string): Promise<string | null>;
   resolveAll(names: string[]): Promise<Map<string, string>>;
@@ -89,6 +132,13 @@ export function createMbidResolver(opts: {
   minIntervalMs?: number;
   minScore?: number;
   userAgent?: string;
+  /**
+   * Optional second reading: act name -> Spotify artist id (the festival's own
+   * catalogue). Consulted ONLY when the name search resolves nothing, then
+   * reversed through MusicBrainz. Supplying it costs one extra throttled request
+   * per otherwise-unresolved name.
+   */
+  spotifyIdFor?: (name: string) => Promise<string | null>;
 } = {}): MbidResolver {
   const minInterval = opts.minIntervalMs ?? 1100;
   const fetchJson =
@@ -130,6 +180,22 @@ export function createMbidResolver(opts: {
     } catch {
       // network/parse failure -> treat as a (non-persisted) miss for this run
       return null;
+    }
+    // Fallback: the name search found nothing usable — either no exact match, or
+    // several distinct artists share the name. A catalogue id settles both. The
+    // Spotify lookup itself is NOT throttled here (it's a different host); the
+    // MusicBrainz reverse call is.
+    if (!mbid && opts.spotifyIdFor) {
+      let spotifyId: string | null = null;
+      try {
+        spotifyId = await opts.spotifyIdFor(lookup);
+      } catch {
+        spotifyId = null; // the festival's catalogue being down must not fail the push
+      }
+      if (spotifyId) {
+        await throttle();
+        mbid = await mbidFromSpotifyId(spotifyId, fetchJson);
+      }
     }
     cache.set(key, mbid);
     save();

@@ -1,5 +1,5 @@
 import { describe, expect, test } from "vitest";
-import { pickExactMbid, createMbidResolver, stripActSuffixes } from "./musicbrainz.js";
+import { pickExactMbid, createMbidResolver, stripActSuffixes, mbidFromSpotifyId } from "./musicbrainz.js";
 
 describe("stripActSuffixes", () => {
   test("strips trailing (DJ Set)/(Live)/[..] qualifiers, keeps the core name", () => {
@@ -55,6 +55,56 @@ describe("pickExactMbid", () => {
   });
 });
 
+describe("mbidFromSpotifyId", () => {
+  const relation = { "target-type": "artist", artist: { id: "mbid-wetleg", name: "Wet Leg" } };
+
+  test("reverses a Spotify artist id through the MusicBrainz URL entity", async () => {
+    let asked = "";
+    const got = await mbidFromSpotifyId("2TwOrUcYnAlIiKmVQkkoSZ", async <T>(url: string) => {
+      asked = url;
+      return { relations: [relation] } as T;
+    });
+    expect(got).toBe("mbid-wetleg");
+    expect(decodeURIComponent(asked)).toContain("https://open.spotify.com/artist/2TwOrUcYnAlIiKmVQkkoSZ");
+    expect(asked).toContain("inc=artist-rels");
+  });
+
+  test("a 404 (MusicBrainz has no such URL) is an ordinary miss, not an error", async () => {
+    // Measured: DJ Marcelle, Akazie, Gadea and DJ Nobu all 404 here. That is the
+    // normal shape of thin coverage, so it must not abort an enrichment run.
+    const got = await mbidFromSpotifyId("nolink", async () => {
+      throw new Error("HTTP 404");
+    });
+    expect(got).toBe(null);
+  });
+
+  test("ignores non-artist relations on the same URL", async () => {
+    const got = await mbidFromSpotifyId("x", async <T>() =>
+      ({ relations: [{ "target-type": "release-group", artist: undefined }, relation] }) as T);
+    expect(got).toBe("mbid-wetleg");
+  });
+
+  test("returns null when one URL points at two different artists", async () => {
+    // Upstream data conflict. Same rule as pickExactMbid: no tag beats a wrong tag.
+    const got = await mbidFromSpotifyId("x", async <T>() =>
+      ({
+        relations: [relation, { "target-type": "artist", artist: { id: "other", name: "Someone Else" } }],
+      }) as T);
+    expect(got).toBe(null);
+  });
+
+  test("returns null for an empty id without calling out", async () => {
+    let calls = 0;
+    expect(
+      await mbidFromSpotifyId("", async <T>() => {
+        calls++;
+        return {} as T;
+      }),
+    ).toBe(null);
+    expect(calls).toBe(0);
+  });
+});
+
 describe("createMbidResolver", () => {
   test("resolves a name, caches hits and misses (one fetch each)", async () => {
     const calls: string[] = [];
@@ -103,6 +153,47 @@ describe("createMbidResolver", () => {
     expect(found.get("Known")).toBe("h");
     expect(missing).toEqual(["Unknown"]);
     expect(calls).toBe(1);
+  });
+
+  test("falls back to the Spotify id when the name search finds nothing", async () => {
+    // The real case this exists for: MusicBrainz's name search returned no exact
+    // match for Ecco2k / Gorillaz, but reversing their Spotify URL resolved both.
+    const r = createMbidResolver({
+      minIntervalMs: 0,
+      fetchJson: async <T>(url: string) =>
+        (url.includes("/ws/2/url")
+          ? { relations: [{ "target-type": "artist", artist: { id: "mbid-ecco", name: "Ecco2K" } }] }
+          : { artists: [] }) as T,
+      spotifyIdFor: async () => "6hG0VsXXlD10l60TqiIHIX",
+    });
+    expect(await r.resolve("Ecco2k")).toBe("mbid-ecco");
+  });
+
+  test("does NOT consult Spotify when the name search already resolved", async () => {
+    let spotifyCalls = 0;
+    const r = createMbidResolver({
+      minIntervalMs: 0,
+      fetchJson: async <T>() => ({ artists: [{ id: "by-name", name: "Wet Leg", score: 100 }] }) as T,
+      spotifyIdFor: async () => {
+        spotifyCalls++;
+        return "x";
+      },
+    });
+    expect(await r.resolve("Wet Leg")).toBe("by-name");
+    expect(spotifyCalls).toBe(0);
+  });
+
+  test("a failing Spotify lookup degrades to a miss, it does not throw", async () => {
+    // This runs mid-push. The festival's catalogue being down must cost us a tag,
+    // never the Clashfinder write.
+    const r = createMbidResolver({
+      minIntervalMs: 0,
+      fetchJson: async <T>() => ({ artists: [] }) as T,
+      spotifyIdFor: async () => {
+        throw new Error("PS graphql down");
+      },
+    });
+    expect(await r.resolve("Anything")).toBe(null);
   });
 
   test("resolveAll returns only matched names", async () => {

@@ -14,6 +14,7 @@ import type {
   WeatherSource,
   AnnouncementsSource,
   PagesSource,
+  ArtistIdSource,
   ArtistInfoSource,
 } from "./sources.js";
 import type { SiteMapSource } from "./sitemap.js";
@@ -66,6 +67,8 @@ export interface FestivalSources {
   announcements?: AnnouncementsSource;
   pages?: PagesSource;
   artistInfo?: ArtistInfoSource;
+  /** External-catalogue ids for acts (Spotify), for MusicBrainz disambiguation. */
+  artistIds?: ArtistIdSource;
   /** Site-map POIs, if this festival publishes any. */
   map?: SiteMapSource;
 }

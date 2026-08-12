@@ -169,7 +169,17 @@ export async function runCfPush(rt: Runtime, tz: string, args: string[]): Promis
   };
 
   // mbid enrichment (MusicBrainz, cached/throttled); skipped with --no-mbid.
-  const resolver = createMbidResolver({ cacheFile: join(cacheDir("musicbrainz"), "mbid.json") });
+  // When the festival can name an act's Spotify id, the resolver uses it to settle
+  // names the MusicBrainz search alone can't — either no exact match, or two real
+  // artists sharing one name. Measured on 30 ps26 acts: 17 resolved by name, +3 by
+  // this fallback. Modest, and it adds no wrong tags (an id is an identity, not a
+  // guess) — but MusicBrainz's Spotify-link coverage thins out on smaller acts.
+  const resolver = createMbidResolver({
+    cacheFile: join(cacheDir("musicbrainz"), "mbid.json"),
+    spotifyIdFor: rt.module.sources.artistIds
+      ? (name) => rt.module.sources.artistIds!.spotifyId(name)
+      : undefined,
+  });
   const mbidSplit = noMbid
     ? { found: new Map<string, string>(), missing: [] as string[] }
     : resolver.cachedOnly(names);
@@ -197,11 +207,32 @@ export async function runCfPush(rt: Runtime, tz: string, args: string[]): Promis
   const resolveBlurbs = async (): Promise<Map<string, string>> => {
     const out = new Map(cachedBlurbs);
     if (!info || missingBlurbs.length === 0) return out;
+
+    // Batch first when the source supports it (PS answers ~60 slugs per request),
+    // then fall back to one-at-a-time for whatever the batch didn't cover. The
+    // batch is a pure speed-up: a slug it omits is still looked up individually,
+    // so coverage is identical to the unbatched path — it's the cold-start cost
+    // that changes, from one HTTP round trip per act to a handful.
+    let batched = new Map<string, { bio: string }>();
+    if (info.infoMany) {
+      try {
+        batched = await info.infoMany(missingBlurbs.map((n) => slugOf.get(n)!));
+      } catch {
+        // a failed batch is not a failed push — every name falls through below
+      }
+      if (batched.size) log(`  bios: ${batched.size}/${missingBlurbs.length} from batched lookup`);
+    }
+
+    let scraped = 0;
     for (const n of missingBlurbs) {
-      const blurb = htmlToBlurb((await info.info(slugOf.get(n)!)).bio);
+      const slug = slugOf.get(n)!;
+      const hit = batched.get(slug);
+      if (!hit) scraped++;
+      const blurb = htmlToBlurb((hit ?? (await info.info(slug))).bio);
       blurbCache[n] = blurb; // cache hits and misses
       if (blurb) out.set(n, blurb);
     }
+    if (scraped) log(`  bios: ${scraped} resolved individually`);
     mkdirSync(dirname(blurbFile), { recursive: true });
     writeFileSync(blurbFile, JSON.stringify(blurbCache, null, 2));
     return out;
