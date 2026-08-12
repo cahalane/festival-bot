@@ -21,6 +21,14 @@ describe("buildEventMap", () => {
     expect(m.get("wetleg-1")).toBe("Wet Leg");
     expect(m.get("bigthief-1")).toBe("Big Thief");
   });
+
+  test("skips an entry with no name rather than mapping it to undefined", () => {
+    // The feed is someone else's JSON; a nameless entry must leave the code
+    // UNMAPPED so the caller reports `?code`, not the string "undefined".
+    const m = buildEventMap({ locations: [{ events: [{ short: "ghost(1)" }, { short: "wetleg(1)", name: "Wet Leg" }] }] });
+    expect(m.has("ghost-1")).toBe(false);
+    expect(m.get("wetleg-1")).toBe("Wet Leg");
+  });
 });
 
 describe("resolveTiers", () => {

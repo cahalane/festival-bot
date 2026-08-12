@@ -24,8 +24,17 @@ export function parseGets(html: string): Record<string, string> {
   throw new Error("could not parse cg.gets");
 }
 
-interface EventJson {
-  locations?: { events?: { short?: string; name: string }[] }[];
+/**
+ * The event feed is someone else's JSON, so every field here is optional —
+ * including `name`. It was previously typed `name: string` (required), which is a
+ * claim about a server we don't control and can't enforce: an entry missing a name
+ * put a literal `undefined` into a `Map<string, string>`, which surfaces
+ * downstream as a favourite called "undefined" instead of an unresolved `?code`.
+ * `locations[].name` / `events[].start` are carried because the feed publishes
+ * them and callers that dump a whole event lineup need them.
+ */
+export interface EventJson {
+  locations?: { name?: string; events?: { short?: string; name?: string; start?: string }[] }[];
   auth?: { result?: string };
 }
 
@@ -35,7 +44,9 @@ export function buildEventMap(ev: EventJson): Map<string, string> {
   for (const loc of ev.locations ?? []) {
     for (const e of loc.events ?? []) {
       const code = (e.short ?? "").replaceAll("(", "-").replaceAll(")", "");
-      if (code) m.set(code, e.name);
+      // A code with no name is not a usable mapping. Omitting it makes the caller
+      // report `?code` — honestly unresolved — rather than the string "undefined".
+      if (code && e.name) m.set(code, e.name);
     }
   }
   return m;
