@@ -158,7 +158,7 @@ small workspace package:
 | `festival.json` | name, timezone, `dayCutoffHour`, dates, coordinates (coordinates are what enable the weather source) |
 | `venues.json` | stage list + walk graph — see [`walk-graph.md`](walk-graph.md) |
 | `schedule.json` | the lineup snapshot |
-| `src/` | the lineup source and any vendor-specific glue |
+| `src/` | which sources this edition wires, and the ids they need |
 | `CONTEXT.md` | the festival-specific facts your assistant reads |
 | `knowledge/` | longer notes read on demand, not loaded every session |
 
@@ -166,6 +166,14 @@ Register the builder in `packages/cli/src/festivals.ts` alongside `demofest`/`at
 dependency to `packages/cli/package.json`, and re-run `npm install`. The template gets you the
 shape; for the substance, read whichever of `atn26` or `ps26` matches your path and copy how it
 wires its sources.
+
+**Where the vendor code lives.** A festival module should be thin: the pack, plus an `index.ts` that
+picks sources and supplies this edition's ids. The integrations themselves live in
+`packages/adapters/` — Appmiral as `appmiral*.ts`, Primavera as `primavera*.ts` — because one vendor
+serves many festivals *and* many editions of the same festival. `festivals/ps26` and `festivals/ps27`
+are the worked example: both are ~80 lines of `index.ts` over the same shared adapter, differing
+only in event names and which Clashfinder event holds favourites. If you find yourself copying a
+whole source implementation into next year's module, extract it to `adapters/` instead.
 
 ### Make it the active festival
 

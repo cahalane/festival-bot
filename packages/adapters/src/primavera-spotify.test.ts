@@ -1,5 +1,5 @@
 import { describe, expect, test } from "vitest";
-import { createArtistIdSource, pickExactArtist, preferencesUrl, normName } from "./spotify.js";
+import { createPsArtistIdSource, pickExactArtist, preferencesUrl, normArtistName } from "./primavera-spotify.js";
 
 describe("preferencesUrl", () => {
   test("sends the app's own query shape", () => {
@@ -10,9 +10,9 @@ describe("preferencesUrl", () => {
   });
 });
 
-describe("normName", () => {
+describe("normArtistName", () => {
   test("folds case, whitespace and diacritics", () => {
-    expect(normName("  Béyoncé   Knowles ")).toBe("beyonce knowles");
+    expect(normArtistName("  Béyoncé   Knowles ")).toBe("beyonce knowles");
   });
 });
 
@@ -46,9 +46,9 @@ describe("pickExactArtist", () => {
   });
 });
 
-describe("createArtistIdSource", () => {
+describe("createPsArtistIdSource", () => {
   test("returns the id for an exact match", async () => {
-    const src = createArtistIdSource({
+    const src = createPsArtistIdSource({
       fetchJson: async <T>(): Promise<T> =>
         ({
           data: { getRegisterPreferencesData: { topArtists: [{ name: "Big Thief", spotifyId: "5QdyldG4Fl4TPiOIeMNpBZ" }] } },
@@ -58,7 +58,7 @@ describe("createArtistIdSource", () => {
   });
 
   test("returns null when the search only offers a different act", async () => {
-    const src = createArtistIdSource({
+    const src = createPsArtistIdSource({
       fetchJson: async <T>(): Promise<T> =>
         ({ data: { getRegisterPreferencesData: { topArtists: [{ name: "Karol Sevilla", spotifyId: "x" }] } } }) as T,
     });
@@ -69,7 +69,7 @@ describe("createArtistIdSource", () => {
     // Deliberately unlike posts.ts, which RAISES on a GraphQL error. There, an
     // empty result would be mistaken for real data; here the caller is already on
     // its fallback path and "no id" is a truthful answer.
-    const src = createArtistIdSource({
+    const src = createPsArtistIdSource({
       fetchJson: async <T>(): Promise<T> => ({ errors: [{ message: "rate limited" }] }) as T,
     });
     expect(await src.spotifyId("Anyone")).toBe(null);
@@ -77,7 +77,7 @@ describe("createArtistIdSource", () => {
 
   test("does not call out for an empty name", async () => {
     let calls = 0;
-    const src = createArtistIdSource({
+    const src = createPsArtistIdSource({
       fetchJson: async <T>(): Promise<T> => {
         calls++;
         return {} as T;

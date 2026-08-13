@@ -1,0 +1,11 @@
+{
+  "slug": "ps27",
+  "name": "Primavera Sound 2027",
+  "timezone": "Europe/Madrid",
+  "dayCutoffHour": 8,
+  "catchFraction": 0.5,
+  "nightGapHours": 3,
+  "days": {},
+  "coordinates": { "lat": 41.4106, "lon": 2.2275 },
+  "_note": "DORMANT SKELETON — see CONTEXT.md. `days` is deliberately EMPTY: Primavera had announced no 2027 dates as of 2026-08-13 (no `primavera-sound-2027-barcelona` event in the GraphQL, no mention across 30 posts of the news feed), and inventing plausible ones would be fabricated schedule data. Fill it in from the announcement, not from a guess — PS26 ran Wed 3 - Sun 7 June 2026 as the 24th edition, so 2027 is the 25th, but that pattern is NOT a source. Everything else here is site-stable: Parc del Fòrum coordinates, Europe/Madrid, and the 08:00 day cutoff convention."
+}

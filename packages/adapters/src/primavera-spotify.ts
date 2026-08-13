@@ -19,9 +19,9 @@
  * otherwise. Of 30 real ps26 acts, 24 matched exactly; the 6 that didn't are
  * suffixed or b2b billings that the name search was never going to settle anyway.
  */
-import { httpGetJson } from "@festival-bot/adapters";
+import { httpGetJson } from "./http.js";
 import type { ArtistIdSource } from "@festival-bot/core";
-import { PS_ENDPOINT } from "./fetch.js";
+import { PS_ENDPOINT } from "./primavera-graphql.js";
 
 /** The app's own query, field-for-field. */
 const PREFERENCES = `query R($search: String, $from: Int, $to: Int, $artists: [String]) {
@@ -57,7 +57,7 @@ export function preferencesUrl(search: string, limit = 5): string {
  * Deliberately the same normalisation the MusicBrainz matcher uses — the two gates
  * should agree on what "the same name" means.
  */
-export function normName(s: string): string {
+export function normArtistName(s: string): string {
   return s
     .normalize("NFKD")
     .replace(/[̀-ͯ]/g, "")
@@ -71,11 +71,11 @@ export function normName(s: string): string {
  * "closest" — see the module header for what happens when you reach further.
  */
 export function pickExactArtist(query: string, artists: PsTopArtist[]): PsTopArtist | null {
-  const q = normName(query);
-  return artists.find((a) => a.name && normName(a.name) === q && a.spotifyId) ?? null;
+  const q = normArtistName(query);
+  return artists.find((a) => a.name && normArtistName(a.name) === q && a.spotifyId) ?? null;
 }
 
-export function createArtistIdSource(
+export function createPsArtistIdSource(
   opts: { fetchJson?: <T>(url: string) => Promise<T>; limit?: number } = {},
 ): ArtistIdSource {
   const fetchJson = opts.fetchJson ?? (<T>(u: string) => httpGetJson<T>(u));

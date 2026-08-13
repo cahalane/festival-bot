@@ -1,5 +1,5 @@
 import { describe, expect, test } from "vitest";
-import { mapFeed } from "./announcements.js";
+import { mapFeed } from "./bluesky.js";
 
 describe("mapFeed", () => {
   const feed = {

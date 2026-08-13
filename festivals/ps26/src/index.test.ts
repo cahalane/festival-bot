@@ -1,5 +1,5 @@
 import { describe, expect, test } from "vitest";
-import { createFestival } from "./index.js";
+import { createFestival, PS26_EVENTS } from "./index.js";
 
 describe("createFestival (ps26 module assembly)", () => {
   test("assembles manifest, venues, knowledge and the always-available sources", async () => {
@@ -14,7 +14,19 @@ describe("createFestival (ps26 module assembly)", () => {
     expect(f.sources.pages).toBeDefined(); // GraphQL editorial feed — diffable news
     expect(f.sources.artistIds).toBeDefined(); // Spotify ids — MusicBrainz disambiguation
     expect(f.sources.artistInfo?.infoMany).toBeDefined(); // batched bios for cf-push
-    expect((await f.sources.lineup.loadSets()).length).toBeGreaterThan(50);
+    // Reads the real bundled 2026 snapshot: the filler is gone and a known act
+    // lands on its known stage. The adapter ships no snapshot, so this per-edition
+    // check lives here.
+    const sets = await f.sources.lineup.loadSets();
+    expect(sets.length).toBeGreaterThan(50);
+    expect(sets.every((s) => s.durationMin < 600)).toBe(true);
+    expect(sets.find((s) => s.name === "st.frances")?.stage).toBe("auditori-rockdelux");
+  });
+
+  test("declares the 2026 Fòrum and Ciutat events as distinct", () => {
+    expect(PS26_EVENTS.forum).toBe("primavera-sound-2026-barcelona");
+    expect(PS26_EVENTS.ciutat).toBe("primavera-ciutat-2026-barcelona");
+    expect(PS26_EVENTS.forum).not.toBe(PS26_EVENTS.ciutat);
   });
 
   test("favourites is wired only when Clashfinder secrets are supplied", () => {

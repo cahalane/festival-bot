@@ -6,7 +6,7 @@
  * `imageUrl` matters. Ported from bsky_watch.py.
  */
 import type { Announcement, AnnouncementsSource } from "@festival-bot/core";
-import { httpGetJson } from "@festival-bot/adapters";
+import { httpGetJson } from "./http.js";
 
 const API = "https://public.api.bsky.app/xrpc";
 const DEFAULT_ACTOR = "primavera-sound.bsky.social";
@@ -55,7 +55,7 @@ export function mapFeed(data: BskyFeed): Announcement[] {
   return out;
 }
 
-export function createAnnouncementsSource(
+export function createBlueskyAnnouncementsSource(
   opts: { actor?: string; fetchJson?: <T>(url: string) => Promise<T> } = {},
 ): AnnouncementsSource {
   const actor = opts.actor ?? DEFAULT_ACTOR;

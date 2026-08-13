@@ -3,8 +3,8 @@ import { existsSync, mkdtempSync, readFileSync, rmSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { formatInZone } from "@festival-bot/core";
-import { parseLineup, createLineupSource } from "./lineup.js";
-import type { RawLineup } from "./lineup.js";
+import { parseLineup, createPsLineupSource } from "./primavera-lineup.js";
+import type { RawLineup } from "./primavera-lineup.js";
 
 const rawOf = (n: number): RawLineup =>
   ({
@@ -51,6 +51,13 @@ describe("parseLineup", () => {
     expect(formatInZone(s.start, "Europe/Madrid")).toMatch(/Sat.*16:30/);
   });
 
+  test("names a missing event instead of dying on a property of null", () => {
+    // What a not-yet-announced edition actually returns: HTTP 200, and
+    // `getLineupEvent: null`. Verified live against primavera-sound-2027-barcelona.
+    const missing = { data: { getLineupEvent: null } } as unknown as RawLineup;
+    expect(() => parseLineup(missing)).toThrow(/no lineup event by that name/);
+  });
+
   test("filters out the >=600-min non-music open-hours filler", () => {
     const sets = parseLineup(raw);
     expect(sets.map((s) => s.name)).toEqual(["st.frances"]);
@@ -58,16 +65,11 @@ describe("parseLineup", () => {
   });
 });
 
-describe("createLineupSource (reads the pack snapshot)", () => {
-  test("loads the real ps26 schedule snapshot with no filler", async () => {
-    const sets = await createLineupSource().loadSets();
-    expect(sets.length).toBeGreaterThan(50);
-    expect(sets.every((s) => s.durationMin < 600)).toBe(true);
-    expect(sets.find((s) => s.name === "st.frances")?.stage).toBe("auditori-rockdelux");
-  });
-});
+// Reading a real bundled snapshot is a per-edition concern and is asserted in the
+// festival module's own test (festivals/ps26/src/index.test.ts) — this adapter
+// ships no snapshot of its own.
 
-describe("createLineupSource refresh (live fetch + snapshot guard)", () => {
+describe("createPsLineupSource refresh (live fetch + snapshot guard)", () => {
   let dir: string;
   let forumFile: string;
   let ciutatFile: string;
@@ -75,7 +77,8 @@ describe("createLineupSource refresh (live fetch + snapshot guard)", () => {
   let ciutatSize: number;
 
   const fake = async <T>(u: string): Promise<T> => (u.includes("ciutat") ? rawOf(ciutatSize) : rawOf(forumSize)) as T;
-  const make = () => createLineupSource({ file: forumFile, ciutatFile, fetchJson: fake });
+  const EVENTS = { forum: "primavera-sound-2026-barcelona", ciutat: "primavera-ciutat-2026-barcelona" };
+  const make = () => createPsLineupSource(EVENTS, { file: forumFile, ciutatFile, fetchJson: fake });
 
   beforeEach(() => {
     dir = mkdtempSync(join(tmpdir(), "ps26-lineup-"));
@@ -121,5 +124,13 @@ describe("createLineupSource refresh (live fetch + snapshot guard)", () => {
     expect(res).toMatchObject({ variant: "ciutat", fetched: 5, written: true, file: ciutatFile });
     expect(readFileSync(ciutatFile, "utf8").length).toBeGreaterThan(0);
     expect((await src.loadSets()).length).toBe(3); // forum snapshot unaffected
+  });
+
+  test("an edition with no ciutat programme refuses the variant instead of fetching the forum", async () => {
+    // ps27 will start life like this: a forum event and no city programme announced.
+    // Silently falling back to the forum event would write the main lineup into the
+    // ciutat snapshot and quietly double-count the festival.
+    const src = createPsLineupSource({ forum: "primavera-sound-2027-barcelona" }, { file: forumFile, fetchJson: fake });
+    await expect(src.refresh!({ variant: "ciutat" })).rejects.toThrow(/no `ciutat` programme/);
   });
 });

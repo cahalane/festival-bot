@@ -12,8 +12,8 @@ app; full derivation, negative results and the endpoints we chose NOT to use are
 ## 1. GraphQL lineup — the lineup source
 Endpoint: `https://graphql.primaverasound.com/prod/graphql` (GET, query in URL params, no auth).
 The lineup lives in the module as `festivals/ps26/schedule.json`, parsed by the TS lineup source
-(`festivals/ps26/src/lineup.ts`) into the engine's `ArtistSet` model. Refresh with
-**`./festplan fetch-lineup`** (source `festivals/ps26/src/fetch.ts`).
+(`packages/adapters/src/primavera-lineup.ts`) into the engine's `ArtistSet` model. Refresh with
+**`./festplan fetch-lineup`** (source `packages/adapters/src/primavera-graphql.ts`).
 
 **Two events on the SAME endpoint/query, different `name`:** Fòrum = `primavera-sound-2026-barcelona`
 (Parc del Fòrum lineup → `schedule.json`); `--ciutat` = `primavera-ciutat-2026-barcelona`
@@ -58,7 +58,7 @@ feed is pruned post-festival (see the shrink guard above).
 
 ## 2. Per-artist bio — `./festplan artist-info` (GraphQL first, scrape as fallback)
 `./festplan artist-info <slug> …` (`--json` → `{name, bio, url}`; source
-`festivals/ps26/src/artist-info.ts`) returns the editorial write-up: genre cues plus "Where to
+`packages/adapters/src/primavera-artist-info.ts`) returns the editorial write-up: genre cues plus "Where to
 start", "What you should know", and a **"You'll like him if you like… [artists]"** line (gold for
 recommendations). Not every artist has one (`bio=""`).
 
@@ -88,19 +88,6 @@ made 73. This is what makes bio-enriching a whole-lineup Clashfinder push practi
 batch doesn't answer for are simply absent from the result, so callers fall back to `info()` per
 slug and keep the scrape safety net — batching is a speed-up, never a coverage change.
 
-## 2c. Spotify ids — `artistIds` source (MusicBrainz disambiguation only)
-
-`getRegisterPreferencesData(search:)` — the app's registration artist-picker — returns
-`spotifyId` per artist, which MusicBrainz can reverse into an MBID *by identity* rather than by
-name. Used only to enrich a Clashfinder push (`festivals/ps26/src/spotify.ts`).
-
-**Read the warning before using this for anything else:** it searches Spotify's global catalogue,
-not the ps26 lineup, and pads with related artists — searching `Greta` returns *Greta Van Fleet*,
-not ps26's Bits act slugged `greta`. The source therefore accepts a result only on an exact
-normalised-name match and returns null otherwise. See
-[`docs/research/primavera-graphql-api.md`](../../../docs/research/primavera-graphql-api.md) §7b for
-the measured hit rate (+3 of 30 acts) and the full list of traps.
-
 ## 2b. Official news — `./festplan page` / `pages-tick` (`getPostsListWithTotal`)
 The festival's editorial feed, wired as the `pages` source (so ps26 has the same change-watch atn26
 gets from Appmiral's CMS). Category **`barcelona`** scopes it to this festival — posts are
@@ -117,6 +104,20 @@ design, rather than a de-tagged email dump.
 registered app instance; pulling it would mean faking an install against Primavera's Braze
 workspace. Out of bounds. The app's other "notifications" are on-device reminders before favourited
 sets — the job `./festplan reminders` already does.
+
+
+## 2c. Spotify ids — `artistIds` source (MusicBrainz disambiguation only)
+
+`getRegisterPreferencesData(search:)` — the app's registration artist-picker — returns
+`spotifyId` per artist, which MusicBrainz can reverse into an MBID *by identity* rather than by
+name. Used only to enrich a Clashfinder push (`packages/adapters/src/primavera-spotify.ts`).
+
+**Read the warning before using this for anything else:** it searches Spotify's global catalogue,
+not the ps26 lineup, and pads with related artists — searching `Greta` returns *Greta Van Fleet*,
+not ps26's Bits act slugged `greta`. The source therefore accepts a result only on an exact
+normalised-name match and returns null otherwise. See
+[`docs/research/primavera-graphql-api.md`](../../../docs/research/primavera-graphql-api.md) §7b for
+the measured hit rate (+3 of 30 acts) and the full list of traps.
 
 ## 3. User favourites — Clashfinder (clashfinder.com/m/ps26)
 Users share must-see acts either by **telling us directly** or via a **Clashfinder** link. We read
@@ -135,7 +136,7 @@ any user's PUBLIC highlights with the deployment's own operator account.
   with the operator's key. Don't ask users for their own private keys.
 
 ## 4. Live-ops announcements — BlueSky (`announcements` source)
-`./festplan announcements` / `announce-tick`, source `festivals/ps26/src/announcements.ts`. The
+`./festplan announcements` / `announce-tick`, source `packages/adapters/src/bluesky.ts`. The
 official feed `primavera-sound.bsky.social` over the **public AT Protocol API**
 (`https://public.api.bsky.app/xrpc/app.bsky.feed.getAuthorFeed`) — no auth, no JS wall.
 

@@ -16,8 +16,8 @@
  * together.
  */
 import type { ArtistInfo, ArtistInfoSource } from "@festival-bot/core";
-import { httpGet } from "@festival-bot/adapters";
-import { fetchPostsBySlug, longestTextEn, postBody, postTitle, stripHtml, PS_SITE } from "./posts.js";
+import { httpGet } from "./http.js";
+import { fetchPostsBySlug, longestTextEn, postBody, postTitle, stripHtml, PS_SITE } from "./primavera-posts.js";
 
 // Re-exported: these moved to posts.ts (both surfaces need them), but this stays
 // their public import site.
@@ -42,7 +42,7 @@ export function infoFromInitialData(blob: unknown, slug: string): ArtistInfo {
   return { name, bio: stripHtml(longestTextEn(d)), url: PAGE(slug) };
 }
 
-export function createArtistInfoSource(
+export function createPsArtistInfoSource(
   opts: {
     fetchText?: (url: string) => Promise<string>;
     fetchJson?: <T>(url: string) => Promise<T>;

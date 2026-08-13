@@ -180,7 +180,7 @@ query R($search: String, $from: Int, $to: Int, $artists: [String]) {
 `spotifyId` is genuinely useful: MusicBrainz records streaming URLs as artist relations, so
 `/ws/2/url?resource=https://open.spotify.com/artist/<id>&inc=artist-rels` reverses an id to an
 **MBID by identity rather than by name** — the only way to separate two acts that share a name.
-Implemented in `festivals/ps26/src/spotify.ts` + `packages/adapters/src/musicbrainz.ts`.
+Implemented in `packages/adapters/src/primavera-spotify.ts` + `packages/adapters/src/musicbrainz.ts`.
 
 **The trap.** This searches Spotify's *global* catalogue and pads results with related artists. It
 is **not** a lineup lookup, and the first result is routinely a different, more famous act

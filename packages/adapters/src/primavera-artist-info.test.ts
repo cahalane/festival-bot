@@ -1,5 +1,5 @@
 import { describe, expect, test } from "vitest";
-import { stripHtml, longestTextEn, extractInitialData, infoFromInitialData, createArtistInfoSource } from "./artist-info.js";
+import { stripHtml, longestTextEn, extractInitialData, infoFromInitialData, createPsArtistInfoSource } from "./primavera-artist-info.js";
 
 describe("stripHtml", () => {
   test("removes tags and decodes the entities the feed uses", () => {
@@ -43,7 +43,7 @@ describe("infoFromInitialData", () => {
   });
 });
 
-describe("createArtistInfoSource", () => {
+describe("createPsArtistInfoSource", () => {
   const apiPost = {
     slugName: "wet-leg",
     postName: "Wet Leg (GB)",
@@ -56,7 +56,7 @@ describe("createArtistInfoSource", () => {
   };
 
   test("reads the bio from the GraphQL components tree, without scraping", async () => {
-    const src = createArtistInfoSource({ fetchJson: okJson, fetchText: failText });
+    const src = createPsArtistInfoSource({ fetchJson: okJson, fetchText: failText });
     expect(await src.info("wet-leg")).toEqual({
       name: "Wet Leg",
       bio: "Where to start? Chaise Longue.",
@@ -69,7 +69,7 @@ describe("createArtistInfoSource", () => {
       throw new Error("graphql down");
     };
     const html = `<script>window.__INITIAL_DATA__ = {"postName":"Wet Leg","body":{"text":{"en":"<p>scraped bio</p>"}}};</script>`;
-    const src = createArtistInfoSource({ fetchJson: boom, fetchText: async () => html });
+    const src = createPsArtistInfoSource({ fetchJson: boom, fetchText: async () => html });
     expect((await src.info("wet-leg")).bio).toBe("scraped bio");
   });
 
@@ -77,13 +77,13 @@ describe("createArtistInfoSource", () => {
     const empty = async <T>(): Promise<T> =>
       ({ data: { getPostsBySlugName: [{ slugName: "absolute", components: [] }] } }) as T;
     const html = `<script>window.__INITIAL_DATA__ = {"postName":"Absolute.","body":{"text":{"en":"<p>from the page</p>"}}};</script>`;
-    const src = createArtistInfoSource({ fetchJson: empty, fetchText: async () => html });
+    const src = createPsArtistInfoSource({ fetchJson: empty, fetchText: async () => html });
     expect((await src.info("absolute")).bio).toBe("from the page");
   });
 
   test("infoMany resolves a whole batch in ONE request", async () => {
     const urls: string[] = [];
-    const src = createArtistInfoSource({
+    const src = createPsArtistInfoSource({
       fetchText: failText,
       fetchJson: async <T>(url: string): Promise<T> => {
         urls.push(url);
@@ -109,7 +109,7 @@ describe("createArtistInfoSource", () => {
 
   test("chunks a large slug list so the GET URL stays bounded", async () => {
     let calls = 0;
-    const src = createArtistInfoSource({
+    const src = createPsArtistInfoSource({
       chunkSize: 2,
       fetchText: failText,
       fetchJson: async <T>(): Promise<T> => {
@@ -123,7 +123,7 @@ describe("createArtistInfoSource", () => {
 
   test("omits slugs with no write-up, leaving them for the per-slug fallback", async () => {
     // The contract that keeps the batch a pure speed-up: absent != 'no such artist'.
-    const src = createArtistInfoSource({
+    const src = createPsArtistInfoSource({
       fetchText: failText,
       fetchJson: async <T>(): Promise<T> =>
         ({ data: { getPostsBySlugName: [{ slugName: "silent", components: [] }] } }) as T,
@@ -133,7 +133,7 @@ describe("createArtistInfoSource", () => {
   });
 
   test("a failing chunk yields no entries rather than throwing", async () => {
-    const src = createArtistInfoSource({
+    const src = createPsArtistInfoSource({
       fetchText: failText,
       fetchJson: async <T>(): Promise<T> => {
         throw new Error("graphql down");
@@ -144,7 +144,7 @@ describe("createArtistInfoSource", () => {
 
   test("infoMany deduplicates repeated slugs", async () => {
     let asked: string[] = [];
-    const src = createArtistInfoSource({
+    const src = createPsArtistInfoSource({
       fetchText: failText,
       fetchJson: async <T>(url: string): Promise<T> => {
         asked = JSON.parse(new URL(url).searchParams.get("variables")!).slugnames;
@@ -156,13 +156,13 @@ describe("createArtistInfoSource", () => {
   });
 
   test("useApi:false makes infoMany a no-op, never a scrape storm", async () => {
-    const src = createArtistInfoSource({ useApi: false, fetchText: failText, fetchJson: failText as never });
+    const src = createPsArtistInfoSource({ useApi: false, fetchText: failText, fetchJson: failText as never });
     expect(await src.infoMany!(["a", "b"])).toEqual(new Map());
   });
 
   test("useApi:false keeps the scrape-only behaviour", async () => {
     const html = `<script>window.__INITIAL_DATA__ = {"postName":"X","body":{"text":{"en":"<p>page only</p>"}}};</script>`;
-    const src = createArtistInfoSource({
+    const src = createPsArtistInfoSource({
       useApi: false,
       fetchJson: async () => {
         throw new Error("API must not be called");

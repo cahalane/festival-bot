@@ -21,8 +21,8 @@
  * them; artist-info re-exports them so its existing import site keeps working.
  */
 import type { PageDetail, PageRef, PagesSource } from "@festival-bot/core";
-import { httpGetJson } from "@festival-bot/adapters";
-import { PS_ENDPOINT } from "./fetch.js";
+import { httpGetJson } from "./http.js";
+import { PS_ENDPOINT } from "./primavera-graphql.js";
 
 /** Public site root — post `url`s are site-relative. */
 export const PS_SITE = "https://www.primaverasound.com";
@@ -235,7 +235,7 @@ export function toPageRef(p: PsPost): PageRef {
  * announcements source: BlueSky is the live ops channel (stage delays, weather),
  * this is the slower editorial one (programme news, ticket waves, line-up reveals).
  */
-export function createPostsPagesSource(
+export function createPsPagesSource(
   opts: { category?: string; limit?: number; fetchJson?: FetchJson } = {},
 ): PagesSource {
   const fetchJson = opts.fetchJson ?? defaultFetch;

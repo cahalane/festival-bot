@@ -1,7 +1,7 @@
 import { describe, expect, test } from "vitest";
 import {
   PS_NEWS_CATEGORY,
-  createPostsPagesSource,
+  createPsPagesSource,
   fetchPostsBySlug,
   isBits,
   longestTextEn,
@@ -15,7 +15,7 @@ import {
   stripHtml,
   toPageRef,
   type PsPost,
-} from "./posts.js";
+} from "./primavera-posts.js";
 
 /** Shaped after a real getPostsBySlugName response (wet-leg, trimmed). */
 const artistPost: PsPost = {
@@ -148,7 +148,7 @@ describe("fetchPostsBySlug", () => {
   });
 });
 
-describe("createPostsPagesSource", () => {
+describe("createPsPagesSource", () => {
   const listResponse = {
     data: {
       getPostsListWithTotal: {
@@ -165,7 +165,7 @@ describe("createPostsPagesSource", () => {
 
   test("refs fingerprints the official news feed", async () => {
     const fake = async <T>(): Promise<T> => listResponse as T;
-    const refs = await createPostsPagesSource({ fetchJson: fake }).refs();
+    const refs = await createPsPagesSource({ fetchJson: fake }).refs();
     expect(refs).toEqual([
       { id: "impact-2026", title: "The impact of PS 2026", modifiedAt: new Date(1784717537712).toISOString() },
     ]);
@@ -177,7 +177,7 @@ describe("createPostsPagesSource", () => {
       seen.push(url);
       return { data: { getPostsBySlugName: [artistPost] } } as T;
     };
-    const page = await createPostsPagesSource({ fetchJson: fake }).page!("wet-leg");
+    const page = await createPsPagesSource({ fetchJson: fake }).page!("wet-leg");
     expect(page?.body).toBe(
       "Where to start? Chaise Longue & more.\n\nhttps://www.primaverasound.com/en/artist/wet-leg",
     );
@@ -186,11 +186,11 @@ describe("createPostsPagesSource", () => {
 
   test("page returns null for a slug the feed does not have", async () => {
     const fake = async <T>(): Promise<T> => ({ data: { getPostsBySlugName: [] } }) as T;
-    expect(await createPostsPagesSource({ fetchJson: fake }).page!("ghost")).toBeNull();
+    expect(await createPsPagesSource({ fetchJson: fake }).page!("ghost")).toBeNull();
   });
 
   test("a GraphQL error surfaces instead of an empty feed", async () => {
     const fake = async <T>(): Promise<T> => ({ errors: [{ message: "rate limited" }] }) as T;
-    await expect(createPostsPagesSource({ fetchJson: fake }).refs()).rejects.toThrow(/rate limited/);
+    await expect(createPsPagesSource({ fetchJson: fake }).refs()).rejects.toThrow(/rate limited/);
   });
 });

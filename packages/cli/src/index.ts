@@ -162,6 +162,23 @@ async function main(argv: string[]): Promise<void> {
     return;
   }
 
+  // BOOTSTRAP: handled before loadRuntime, which parses the snapshot up front. A
+  // festival module that has no snapshot yet (a newly-prepared edition — see
+  // festivals/ps27) could otherwise never run the one command that creates it.
+  if (cmd === "fetch-lineup") {
+    const src = loadActiveFestival().sources.lineup;
+    if (!src.refresh) return void console.log("this festival's lineup source has no live fetch.");
+    const res = await src.refresh({
+      variant: args.includes("--ciutat") ? "ciutat" : "forum",
+      force: args.includes("--force"),
+    });
+    if (json) return void console.log(JSON.stringify({ query: "fetch-lineup", ...res }, null, 2));
+    console.log(`${res.variant}: fetched ${res.fetched} sets (prev ${res.previous ?? "none"}) — ${res.note}`);
+    console.log(`  ${res.written ? "wrote" : "GUARDED → sidecar"}: ${res.file}`);
+    if (!res.written) console.log("  (re-run with --force to overwrite the snapshot)");
+    return;
+  }
+
   const rt: Runtime = await loadRuntime(loadActiveFestival());
   const tz = rt.module.manifest.timezone;
   const ctx: JsonCtx = { tz, venueName: (s) => rt.venueName(s), limited: (s) => rt.limited(s) };
@@ -665,21 +682,7 @@ async function main(argv: string[]): Promise<void> {
       });
       break;
     }
-    case "fetch-lineup": {
-      const src = rt.module.sources.lineup;
-      if (!src.refresh) return void console.log("this festival's lineup source has no live fetch.");
-      const variant = args.includes("--ciutat") ? "ciutat" : "forum";
-      const force = args.includes("--force");
-      const res = await src.refresh({ variant, force });
-      if (json) {
-        emit({ query: "fetch-lineup", ...res });
-        break;
-      }
-      console.log(`${res.variant}: fetched ${res.fetched} sets (prev ${res.previous ?? "none"}) — ${res.note}`);
-      console.log(`  ${res.written ? "wrote" : "GUARDED → sidecar"}: ${res.file}`);
-      if (!res.written) console.log("  (re-run with --force to overwrite the snapshot)");
-      break;
-    }
+    // NOTE: `fetch-lineup` is handled above, before the runtime is built.
     case "artist-info": {
       const src = rt.module.sources.artistInfo;
       if (!src) return void console.log("no artist-info source for this festival.");
