@@ -130,6 +130,8 @@ to show the two shapes a real integration takes; see
   (vendor API vs. scrape), and what talking to it looks like.
 - [`docs/setup/running-as-a-service.md`](docs/setup/running-as-a-service.md) — running the session
   unattended under tmux + systemd, so the background watches survive crashes and reboots.
+- [`docs/setup/adding-a-watch.md`](docs/setup/adding-a-watch.md) — the shape every unattended watch
+  follows: the tick, the source, the loop script, and teaching the bootstrap skill to arm it.
 - `docs/operating/` — how the bot behaves once it's live: channel etiquette, per-user tone,
   privacy and access boundaries, watches and alerts, data-accuracy caveats.
 

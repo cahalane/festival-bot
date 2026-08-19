@@ -54,3 +54,9 @@ resolver may silently match the wrong one or drop the star entirely. When pushin
 collisions across the acts you're exporting and disambiguate them (a venue or set-time suffix is
 usually enough) before they reach the mirror, rather than discovering after the fact that
 someone's star silently stopped resolving.
+
+The safety net behind this is the `STAR CHECK` block `cf-push` prints after a push, which diffs
+every crew member's stars against the previous push and names anything that dropped or now points
+at a different act. Read it every time — it is silent when nothing broke, so silence is the normal
+case and easy to stop looking for. A `(star check skipped: …)` line is not silence: it means the
+check couldn't run and nothing was verified.

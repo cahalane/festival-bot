@@ -4,7 +4,7 @@
 
 **demofest** is a synthetic, offline festival built into every fresh clone as the default when no real festival is configured. It has no network dependency, no secrets, and no cache — only a committed `schedule.json` and walk graph. Three stages, sixteen invented sets across two nights (Friday 14 August → Saturday 15 August 2026), deliberately including a clash and a tight walk so the planner is exercised.
 
-Use demofest to test the CLI and planner in isolation. To plan a real festival, replace it by adding the festival's module under `festivals/<slug>/` and pointing your root `CLAUDE.md` at it with an `@festivals/<slug>/CONTEXT.md` import line — the CLI (see `packages/cli/src/config.ts`) parses that import out of `CLAUDE.md` to decide what it plans against. A fresh clone ships a `CLAUDE.md` whose import line already points at `demofest`, so swapping that one line is what switches festivals; the `demofest` constant in `config.ts` is only a last-resort fallback for when `CLAUDE.md` is missing or unreadable. `ACTIVE_FESTIVAL=<slug>` overrides for a one-off/test run. See `docs/setup/getting-started.md` for details.
+Use demofest to test the CLI and planner in isolation. To swap in a real festival — the one-line `CLAUDE.md` import that decides what both the CLI and this session plan against — see [`docs/setup/getting-started.md`](../../docs/setup/getting-started.md).
 
 **No favourites source is wired up.** demofest deliberately declares no Clashfinder mirror and no
 `data/users.json` favourites, on purpose — it needs no network access or secrets. That means

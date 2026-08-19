@@ -45,14 +45,16 @@ task is scoped to one of them. This is what actually prevents cross-user leakage
 multi-tenant session: a subagent that never received another person's data cannot leak it, even by
 accident.
 
-This has a specific mechanical consequence for how you dispatch work: a context-inheriting
-fork (an agent type that carries forward the *entire* current conversation) is the wrong tool for
-per-user work in a session juggling several people's threads at once, precisely because it
-inherits everything — including whatever other users' data is currently live in that context. Use
-a fresh, narrowly-briefed agent instead, handed exactly the one person's handle and data it needs
-and nothing else. Subagents drafting a reply on someone's behalf should produce a **draft** that
-the orchestrating session reviews and sends — not send directly themselves — so there's a single
-point where a final privacy check happens before anything reaches a real person.
+Isolation is a property of what the subagent was *handed*, not of how carefully it behaves once it
+holds the data — so the dispatch mechanics are where this rule is actually won or lost. They live
+as a standing rule in [`CLAUDE.md`](../../CLAUDE.md)'s **Concurrency** section, which holds whether
+or not this file has been read; don't re-derive them here.
+
+What that section doesn't give is the *reason* for its last step, the one easiest to skip under
+load: a subagent hands back a **draft** rather than sending, because that hand-back is the single
+point where a final privacy check happens before anything reaches a real person. Let a subagent
+send for itself and that checkpoint disappears silently — nothing errors, the message just goes out
+unreviewed.
 
 ## Consent is scoped to what it was given for
 

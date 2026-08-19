@@ -115,8 +115,14 @@ Don't just report a diff and wait to be asked:
    exception is a purely cosmetic rename with no time/stage change (say so rather than silently
    skipping even then). If the festival's event belongs to someone else, there is nothing to push —
    go straight to re-checking stars.
-2. **Re-check every crew member's stars** after the push — a push can orphan a star by making an id
-   ambiguous, so verify rather than assume nothing broke.
+2. **Read the `STAR CHECK` block in the push output.** `cf-push` already does this re-check for
+   you: it re-pulls every crew member's Clashfinder page, diffs their star codes against the last
+   push's baseline (`cache/<festival>/star_state.json`), and prints nothing when nothing broke.
+   `DROPPED <act> (<code>)` — their star no longer resolves; tell that person to re-star it.
+   `MOVED <code> was <act> — NOW POINTS AT <other>` is the worse case and leads: their plan still
+   looks complete while routing them to an act they never picked. A `(star check skipped: …)` line
+   means the check itself failed, so nothing was verified — say so rather than reading silence as
+   all-clear.
 3. **Tell only the affected people**, in their own tone from `data/prefs.json`, bound to the exact
    handle whose picks are hit — never leak one person's picks into another's reply.
 4. Say what it means concretely (a cancellation, a new clash, a clash resolved) rather than
@@ -130,38 +136,13 @@ Summarise: which watches got armed (with their Monitor description), which were 
 from Step 1 the operator should know before relying on the arming (e.g. "this festival has no
 `pages` source, so info-page changes won't be caught").
 
-## Appendix — adding a new watch
-
-Every watch in this project is the same shape; follow this rather than inventing a new one.
-Invariants that must hold regardless of what the new watch checks: **silent unless something
-changed** (no output = nothing happened, except the one clock-based exception above), **state on
-disk** under `cache/<festival>/` (so a change landing while the session is down still fires once,
-later, rather than being lost), and **fail quietly until the third consecutive failure** (one blip
-is noise, three in a row is an outage worth surfacing).
-
-1. **Build the tick** — a `<name>-tick` subcommand in `packages/cli/src/<name>-watch.ts`, modelled
-   on the existing tick files (`tick.ts` / `announce-watch.ts` / `pages-watch.ts` / `cold-watch.ts`
-   / `rain-watch.ts`): IO injected for testability, pull the source, diff against a saved
-   baseline/seen-set, print nothing unless something changed, advance the baseline, append to
-   `cache/<festival>/<name>_changes.log`, reuse the shared 3-strike failure helper. Wire it as a
-   `case "<name>-tick"` in `packages/cli/src/index.ts`. TDD it — the diff + failure state machine is
-   pure and unit-testable without touching a real network.
-2. **Register the source** (if new) on `FestivalSources` in `packages/core/src/festival.ts` and
-   `sources.ts`, then wire it conditionally in whichever festival module(s) actually have it,
-   guarded by whatever secret/precondition it needs — mirror how `atn26/src/index.ts` gates
-   `announcements`/`pages`/`map` on `xProtect` being set.
-3. **Add the loop script** — `scripts/<name>_watch_loop.sh`, modelled on
-   `scripts/schedule_watch_loop.sh`: `cd` to the repo root, call `./festplan <name>-tick`, sleep
-   `1200 + RANDOM % 600` (20-30 min, jittered), loop forever.
-4. **Add a row to the Step 2 table here** and a bullet in Step 3 documenting the exact event-line
-   string it prints and what to do when it fires — including, for anything user-facing, a
-   classifier gate so people aren't spammed over trivia.
-
 ## Notes
 
 - Read `cache/<festival>/schedule_changes.log` (and the other `*_changes.log` files) to recover
   changes that landed while the session was down, e.g. after `/clear` or a restart.
 - Which watches apply follows the **active festival** import in `CLAUDE.md` (or `ACTIVE_FESTIVAL`
   for a one-off run) — switching festivals needs no change to this skill, only a re-run of Step 1.
+- To add a new watch — same shape as every existing one, so follow it rather than inventing a
+  new one: [`docs/setup/adding-a-watch.md`](../../../docs/setup/adding-a-watch.md).
 - To stop a watch: `TaskStop` on its Monitor task id (note it when you arm it — `TaskList` won't
   show it later), or find the process with `ps aux | grep -i _watch_loop`.

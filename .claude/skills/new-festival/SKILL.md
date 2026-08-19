@@ -30,8 +30,8 @@ itself from being picked up as a workspace package, so do this before anything e
 new directory.
 
 Register it as a workspace member:
-- `packages/cli/package.json` — add `"@festival/<slug>": "*"` to `dependencies`, alongside
-  `@festival/demofest` / `@festival/atn26` / `@festival/ps26`.
+- `packages/cli/package.json` — add `"@festival/<slug>": "*"` to `dependencies`, alongside the
+  `@festival/*` entries already there.
 - `packages/cli/src/festivals.ts` — add `import { createFestival as <slug> } from "@festival/<slug>";`
   and an entry in the `builders` map (`<slug>: () => <slug>({ cacheDir: cacheDir("<slug>") })` —
   add `secrets: loadSecrets()` too once a source needs it).
