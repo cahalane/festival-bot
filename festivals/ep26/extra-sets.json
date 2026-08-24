@@ -1,19 +1,12 @@
 {
  "_source": "https://www.irishtimes.com/culture/music/2026/08/24/exclusive-electric-picnic-2026-stage-times-for-all-the-main-areas/",
- "_note": "Was 115 entries. The app published the main arenas in OTA v42 on 2026-08-24 with times matching this article (109 of 115 identical, 4 slightly refined by the app, which is newer and wins). Keeping the full list would have double-listed 113 acts, some under two stage names (comedy-stage vs comedy-arena, red-bull-terminus vs red-bull-x-terminus). Only the acts the app still lacks remain.",
+ "_note": "Was 115 entries. The app published the main arenas in OTA v42 (2026-08-24) with times matching the Irish Times article, so all but a couple became duplicates. 'The Saw Doctors' was dropped on 2026-08-24 once the app added it as 'The Saw Doctors (Main Stage)'. Only acts the app still lacks remain — re-check this file after every fetch-lineup, because an entry the app has caught up on becomes a duplicate on the Clashfinder mirror.",
  "sets": [
   {
    "name": "Breda Hegarty",
    "stage": "comedy-arena",
    "start": "2026-08-29T15:55:00+01:00",
    "end": "2026-08-29T16:15:00+01:00",
-   "note": "Irish Times, 'Electric Picnic 2026 stage times for all the main areas', 2026-08-24. Retained because the official app (Greencopper OTA v42, 2026-08-24) publishes the rest of the main-arena programme but not this act. Re-check on the next fetch-lineup: if the app adds it, delete this entry or it becomes a duplicate."
-  },
-  {
-   "name": "The Saw Doctors",
-   "stage": "main-stage-presented-by-3",
-   "start": "2026-08-30T17:30:00+01:00",
-   "end": "2026-08-30T18:30:00+01:00",
    "note": "Irish Times, 'Electric Picnic 2026 stage times for all the main areas', 2026-08-24. Retained because the official app (Greencopper OTA v42, 2026-08-24) publishes the rest of the main-arena programme but not this act. Re-check on the next fetch-lineup: if the app adds it, delete this entry or it becomes a duplicate."
   }
  ],
