@@ -1,0 +1,25 @@
+{
+  "_note": "Applied to EXISTING Clashfinder acts. Only entries where the CF spelling is factually wrong (misspelled proper noun / missing fadas). Casing and stylistic differences are deliberately NOT touched - CF's title case usually reads better than the app's ALL CAPS, and a 'correction' that is actually wrong is worse than leaving it alone.",
+  "fix": {
+    "Zara Larson": "Zara Larsson",
+    "Ben Helmsley": "Ben Hemsley",
+    "James Marriot": "James Marriott",
+    "Audrey Hobart": "Audrey Hobert",
+    "Ravyn Levae": "Ravyn Lenae",
+    "MC Damian Clarke": "MC Damian Clark",
+    "John Collery": "John Colleary",
+    "Breda Heggarty": "Breda Hegarty",
+    "Coaimhe Butterly and Rupa Marya in Conversation: Palestine - what next?": "Caoimhe Butterly and Rupa Marya in Conversation: Palestine - what next?",
+    "The Inisbofin Ceili Band": "The Inishbofin Céilí Band",
+    "CloughJordan Candelit Ensemble": "Cloughjordan Candlelit Ensemble",
+    "Seisun na mBan": "Seisiún na mBan",
+    "The Majic of Mythology with Marty and Friends": "The Magic of Mythology with Marty and Friends"
+  },
+  "_skipped_uncertain": [
+    "Annie Tannam vs ANNE TANNAM", "DJ Aronaoscar vs DJ Aaronoscar", "Michael Dowling vs Michael Downing",
+    "Laura Joe vs Laura Jo", "Claudio O vs Claudia O", "Shiloh Gray vs Shiloh Grey",
+    "DJ Bonjani vs DJ Bongani", "Donking Rongaville vs Donking Rongavilla", "SEANAM vs SEANEM",
+    "Newwra vs NewEra", "THXTII vs Thxtti", "Morrigna vs Morgana",
+    "Checkpoint Charlie vs Checkpiont Charlie (the APP has the typo here, not CF)"
+  ]
+}

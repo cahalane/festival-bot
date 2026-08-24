@@ -52,3 +52,48 @@ Cleaned variant: real acts 748 -> 1028 (+280), coverage 70% -> 77%, locations 51
 Garden, Coke Studio, Three Music Stage, Stradbally Inn, Brutropolis - Ministry of Misinformation,
 White Claw, 3 Charge and Chill, Cerebral Fortress, Northside Rises, Sa Chollchoill, Survivor, and
 others. Their `?` rows are the maintainer's timetable skeleton and are deliberately left in place.
+
+---
+
+## Push attempt, 2026-08-24 14:39 — BLOCKED (403, no edit rights)
+
+A complete payload was built and validated, then refused by Clashfinder.
+
+**Diagnosis (not a technical fault):**
+
+    GET  https://clashfinder.com/           200   signed in as colm2
+    GET  https://clashfinder.com/s/ep26/    200   readable
+    read API auth block                     {"result":"pass"}
+    GET  https://clashfinder.com/s/ep26/?edit   403   (bot UA and browser UA alike)
+    POST https://clashfinder.com/s/ep26/?edit   403
+
+The session cookie is live and the read key works; `?edit` alone is forbidden. This account does
+not hold edit rights on ep26. That is an access control on another user's event, so it was not
+worked around.
+
+**The payload is finished and ready** (`input0.txt` / `input1.txt`, rebuilt by `build_payload.py`):
+
+    1272 act lines / 63 locations
+      1013 existing acts carried through verbatim
+       259 area/fringe sets added from the app (Greencopper OTA v39)
+       215 artist blurbs from the app bundle
+        12 misspelled act names corrected (see corrections.json)
+         1 mbid
+       0 locations dropped, 0 malformed rows, 0 inverted times
+
+**Before any future push, re-run the freshness check.** `cf_ep26_baseline.json` is the state this
+payload was built against (`lastEdit 2026-08-24 12:52`). The maintainer edited the event twice
+during this session; a push built on a stale baseline would have re-created three parking lists and
+a duplicate "Three Music Stage" they had just deleted.
+
+**MBIDs were deliberately abandoned.** MusicBrainz resolved 1 of the first 17 fringe names (6%) —
+the rest are workshops, trad sessions and cocktail classes with no MusicBrainz entry. The push sets
+`cinfo-autoMbIdTagging=1`, so Clashfinder tags what it can server-side. The mainstream acts, which
+would resolve, are already on the event and are not in the add list.
+
+## Options from here
+
+1. Ask halvin (halvin@clashfinder.com) for edit rights on ep26, or send them `input1.txt`.
+2. Create an event this deployment owns and push there (the `atn26` mirror model).
+3. Leave ep26 alone — the maintainer is actively filling it and had already applied the Irish
+   Times main-arena times before this session's push was built.
