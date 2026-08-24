@@ -13,6 +13,7 @@
     "@festival-bot/adapters": "*",
     "@festival-bot/data": "*",
     "@festival/demofest": "*",
+    "@festival/ep26": "*",
     "@festival/atn26": "*",
     "@festival/ps26": "*",
     "@festival/ps27": "*"

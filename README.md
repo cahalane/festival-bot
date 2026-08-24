@@ -118,9 +118,15 @@ Two worked examples ship here, each demonstrating a different lineup-source path
   fetch before the festival ended — it's kept as-is for provenance, not backfilled, so don't treat
   it as a complete lineup.
 
-Neither reference module is "the" festival this repo defaults to — that's `demofest`. They're there
-to show the two shapes a real integration takes; see
-[`docs/setup/appmiral-discovery.md`](docs/setup/appmiral-discovery.md) and
+A third shape is `festivals/ep26` (Electric Picnic 2026), on **Greencopper / Leap** — the platform
+behind `com.greencopper.android.*` apps (Roskilde, Leeds, Download). It has no REST API at all:
+the app ships an AES-encrypted content bundle and replaces it over the air, so the adapter speaks
+that pipeline instead. See [`docs/setup/greencopper-discovery.md`](docs/setup/greencopper-discovery.md).
+
+None of these reference modules is "the" festival this repo defaults to — that's `demofest`. They're
+there to show the shapes a real integration takes; see
+[`docs/setup/appmiral-discovery.md`](docs/setup/appmiral-discovery.md),
+[`docs/setup/greencopper-discovery.md`](docs/setup/greencopper-discovery.md) and
 [`docs/setup/scraped-lineup.md`](docs/setup/scraped-lineup.md) for how each was actually built.
 
 ## Docs

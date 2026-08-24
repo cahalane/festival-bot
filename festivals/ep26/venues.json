@@ -1,0 +1,222 @@
+{
+  "venues": [
+    {
+      "slug": "main-stage-presented-by-3",
+      "name": "Main Stage presented by 3"
+    },
+    {
+      "slug": "electric-arena",
+      "name": "Electric Arena"
+    },
+    {
+      "slug": "rankins-wood",
+      "name": "Rankins Wood"
+    },
+    {
+      "slug": "red-bull-x-terminus",
+      "name": "Red Bull x Terminus"
+    },
+    {
+      "slug": "comedy-arena",
+      "name": "Comedy Arena"
+    },
+    {
+      "slug": "anachronica",
+      "name": "Anachronica"
+    },
+    {
+      "slug": "artlot-main-stage",
+      "name": "ArtLot (Main Stage)"
+    },
+    {
+      "slug": "artlot-groove-palette",
+      "name": "ArtLot Groove & Palette"
+    },
+    {
+      "slug": "artlot-seomra-boil",
+      "name": "ArtLot Seomra Boil"
+    },
+    {
+      "slug": "coke-studio",
+      "name": "Coke Studio"
+    },
+    {
+      "slug": "croi-crescent-earth",
+      "name": "Croi - Crescent Earth"
+    },
+    {
+      "slug": "croi-harp-ireland-stage",
+      "name": "Croi - Harp Ireland Stage"
+    },
+    {
+      "slug": "croi-intinn",
+      "name": "Croi - Intinn"
+    },
+    {
+      "slug": "croi-kinship-touch",
+      "name": "Croi - Kinship & Touch"
+    },
+    {
+      "slug": "croi-mainstage",
+      "name": "Croi - Mainstage"
+    },
+    {
+      "slug": "croi-realign",
+      "name": "Croi - Realign"
+    },
+    {
+      "slug": "croi-serenity-gardens-stage",
+      "name": "Croi - Serenity Gardens Stage"
+    },
+    {
+      "slug": "croi-serenity-gardens-soft-landing",
+      "name": "Croi Serenity Gardens - Soft Landing"
+    },
+    {
+      "slug": "fishtown",
+      "name": "Fishtown"
+    },
+    {
+      "slug": "fishtown-the-heart-anchor-bar",
+      "name": "Fishtown - The Heart & Anchor Bar"
+    },
+    {
+      "slug": "fosset-s-circus",
+      "name": "Fosset's Circus"
+    },
+    {
+      "slug": "global-green-elements-of-change",
+      "name": "GLOBAL GREEN ELEMENTS OF CHANGE"
+    },
+    {
+      "slug": "glow-depot-court-side",
+      "name": "Glow Depot - Court Side"
+    },
+    {
+      "slug": "glow-depot-stage",
+      "name": "Glow Depot Stage"
+    },
+    {
+      "slug": "guinness-lovely-times-stage",
+      "name": "Guinness Lovely Times Stage"
+    },
+    {
+      "slug": "hazelwood-an-chollchoill",
+      "name": "Hazelwood / An Chollchoill"
+    },
+    {
+      "slug": "little-picnic-creativity-tent",
+      "name": "Little Picnic - Creativity Tent"
+    },
+    {
+      "slug": "little-picnic-expression-storytelling-tent",
+      "name": "Little Picnic - Expression & Storytelling Tent"
+    },
+    {
+      "slug": "little-picnic-ickle-big-top",
+      "name": "Little Picnic - Ickle Big Top"
+    },
+    {
+      "slug": "little-picnic-sports-field",
+      "name": "Little Picnic - Sports Field"
+    },
+    {
+      "slug": "little-picnic-walkabout",
+      "name": "Little Picnic - Walkabout"
+    },
+    {
+      "slug": "little-picnic-workshop-tent",
+      "name": "Little Picnic - Workshop Tent"
+    },
+    {
+      "slug": "metro",
+      "name": "Metro 🚇"
+    },
+    {
+      "slug": "mindfield-ah-hear-podcast-stage",
+      "name": "Mindfield - Ah Hear! Podcast Stage"
+    },
+    {
+      "slug": "mindfield-an-puball-gaelige",
+      "name": "Mindfield - An Puball Gaelige"
+    },
+    {
+      "slug": "mindfield-leviathan",
+      "name": "Mindfield - Leviathan"
+    },
+    {
+      "slug": "mindfield-manifesto",
+      "name": "Mindfield - Manifesto"
+    },
+    {
+      "slug": "mindfield-the-word-stage",
+      "name": "Mindfield - The Word Stage"
+    },
+    {
+      "slug": "mother-afterdark",
+      "name": "Mother Afterdark"
+    },
+    {
+      "slug": "providencia",
+      "name": "Providencia"
+    },
+    {
+      "slug": "rockshore-stage",
+      "name": "Rockshore Stage"
+    },
+    {
+      "slug": "salty-dog",
+      "name": "Salty Dog"
+    },
+    {
+      "slug": "schweppes-born-social",
+      "name": "Schweppes Born Social"
+    },
+    {
+      "slug": "smirnoff-stage",
+      "name": "Smirnoff Stage"
+    },
+    {
+      "slug": "spike-island",
+      "name": "Spike Island"
+    },
+    {
+      "slug": "the-theatre",
+      "name": "The Theatre"
+    },
+    {
+      "slug": "theatre-of-food",
+      "name": "Theatre Of Food"
+    },
+    {
+      "slug": "tof-drinks-theatre",
+      "name": "TOF - Drinks Theatre"
+    },
+    {
+      "slug": "tof-garden-stage",
+      "name": "TOF - Garden Stage"
+    },
+    {
+      "slug": "trailer-park",
+      "name": "Trailer Park"
+    },
+    {
+      "slug": "transmission",
+      "name": "Transmission 👽"
+    },
+    {
+      "slug": "treasure-beach",
+      "name": "Treasure Beach"
+    },
+    {
+      "slug": "white-claw-shore-club",
+      "name": "White Claw Shore Club"
+    }
+  ],
+  "limitedCapacity": [],
+  "walk": {
+    "defaultMinutes": 12,
+    "edges": []
+  },
+  "_note": "Main arenas are listed first; the rest alphabetically. Walk edges are EMPTY, so defaultMinutes applies to every hop - run `walk-refine` or follow docs/setup/walk-graph.md rather than hand-guessing them."
+}

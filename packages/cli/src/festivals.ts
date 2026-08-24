@@ -10,6 +10,7 @@ import { createFestival as demofest } from "@festival/demofest";
 import { createFestival as atn26 } from "@festival/atn26";
 import { createFestival as ps26 } from "@festival/ps26";
 import { createFestival as ps27 } from "@festival/ps27";
+import { createFestival as ep26 } from "@festival/ep26";
 import { cacheDir, loadSecrets, activeFestivalSlug } from "./config.js";
 
 const builders: Record<string, () => FestivalModule> = {
@@ -20,6 +21,7 @@ const builders: Record<string, () => FestivalModule> = {
   // ACTIVE_FESTIVAL=ps27 for setup work; do not point CLAUDE.md at it until
   // there is real data (see festivals/ps27/CONTEXT.md).
   ps27: () => ps27({ secrets: loadSecrets(), cacheDir: cacheDir("ps27") }),
+  ep26: () => ep26({ secrets: loadSecrets(), cacheDir: cacheDir("ep26") }),
 };
 
 export const ACTIVE_FESTIVAL = activeFestivalSlug();
