@@ -1,0 +1,17 @@
+{
+  "slug": "ep26",
+  "name": "Electric Picnic 2026",
+  "timezone": "Europe/Dublin",
+  "dayCutoffHour": 6,
+  "catchFraction": 0.5,
+  "nightGapHours": 3,
+  "days": {
+    "thu": [2026, 8, 27],
+    "fri": [2026, 8, 28],
+    "sat": [2026, 8, 29],
+    "sun": [2026, 8, 30]
+  },
+  "coordinates": { "lat": 53.0225, "lon": -7.1547 },
+  "_anchor": "Timezone sanity anchor: Fontaines DC close the Main Stage Sun 30 Aug 22:30-24:00 (Irish Times, 24 Aug 2026). `now \"Sun 22:30\"` must show them.",
+  "_note": "Stradbally Hall, Co Laois. dayCutoffHour 6 groups post-midnight sets with the right evening; the app's latest set ends 03:40."
+}

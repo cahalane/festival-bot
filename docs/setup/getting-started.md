@@ -124,8 +124,12 @@ working reference module in this repo:
   info-page watch, site-map POIs for the walk graph, and favourites sourced from a Clashfinder
   *mirror this deployment publishes* (the festival itself has no public favourites API). Follow
   [`appmiral-discovery.md`](appmiral-discovery.md) — Appmiral is the vendor covered there and the
-  platform behind a large share of festival apps, but if your festival's app is built on something
-  else, the same "find the API behind the app" method still applies.
+  platform behind a large share of festival apps. The other vendor covered here is **Greencopper /
+  Leap** (`com.greencopper.android.*` — Electric Picnic, Roskilde, Leeds, Download): it works quite
+  differently, shipping an encrypted content bundle updated over the air rather than a REST API, so
+  it has its own guide, [`greencopper-discovery.md`](greencopper-discovery.md), and
+  `festivals/ep26` as its reference module. If your festival's app is built on something else again,
+  the same "find the API behind the app" method still applies.
 - **An app, but not a vendor platform** → the festival's *own* API. `festivals/ps26` is the
   reference: Primavera's app is React Native, so its GraphQL queries sit in plain sight in
   `assets/index.android.bundle`, and the endpoint needs **no auth at all** — lineup, artist bios and
@@ -219,8 +223,9 @@ festival, in its `CONTEXT.md`, before you rely on any other output.
 }
 ```
 
-Only fill in what your path needs: `appmiral` for the vendor-API path
-([`appmiral-discovery.md`](appmiral-discovery.md)), `clashfinder` for favourites and mirror pushes
+Only fill in what your path needs: `appmiral` for the Appmiral vendor path
+([`appmiral-discovery.md`](appmiral-discovery.md)), `greencopper.secret` for a Greencopper/Leap app
+([`greencopper-discovery.md`](greencopper-discovery.md)), `clashfinder` for favourites and mirror pushes
 ([`clashfinder.md`](clashfinder.md)), `setlist.fm` optionally for the `setlist` command. Pushing to
 a Clashfinder mirror needs `clashfinder.password` — the CLI derives the login cookie from it locally
 (Clashfinder hashes passwords client-side, so the password never leaves your machine). If you'd

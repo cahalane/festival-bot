@@ -1,7 +1,0 @@
-maintitle = Electric Picnic 2026
-timezone = Europe/Dublin
-dateFormat = dddd dS mmmm
-printAdvisory = 5
-daychangeover = 06:00
-lpRevisions
-lpComments
