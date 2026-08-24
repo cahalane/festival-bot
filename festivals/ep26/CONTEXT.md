@@ -64,5 +64,11 @@ A full 957-act payload built from app + Irish Times was pushed to the **sandbox*
 
 ## Secrets
 
-Live re-fetch needs `greencopper.secret` in `config/secrets.json` (gitignored). Without it the
-module still plans from the committed `bundle/` snapshot; only `fetch-lineup` is unavailable.
+Live re-fetch needs **both** `greencopper.secret` and `greencopper.otaToken` in
+`config/secrets.json` (gitignored) — the bundle-decryption key and the OTA path token. Neither is in
+this repo: they are working access gates, and this repo is public (same reasoning as Appmiral's
+`x-protect`, see [`appmiral-discovery.md`](../../docs/setup/appmiral-discovery.md) §4). Extract your
+own per [`greencopper-discovery.md`](../../docs/setup/greencopper-discovery.md).
+
+Without them the module still plans from the committed `bundle/` snapshot; only `fetch-lineup` is
+unavailable.

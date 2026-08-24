@@ -16,14 +16,25 @@ const PACK_DIR = join(dirname(fileURLToPath(import.meta.url)), "..");
 
 /** Project identity, read out of the app's own config (docs/setup/greencopper-discovery.md). */
 export const EP26_PROJECT = "electricpicnic-2026";
-export const EP26_OTA_URL =
-  "https://api.mobile.leapevent.tech/ota/electricpicnic-2026/c4eb8ada4e66436f9d798ea61e1a3d38/";
+export const GREENCOPPER_OTA_HOST = "https://api.mobile.leapevent.tech/ota";
+
+/**
+ * The OTA url needs a 32-hex path token, which is NOT in this repo for the same
+ * reason Appmiral's `x-protect` is not (see docs/setup/appmiral-discovery.md §4):
+ * it is a working access gate, and a public copy invites volume use until the
+ * vendor rotates it — breaking it for every legitimate reader including us.
+ * Extract it yourself per docs/setup/greencopper-discovery.md and put it in
+ * config/secrets.json under `greencopper.otaToken`.
+ */
+export function ep26OtaUrl(token: string): string {
+  return `${GREENCOPPER_OTA_HOST}/${EP26_PROJECT}/${token}/`;
+}
 
 export interface Ep26Config {
   secrets?: {
     clashfinder?: { authUsername: string; authPublicKey: string };
-    /** Bundle-decryption secret from the app's runConfig.json. NEVER committed. */
-    greencopper?: { secret?: string };
+    /** From the app: `secret` (runConfig.json) and the OTA path token. NEVER committed. */
+    greencopper?: { secret?: string; otaToken?: string };
   };
   cacheDir?: string;
 }
@@ -35,14 +46,17 @@ export function createFestival(config: Ep26Config = {}): FestivalModule {
   const sources: FestivalSources = {
     lineup: createEp26LineupSource({
       bundleDir: join(PACK_DIR, "bundle"),
-      greencopper: config.secrets?.greencopper?.secret
-        ? {
-            project: EP26_PROJECT,
-            otaApiUrl: EP26_OTA_URL,
-            secret: config.secrets.greencopper.secret,
-            locale: "en-GB",
-          }
-        : undefined,
+      // Live refresh needs BOTH halves; without them the module still plans from
+      // the committed bundle, it just cannot re-fetch.
+      greencopper:
+        config.secrets?.greencopper?.secret && config.secrets.greencopper.otaToken
+          ? {
+              project: EP26_PROJECT,
+              otaApiUrl: ep26OtaUrl(config.secrets.greencopper.otaToken),
+              secret: config.secrets.greencopper.secret,
+              locale: "en-GB",
+            }
+          : undefined,
     }),
   };
 

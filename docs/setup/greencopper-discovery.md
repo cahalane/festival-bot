@@ -114,9 +114,18 @@ infer a stage from sibling sets.
 
 ## 7. Keep the secret out of the repo
 
-`secret` and the OTA token are embedded in the shipped app, not per-user credentials, but a working
-value committed to a public repo invites volume use and the predictable response is the vendor
-rotating it. Keep them in `config/secrets.json` (gitignored) under `greencopper.secret`.
+`secret` and the OTA path token are embedded in the shipped app, not per-user credentials, but a
+working value committed to a public repo invites volume use and the predictable response is the
+vendor rotating it — breaking it for every legitimate reader including you. Keep **both** in
+`config/secrets.json` (gitignored):
+
+```json
+{ "greencopper": { "secret": "<32 hex from runConfig.json>",
+                   "otaToken": "<32 hex from the ota apiUrl path>" } }
+```
+
+`festivals/ep26` reads them there and simply omits `refresh()` when either is missing, so a clone
+with no secrets still plans from the committed bundle.
 
 ## 8. Verify before trusting it
 

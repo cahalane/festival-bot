@@ -1,34 +1,55 @@
+/**
+ * The parser against a REAL Greencopper bundle, not a hand-made fixture — the
+ * committed ep26 snapshot. A synthetic fixture can only test what I already
+ * believed about the format; this catches the shape actually shipping.
+ */
 import { describe, expect, test } from "vitest";
 import { existsSync, readFileSync } from "node:fs";
+import { fileURLToPath } from "node:url";
+import { dirname, join } from "node:path";
 import { parseGreencopperLineup, greencopperVenuesFromBundle, type GreencopperBundle } from "./greencopper.js";
 
-const D = "/home/colm/.claude/jobs/5834c5c1/tmp/dec39";
-const has = existsSync(`${D}/event/data/scheduleItems.json`);
-const j = (p: string) => JSON.parse(readFileSync(`${D}/${p}`, "utf8"));
+const BUNDLE = join(dirname(fileURLToPath(import.meta.url)), "../../../festivals/ep26/bundle");
+const present = existsSync(join(BUNDLE, "scheduleItems.json"));
+const j = <T,>(f: string): T => JSON.parse(readFileSync(join(BUNDLE, f), "utf8")) as T;
 
-describe.skipIf(!has)("real EP v39 bundle", () => {
+describe.skipIf(!present)("real Electric Picnic bundle", () => {
   const bundle: GreencopperBundle = {
-    strings: j("core/strings/en-GB.json"),
-    stages: j("event/data/stages.json"),
-    scheduleItems: j("event/data/scheduleItems.json"),
-    timeSlots: j("event/data/timeSlots.json"),
+    strings: j("strings.json"),
+    stages: j("stages.json"),
+    scheduleItems: j("scheduleItems.json"),
+    timeSlots: j("timeSlots.json"),
   };
   const sets = parseGreencopperLineup(bundle);
-  test("counts", () => {
-    console.log("SETS:", sets.length, "VENUES:", greencopperVenuesFromBundle(bundle).length);
-    expect(sets.length).toBeGreaterThan(500);
+
+  test("parses a full festival programme", () => {
+    expect(sets.length).toBeGreaterThan(800);
+    expect(greencopperVenuesFromBundle(bundle).length).toBeGreaterThan(30);
   });
-  test("no unresolved keys leak", () => {
-    expect(sets.filter(s => /^(activity|location)_/.test(s.name))).toEqual([]);
-    expect(sets.filter(s => /^(activity|location)-/.test(s.stage))).toEqual([]);
+
+  test("resolves every name and stage through the string table", () => {
+    expect(sets.filter((s) => /^(activity|location)_/.test(s.name))).toEqual([]);
+    expect(sets.filter((s) => /^(activity|location)-/.test(s.stage))).toEqual([]);
   });
-  test("sane durations", () => {
-    expect(sets.filter(s => s.durationMin <= 0 || s.durationMin > 24*60).map(b=>`${b.name}:${b.durationMin}`)).toEqual([]);
+
+  test("durations are sane", () => {
+    expect(sets.filter((s) => s.durationMin <= 0 || s.durationMin > 24 * 60)).toEqual([]);
   });
-  test("window", () => {
-    console.log("FIRST:", sets[0]!.start.toISOString(), "|", sets[0]!.name, "@", sets[0]!.stage);
-    const last = sets[sets.length - 1]!;
-    console.log("LAST :", last.start.toISOString(), "|", last.name, "@", last.stage);
-    expect(sets[0]!.start.getUTCFullYear()).toBe(2026);
+
+  test("keeps the feed's local wall time (no double zone conversion)", () => {
+    // Every set falls inside the real festival window, 27-31 Aug 2026.
+    for (const s of sets) {
+      expect(s.start.getTime()).toBeGreaterThanOrEqual(Date.parse("2026-08-27T00:00:00Z"));
+      expect(s.start.getTime()).toBeLessThan(Date.parse("2026-09-01T00:00:00Z"));
+    }
+  });
+
+  test("is sorted deterministically, so a re-fetch diffs only real changes", () => {
+    const copy = [...sets].sort(
+      (a, b) => a.start.getTime() - b.start.getTime() || a.stage.localeCompare(b.stage) || a.name.localeCompare(b.name),
+    );
+    expect(sets.map((s) => `${s.start.toISOString()}|${s.stage}|${s.name}`)).toEqual(
+      copy.map((s) => `${s.start.toISOString()}|${s.stage}|${s.name}`),
+    );
   });
 });
