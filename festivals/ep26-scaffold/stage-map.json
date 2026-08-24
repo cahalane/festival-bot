@@ -1,0 +1,60 @@
+{
+  "_purpose": "Hand-curated identity map between OUR stage names (Greencopper app + Irish Times) and the EXISTING Clashfinder ep26 location names. String similarity is NOT safe here: 'Irish Harp Stage'(CF) == 'Harp Ireland Stage'(ours) scores 0.64, while 'Coke Studio'(CF) vs 'Comedy Stage'(ours) scores 0.48 and is a FALSE match. Every pair below is a human decision.",
+  "_priority": "Lower number = higher billing. 0-4 are the main arenas from the Irish Times; they lead the event. Fringe/area stages follow.",
+
+  "mapped": [
+    { "ours": "Main Stage presented by 3",  "cf": "Main Stage",                 "priority": 0, "source": "irish-times" },
+    { "ours": "Electric Arena",             "cf": "Electric Arena",             "priority": 1, "source": "irish-times" },
+    { "ours": "Rankins Wood",               "cf": null,                         "priority": 2, "source": "irish-times", "note": "No CF location for Rankins Wood; a push CREATES it." },
+    { "ours": "Red Bull × Terminus",        "cf": "Terminus",                   "priority": 3, "source": "irish-times" },
+    { "ours": "Comedy Stage",               "cf": "Comedy Arena",               "priority": 4, "source": "irish-times", "note": "App carries these 79 acts with stageId:null; IT supplies the stage." },
+
+    { "ours": "ArtLot (Main Stage)",        "cf": "Artlot",                     "priority": 10, "source": "app" },
+    { "ours": "ArtLot Seomra Boil",         "cf": "Seomra Boil - Artlot",       "priority": 11, "source": "app" },
+    { "ours": "Croi - Mainstage",           "cf": "Croi - Main Stage",          "priority": 12, "source": "app" },
+    { "ours": "Croi - Crescent Earth",      "cf": "Croi - Crescent Earth",      "priority": 13, "source": "app" },
+    { "ours": "Croi - Intinn",              "cf": "Croi - Intinn",              "priority": 14, "source": "app" },
+    { "ours": "Croi - Kinship & Touch",     "cf": "Croi - Kinship & Touch",     "priority": 15, "source": "app" },
+    { "ours": "Croi - Realign",             "cf": "Croi - Realign",             "priority": 16, "source": "app" },
+    { "ours": "Fishtown - The Heart & Anchor Bar", "cf": "Fishtown - Heart and Anchor", "priority": 17, "source": "app" },
+    { "ours": "Rockshore Stage",            "cf": "Rockshore Live",             "priority": 18, "source": "app" },
+    { "ours": "Salty Dog",                  "cf": "Salty Dog",                  "priority": 19, "source": "app" },
+    { "ours": "Harp Ireland Stage",         "cf": "Irish Harp Stage",           "priority": 20, "source": "app", "note": "Same stage, transposed name - fuzzy match scored only 0.64." },
+    { "ours": "Trailer Park",               "cf": "Trailer Park - Main Stage",  "priority": 21, "source": "app" },
+    { "ours": "Anachronica",                "cf": "Anachronica",                "priority": 22, "source": "app" },
+    { "ours": "Transmission 👽",             "cf": "Transmission",               "priority": 23, "source": "app" },
+    { "ours": "Metro 🚇",                    "cf": "Brutropolis - Metro",        "priority": 24, "source": "app", "note": "Fuzzy scored 0.48 - would have been missed automatically." },
+    { "ours": "Mother Afterdark",           "cf": "Mother after Dark",          "priority": 25, "source": "app" },
+    { "ours": "GLOBAL GREEN ELEMENTS OF CHANGE", "cf": "Global Green - Elements of Change", "priority": 26, "source": "app" },
+    { "ours": "Glow Depot Stage",           "cf": "Glow Depot",                 "priority": 27, "source": "app" },
+    { "ours": "Glow Depot - Court Side",    "cf": "Glow Depot - Courtside Stage","priority": 28, "source": "app" },
+    { "ours": "Mindfield - Manifesto",      "cf": "Mindfield - Manifesto",      "priority": 29, "source": "app" },
+    { "ours": "Mindfield - Leviathan",      "cf": "Minefield - Leviathan",      "priority": 30, "source": "app", "note": "CF has a typo ('Minefield'); keep CF's spelling at push time or it forks the location." },
+    { "ours": "Mindfield - The Word Stage", "cf": "Mindfield - The Word Stage", "priority": 31, "source": "app" },
+    { "ours": "Mindfield - An Puball Gaelige", "cf": "Mindfield - An Pubal Gaelige", "priority": 32, "source": "app" },
+    { "ours": "Treasure Beach",             "cf": "Trenchtown - Treasure Beach","priority": 33, "source": "app" },
+    { "ours": "Hazelwood / An Chollchoill", "cf": "Hazelwood - Chollchoill",    "priority": 34, "source": "app" },
+    { "ours": "Spike Island",               "cf": "Spike Island",               "priority": 35, "source": "app" },
+    { "ours": "The Theatre",                "cf": "Mindfield -The Theatre",     "priority": 36, "source": "app" }
+  ],
+
+  "ours_unmapped_creates_new_cf_location": [
+    "ArtLot Groove & Palette", "Croi  - Serenity Gardens Stage", "Croi Serenity Gardens - Soft Landing",
+    "Fishtown", "Guinness Lovely Times Stage", "Little Picnic - Creativity Tent",
+    "Little Picnic - Expression & Storytelling Tent", "Little Picnic - Ickle Big Top",
+    "Little Picnic - Sports Field", "Little Picnic - Walkabout", "Little Picnic - Workshop Tent",
+    "TOF - Drinks Theatre", "TOF - Garden Stage", "Theatre Of Food", "Mindfield - Ah Hear! Podcast Stage"
+  ],
+
+  "cf_only_MUST_PRESERVE": {
+    "_note": "These CF locations have NO counterpart in the app or the Irish Times. A replace-everything push DELETES them and every act on them. Any push must be a UNION that carries these through untouched.",
+    "locations": [
+      "Smirnoff Stage", "Six Bars", "Survivor", "Coke Studio", "White Claw", "Stradbally Inn",
+      "Northside Rises", "Provedencia", "Cerebral Fortress", "The Lovely Local", "3 Charge and Chill",
+      "Today FM Sound Garden", "Three Music Stage", "Sa Chollchoill", "Fishtown - Sideshow Circus  Stage",
+      "Brutropolis - Ministry of Misinformation", "Trailer Park - My Lovely Horse",
+      "ACTS LIST TEMP", "ACTS LIST TEMP 2", "ACTS LIST TEMP 3"
+    ],
+    "_scratch": "The three ACTS LIST TEMP lists (72 acts) are the maintainer's own working scratchpads. Never touch them."
+  }
+}
