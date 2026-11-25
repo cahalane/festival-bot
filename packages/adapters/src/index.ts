@@ -6,7 +6,7 @@
  *   - **Festival-independent**: Open-Meteo weather, the generic Clashfinder client,
  *     MusicBrainz, the shared HTTP/cache helper, BlueSky announcements.
  *   - **Vendor-specific but multi-festival**: Appmiral (`appmiral*.ts`), Greencopper /
- *     Leap (`greencopper*.ts`) and Primavera (`primavera*.ts`). One vendor serves many festivals *and* many editions of the
+ *     Leap (`greencopper*.ts`), Aloompa Dragonfly (`aloompa.ts`) and Primavera (`primavera*.ts`). One vendor serves many festivals *and* many editions of the
  *     same festival, so the integration outlives any single `festivals/<slug>/` pack.
  *
  * What stays in a festival module is only what genuinely differs per edition: the
@@ -25,6 +25,7 @@ export * from "./musicbrainz.js";
 export * from "./appmiral.js";
 export * from "./greencopper.js";
 export * from "./greencopper-bundle.js";
+export * from "./aloompa.js";
 export * from "./appmiral-map.js";
 export * from "./setlistfm.js";
 export * from "./appmiral-news.js";

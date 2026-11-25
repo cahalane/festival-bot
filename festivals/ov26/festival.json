@@ -1,0 +1,31 @@
+{
+  "slug": "ov26",
+  "name": "Other Voices Dingle 2026",
+  "timezone": "Europe/Dublin",
+  "dayCutoffHour": 6,
+  "catchFraction": 0.5,
+  "nightGapHours": 3,
+  "days": {
+    "fri": [
+      2026,
+      11,
+      27
+    ],
+    "sat": [
+      2026,
+      11,
+      28
+    ],
+    "sun": [
+      2026,
+      11,
+      29
+    ]
+  },
+  "coordinates": {
+    "lat": 52.1409,
+    "lon": -10.2689
+  },
+  "_anchor": "Timezone sanity anchor (operator-confirmed 2026-11-25): BABYRAT, The Dingle Pub, Sun 29 Nov 18:20-19:00. `now \"Sun 18:20\"` must show them.",
+  "_note": "Dingle town, Co Kerry. Latest set ends 00:15 Mon; dayCutoffHour 6 keeps it with Sunday. The app reports Europe/London; times are UTC epochs so the zone label is irrelevant (and London == Dublin offset anyway)."
+}

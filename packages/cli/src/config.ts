@@ -16,6 +16,8 @@ export interface Secrets {
     write?: { userLogin?: string };
   };
   appmiral?: { xProtect: string };
+  /** Aloompa Dragonfly apps (ov26): the APK's properties.json staticParamsEndpointAuthToken. */
+  aloompa?: { buildParamsToken: string };
   "setlist.fm"?: { apiKey: string };
 }
 

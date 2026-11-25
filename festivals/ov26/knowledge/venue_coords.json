@@ -1,0 +1,95 @@
+{
+ "_source": "OpenStreetMap (Overpass), fetched 2026-11-25. [lat, lon, osm element]. an-diseart(+garden) from operator-supplied Plus Code. Not positioned: wave. paidi-o-ses (Ventry, way/126810064 @ 52.12739,-10.38010) is bus-only and handled separately.",
+ "coords": {
+  "adams-bar": [
+   52.14198,
+   -10.26873,
+   "node/3381418424"
+  ],
+  "an-droichead-beag": [
+   52.14101,
+   -10.26708,
+   "node/877738390"
+  ],
+  "barr-na-sraide": [
+   52.14285,
+   -10.27056,
+   "node/1536488985"
+  ],
+  "benners-hotel": [
+   52.14139,
+   -10.26817,
+   "node/5801966447"
+  ],
+  "dingle-skellig-hotel": [
+   52.13387,
+   -10.26893,
+   "relation/1314694"
+  ],
+  "foxy-johns": [
+   52.14205,
+   -10.26925,
+   "node/1868450704"
+  ],
+  "john-bennys-pub": [
+   52.13939,
+   -10.2745,
+   "node/6600928597"
+  ],
+  "kennedys-bar": [
+   52.14257,
+   -10.27,
+   "node/9518890000"
+  ],
+  "mccarthys-bar": [
+   52.14232,
+   -10.26986,
+   "node/5562003012"
+  ],
+  "murphys-ice-cream": [
+   52.13951,
+   -10.27297,
+   "midpoint of node/2799130453 + node/10896413006"
+  ],
+  "neligans-bar": [
+   52.14108,
+   -10.26719,
+   "node/2799130456"
+  ],
+  "osullivans-courthouse-pub": [
+   52.14062,
+   -10.26714,
+   "node/879565293"
+  ],
+  "st-james-church": [
+   52.14175,
+   -10.26736,
+   "way/221490478"
+  ],
+  "the-dingle-pub": [
+   52.14136,
+   -10.26762,
+   "node/1536488978"
+  ],
+  "the-marina-inn": [
+   52.13937,
+   -10.27508,
+   "node/5918566685"
+  ],
+  "the-temperance-hall": [
+   52.14236,
+   -10.26937,
+   "way/1447374855"
+  ],
+  "an-diseart": [
+   52.14206,
+   -10.27069,
+   "Plus Code 4PRH+RP Dingle (operator, 2026-11-25)"
+  ],
+  "an-diseart-garden": [
+   52.14206,
+   -10.27069,
+   "same site as an-diseart (Plus Code 4PRH+RP)"
+  ]
+ }
+}

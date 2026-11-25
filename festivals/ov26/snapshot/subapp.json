@@ -1,0 +1,4003 @@
+{
+ "id": "93c338cc-ee57-482e-bb4f-f646bf4a0cf2",
+ "name": "2026 Other Voices",
+ "timezoneName": "Europe/London",
+ "listSubAppEvents": {
+  "nextToken": null,
+  "items": [
+   {
+    "id": "04cd11a7-c59b-4f1f-b6a6-dab1fb96b09c",
+    "name": "John Blek",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795962600,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795965300,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "644ad334-d715-43ff-9701-cc35929f5352",
+     "name": "O'Sullivan's Courthouse Pub"
+    }
+   },
+   {
+    "id": "07c2c905-34b9-4d05-bf24-d062c1a69c09",
+    "name": "Last Apollo",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795883400,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795886100,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "b36b793e-7df9-4a89-88c3-29f7c21117cc",
+     "name": "The Marina Inn"
+    }
+   },
+   {
+    "id": "08b4eedf-f14d-45bf-9811-24273d03d565",
+    "name": "Curtisy",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795890600,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795893000,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "9828284e-927d-4879-a779-2b5e160b2089",
+     "name": "Wave"
+    }
+   },
+   {
+    "id": "08d3eab2-e38a-4851-9b38-e58d2e9e7d9c",
+    "name": "Sei Green",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795977000,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795979700,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "06cbe98f-3756-4bf4-9370-4239cec3db19",
+     "name": "Adams Bar"
+    }
+   },
+   {
+    "id": "099dcb12-d456-4720-9d5a-8aa9811ab7fe",
+    "name": "Brìghde Chaimbeul",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "St James' Church Golden Ticket",
+    "startsAt": {
+     "date": 1795806000,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795807800,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "fb88d3d3-c6a4-4cb8-b617-ee040a8aac4f",
+     "name": "St James' Church"
+    }
+   },
+   {
+    "id": "0ad45526-e792-46fa-8494-2c03820bc526",
+    "name": "Sell Everything",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795910400,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795912800,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "874f2cf0-f696-47b9-ac91-7340b5c8718f",
+     "name": "The Dingle Pub"
+    }
+   },
+   {
+    "id": "0b537741-6644-42e8-9d12-4786ae00d435",
+    "name": "Emma Power & Graham Smyth",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795820400,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795822200,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "cb9c0b94-6b26-48fb-875b-c463d6ff7432",
+     "name": "An Droichead Beag"
+    }
+   },
+   {
+    "id": "0b55b8b8-0e43-419e-9645-aa15edae2df3",
+    "name": "BABYRAT",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795976400,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795978800,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "874f2cf0-f696-47b9-ac91-7340b5c8718f",
+     "name": "The Dingle Pub"
+    }
+   },
+   {
+    "id": "0c2660ae-d6df-4658-b5c5-aa97ff87ae55",
+    "name": "Roisin El Cherif",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795980000,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795982400,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "55fffe37-4631-4627-a4ac-292acb566da5",
+     "name": "An Díseart"
+    }
+   },
+   {
+    "id": "0d64e30d-373d-4a75-969d-88f834aead02",
+    "name": "Powers Golden Hours",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Powers Golden Hours Ticket",
+    "startsAt": {
+     "date": 1795968000,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795984200,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "1c9b288a-3e5e-4952-b344-a56a401846c2",
+     "name": "Páidí Ó Sé’s"
+    }
+   },
+   {
+    "id": "0d680bff-530a-478b-adc6-6380817b2527",
+    "name": "Sei Green",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795887000,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795889700,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "9828284e-927d-4879-a779-2b5e160b2089",
+     "name": "Wave"
+    }
+   },
+   {
+    "id": "0e07fbde-7487-4e0b-8593-cd80a49e0fd0",
+    "name": "Maicín",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795982400,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795985100,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "06cbe98f-3756-4bf4-9370-4239cec3db19",
+     "name": "Adams Bar"
+    }
+   },
+   {
+    "id": "0ef2e876-214b-4f05-afa7-ca54dfbb4eec",
+    "name": "Child of Prague",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795818600,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795821300,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "874f2cf0-f696-47b9-ac91-7340b5c8718f",
+     "name": "The Dingle Pub"
+    }
+   },
+   {
+    "id": "0f1fd00a-4630-41c9-a6a4-440083efa17b",
+    "name": "Inis Records: All Irish Artists' Pop Up Record Market",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": null,
+    "startsAt": {
+     "date": 1795860000,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795888800,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "b64239aa-e81c-48c9-8dba-5cb097e26006",
+     "name": "The Temperance Hall"
+    }
+   },
+   {
+    "id": "1164b5fa-0f43-4c96-88ff-7051d4cbcc6e",
+    "name": "Madra Salach",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "St James' Church",
+    "startsAt": {
+     "date": 1795903200,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795905000,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "fb88d3d3-c6a4-4cb8-b617-ee040a8aac4f",
+     "name": "St James' Church"
+    }
+   },
+   {
+    "id": "13c9749e-c970-4017-9732-c2fa7fdb7c70",
+    "name": "Esmeralda Road",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795994100,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795996800,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "06cbe98f-3756-4bf4-9370-4239cec3db19",
+     "name": "Adams Bar"
+    }
+   },
+   {
+    "id": "13e69a47-25a9-47b7-b7ee-1cf2c45bcbc0",
+    "name": "Was Man",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795874400,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795876800,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "83a8f628-4ad9-4b09-a189-ad3a7dd9dd9c",
+     "name": "McCarthys Bar"
+    }
+   },
+   {
+    "id": "13f07647-be81-41fa-80c0-92cb225b06ab",
+    "name": "How I Became A Wave",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795963500,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795966200,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "55fffe37-4631-4627-a4ac-292acb566da5",
+     "name": "An Díseart"
+    }
+   },
+   {
+    "id": "1506187a-fc60-4b9c-853c-c94684be3099",
+    "name": "Aisling Bea & Special Guest",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Ireland's Edge Wristband",
+    "startsAt": {
+     "date": 1795887600,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795890000,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "c4b70adb-5d93-43bf-83bf-1f7a3f85b86e",
+     "name": "Dingle Skellig Hotel"
+    }
+   },
+   {
+    "id": "171fbb0a-6115-419f-9ce9-d8864916b5cc",
+    "name": "Segotia",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795809600,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795812000,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "4418a3a2-833d-44a2-a802-44d1c2362165",
+     "name": "Neligan's Bar"
+    }
+   },
+   {
+    "id": "190cbb7c-328f-47ba-b7fc-cd29f57270b9",
+    "name": "The Waterboys",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "St James' Church Golden Ticket",
+    "startsAt": {
+     "date": 1795891500,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795894200,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "fb88d3d3-c6a4-4cb8-b617-ee040a8aac4f",
+     "name": "St James' Church"
+    }
+   },
+   {
+    "id": "19d029a8-f903-4464-8820-aec9cadff5b1",
+    "name": "Simple Things",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795815000,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795817700,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "77e9ca2d-8ebe-40fa-9929-bb9d41969288",
+     "name": "John Benny's Pub"
+    }
+   },
+   {
+    "id": "1a10e220-53cc-419c-925e-43ded2dbc58f",
+    "name": "Sean Joyce",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795804200,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795806600,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "4418a3a2-833d-44a2-a802-44d1c2362165",
+     "name": "Neligan's Bar"
+    }
+   },
+   {
+    "id": "1bd6363b-1779-4dc2-b0b3-a82890e523dc",
+    "name": "Reevah",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795885200,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795887600,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "83a8f628-4ad9-4b09-a189-ad3a7dd9dd9c",
+     "name": "McCarthys Bar"
+    }
+   },
+   {
+    "id": "1d546be2-181b-4b84-b1b0-b002d0ff4e55",
+    "name": "Caolan Ryan",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795995900,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795997700,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "cb9c0b94-6b26-48fb-875b-c463d6ff7432",
+     "name": "An Droichead Beag"
+    }
+   },
+   {
+    "id": "1fa45408-e73e-4bae-9b5d-62527079bb6a",
+    "name": "Morgana in Conversation with Jim Carroll",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": null,
+    "startsAt": {
+     "date": 1795964400,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795968000,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "1974c2e0-3b1e-416b-a43d-8ce1237da569",
+     "name": "Foxy John's "
+    }
+   },
+   {
+    "id": "202408b1-f576-4819-a488-e4eff114a9f7",
+    "name": "Cogar: Art, Performance, Music & Illuminated Gardens",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Free Entry",
+    "startsAt": {
+     "date": 1795883400,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795892400,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "071b6661-bb10-42a4-ac53-92936f6d0282",
+     "name": "An Díseart Garden"
+    }
+   },
+   {
+    "id": "213ba217-4c93-41e2-831d-1ada3118fa8b",
+    "name": "Malachy Browne in Conversation with Jim Carroll",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": null,
+    "startsAt": {
+     "date": 1795875300,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795878000,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "1974c2e0-3b1e-416b-a43d-8ce1237da569",
+     "name": "Foxy John's "
+    }
+   },
+   {
+    "id": "22acb93c-8961-42e3-b641-6ca17d761362",
+    "name": "mischa and the bear",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795911300,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795914000,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "cb9c0b94-6b26-48fb-875b-c463d6ff7432",
+     "name": "An Droichead Beag"
+    }
+   },
+   {
+    "id": "27fbc67f-0957-4a8c-90ce-2ac861c6420b",
+    "name": "Ceol sa Gazebo: Mel Joy & Louise Foxe",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Free Entry",
+    "startsAt": {
+     "date": 1795881600,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795883400,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "071b6661-bb10-42a4-ac53-92936f6d0282",
+     "name": "An Díseart Garden"
+    }
+   },
+   {
+    "id": "28897660-f652-4276-91c2-89b14671b0de",
+    "name": "Reevah",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795975200,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795977600,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "77e9ca2d-8ebe-40fa-9929-bb9d41969288",
+     "name": "John Benny's Pub"
+    }
+   },
+   {
+    "id": "298f3240-a2b8-4b25-9788-3ca5ddc113bf",
+    "name": "d_abdu",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795890000,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795892400,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "83a8f628-4ad9-4b09-a189-ad3a7dd9dd9c",
+     "name": "McCarthys Bar"
+    }
+   },
+   {
+    "id": "2b29e75a-2c63-4da4-b684-33dac3a49020",
+    "name": "black nylon",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795905000,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795907700,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "b36b793e-7df9-4a89-88c3-29f7c21117cc",
+     "name": "The Marina Inn"
+    }
+   },
+   {
+    "id": "2bfe6b7b-5c57-45d9-b14f-3ebbf5dc7b80",
+    "name": "Last Apollo",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795802400,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795805100,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "874f2cf0-f696-47b9-ac91-7340b5c8718f",
+     "name": "The Dingle Pub"
+    }
+   },
+   {
+    "id": "2df052c2-478e-4d46-81e6-da64022b8792",
+    "name": "Avenue 68",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795820400,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795822800,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "06cbe98f-3756-4bf4-9370-4239cec3db19",
+     "name": "Adams Bar"
+    }
+   },
+   {
+    "id": "3080d9b1-0aae-41ce-8da0-3283be4da43a",
+    "name": "Gwenno (Music)",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": null,
+    "startsAt": {
+     "date": 1795961700,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795962600,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "1974c2e0-3b1e-416b-a43d-8ce1237da569",
+     "name": "Foxy John's "
+    }
+   },
+   {
+    "id": "3121359c-7bf0-4138-882b-098bc4f89055",
+    "name": "Emma Power & Graham Smyth",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795910400,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795911300,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "cb9c0b94-6b26-48fb-875b-c463d6ff7432",
+     "name": "An Droichead Beag"
+    }
+   },
+   {
+    "id": "32127214-a4c8-4efb-8b24-08aaca4f5422",
+    "name": "Toddla T in Conversation with Jim Carroll",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": null,
+    "startsAt": {
+     "date": 1795885200,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795887900,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "1974c2e0-3b1e-416b-a43d-8ce1237da569",
+     "name": "Foxy John's "
+    }
+   },
+   {
+    "id": "322a74b4-7dbb-4fc6-8135-ccdc3b2973d9",
+    "name": "Man/Woman/Chainsaw",
+    "status": "PUBLIC",
+    "timeIsTBD": true,
+    "statusMessage": "St James' Church Golden Ticket",
+    "startsAt": {
+     "date": 1795777020,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795777020,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "fb88d3d3-c6a4-4cb8-b617-ee040a8aac4f",
+     "name": "St James' Church"
+    }
+   },
+   {
+    "id": "3328f14b-592b-4271-8286-ae18c9cd1a05",
+    "name": "Emma Power & Graham Smyth",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795899600,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795905000,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "cb9c0b94-6b26-48fb-875b-c463d6ff7432",
+     "name": "An Droichead Beag"
+    }
+   },
+   {
+    "id": "335cdf05-2a24-4193-8c99-69389a3a50ac",
+    "name": "Una Mullaly in Conversation with Jim Carroll",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": null,
+    "startsAt": {
+     "date": 1795968000,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795971600,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "1974c2e0-3b1e-416b-a43d-8ce1237da569",
+     "name": "Foxy John's "
+    }
+   },
+   {
+    "id": "353de938-6602-4c66-aab5-04ae66466be8",
+    "name": "Molly Donnery",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795975200,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795977600,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "41026bab-7526-4756-b634-a97a9a80b42f",
+     "name": "Barr na Sráide"
+    }
+   },
+   {
+    "id": "35a16a51-3078-489b-aa0f-f333c9b0143b",
+    "name": "Maicín",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795888800,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795891500,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "cb9c0b94-6b26-48fb-875b-c463d6ff7432",
+     "name": "An Droichead Beag"
+    }
+   },
+   {
+    "id": "37652a09-2388-47b1-83a8-ce4aa2f4e67f",
+    "name": "banrion",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795980000,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795982400,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "77e9ca2d-8ebe-40fa-9929-bb9d41969288",
+     "name": "John Benny's Pub"
+    }
+   },
+   {
+    "id": "37c9e6ef-a678-450e-aafa-1168bcab3fda",
+    "name": "Alannah Thornburgh",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795881600,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795884300,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "644ad334-d715-43ff-9701-cc35929f5352",
+     "name": "O'Sullivan's Courthouse Pub"
+    }
+   },
+   {
+    "id": "392f5e21-953b-47b1-ad83-732ed093ae05",
+    "name": "Julian Boland & Sorcha Ní Bhriain ",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795980600,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795983000,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "41026bab-7526-4756-b634-a97a9a80b42f",
+     "name": "Barr na Sráide"
+    }
+   },
+   {
+    "id": "39dd1785-14e9-4b03-bdb1-c8a4c9d3fb62",
+    "name": "KK Lewis",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795815000,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795817400,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "06cbe98f-3756-4bf4-9370-4239cec3db19",
+     "name": "Adams Bar"
+    }
+   },
+   {
+    "id": "3a25872e-fc3d-4340-a154-54d8dbd2f0fe",
+    "name": "Scots Gaelic Psalm Singing Workshop with Rob MacNeacail",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Free Entry",
+    "startsAt": {
+     "date": 1795950000,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795953600,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "071b6661-bb10-42a4-ac53-92936f6d0282",
+     "name": "An Díseart Garden"
+    }
+   },
+   {
+    "id": "3b77f1ff-c7d7-4b9c-904f-e429607b7668",
+    "name": "cosign",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795976400,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795978800,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "83a8f628-4ad9-4b09-a189-ad3a7dd9dd9c",
+     "name": "McCarthys Bar"
+    }
+   },
+   {
+    "id": "3c9a27ff-ae15-4456-9973-bb86529eef34",
+    "name": "PORTS",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795890600,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795893600,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "77e9ca2d-8ebe-40fa-9929-bb9d41969288",
+     "name": "John Benny's Pub"
+    }
+   },
+   {
+    "id": "3f49c0ae-9856-4015-9447-9a6b3438b99c",
+    "name": "d_abdu",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795972500,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795975200,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "b36b793e-7df9-4a89-88c3-29f7c21117cc",
+     "name": "The Marina Inn"
+    }
+   },
+   {
+    "id": "3f5bd7c8-3476-47e1-95a5-8d3267e3ba43",
+    "name": "Search Results",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795914000,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795916400,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "b36b793e-7df9-4a89-88c3-29f7c21117cc",
+     "name": "The Marina Inn"
+    }
+   },
+   {
+    "id": "42415442-bd95-4643-b027-b0ca1fde62e3",
+    "name": "The Railway Boys",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795820400,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795823100,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "77e9ca2d-8ebe-40fa-9929-bb9d41969288",
+     "name": "John Benny's Pub"
+    }
+   },
+   {
+    "id": "4434c66b-c789-4200-914e-e92a77d524a7",
+    "name": "Emma Power & Graham Smyth",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795824000,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795824900,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "cb9c0b94-6b26-48fb-875b-c463d6ff7432",
+     "name": "An Droichead Beag"
+    }
+   },
+   {
+    "id": "45b51284-3572-481e-898a-3e079c50d84f",
+    "name": "Roe Byrne",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795890600,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795893300,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "41026bab-7526-4756-b634-a97a9a80b42f",
+     "name": "Barr na Sráide"
+    }
+   },
+   {
+    "id": "462bc3ec-0db6-49dc-bb36-7e4c5550e556",
+    "name": "Smithereens",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795816800,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795819200,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "b36b793e-7df9-4a89-88c3-29f7c21117cc",
+     "name": "The Marina Inn"
+    }
+   },
+   {
+    "id": "464f0f9c-7e4b-4f3a-9c42-69eca29cea27",
+    "name": "Gwenno",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795985100,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795987800,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "55fffe37-4631-4627-a4ac-292acb566da5",
+     "name": "An Díseart"
+    }
+   },
+   {
+    "id": "495884b5-fbb2-453b-8ceb-1832ff798c7c",
+    "name": "PORTS",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795809600,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795812000,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "06cbe98f-3756-4bf4-9370-4239cec3db19",
+     "name": "Adams Bar"
+    }
+   },
+   {
+    "id": "4c4df8a1-0059-4857-9e92-6d54b86a24e3",
+    "name": "CABL",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795827600,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795830000,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "b36b793e-7df9-4a89-88c3-29f7c21117cc",
+     "name": "The Marina Inn"
+    }
+   },
+   {
+    "id": "4e1a505b-ff7f-4e5f-863f-c6c1513abf42",
+    "name": "Avenue 68",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795881600,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795884000,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "9828284e-927d-4879-a779-2b5e160b2089",
+     "name": "Wave"
+    }
+   },
+   {
+    "id": "4e77ad5b-51d6-48e9-b1c4-07c8a8df71a7",
+    "name": "Dermot Henry",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "St James' Church Golden Ticket",
+    "startsAt": {
+     "date": 1795809600,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795811400,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "fb88d3d3-c6a4-4cb8-b617-ee040a8aac4f",
+     "name": "St James' Church"
+    }
+   },
+   {
+    "id": "4ec2c3c3-327a-48f1-adcb-214cc6900b9d",
+    "name": "Pobalscoil Chorca Dhuibhne",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795957200,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795960800,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "80dadc25-2595-450a-a0c6-f2d713e56a1a",
+     "name": "Murphy's Ice Cream"
+    }
+   },
+   {
+    "id": "50501c65-a890-42d0-82e4-63ac1fdcc0f6",
+    "name": "Daragh Fleming x Throwing Snow",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795971600,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795974000,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "83a8f628-4ad9-4b09-a189-ad3a7dd9dd9c",
+     "name": "McCarthys Bar"
+    }
+   },
+   {
+    "id": "5075bb2d-f08f-462b-9628-40c3e5c496ef",
+    "name": "Search Results",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795827600,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795830300,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "874f2cf0-f696-47b9-ac91-7340b5c8718f",
+     "name": "The Dingle Pub"
+    }
+   },
+   {
+    "id": "53a2dcf8-a7a6-47a6-95a7-2cac95a0d841",
+    "name": "Smithereens",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795888800,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795891500,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "874f2cf0-f696-47b9-ac91-7340b5c8718f",
+     "name": "The Dingle Pub"
+    }
+   },
+   {
+    "id": "5516e5df-7a34-4e83-82f3-87ca7c9e0633",
+    "name": "BUKKY",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795891500,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795894200,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "06cbe98f-3756-4bf4-9370-4239cec3db19",
+     "name": "Adams Bar"
+    }
+   },
+   {
+    "id": "58f44518-6aa3-4455-a243-75e5062105c9",
+    "name": "Livestream: Gilla Band, Lava La Rue, Knats, Lambrini Girls",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Livestream",
+    "startsAt": {
+     "date": 1795978800,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795993200,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "71e08e8d-b0cb-4854-98cd-1773f88a254b",
+     "name": "Benner's Hotel"
+    }
+   },
+   {
+    "id": "59b69db7-0c47-47f4-9852-ee05e43661fa",
+    "name": "Meryl Streek",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795984200,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795986900,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "9828284e-927d-4879-a779-2b5e160b2089",
+     "name": "Wave"
+    }
+   },
+   {
+    "id": "59dbf725-ac79-4ae6-99a7-1bc10871c2f3",
+    "name": "Officer John",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795885200,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795887600,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "77e9ca2d-8ebe-40fa-9929-bb9d41969288",
+     "name": "John Benny's Pub"
+    }
+   },
+   {
+    "id": "59e8bd94-85c4-4c4b-8eaa-70c74ec8c18d",
+    "name": "Inis Records: All Irish Artists' Pop Up Record",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": null,
+    "startsAt": {
+     "date": 1795946400,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795975200,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "b64239aa-e81c-48c9-8dba-5cb097e26006",
+     "name": "The Temperance Hall"
+    }
+   },
+   {
+    "id": "5a865b0a-e1a4-4c63-9df9-2680edf86afb",
+    "name": "Nell Mescal",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795874400,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795876800,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "874f2cf0-f696-47b9-ac91-7340b5c8718f",
+     "name": "The Dingle Pub"
+    }
+   },
+   {
+    "id": "5a8697c4-e4ae-42f4-bbe2-737aba8c702f",
+    "name": "Shark School",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795823100,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795825800,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "874f2cf0-f696-47b9-ac91-7340b5c8718f",
+     "name": "The Dingle Pub"
+    }
+   },
+   {
+    "id": "5acd3b2b-1332-447a-b2b9-23d400dd5c54",
+    "name": "Lava La Rue",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "St James' Church Golden Ticket",
+    "startsAt": {
+     "date": 1795978800,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795980600,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "fb88d3d3-c6a4-4cb8-b617-ee040a8aac4f",
+     "name": "St James' Church"
+    }
+   },
+   {
+    "id": "5b384679-02d4-4b9f-b493-606b65afcf48",
+    "name": "Ceol sa Gazebo: Iarla Ó Muirthile",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Free Entry",
+    "startsAt": {
+     "date": 1795883400,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795886100,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "071b6661-bb10-42a4-ac53-92936f6d0282",
+     "name": "An Díseart Garden"
+    }
+   },
+   {
+    "id": "5d1edf50-fbf2-4bbf-9db0-6ff196e2f287",
+    "name": "SHAMROCK SHOWBAND",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795896900,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795899600,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "06cbe98f-3756-4bf4-9370-4239cec3db19",
+     "name": "Adams Bar"
+    }
+   },
+   {
+    "id": "5d2aa3a8-b85a-44d7-9573-e4812cc314f0",
+    "name": "Daragh Fleming x Throwing Snow",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795897800,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795900500,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "9828284e-927d-4879-a779-2b5e160b2089",
+     "name": "Wave"
+    }
+   },
+   {
+    "id": "607938af-f779-4cb5-8e13-da694efc2966",
+    "name": "Zoë Uí Fhaoláin Green: SiúlóidCheoil / MusicWalk",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Free Entry",
+    "startsAt": {
+     "date": 1795888800,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795890000,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "071b6661-bb10-42a4-ac53-92936f6d0282",
+     "name": "An Díseart Garden"
+    }
+   },
+   {
+    "id": "625fd370-0660-4171-98b4-3386f68b934c",
+    "name": "BUKKY",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795879800,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795882200,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "77e9ca2d-8ebe-40fa-9929-bb9d41969288",
+     "name": "John Benny's Pub"
+    }
+   },
+   {
+    "id": "6336bdac-32c0-43cf-ab9d-2b0c71d1722f",
+    "name": "New Jackson",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795987800,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795996800,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "9828284e-927d-4879-a779-2b5e160b2089",
+     "name": "Wave"
+    }
+   },
+   {
+    "id": "644887fe-cfcf-423f-9e53-4057b9e5e5b6",
+    "name": "Jessica Doolan",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795905000,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795906800,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "cb9c0b94-6b26-48fb-875b-c463d6ff7432",
+     "name": "An Droichead Beag"
+    }
+   },
+   {
+    "id": "65568b07-a65a-4bed-a87c-fd7d39ae2e6f",
+    "name": "Rua Rí",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795888800,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795892400,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "644ad334-d715-43ff-9701-cc35929f5352",
+     "name": "O'Sullivan's Courthouse Pub"
+    }
+   },
+   {
+    "id": "65635a79-5cf9-4373-b3ea-2c37ba47fb2f",
+    "name": "Mother Tongue: Losing, Finding and Reclaiming Language",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Ireland's Edge Wristband",
+    "startsAt": {
+     "date": 1795878900,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795881900,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "c4b70adb-5d93-43bf-83bf-1f7a3f85b86e",
+     "name": "Dingle Skellig Hotel"
+    }
+   },
+   {
+    "id": "65ab8039-f310-40be-b15c-05d8e1c6177b",
+    "name": "Music at the Edge: Caoimhín Ó Raghallaigh",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Ireland's Edge Wristband",
+    "startsAt": {
+     "date": 1795882500,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795883400,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "c4b70adb-5d93-43bf-83bf-1f7a3f85b86e",
+     "name": "Dingle Skellig Hotel"
+    }
+   },
+   {
+    "id": "68011f8d-5e04-429c-87f7-d517a7986e1a",
+    "name": "Sinéad O'Shea in Conversation with Jim Carroll",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": null,
+    "startsAt": {
+     "date": 1795971600,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795974300,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "1974c2e0-3b1e-416b-a43d-8ce1237da569",
+     "name": "Foxy John's "
+    }
+   },
+   {
+    "id": "68286173-4334-4e62-84b0-f5fbd529bf55",
+    "name": "Sláine Ní Chathalláin (Music)",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": null,
+    "startsAt": {
+     "date": 1795874400,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795875300,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "1974c2e0-3b1e-416b-a43d-8ce1237da569",
+     "name": "Foxy John's "
+    }
+   },
+   {
+    "id": "6895ea2b-ac46-41c7-a94f-b7a3e8aace20",
+    "name": "\"Choose Life\": In Conversation with Irvine Welsh",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Ireland's Edge Wristband",
+    "startsAt": {
+     "date": 1795805400,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795808400,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "c4b70adb-5d93-43bf-83bf-1f7a3f85b86e",
+     "name": "Dingle Skellig Hotel"
+    }
+   },
+   {
+    "id": "69db17aa-ebad-4d7c-bd0b-c35b78f03cd6",
+    "name": "The Railway Boys",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795881600,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795884000,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "06cbe98f-3756-4bf4-9370-4239cec3db19",
+     "name": "Adams Bar"
+    }
+   },
+   {
+    "id": "6bdfcb03-0312-4bb8-b762-f15110c3d4ae",
+    "name": "Emma Power & Graham Smyth",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795813200,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795818600,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "cb9c0b94-6b26-48fb-875b-c463d6ff7432",
+     "name": "An Droichead Beag"
+    }
+   },
+   {
+    "id": "6c6b497b-9690-482f-ab8e-898bc57b02f3",
+    "name": "Seamus Fogarty (Music)",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": null,
+    "startsAt": {
+     "date": 1795887900,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795888800,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "1974c2e0-3b1e-416b-a43d-8ce1237da569",
+     "name": "Foxy John's "
+    }
+   },
+   {
+    "id": "6d8da9e1-8da7-499e-aff2-638a4dedfec5",
+    "name": "McGrath",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795953600,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795955400,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "55fffe37-4631-4627-a4ac-292acb566da5",
+     "name": "An Díseart"
+    }
+   },
+   {
+    "id": "6e1cb263-2c47-46ca-acd0-98fe8ea3d0be",
+    "name": "Sult",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795809600,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795812300,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "644ad334-d715-43ff-9701-cc35929f5352",
+     "name": "O'Sullivan's Courthouse Pub"
+    }
+   },
+   {
+    "id": "70795eb3-7dbd-4d1a-88b4-7e35006d93a4",
+    "name": "Roe Byrne",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795818600,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795820400,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "cb9c0b94-6b26-48fb-875b-c463d6ff7432",
+     "name": "An Droichead Beag"
+    }
+   },
+   {
+    "id": "70c56ecd-fe39-42ca-be36-a36eef98742e",
+    "name": "Burglar",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795888800,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795891500,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "b36b793e-7df9-4a89-88c3-29f7c21117cc",
+     "name": "The Marina Inn"
+    }
+   },
+   {
+    "id": "71de091a-a898-4aed-8a02-515846dafbc2",
+    "name": "Junk Drawer",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795884000,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795886400,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "874f2cf0-f696-47b9-ac91-7340b5c8718f",
+     "name": "The Dingle Pub"
+    }
+   },
+   {
+    "id": "7348965f-2783-4d07-8e6a-4a56478ead74",
+    "name": "Fizzy Orange",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795995000,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795997700,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "874f2cf0-f696-47b9-ac91-7340b5c8718f",
+     "name": "The Dingle Pub"
+    }
+   },
+   {
+    "id": "73b704c4-7302-4198-b386-84299245a994",
+    "name": "Robocobra Quartet",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795909500,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795955400,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "b36b793e-7df9-4a89-88c3-29f7c21117cc",
+     "name": "The Marina Inn"
+    }
+   },
+   {
+    "id": "7736bf9c-d94d-47ba-af77-158fe6edebde",
+    "name": "Subterranean Soul DJ's",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795982400,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795996800,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "511c356e-2a17-4d62-9cbe-d8cb6e626180",
+     "name": "Kennedy's Bar"
+    }
+   },
+   {
+    "id": "79756436-465f-480d-bcfc-e3a811276bc1",
+    "name": "Ultan O'Brien",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795814100,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795816800,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "55fffe37-4631-4627-a4ac-292acb566da5",
+     "name": "An Díseart"
+    }
+   },
+   {
+    "id": "7a071f1a-175c-4d99-a5f8-dae5d1c3b667",
+    "name": "“Whatever You Say…”: Journalism Under Threat",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Ireland's Edge Wristband",
+    "startsAt": {
+     "date": 1795884000,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795887000,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "c4b70adb-5d93-43bf-83bf-1f7a3f85b86e",
+     "name": "Dingle Skellig Hotel"
+    }
+   },
+   {
+    "id": "7f564946-43b6-4fbf-91cf-c3de44064b48",
+    "name": "Sugaboo",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795816800,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795819500,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "9828284e-927d-4879-a779-2b5e160b2089",
+     "name": "Wave"
+    }
+   },
+   {
+    "id": "812fb83c-468f-42ce-ac96-ea7f050177e1",
+    "name": "Molly Donnery",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795885200,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795887600,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "55fffe37-4631-4627-a4ac-292acb566da5",
+     "name": "An Díseart"
+    }
+   },
+   {
+    "id": "86197cae-b17c-4420-b383-9523d35e5cf3",
+    "name": "Emma Power & Graham Smyth",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795827600,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795831200,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "cb9c0b94-6b26-48fb-875b-c463d6ff7432",
+     "name": "An Droichead Beag"
+    }
+   },
+   {
+    "id": "86d91300-2ee8-4496-a7c9-d59927394900",
+    "name": "Alannah Thornburgh",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795798800,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795801500,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "55fffe37-4631-4627-a4ac-292acb566da5",
+     "name": "An Díseart"
+    }
+   },
+   {
+    "id": "87d6f9cc-e033-4749-9f0b-d29912f7b71e",
+    "name": "Staying Power: Community, Enterprise and the Power of the Collective",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Ireland's Edge Wristband",
+    "startsAt": {
+     "date": 1795872000,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795875000,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "c4b70adb-5d93-43bf-83bf-1f7a3f85b86e",
+     "name": "Dingle Skellig Hotel"
+    }
+   },
+   {
+    "id": "88913128-e57d-410a-b6c8-5f5444724002",
+    "name": "Dorothy Cross in Conversation with Jim Carroll",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": null,
+    "startsAt": {
+     "date": 1795878000,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795881600,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "1974c2e0-3b1e-416b-a43d-8ce1237da569",
+     "name": "Foxy John's "
+    }
+   },
+   {
+    "id": "8b9b57e8-1bcc-4f23-b85c-700b29876d95",
+    "name": "banríon",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795965300,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795968000,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "83a8f628-4ad9-4b09-a189-ad3a7dd9dd9c",
+     "name": "McCarthys Bar"
+    }
+   },
+   {
+    "id": "8e39b8d3-e0ee-4bbf-a9d9-d87afaafed96",
+    "name": "Seamus Fogarty",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795879200,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795881600,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "874f2cf0-f696-47b9-ac91-7340b5c8718f",
+     "name": "The Dingle Pub"
+    }
+   },
+   {
+    "id": "8f171073-ed75-4009-945e-828ae57df9ca",
+    "name": "Fortune Igiebor",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795905000,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795907700,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "83a8f628-4ad9-4b09-a189-ad3a7dd9dd9c",
+     "name": "McCarthys Bar"
+    }
+   },
+   {
+    "id": "917725e0-6c16-482a-9227-04528856418a",
+    "name": "Múlú",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795967100,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795969800,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "b36b793e-7df9-4a89-88c3-29f7c21117cc",
+     "name": "The Marina Inn"
+    }
+   },
+   {
+    "id": "92e51c79-36f2-4e4c-81f7-fafdc9dcb403",
+    "name": "Secret Set",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795824000,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795831200,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "83a8f628-4ad9-4b09-a189-ad3a7dd9dd9c",
+     "name": "McCarthys Bar"
+    }
+   },
+   {
+    "id": "93610cc0-c371-480c-8cd8-ba83d349d499",
+    "name": "SHAMROCK SHOWBAND",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wrist Band",
+    "startsAt": {
+     "date": 1795825800,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795828500,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "77e9ca2d-8ebe-40fa-9929-bb9d41969288",
+     "name": "John Benny's Pub"
+    }
+   },
+   {
+    "id": "9369aada-909e-4919-b9e6-1ab8364d0f0b",
+    "name": "Danny Murphy",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795876200,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795878600,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "06cbe98f-3756-4bf4-9370-4239cec3db19",
+     "name": "Adams Bar"
+    }
+   },
+   {
+    "id": "9666a300-7caf-4fef-a536-0f6418ee472b",
+    "name": "The Bog and the Cloud: Ireland's Digital Dilemma",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Ireland's Edge Wristband",
+    "startsAt": {
+     "date": 1795800300,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795803300,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "c4b70adb-5d93-43bf-83bf-1f7a3f85b86e",
+     "name": "Dingle Skellig Hotel"
+    }
+   },
+   {
+    "id": "98a8c701-18ab-4c88-85c5-96d354e0404e",
+    "name": "Julia Jacklin",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "St James' Church Golden Ticket",
+    "startsAt": {
+     "date": 1795896000,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795897800,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "fb88d3d3-c6a4-4cb8-b617-ee040a8aac4f",
+     "name": "St James' Church"
+    }
+   },
+   {
+    "id": "9c7478f8-1044-4cf0-8bce-cc631fe99dbc",
+    "name": "Burglar",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795971600,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795974000,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "06cbe98f-3756-4bf4-9370-4239cec3db19",
+     "name": "Adams Bar"
+    }
+   },
+   {
+    "id": "a3c1a5c1-6258-48cf-9685-73866133deae",
+    "name": "black nylon",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795991400,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795993800,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "874f2cf0-f696-47b9-ac91-7340b5c8718f",
+     "name": "The Dingle Pub"
+    }
+   },
+   {
+    "id": "a3da411f-c0c7-4202-87e0-d82cbe289674",
+    "name": "Airneán X Rebel Matters",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Free Entry",
+    "startsAt": {
+     "date": 1795953600,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795959000,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "55fffe37-4631-4627-a4ac-292acb566da5",
+     "name": "An Díseart"
+    }
+   },
+   {
+    "id": "aa85d5ef-ebac-4c60-b728-52645952cb15",
+    "name": "From the Plough to the Stars: Reimagining Ireland's Economy",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Ireland's Edge Wristband",
+    "startsAt": {
+     "date": 1795795200,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795797300,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "c4b70adb-5d93-43bf-83bf-1f7a3f85b86e",
+     "name": "Dingle Skellig Hotel"
+    }
+   },
+   {
+    "id": "aaf1b373-7fa9-47d5-8cdc-e99eb96bd8b4",
+    "name": "The Fully Automatic Model",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795980600,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795983300,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "9828284e-927d-4879-a779-2b5e160b2089",
+     "name": "Wave"
+    }
+   },
+   {
+    "id": "ab0f7bd3-ad5e-477f-a943-1acf544c298c",
+    "name": "Ceol sa Gazebo: Louise Foxe",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Free Entry",
+    "startsAt": {
+     "date": 1795888800,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795892400,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "071b6661-bb10-42a4-ac53-92936f6d0282",
+     "name": "An Díseart Garden"
+    }
+   },
+   {
+    "id": "ad817341-68be-4394-bfb4-05bf3940672d",
+    "name": "PORTS",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795901400,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795904100,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "41026bab-7526-4756-b634-a97a9a80b42f",
+     "name": "Barr na Sráide"
+    }
+   },
+   {
+    "id": "ae441e88-02fe-49b6-b25d-d799daec51d7",
+    "name": "Pebbledash",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795987800,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795990500,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "06cbe98f-3756-4bf4-9370-4239cec3db19",
+     "name": "Adams Bar"
+    }
+   },
+   {
+    "id": "ae7cd0b2-71b6-4397-b5c0-cbcc77c4a6e5",
+    "name": "Gwenno in Conversation with Jim Carroll",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": null,
+    "startsAt": {
+     "date": 1795960800,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795964400,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "1974c2e0-3b1e-416b-a43d-8ce1237da569",
+     "name": "Foxy John's "
+    }
+   },
+   {
+    "id": "af3bbdbc-a446-4596-b386-1eb0f2c007e3",
+    "name": "Emma Howard in Conversation with Jim Carroll",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": null,
+    "startsAt": {
+     "date": 1795881600,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795885200,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "1974c2e0-3b1e-416b-a43d-8ce1237da569",
+     "name": "Foxy John's "
+    }
+   },
+   {
+    "id": "afa0606f-94fc-4399-bab0-d41be6b98cb6",
+    "name": "Knats",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "St James' Church Golden Ticket",
+    "startsAt": {
+     "date": 1795986000,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795987800,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "fb88d3d3-c6a4-4cb8-b617-ee040a8aac4f",
+     "name": "St James' Church"
+    }
+   },
+   {
+    "id": "b022c0b8-91a7-4d95-bf36-acaac653ec08",
+    "name": "Disfreq & Caolan Ryan",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795822200,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795829400,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "9828284e-927d-4879-a779-2b5e160b2089",
+     "name": "Wave"
+    }
+   },
+   {
+    "id": "b09a0247-d46d-402d-a478-0b5657a9a766",
+    "name": "telekura",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795966200,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795968600,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "874f2cf0-f696-47b9-ac91-7340b5c8718f",
+     "name": "The Dingle Pub"
+    }
+   },
+   {
+    "id": "b1aa819b-46dc-41a7-9b50-95a1d40ff94e",
+    "name": "I mBliana: Film Screening",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Free Entry",
+    "startsAt": {
+     "date": 1795881600,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795892400,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "071b6661-bb10-42a4-ac53-92936f6d0282",
+     "name": "An Díseart Garden"
+    }
+   },
+   {
+    "id": "b2919aa4-e0ed-4dd9-ac96-cef294d7ee21",
+    "name": "Dani Larkin",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795958100,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795960800,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "55fffe37-4631-4627-a4ac-292acb566da5",
+     "name": "An Díseart"
+    }
+   },
+   {
+    "id": "b3d257a1-539b-4110-a696-5b20bc97c3f9",
+    "name": "Caroline Keane & Tom Delany, Tommy & Saundra O'Sullivan",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795971600,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795974300,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "644ad334-d715-43ff-9701-cc35929f5352",
+     "name": "O'Sullivan's Courthouse Pub"
+    }
+   },
+   {
+    "id": "b3d9b305-aceb-4889-9f1a-0a89e127d147",
+    "name": "Was Man",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795807800,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795810200,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "41026bab-7526-4756-b634-a97a9a80b42f",
+     "name": "Barr na Sráide"
+    }
+   },
+   {
+    "id": "b3dd8bb7-4491-4d71-8b17-c7412f19c41b",
+    "name": "Roisin Gowen",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795874400,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795876800,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "55fffe37-4631-4627-a4ac-292acb566da5",
+     "name": "An Díseart"
+    }
+   },
+   {
+    "id": "b587de85-165e-424a-93e1-d434b6314792",
+    "name": "Lambrini Girls",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "St James' Church Golden Ticket",
+    "startsAt": {
+     "date": 1795989600,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795991400,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "fb88d3d3-c6a4-4cb8-b617-ee040a8aac4f",
+     "name": "St James' Church"
+    }
+   },
+   {
+    "id": "b61b074c-1aa2-47a6-ace5-c770b88d0b2d",
+    "name": "Sean Joyce",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795879800,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795882500,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "80dadc25-2595-450a-a0c6-f2d713e56a1a",
+     "name": "Murphy's Ice Cream"
+    }
+   },
+   {
+    "id": "b678949f-875a-4b6a-9240-6305716fa1d8",
+    "name": "RunTheRed",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795824900,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795827600,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "cb9c0b94-6b26-48fb-875b-c463d6ff7432",
+     "name": "An Droichead Beag"
+    }
+   },
+   {
+    "id": "b6e586f5-d18b-4171-b69c-9cc6cca4a552",
+    "name": "Rua Rí",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795809600,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795812000,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "55fffe37-4631-4627-a4ac-292acb566da5",
+     "name": "An Díseart"
+    }
+   },
+   {
+    "id": "ba1f1bd6-12ef-49e3-b157-86c25383ce34",
+    "name": "Yunè Pinku",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795905900,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795954500,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "9828284e-927d-4879-a779-2b5e160b2089",
+     "name": "Wave"
+    }
+   },
+   {
+    "id": "bad8e068-4219-44d5-a9f1-d53228b77a86",
+    "name": "Sugaboo",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795909500,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795912200,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "83a8f628-4ad9-4b09-a189-ad3a7dd9dd9c",
+     "name": "McCarthys Bar"
+    }
+   },
+   {
+    "id": "bb975c6b-afaf-4f31-862b-e9f73b77fc69",
+    "name": "Livestream: Bhrighde Chaumbeul, Dermot Henry, Man/Woman/Chainsaw, ⁠⁠State of Grace & More",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Livestream",
+    "startsAt": {
+     "date": 1795806000,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795820400,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "71e08e8d-b0cb-4854-98cd-1773f88a254b",
+     "name": "Benner's Hotel"
+    }
+   },
+   {
+    "id": "bd6f7208-549f-487b-bd43-3d64c7fbf6af",
+    "name": "John Blek",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795975200,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795977600,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "55fffe37-4631-4627-a4ac-292acb566da5",
+     "name": "An Díseart"
+    }
+   },
+   {
+    "id": "bd8273f2-8663-40dd-b7b4-7e257715874a",
+    "name": "Lil Skag",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795906800,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795909500,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "77e9ca2d-8ebe-40fa-9929-bb9d41969288",
+     "name": "John Benny's Pub"
+    }
+   },
+   {
+    "id": "be0fb2aa-f102-4d0c-9bce-6e9769b74785",
+    "name": "Rory Sweeney",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795818600,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795824000,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "83a8f628-4ad9-4b09-a189-ad3a7dd9dd9c",
+     "name": "McCarthys Bar"
+    }
+   },
+   {
+    "id": "be610f55-5604-488d-a45e-411d446b2b2e",
+    "name": "Junk Drawer",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795822200,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795824900,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "b36b793e-7df9-4a89-88c3-29f7c21117cc",
+     "name": "The Marina Inn"
+    }
+   },
+   {
+    "id": "c0720db0-52e4-496e-a7ed-a2192587840b",
+    "name": "cosign",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795901400,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795905000,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "9828284e-927d-4879-a779-2b5e160b2089",
+     "name": "Wave"
+    }
+   },
+   {
+    "id": "c1da86ed-b633-41bd-84a3-d5503c4c28f0",
+    "name": "Roe Byrne",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795874400,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795876800,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "80dadc25-2595-450a-a0c6-f2d713e56a1a",
+     "name": "Murphy's Ice Cream"
+    }
+   },
+   {
+    "id": "c2e6b761-5458-4802-aff7-9306876e1473",
+    "name": "Zoë Uí Fhaoláin Green: SiúlóidCheoil / MusicWalk",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Free Entry",
+    "startsAt": {
+     "date": 1795881600,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795882800,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "071b6661-bb10-42a4-ac53-92936f6d0282",
+     "name": "An Díseart Garden"
+    }
+   },
+   {
+    "id": "c4f574da-90e4-4299-b175-137f0b465d8c",
+    "name": "Nialler9",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795912200,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795919400,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "83a8f628-4ad9-4b09-a189-ad3a7dd9dd9c",
+     "name": "McCarthys Bar"
+    }
+   },
+   {
+    "id": "c8149508-c620-48e0-966f-3c06397e504d",
+    "name": "Nell Mescal",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795890600,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795893000,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "55fffe37-4631-4627-a4ac-292acb566da5",
+     "name": "An Díseart"
+    }
+   },
+   {
+    "id": "c9754d95-07c4-49bc-80a7-325b747ef474",
+    "name": "mischa and the bear",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795900800,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795903200,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "83a8f628-4ad9-4b09-a189-ad3a7dd9dd9c",
+     "name": "McCarthys Bar"
+    }
+   },
+   {
+    "id": "c9998217-2555-43cd-a8fa-94c7ef6bfc58",
+    "name": "Fortune Igiebor",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795822200,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795824000,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "cb9c0b94-6b26-48fb-875b-c463d6ff7432",
+     "name": "An Droichead Beag"
+    }
+   },
+   {
+    "id": "c9c93220-fdaf-4b1b-b0a7-ca279d8a38bd",
+    "name": "State of Grace",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795899600,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795902000,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "b36b793e-7df9-4a89-88c3-29f7c21117cc",
+     "name": "The Marina Inn"
+    }
+   },
+   {
+    "id": "ca2f1e8b-99e6-4963-a127-339ce2353267",
+    "name": "Lil Skag",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795819500,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795822200,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "9828284e-927d-4879-a779-2b5e160b2089",
+     "name": "Wave"
+    }
+   },
+   {
+    "id": "caca483f-76a3-4f8d-ac74-b282c59bd53f",
+    "name": "Rory Sweeney",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795911300,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795915800,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "9828284e-927d-4879-a779-2b5e160b2089",
+     "name": "Wave"
+    }
+   },
+   {
+    "id": "caf2be0d-ab08-4371-be7c-c2ee921d16fd",
+    "name": "Music at the Edge: Julia Jacklin",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Ireland's Edge Wristband",
+    "startsAt": {
+     "date": 1795803900,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795804800,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "c4b70adb-5d93-43bf-83bf-1f7a3f85b86e",
+     "name": "Dingle Skellig Hotel"
+    }
+   },
+   {
+    "id": "cb06e1e3-1f6b-4372-946c-221f8af68bb3",
+    "name": "Shark School",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795901400,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795904100,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "77e9ca2d-8ebe-40fa-9929-bb9d41969288",
+     "name": "John Benny's Pub"
+    }
+   },
+   {
+    "id": "cd26b577-e5c2-4631-8612-cd5126c909f2",
+    "name": "BABYRAT",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795912200,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795914900,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "06cbe98f-3756-4bf4-9370-4239cec3db19",
+     "name": "Adams Bar"
+    }
+   },
+   {
+    "id": "cd79a26e-78bd-406f-8d34-cdc1f4f206f7",
+    "name": "How I Became A Wave",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795896000,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795898700,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "41026bab-7526-4756-b634-a97a9a80b42f",
+     "name": "Barr na Sráide"
+    }
+   },
+   {
+    "id": "d08a8bd0-ed3f-446a-acf8-a7c7e142dd28",
+    "name": "echo northstar",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795811400,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795814100,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "b36b793e-7df9-4a89-88c3-29f7c21117cc",
+     "name": "The Marina Inn"
+    }
+   },
+   {
+    "id": "d0b66318-d08d-4ff9-9e4f-3970a13cbf61",
+    "name": "Secret Set",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795911300,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795960800,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "77e9ca2d-8ebe-40fa-9929-bb9d41969288",
+     "name": "John Benny's Pub"
+    }
+   },
+   {
+    "id": "d2c1715f-ae23-40f1-8ddf-4ef362323f33",
+    "name": "KK Lewis",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795894200,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795896900,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "b36b793e-7df9-4a89-88c3-29f7c21117cc",
+     "name": "The Marina Inn"
+    }
+   },
+   {
+    "id": "d3465e02-7c16-49d8-bb50-45b87b0f9867",
+    "name": "Gilla Band",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "St James' Church Golden Ticket",
+    "startsAt": {
+     "date": 1795978800,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795980600,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "fb88d3d3-c6a4-4cb8-b617-ee040a8aac4f",
+     "name": "St James' Church"
+    }
+   },
+   {
+    "id": "d418ed0a-a991-43db-9a11-82eff699399d",
+    "name": "Secret Set",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795888800,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795891500,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "511c356e-2a17-4d62-9cbe-d8cb6e626180",
+     "name": "Kennedy's Bar"
+    }
+   },
+   {
+    "id": "d452a6bd-d59c-4931-8813-0810c401a98d",
+    "name": "Daragh Fleming",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795879800,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795882500,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "55fffe37-4631-4627-a4ac-292acb566da5",
+     "name": "An Díseart"
+    }
+   },
+   {
+    "id": "d4d2f3a7-04e5-42b9-8aea-9aa37e72ccfd",
+    "name": "Julian Boland",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795964400,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795967100,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "80dadc25-2595-450a-a0c6-f2d713e56a1a",
+     "name": "Murphy's Ice Cream"
+    }
+   },
+   {
+    "id": "d6204f22-1185-46ed-9790-04aaaf753740",
+    "name": "Ceol sa Gazebo: Rob MacNeacail",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Free Entry",
+    "startsAt": {
+     "date": 1795886100,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795888800,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "071b6661-bb10-42a4-ac53-92936f6d0282",
+     "name": "An Díseart Garden"
+    }
+   },
+   {
+    "id": "d6f4cbfd-d5b4-4fde-9f9e-5760c08473df",
+    "name": "McGrath",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795883400,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795886100,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "4418a3a2-833d-44a2-a802-44d1c2362165",
+     "name": "Neligan's Bar"
+    }
+   },
+   {
+    "id": "d89c6ec9-f38e-4e7d-85e6-998130f084c5",
+    "name": "Child of Prague",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795902300,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795905000,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "06cbe98f-3756-4bf4-9370-4239cec3db19",
+     "name": "Adams Bar"
+    }
+   },
+   {
+    "id": "d925f620-4647-4a57-9ea0-13e962c2e5e7",
+    "name": "Aaron Rowe",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "St James' Church Golden Ticket",
+    "startsAt": {
+     "date": 1795899600,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795901400,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "fb88d3d3-c6a4-4cb8-b617-ee040a8aac4f",
+     "name": "St James' Church"
+    }
+   },
+   {
+    "id": "d932db67-6a19-48fa-865a-4dce8c507e93",
+    "name": "Amy Winehouse: The Day She Came to Dingle (Screening)",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Free Entry",
+    "startsAt": {
+     "date": 1795964400,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795968000,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "71e08e8d-b0cb-4854-98cd-1773f88a254b",
+     "name": "Benner's Hotel"
+    }
+   },
+   {
+    "id": "dd7f3a24-2cb4-4d17-952b-3f4728afab53",
+    "name": "Zoë Uí Fhaoláin Green: SiúlóidCheoil / MusicWalk",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Free Entry",
+    "startsAt": {
+     "date": 1795885200,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795886400,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "071b6661-bb10-42a4-ac53-92936f6d0282",
+     "name": "An Díseart Garden"
+    }
+   },
+   {
+    "id": "dee5cac3-4e1d-4556-b484-3ec93123a988",
+    "name": "Emma Power & Graham Smyth",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795914000,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795917600,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "cb9c0b94-6b26-48fb-875b-c463d6ff7432",
+     "name": "An Droichead Beag"
+    }
+   },
+   {
+    "id": "df0b3645-7bce-4a8c-bda2-6d3df85d5579",
+    "name": "Esmeralda Road",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795914900,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795917600,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "874f2cf0-f696-47b9-ac91-7340b5c8718f",
+     "name": "The Dingle Pub"
+    }
+   },
+   {
+    "id": "e065469e-6277-446d-a2ff-3938fe205cca",
+    "name": "Scullion",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795968900,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795972500,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "55fffe37-4631-4627-a4ac-292acb566da5",
+     "name": "An Díseart"
+    }
+   },
+   {
+    "id": "e0f695b8-c160-4fd0-bdf2-2ad789602e15",
+    "name": "RunTheRed",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795886100,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795888800,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "06cbe98f-3756-4bf4-9370-4239cec3db19",
+     "name": "Adams Bar"
+    }
+   },
+   {
+    "id": "e148721c-4ec4-479b-ad0d-d2eab9eacdd8",
+    "name": "Múlú",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795976100,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795978800,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "511c356e-2a17-4d62-9cbe-d8cb6e626180",
+     "name": "Kennedy's Bar"
+    }
+   },
+   {
+    "id": "e1f9fbe7-cc44-4ce0-9dec-0c4e10f3dad2",
+    "name": "echo northstar",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795896900,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795899000,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "83a8f628-4ad9-4b09-a189-ad3a7dd9dd9c",
+     "name": "McCarthys Bar"
+    }
+   },
+   {
+    "id": "e35b24e2-8ac2-48ce-8689-5dfb57fed986",
+    "name": "Sult",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795869000,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795871400,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "55fffe37-4631-4627-a4ac-292acb566da5",
+     "name": "An Díseart"
+    }
+   },
+   {
+    "id": "e524b41e-3487-4b16-b8af-6de3d2c86402",
+    "name": "Waste Not, Want Not: All About Business Live with Iseult Ward",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Ireland's Edge Wristband",
+    "startsAt": {
+     "date": 1795869000,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795871400,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "c4b70adb-5d93-43bf-83bf-1f7a3f85b86e",
+     "name": "Dingle Skellig Hotel"
+    }
+   },
+   {
+    "id": "e697b1d9-e3a6-47b7-9760-81df1c40cbcc",
+    "name": "Molly Donnery",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795804200,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795806900,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "644ad334-d715-43ff-9701-cc35929f5352",
+     "name": "O'Sullivan's Courthouse Pub"
+    }
+   },
+   {
+    "id": "e6ed6898-fc14-4317-be66-ca08f2f52cf1",
+    "name": "Jessica Doolan",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795804200,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795806900,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "55fffe37-4631-4627-a4ac-292acb566da5",
+     "name": "An Díseart"
+    }
+   },
+   {
+    "id": "e7938460-6c2c-4649-be40-0f9679b05ae0",
+    "name": "Piaras Ó Lorcáin",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795896000,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795899000,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "55fffe37-4631-4627-a4ac-292acb566da5",
+     "name": "An Díseart"
+    }
+   },
+   {
+    "id": "e8810c57-ca3c-4c10-91c4-97eb6be5b9ee",
+    "name": "Cautionary Tales for Curious Times",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Ireland's Edge Wristband",
+    "startsAt": {
+     "date": 1795797900,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795799700,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "c4b70adb-5d93-43bf-83bf-1f7a3f85b86e",
+     "name": "Dingle Skellig Hotel"
+    }
+   },
+   {
+    "id": "ec0c5668-0741-4288-a81f-9e9c7db3013a",
+    "name": "State of Grace",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "St James' Church Golden Ticket",
+    "startsAt": {
+     "date": 1795813200,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795815000,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "fb88d3d3-c6a4-4cb8-b617-ee040a8aac4f",
+     "name": "St James' Church"
+    }
+   },
+   {
+    "id": "edf941f8-0410-4ca5-ac02-098ced7c9b58",
+    "name": "CABL",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795905900,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795908000,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "874f2cf0-f696-47b9-ac91-7340b5c8718f",
+     "name": "The Dingle Pub"
+    }
+   },
+   {
+    "id": "ee6b95d4-671c-4fae-a6ad-9dabc05d3632",
+    "name": "Roisín Gowen",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795813200,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795815900,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "41026bab-7526-4756-b634-a97a9a80b42f",
+     "name": "Barr na Sráide"
+    }
+   },
+   {
+    "id": "eedc283d-3c19-4725-a08f-f93dc4481ec1",
+    "name": "Sally Cinnamon and Friends",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795986000,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1796000400,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "83a8f628-4ad9-4b09-a189-ad3a7dd9dd9c",
+     "name": "McCarthys Bar"
+    }
+   },
+   {
+    "id": "ef0b8aa8-24a7-49e7-8ce9-ca1740665330",
+    "name": "ROOFCATS",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795879800,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795882200,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "83a8f628-4ad9-4b09-a189-ad3a7dd9dd9c",
+     "name": "McCarthys Bar"
+    }
+   },
+   {
+    "id": "ef83fe99-43b5-411b-afc0-186e0ae40417",
+    "name": "Múlú",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795888800,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795891200,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "4418a3a2-833d-44a2-a802-44d1c2362165",
+     "name": "Neligan's Bar"
+    }
+   },
+   {
+    "id": "efcd51ef-6482-40f8-8379-323eda9dc186",
+    "name": "Sell Everything",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795825800,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795828500,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "06cbe98f-3756-4bf4-9370-4239cec3db19",
+     "name": "Adams Bar"
+    }
+   },
+   {
+    "id": "f190ff7c-6f3c-43ce-9d65-f250df1be2d0",
+    "name": "Robocobra Quartet",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795971600,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795974000,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "874f2cf0-f696-47b9-ac91-7340b5c8718f",
+     "name": "The Dingle Pub"
+    }
+   },
+   {
+    "id": "f4912c2d-ca6f-4a7e-8d58-be51f608989d",
+    "name": "Emma Power & Graham Smyth",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795906800,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795908600,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "cb9c0b94-6b26-48fb-875b-c463d6ff7432",
+     "name": "An Droichead Beag"
+    }
+   },
+   {
+    "id": "f720d313-4cf1-4b57-924c-9f394ab5381d",
+    "name": "Shy",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795989600,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795996800,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "cb9c0b94-6b26-48fb-875b-c463d6ff7432",
+     "name": "An Droichead Beag"
+    }
+   },
+   {
+    "id": "f7c57b9d-792c-49a0-929f-f3e6875c0420",
+    "name": "telekura",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795907700,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795910400,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "06cbe98f-3756-4bf4-9370-4239cec3db19",
+     "name": "Adams Bar"
+    }
+   },
+   {
+    "id": "f8dac087-ff72-45ba-a6bc-9bb59359cb9c",
+    "name": "Dani Larkin",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795969800,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795972500,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "644ad334-d715-43ff-9701-cc35929f5352",
+     "name": "O'Sullivan's Courthouse Pub"
+    }
+   },
+   {
+    "id": "fa0abb4f-fef7-417b-8585-1a3119f1d6c2",
+    "name": "Officer John",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795806000,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795808400,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "06cbe98f-3756-4bf4-9370-4239cec3db19",
+     "name": "Adams Bar"
+    }
+   },
+   {
+    "id": "ffda1457-f86e-4f5d-9730-5993e4594ab5",
+    "name": "State of Grace",
+    "status": "PUBLIC",
+    "timeIsTBD": false,
+    "statusMessage": "Jameson Music Trail Wristband",
+    "startsAt": {
+     "date": 1795960800,
+     "timezoneName": "Europe/London"
+    },
+    "endsAt": {
+     "date": 1795963200,
+     "timezoneName": "Europe/London"
+    },
+    "eventPlace": {
+     "id": "874f2cf0-f696-47b9-ac91-7340b5c8718f",
+     "name": "The Dingle Pub"
+    }
+   }
+  ]
+ },
+ "listSubAppPlaces": {
+  "nextToken": null,
+  "items": [
+   {
+    "id": "06cbe98f-3756-4bf4-9370-4239cec3db19",
+    "name": "Adams Bar",
+    "placeType": "stage",
+    "status": "PUBLIC",
+    "latitude": null,
+    "longitude": null
+   },
+   {
+    "id": "071b6661-bb10-42a4-ac53-92936f6d0282",
+    "name": "An Díseart Garden",
+    "placeType": "stage",
+    "status": "PUBLIC",
+    "latitude": null,
+    "longitude": null
+   },
+   {
+    "id": "11ab5186-92a0-4201-988b-647e7010a828",
+    "name": "Banter",
+    "placeType": "poi",
+    "status": "PUBLIC",
+    "latitude": null,
+    "longitude": null
+   },
+   {
+    "id": "1974c2e0-3b1e-416b-a43d-8ce1237da569",
+    "name": "Foxy John's ",
+    "placeType": "stage",
+    "status": "PUBLIC",
+    "latitude": null,
+    "longitude": null
+   },
+   {
+    "id": "1b63e2c2-07b8-4595-aa1a-b74036a7bef2",
+    "name": "Jameson Music Stage",
+    "placeType": "poi",
+    "status": "PUBLIC",
+    "latitude": null,
+    "longitude": null
+   },
+   {
+    "id": "1c9b288a-3e5e-4952-b344-a56a401846c2",
+    "name": "Páidí Ó Sé’s",
+    "placeType": "stage",
+    "status": "PUBLIC",
+    "latitude": null,
+    "longitude": null
+   },
+   {
+    "id": "2a21864a-51fa-46a1-87f1-e8f58e2b12dd",
+    "name": "Ireland's Edge",
+    "placeType": "poi",
+    "status": "PUBLIC",
+    "latitude": null,
+    "longitude": null
+   },
+   {
+    "id": "2cff6141-5786-4a46-b58f-89da22d378bf",
+    "name": "RTÉ 2FM Rising",
+    "placeType": "poi",
+    "status": "PUBLIC",
+    "latitude": null,
+    "longitude": null
+   },
+   {
+    "id": "30253b52-fc52-4b98-beb7-85a4ae4656ea",
+    "name": "Jameson Music Trail",
+    "placeType": "poi",
+    "status": "PUBLIC",
+    "latitude": null,
+    "longitude": null
+   },
+   {
+    "id": "303811a7-f55d-45e3-acfb-3d0e673c7dc0",
+    "name": "Powers Golden Hours",
+    "placeType": "poi",
+    "status": "PUBLIC",
+    "latitude": null,
+    "longitude": null
+   },
+   {
+    "id": "41026bab-7526-4756-b634-a97a9a80b42f",
+    "name": "Barr na Sráide",
+    "placeType": "stage",
+    "status": "PUBLIC",
+    "latitude": null,
+    "longitude": null
+   },
+   {
+    "id": "4418a3a2-833d-44a2-a802-44d1c2362165",
+    "name": "Neligan's Bar",
+    "placeType": "stage",
+    "status": "PUBLIC",
+    "latitude": null,
+    "longitude": null
+   },
+   {
+    "id": "511c356e-2a17-4d62-9cbe-d8cb6e626180",
+    "name": "Kennedy's Bar",
+    "placeType": "stage",
+    "status": "PUBLIC",
+    "latitude": null,
+    "longitude": null
+   },
+   {
+    "id": "55fffe37-4631-4627-a4ac-292acb566da5",
+    "name": "An Díseart",
+    "placeType": "stage",
+    "status": "PUBLIC",
+    "latitude": null,
+    "longitude": null
+   },
+   {
+    "id": "644ad334-d715-43ff-9701-cc35929f5352",
+    "name": "O'Sullivan's Courthouse Pub",
+    "placeType": "stage",
+    "status": "PUBLIC",
+    "latitude": null,
+    "longitude": null
+   },
+   {
+    "id": "64f141aa-1aa8-4cb6-ab24-8c4d251f3a7f",
+    "name": "IMRO Other Room",
+    "placeType": "poi",
+    "status": "PUBLIC",
+    "latitude": null,
+    "longitude": null
+   },
+   {
+    "id": "71e08e8d-b0cb-4854-98cd-1773f88a254b",
+    "name": "Benner's Hotel",
+    "placeType": "stage",
+    "status": "PUBLIC",
+    "latitude": null,
+    "longitude": null
+   },
+   {
+    "id": "77e9ca2d-8ebe-40fa-9929-bb9d41969288",
+    "name": "John Benny's Pub",
+    "placeType": "stage",
+    "status": "PUBLIC",
+    "latitude": null,
+    "longitude": null
+   },
+   {
+    "id": "80dadc25-2595-450a-a0c6-f2d713e56a1a",
+    "name": "Murphy's Ice Cream",
+    "placeType": "stage",
+    "status": "PUBLIC",
+    "latitude": null,
+    "longitude": null
+   },
+   {
+    "id": "83a8f628-4ad9-4b09-a189-ad3a7dd9dd9c",
+    "name": "McCarthys Bar",
+    "placeType": "stage",
+    "status": "PUBLIC",
+    "latitude": null,
+    "longitude": null
+   },
+   {
+    "id": "874f2cf0-f696-47b9-ac91-7340b5c8718f",
+    "name": "The Dingle Pub",
+    "placeType": "stage",
+    "status": "PUBLIC",
+    "latitude": null,
+    "longitude": null
+   },
+   {
+    "id": "9828284e-927d-4879-a779-2b5e160b2089",
+    "name": "Wave",
+    "placeType": "stage",
+    "status": "PUBLIC",
+    "latitude": null,
+    "longitude": null
+   },
+   {
+    "id": "a9b35f70-68e2-48b5-ba7e-8c496bf09594",
+    "name": "Banner's Hotel Livestream ",
+    "placeType": "poi",
+    "status": "PUBLIC",
+    "latitude": null,
+    "longitude": null
+   },
+   {
+    "id": "b36b793e-7df9-4a89-88c3-29f7c21117cc",
+    "name": "The Marina Inn",
+    "placeType": "stage",
+    "status": "PUBLIC",
+    "latitude": null,
+    "longitude": null
+   },
+   {
+    "id": "b64239aa-e81c-48c9-8dba-5cb097e26006",
+    "name": "The Temperance Hall",
+    "placeType": "stage",
+    "status": "PUBLIC",
+    "latitude": null,
+    "longitude": null
+   },
+   {
+    "id": "c15efb2f-8c20-4c3c-a5fa-d71378ca8488",
+    "name": "Jameson Music Stage at The Bridge House",
+    "placeType": "stage",
+    "status": "PUBLIC",
+    "latitude": null,
+    "longitude": null
+   },
+   {
+    "id": "c4b70adb-5d93-43bf-83bf-1f7a3f85b86e",
+    "name": "Dingle Skellig Hotel",
+    "placeType": "stage",
+    "status": "PUBLIC",
+    "latitude": null,
+    "longitude": null
+   },
+   {
+    "id": "cb9c0b94-6b26-48fb-875b-c463d6ff7432",
+    "name": "An Droichead Beag",
+    "placeType": "stage",
+    "status": "PUBLIC",
+    "latitude": null,
+    "longitude": null
+   },
+   {
+    "id": "d228f618-d14d-4dde-9072-00856e54ecbb",
+    "name": "Foxy Johns",
+    "placeType": "poi",
+    "status": "PUBLIC",
+    "latitude": null,
+    "longitude": null
+   },
+   {
+    "id": "d9e4434a-2fa3-4855-bb9c-d83ce34157d2",
+    "name": "Cogar",
+    "placeType": "poi",
+    "status": "PUBLIC",
+    "latitude": null,
+    "longitude": null
+   },
+   {
+    "id": "e250045a-dc69-4d13-9883-b9fd32b616bb",
+    "name": "The Hermitage ",
+    "placeType": "poi",
+    "status": "PUBLIC",
+    "latitude": null,
+    "longitude": null
+   },
+   {
+    "id": "f2408fb6-dabc-4d42-a58c-91caf4a20deb",
+    "name": "St James' Church",
+    "placeType": "poi",
+    "status": "PUBLIC",
+    "latitude": null,
+    "longitude": null
+   },
+   {
+    "id": "fb88d3d3-c6a4-4cb8-b617-ee040a8aac4f",
+    "name": "St James' Church",
+    "placeType": "stage",
+    "status": "PUBLIC",
+    "latitude": null,
+    "longitude": null
+   }
+  ]
+ }
+}

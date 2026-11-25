@@ -1,15 +1,24 @@
 {
-  "_note": "Copy to prefs.json (gitignored). Keyed by the same handle as users.json. `tone` is read on every inbound message and applied to the reply.",
+  "_note": "Copy to prefs.json (gitignored). Keyed by the same handle as users.json. `tone` is read on every inbound message and applied to the reply. Opt-in alert flags: `weatherDaily` (daily forecast card), `surpriseSets` (newly-added sets from the schedule watch, relayed at the bot's discretion).",
   "alex": {
     "name": "Alex",
-    "channel": { "kind": "telegram", "id": "100000001" },
+    "channel": {
+      "kind": "telegram",
+      "id": "100000001"
+    },
     "tone": "plain, no filler, data first",
     "weatherDaily": true,
-    "notes": ["Prefers a card over a wall of text."]
+    "notes": [
+      "Prefers a card over a wall of text."
+    ],
+    "surpriseSets": true
   },
   "sam": {
     "name": "Sam",
-    "channel": { "kind": "telegram", "id": "100000002" },
+    "channel": {
+      "kind": "telegram",
+      "id": "100000002"
+    },
     "tone": "warm and chatty",
     "notes": []
   }

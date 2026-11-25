@@ -128,7 +128,10 @@ working reference module in this repo:
   Leap** (`com.greencopper.android.*` — Electric Picnic, Roskilde, Leeds, Download): it works quite
   differently, shipping an encrypted content bundle updated over the air rather than a REST API, so
   it has its own guide, [`greencopper-discovery.md`](greencopper-discovery.md), and
-  `festivals/ep26` as its reference module. If your festival's app is built on something else again,
+  `festivals/ep26` as its reference module. A third is **Aloompa** (Flutter apps with a
+  `staticParamsEndpoint` on `*.aloompa.com` in `properties.json` — Other Voices): an AWS AppSync
+  GraphQL API, see [`aloompa-discovery.md`](aloompa-discovery.md) and `festivals/ov26`.
+  If your festival's app is built on something else again,
   the same "find the API behind the app" method still applies.
 - **An app, but not a vendor platform** → the festival's *own* API. `festivals/ps26` is the
   reference: Primavera's app is React Native, so its GraphQL queries sit in plain sight in
@@ -225,7 +228,8 @@ festival, in its `CONTEXT.md`, before you rely on any other output.
 
 Only fill in what your path needs: `appmiral` for the Appmiral vendor path
 ([`appmiral-discovery.md`](appmiral-discovery.md)), `greencopper.secret` for a Greencopper/Leap app
-([`greencopper-discovery.md`](greencopper-discovery.md)), `clashfinder` for favourites and mirror pushes
+([`greencopper-discovery.md`](greencopper-discovery.md)), `aloompa.buildParamsToken` for an Aloompa app
+([`aloompa-discovery.md`](aloompa-discovery.md)), `clashfinder` for favourites and mirror pushes
 ([`clashfinder.md`](clashfinder.md)), `setlist.fm` optionally for the `setlist` command. Pushing to
 a Clashfinder mirror needs `clashfinder.password` — the CLI derives the login cookie from it locally
 (Clashfinder hashes passwords client-side, so the password never leaves your machine). If you'd

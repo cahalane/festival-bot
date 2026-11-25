@@ -16,6 +16,7 @@
     "@festival/ep26": "*",
     "@festival/atn26": "*",
     "@festival/ps26": "*",
-    "@festival/ps27": "*"
+    "@festival/ps27": "*",
+    "@festival/ov26": "*"
   }
 }

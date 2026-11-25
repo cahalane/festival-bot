@@ -65,7 +65,12 @@ loop, not just editing `CLAUDE.md`.
 ## Step 3 — What each event line means
 
 - `SCHEDULE CHANGE (<festival>): N added, M removed, K moved` + one line per change — the lineup
-  moved. **Act (Step 4).**
+  moved. **Act (Step 4).** Each `ADDED:` line is also a candidate **surprise set**: relay it to
+  everyone with `surpriseSets: true` in `data/prefs.json` (check the flag fresh), each in their own
+  tone, with what/where/when and the walk from somewhere sensible. There is no fixed threshold —
+  use discretion as it lands: a pop-up starting in the next few hours, or a TBD slot that just got
+  a real time, is worth a ping; a talk re-listed with a typo fix, or a set days away that will
+  turn up in normal planning anyway, can be logged and skipped. Say why you skipped if asked.
 - `SCHEDULE WATCH (<festival>): guarded shrink — …` — the live feed came back smaller than the
   saved snapshot, so nothing was overwritten; the fetch was parked in a `.fetched.json` sidecar
   instead. Often legitimate (post-festival pruning) but suspicious before the festival has
