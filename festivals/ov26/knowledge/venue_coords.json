@@ -1,5 +1,5 @@
 {
- "_source": "OpenStreetMap (Overpass), fetched 2026-11-25. [lat, lon, osm element]. an-diseart(+garden) from operator-supplied Plus Code. Not positioned: wave. paidi-o-ses (Ventry, way/126810064 @ 52.12739,-10.38010) is bus-only and handled separately.",
+ "_source": "OpenStreetMap (Overpass), fetched 2026-11-25. [lat, lon, osm element]. an-diseart(+garden) from operator-supplied Plus Code. wave from operator-supplied Plus Code 4PRC+23. paidi-o-ses (Ventry, way/126810064 @ 52.12739,-10.38010) is bus-only and handled separately.",
  "coords": {
   "adams-bar": [
    52.14198,
@@ -90,6 +90,11 @@
    52.14206,
    -10.27069,
    "same site as an-diseart (Plus Code 4PRH+RP)"
+  ],
+  "wave": [
+   52.14006,
+   -10.27981,
+   "Plus Code 4PRC+23 Dingle (operator, 2026-11-25)"
   ]
  }
 }

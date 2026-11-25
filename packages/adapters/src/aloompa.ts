@@ -25,7 +25,7 @@
  *   - Place names can carry trailing spaces ("Foxy John's "); slugs are trimmed.
  *   - Each event *is* one slot: the event `name` is the act/session name.
  */
-import type { ArtistSet, LineupSource, VenueInfo } from "@festival-bot/core";
+import type { ArtistSet, DraftAct, LineupSource, VenueInfo } from "@festival-bot/core";
 
 export const ALOOMPA_BUILD_PARAMS_URL = "https://skeeter-hawk.aloompa.com/build-params";
 
@@ -182,6 +182,85 @@ export async function fetchAloompaSubApp(config: AloompaConfig, deps: AloompaFet
   if (!sub) throw new Error("aloompa graphql: empty response");
   sub.listSubAppEvents.nextToken = null;
   return sub;
+}
+
+/**
+ * Opt-in repair for a recurring data-entry fault: a late set whose end was typed as
+ * PM instead of AM (22:45 -> "12:15" meaning 00:15), which shows up as a set longer
+ * than 12 hours. A set over 12h whose length minus 12h is at most 8h is taken to
+ * have an end exactly 12 hours late, and is moved back. Seen in Other Voices 2026.
+ * Returns new objects (input untouched) plus the corrected sets, for logging.
+ */
+export function fixAloompaAmPmEnds(sets: ArtistSet[]): { sets: ArtistSet[]; fixed: ArtistSet[] } {
+  const fixed: ArtistSet[] = [];
+  const out = sets.map((s) => {
+    if (s.durationMin > 720 && s.durationMin - 720 <= 480) {
+      const f = { ...s, end: new Date(s.end.getTime() - 12 * 3_600_000), durationMin: s.durationMin - 720 };
+      fixed.push(f);
+      return f;
+    }
+    return s;
+  });
+  return { sets: out, fixed };
+}
+
+/**
+ * Draft detection. `listSubAppEvents` returns only PUBLISHED events, but a performer's
+ * `listPerformerEvents` also links events the festival has staged and not yet
+ * published. Any linked id missing from the published list is a draft, so a performer
+ * with one is an act about to be announced (or a second set for a scheduled act).
+ */
+export function findAloompaDraftActs(
+  performers: { name: string; listPerformerEvents?: { items: ({ id: string } | null)[] } | null }[],
+  publishedEventIds: Iterable<string>,
+): DraftAct[] {
+  const pub = new Set(publishedEventIds);
+  const out: DraftAct[] = [];
+  for (const p of performers) {
+    const ids = (p.listPerformerEvents?.items ?? []).map((i) => i?.id).filter((x): x is string => !!x);
+    const drafts = ids.filter((id) => !pub.has(id));
+    if (drafts.length) out.push({ name: p.name.trim(), eventIds: drafts });
+  }
+  out.sort((a, b) => a.name.localeCompare(b.name));
+  return out;
+}
+
+export const ALOOMPA_DRAFTS_QUERY = [
+  "query Drafts($appId: String!, $id: String!, $versionId: String!) {",
+  "  getSubApp(appId: $appId, id: $id, versionId: $versionId) {",
+  "    listSubAppEvents { nextToken items { id } }",
+  "    listSubAppPerformers { nextToken items { name listPerformerEvents { items { id } } } }",
+  "  }",
+  "}",
+].join("\n");
+
+/** Live draft check: performers linked to unpublished events. */
+export async function fetchAloompaDraftActs(config: AloompaConfig, deps: AloompaFetchDeps = {}): Promise<DraftAct[]> {
+  const f = deps.fetch ?? fetch;
+  const { apiUrl, apiKey } = await resolveAloompaEndpoint(config, deps);
+  const r = await f(apiUrl, {
+    method: "POST",
+    headers: { "content-type": "application/json", "x-api-key": apiKey, "User-Agent": "festival-bot/1.0" },
+    body: JSON.stringify({
+      query: ALOOMPA_DRAFTS_QUERY,
+      variables: { appId: config.appId, id: config.subAppId, versionId: config.versionId ?? "1.0.0" },
+    }),
+  });
+  if (!r.ok) throw new Error("aloompa graphql: HTTP " + r.status);
+  type Page<T> = { nextToken?: string | null; items: T[] };
+  const j = (await r.json()) as {
+    data?: { getSubApp?: { listSubAppEvents: Page<{ id: string }>; listSubAppPerformers: Page<{ name: string; listPerformerEvents?: { items: ({ id: string } | null)[] } | null }> } | null };
+    errors?: { message: string }[];
+  };
+  if (j.errors?.length) throw new Error("aloompa graphql: " + j.errors.map((e) => e.message).join("; "));
+  const s = j.data?.getSubApp;
+  if (!s) throw new Error("aloompa graphql: sub-app " + config.subAppId + " not found");
+  // A truncated published list would make every unlisted event look like a draft:
+  // refuse rather than report a flood of false drafts.
+  if (s.listSubAppEvents.nextToken || s.listSubAppPerformers.nextToken) {
+    throw new Error("aloompa draft check: paged events/performers not supported yet");
+  }
+  return findAloompaDraftActs(s.listSubAppPerformers.items, s.listSubAppEvents.items.map((e) => e.id));
 }
 
 /** A LineupSource over a sub-app snapshot the festival module loads. */

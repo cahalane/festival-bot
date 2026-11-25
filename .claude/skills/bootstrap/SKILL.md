@@ -39,6 +39,7 @@ Reminders are always armed — they don't depend on any festival source.
 | Declared source | Command | Loop script |
 |---|---|---|
 | `lineup` (always present) | `./festplan schedule-tick` | `scripts/schedule_watch_loop.sh` |
+| `lineup` with a `drafts()` check (Aloompa: `ov26`) | `./festplan draft-tick` | `scripts/draft_watch_loop.sh` |
 | `announcements` | `./festplan announce-tick` | `scripts/announce_watch_loop.sh` |
 | `pages` | `./festplan pages-tick` | `scripts/pages_watch_loop.sh` |
 | `map` | `./festplan map-check` | `scripts/map_watch_loop.sh` |
@@ -71,6 +72,12 @@ loop, not just editing `CLAUDE.md`.
   use discretion as it lands: a pop-up starting in the next few hours, or a TBD slot that just got
   a real time, is worth a ping; a talk re-listed with a typo fix, or a set days away that will
   turn up in normal planning anyway, can be logged and skipped. Say why you skipped if asked.
+- `DRAFT ACTS (<festival>): N new staged-but-unpublished act(s)` + one `DRAFT:   <name>` line
+  each — the app has a set for that act prepared but not yet published (see the festival's
+  `knowledge/data-source.md`). There is no time or stage yet, so this is a heads-up, not a schedule
+  fact: tell people with `surpriseSets: true` at your discretion, phrased as "the app is preparing
+  a set for X, no time yet", never as confirmed. The real slot arrives later as an `ADDED:` line
+  from the schedule watch. A name that is already on the schedule means a second set is coming.
 - `SCHEDULE WATCH (<festival>): guarded shrink — …` — the live feed came back smaller than the
   saved snapshot, so nothing was overwritten; the fetch was parked in a `.fetched.json` sidecar
   instead. Often legitimate (post-festival pruning) but suspicious before the festival has

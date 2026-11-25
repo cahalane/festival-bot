@@ -24,6 +24,13 @@ export interface LineupRefreshResult {
   note: string;
 }
 
+export interface DraftAct {
+  /** Performer name as the source holds it. */
+  name: string;
+  /** Linked event ids that are NOT in the published lineup (staged, unpublished). */
+  eventIds: string[];
+}
+
 export interface LineupSource {
   /** Current set list for the festival (already in absolute instants). */
   loadSets(): Promise<ArtistSet[]>;
@@ -33,6 +40,12 @@ export interface LineupSource {
    * snapshot with a degraded one (see ps26 post-festival pruning).
    */
   refresh?(opts?: { variant?: string; force?: boolean }): Promise<LineupRefreshResult>;
+  /**
+   * Acts the source has staged but not published (e.g. Aloompa performers linked to
+   * draft events). OPTIONAL — only sources that can see drafts implement it; the
+   * `draft-tick` watch is armed only when it exists.
+   */
+  drafts?(): Promise<DraftAct[]>;
 }
 
 export interface FavouritesSource {

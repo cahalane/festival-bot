@@ -20,6 +20,8 @@ snapshot `snapshot/subapp.json` (195 sets / 20 venues on 2026-11-25).
   `now "Sun 18:20"` must show it.
 - **Surprise sets** are a feature of this festival: the schedule watch ticks every 4–6 min
   (`watch.conf`) and relays `ADDED:` sets to people with `surpriseSets: true` (see the bootstrap skill).
+  **Draft events** (acts staged but unpublished — e.g. the J Music Stage strand) can be spotted
+  *before* they hit the schedule, via performer→draft-event links (`draft-tick` watch); see `knowledge/data-source.md`.
 
 ## Favourites
 Clashfinder event **`ov2026`** ("Other Voices Dingle 2026 (unofficial)") — run by an independent

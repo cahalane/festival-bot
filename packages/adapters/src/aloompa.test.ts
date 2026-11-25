@@ -1,5 +1,13 @@
 import { describe, expect, test } from "vitest";
-import { aloompaSlugify, parseAloompaLineup, aloompaVenues, fetchAloompaSubApp, type AloompaSubApp } from "./aloompa.js";
+import {
+  aloompaSlugify,
+  parseAloompaLineup,
+  aloompaVenues,
+  fetchAloompaSubApp,
+  fixAloompaAmPmEnds,
+  findAloompaDraftActs,
+  type AloompaSubApp,
+} from "./aloompa.js";
 
 const t = (iso: string) => ({ date: Date.parse(iso) / 1000, timezoneName: "Europe/London" });
 
@@ -72,5 +80,44 @@ describe("aloompa", () => {
     ];
     const fakeFetch = (async () => new Response(JSON.stringify(responses.shift()), { status: 200 })) as unknown as typeof fetch;
     await expect(fetchAloompaSubApp({ appId: "a", subAppId: "s", buildParamsToken: "T" }, { fetch: fakeFetch })).rejects.toThrow(/Unauthorized/);
+  });
+});
+
+describe("fixAloompaAmPmEnds", () => {
+  const mk = (name: string, startIso: string, endIso: string) => {
+    const start = new Date(startIso), end = new Date(endIso);
+    return { name, slug: name, stage: "x", start, end, durationMin: Math.round((end.getTime() - start.getTime()) / 60000) };
+  };
+  test("moves a >12h set back 12 hours (the three Other Voices 2026 rows)", () => {
+    const { sets, fixed } = fixAloompaAmPmEnds([
+      mk("Yune Pinku", "2026-11-28T22:45:00Z", "2026-11-29T12:15:00Z"),
+      mk("Robocobra Quartet", "2026-11-28T23:45:00Z", "2026-11-29T12:30:00Z"),
+      mk("Secret Set", "2026-11-29T00:15:00Z", "2026-11-29T14:00:00Z"),
+    ]);
+    expect(fixed).toHaveLength(3);
+    expect(sets.map((s) => s.end.toISOString().slice(11, 16))).toEqual(["00:15", "00:30", "02:00"]);
+    expect(sets.map((s) => s.durationMin)).toEqual([90, 45, 105]);
+  });
+  test("leaves long-but-real sets alone", () => {
+    const s = mk("Sally Cinnamon and Friends", "2026-11-29T21:00:00Z", "2026-11-30T01:00:00Z");
+    const { sets, fixed } = fixAloompaAmPmEnds([s]);
+    expect(fixed).toHaveLength(0);
+    expect(sets[0]).toBe(s);
+  });
+});
+
+describe("findAloompaDraftActs", () => {
+  test("flags performers linked to unpublished events, only those ids", () => {
+    const perf = [
+      { name: "Sprints", listPerformerEvents: { items: [{ id: "d1" }] } },
+      { name: "Vaticanjail", listPerformerEvents: { items: [{ id: "p1" }] } },
+      { name: "Knats ", listPerformerEvents: { items: [{ id: "p2" }, { id: "d2" }] } },
+      { name: "Laura", listPerformerEvents: { items: [] } },
+      { name: "Nobody", listPerformerEvents: null },
+    ];
+    expect(findAloompaDraftActs(perf, ["p1", "p2"])).toEqual([
+      { name: "Knats", eventIds: ["d2"] },
+      { name: "Sprints", eventIds: ["d1"] },
+    ]);
   });
 });

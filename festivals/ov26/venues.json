@@ -1,5 +1,5 @@
 {
-  "_note": "Stages = every place carrying a set in the Aloompa feed. St James' Church is golden-ticket only -> limitedCapacity. Walk edges: tools/derive-walk-graph.mjs from OSM coords (knowledge/venue_coords.json, knowledge/walk-graph.md). wave has NO position and fall back to defaultMinutes 10 (a placeholder). paidi-o-ses (Ventry) edges are a flat 30-min shuttle-bus estimate, not a walk.",
+  "_note": "Stages = every place carrying a set in the Aloompa feed. St James' Church is golden-ticket only -> limitedCapacity. Walk edges: tools/derive-walk-graph.mjs from OSM coords + operator Plus Codes for An Díseart and Wave (knowledge/venue_coords.json, knowledge/walk-graph.md). paidi-o-ses (Ventry) edges are a flat 30-min shuttle-bus estimate, not a walk.",
   "venues": [
     {
       "slug": "adams-bar",
@@ -174,6 +174,11 @@
         1
       ],
       [
+        "adams-bar",
+        "wave",
+        15
+      ],
+      [
         "an-diseart",
         "an-diseart-garden",
         1
@@ -254,6 +259,11 @@
         2
       ],
       [
+        "an-diseart",
+        "wave",
+        13
+      ],
+      [
         "an-diseart-garden",
         "an-droichead-beag",
         5
@@ -327,6 +337,11 @@
         "an-diseart-garden",
         "the-temperance-hall",
         2
+      ],
+      [
+        "an-diseart-garden",
+        "wave",
+        13
       ],
       [
         "an-droichead-beag",
@@ -397,6 +412,11 @@
         "an-droichead-beag",
         "the-temperance-hall",
         4
+      ],
+      [
+        "an-droichead-beag",
+        "wave",
+        17
       ],
       [
         "barr-na-sraide",
@@ -464,6 +484,11 @@
         2
       ],
       [
+        "barr-na-sraide",
+        "wave",
+        14
+      ],
+      [
         "benners-hotel",
         "dingle-skellig-hotel",
         17
@@ -522,6 +547,11 @@
         "benners-hotel",
         "the-temperance-hall",
         3
+      ],
+      [
+        "benners-hotel",
+        "wave",
+        16
       ],
       [
         "dingle-skellig-hotel",
@@ -579,6 +609,11 @@
         19
       ],
       [
+        "dingle-skellig-hotel",
+        "wave",
+        20
+      ],
+      [
         "foxy-johns",
         "john-bennys-pub",
         9
@@ -629,6 +664,11 @@
         1
       ],
       [
+        "foxy-johns",
+        "wave",
+        15
+      ],
+      [
         "john-bennys-pub",
         "kennedys-bar",
         9
@@ -672,6 +712,11 @@
         "john-bennys-pub",
         "the-temperance-hall",
         9
+      ],
+      [
+        "john-bennys-pub",
+        "wave",
+        7
       ],
       [
         "kennedys-bar",
@@ -714,6 +759,11 @@
         1
       ],
       [
+        "kennedys-bar",
+        "wave",
+        14
+      ],
+      [
         "mccarthys-bar",
         "murphys-ice-cream",
         7
@@ -749,6 +799,11 @@
         1
       ],
       [
+        "mccarthys-bar",
+        "wave",
+        14
+      ],
+      [
         "murphys-ice-cream",
         "neligans-bar",
         8
@@ -779,6 +834,11 @@
         8
       ],
       [
+        "murphys-ice-cream",
+        "wave",
+        9
+      ],
+      [
         "neligans-bar",
         "osullivans-courthouse-pub",
         1
@@ -804,6 +864,11 @@
         4
       ],
       [
+        "neligans-bar",
+        "wave",
+        17
+      ],
+      [
         "osullivans-courthouse-pub",
         "st-james-church",
         2
@@ -824,6 +889,11 @@
         5
       ],
       [
+        "osullivans-courthouse-pub",
+        "wave",
+        17
+      ],
+      [
         "st-james-church",
         "the-dingle-pub",
         1
@@ -839,6 +909,11 @@
         3
       ],
       [
+        "st-james-church",
+        "wave",
+        17
+      ],
+      [
         "the-dingle-pub",
         "the-marina-inn",
         11
@@ -849,9 +924,24 @@
         3
       ],
       [
+        "the-dingle-pub",
+        "wave",
+        17
+      ],
+      [
         "the-marina-inn",
         "the-temperance-hall",
         10
+      ],
+      [
+        "the-marina-inn",
+        "wave",
+        7
+      ],
+      [
+        "the-temperance-hall",
+        "wave",
+        15
       ],
       [
         "adams-bar",
@@ -940,6 +1030,11 @@
       ],
       [
         "the-temperance-hall",
+        "paidi-o-ses",
+        30
+      ],
+      [
+        "wave",
         "paidi-o-ses",
         30
       ]

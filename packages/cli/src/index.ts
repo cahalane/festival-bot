@@ -39,6 +39,7 @@ import { baselineFile, readBaseline, writeBaseline } from "./baseline.js";
 import { loadActiveFestival, ACTIVE_FESTIVAL } from "./festivals.js";
 import { loadRuntime, resolveUserFavourites, findSets, type Runtime } from "./runtime.js";
 import { runScheduleTick } from "./tick.js";
+import { runDraftTick } from "./draft-watch.js";
 import { runCfPush } from "./cf-push.js";
 import { runMapCheck, runAmenities } from "./map-watch.js";
 import { runAnnounceTick, type AnnounceSeen } from "./announce-watch.js";
@@ -94,6 +95,7 @@ const USAGE = `festplan (festival: ${ACTIVE_FESTIVAL})
   vibecheck <cf-user> ["Sat 22:00"]           personalised now/next + clash decisions
   schedule-watch [--commit]                   lineup changes vs the saved baseline
   schedule-tick                               unattended: re-pull live + diff; SILENT unless something changed
+  draft-tick                                  unattended: staged-but-unpublished acts (Aloompa); SILENT unless new
   announce-tick                               unattended: pull official announcements; SILENT unless a new one
   pages-tick                                  unattended: diff info pages by modified_at; SILENT unless one changed
   cold-tick                                   unattended: forecast cold-snap alerts for opted-in users; SILENT unless one is due
@@ -597,6 +599,48 @@ async function main(argv: string[]): Promise<void> {
             timeZone: tz, weekday: "short", day: "2-digit", hour: "2-digit", minute: "2-digit", hourCycle: "h23",
           }).format(d),
         venueName: (s) => rt.venueName(s),
+        now: () => new Date(),
+      });
+      break;
+    }
+    case "draft-tick": {
+      const src = rt.module.sources.lineup;
+      if (!src.drafts) return void console.log("TICK ERROR: this festival's lineup source has no draft check");
+      const fetchDrafts = src.drafts.bind(src);
+      const dir = cacheDir(ACTIVE_FESTIVAL);
+      const stateFile = join(dir, "draft_state.json");
+      const seenFile = join(dir, "drafts_seen.json");
+      const logFile = join(dir, "draft_changes.log");
+      await runDraftTick({
+        festival: ACTIVE_FESTIVAL,
+        readFails: () => {
+          try {
+            return (JSON.parse(readFileSync(stateFile, "utf8")) as { fails?: number }).fails ?? 0;
+          } catch {
+            return 0;
+          }
+        },
+        writeFails: (fails) => {
+          mkdirSync(dir, { recursive: true });
+          writeFileSync(stateFile, JSON.stringify({ fails, at: new Date().toISOString() }));
+        },
+        fetchDrafts: () => fetchDrafts(),
+        readSeen: () => {
+          try {
+            return JSON.parse(readFileSync(seenFile, "utf8")) as string[];
+          } catch {
+            return null;
+          }
+        },
+        writeSeen: (ids) => {
+          mkdirSync(dir, { recursive: true });
+          writeFileSync(seenFile, JSON.stringify(ids, null, 1) + "\n");
+        },
+        appendChange: (entry) => {
+          mkdirSync(dir, { recursive: true });
+          appendFileSync(logFile, entry);
+        },
+        log: (line) => console.log(line),
         now: () => new Date(),
       });
       break;
